@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>体质首页</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        body {
+            font-family: "微软雅黑";
+        }
+        .container {
+            padding: 10px;
+        }
+        .tzjl_label {
+            height: 115px;
+            background: url("../images/physique/tzjlbg.png") no-repeat center;
+            background-size: 100% 115px;
+        }
+        .tzjl_label.weui-panel:before {
+            border: none;
+        }
+        .tzjl_label.weui-panel:after {
+            border: none;
+        }
+        .tzjl_label .weui-media-box__hd {
+            line-height: 50px;
+        }
+        .tzjl_label .weui-media-box__hd .weui-media-box__thumb {
+            width: 50px;
+            height: 50px;
+        }
+        .tzjl_label .weui-media-box__hd p {
+            line-height: 20px;
+            font-size: 14px!important;
+            color: #4d4d4d!important;
+        }
+        .tzjl_label .weui-media-box__bd p {
+            font-size: 14px!important;
+            color: #4d4d4d!important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="weui-panel weui-panel_access tzjl_label">
+            <div class="weui-panel__bd">
+                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img src="../images/physique/tx.png" alt="" class="weui-media-box__thumb">
+                        <p>崔胜贤</p>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <p class="weui-media-box__desc">评定医生：李胜利</p>
+                        <p class="weui-media-box__desc">评定时间：2018-01-18</p>
+                        <p class="weui-media-box__desc">评定内容：老年人中医体质辨识</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="weui-panel weui-panel_access tzjl_label">
+            <div class="weui-panel__bd">
+                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img src="../images/physique/tx.png" alt="" class="weui-media-box__thumb">
+                        <p>崔胜贤</p>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <p class="weui-media-box__desc">评定医生：李胜利</p>
+                        <p class="weui-media-box__desc">评定时间：2018-01-18</p>
+                        <p class="weui-media-box__desc">评定内容：老年人中医体质辨识</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="weui-panel weui-panel_access tzjl_label">
+            <div class="weui-panel__bd">
+                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img src="../images/physique/tx.png" alt="" class="weui-media-box__thumb">
+                        <p>崔胜贤</p>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <p class="weui-media-box__desc">评定医生：李胜利</p>
+                        <p class="weui-media-box__desc">评定时间：2018-01-18</p>
+                        <p class="weui-media-box__desc">评定内容：老年人中医体质辨识</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script>
+    $(function() {
+        $(".container").delegate(".tzjl_label", "click", function() {
+            window.location = "辨识结果.html";
+        })
+    })
+</script>
+</html>

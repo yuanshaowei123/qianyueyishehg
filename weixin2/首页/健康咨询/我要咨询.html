@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-cells id" style="margin-top: 0">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <textarea id="symptom" class="weui-textarea" placeholder="在此描述并输入您的症状" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">就诊人</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select2" style="direction: rtl;">
+                    <option value="1">张三</option>
+                    <option value="2">李四</option>
+                    <option value="3">王五</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell onlineConsulting_my_details">
+            <div class="weui-cell__bd">
+                <p class="uploader_tips">选择上传症状照片／病历／检查单，方便医生作诊断<b> (不超过4张)</b></p>
+                <div class="weui-uploader">
+                    <div class="weui-uploader__bd">
+                        <ul class="weui-uploader__files" id="uploaderFiles">
+                        </ul>
+                        <div class="weui-uploader__input-box">
+                            <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*"
+                                   multiple="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui-btn-rea fix_btn onlineConsulting_btn">
+    <button class="weui-btn weui-btn_primary" style="border-radius: 0">开始咨询</button>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    $(".fix_btn button").on("click", function () {
+        if (f.reg_common($("#symptom").val(), "症状")) {
+
+            //上传时置灰按钮
+            $(this).removeClass("weui-btn_primary");
+            $(this).attr("type", "default");
+            $(this).attr("disabled", "true");
+            $(this).text("提交中...");
+
+            f.successToptips("发起咨询成功，请耐心等待医生回复", "热门问题.html");
+        }
+    })
+</script>
+</body>
+</html>

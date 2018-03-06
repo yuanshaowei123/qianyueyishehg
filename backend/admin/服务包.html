@@ -1,0 +1,922 @@
+<style>
+    .situation {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0;
+    }
+
+    .green-bg {
+        background-color: #0fa661;
+    }
+
+    .timeline .panel-body {
+        background: #F4F4F4;
+    }
+    .timeline::before {
+        background-color: #C7CBD6;
+        width: 2px;
+        margin-left: 0px;
+    }
+    .modal-lg {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .col-md-xs {
+        width: 8%;
+        float: left
+    }
+    .tab-bg-dark-navy-blue {
+        background: #35404d;
+    }
+</style>
+<!--<div class="col-md-12" style="height: 700px">-->
+<!--<div style="position:absolute;-->
+<!--top: 0;-->
+<!--right: 15px;-->
+<!--bottom:0;-->
+<!--left: 15px;-->
+<!--z-index: 1030;-->
+<!--background-color: rgba(0, 0, 0, 0.36);-->
+<!--color: white;-->
+<!--text-align: center;font-size:60px;"><p style="margin-top: 18%">正在开发中，敬请期待</p>-->
+<!--</div>-->
+<!--</div>-->
+<div class="col-md-12">
+    <header class="panel-heading tab-bg-dark-navy-blue">
+        <ul class="nav nav-tabs service">
+            <li class="active">
+                <a href="#serset" data-toggle="tab">
+                    服务设置
+                </a>
+            </li>
+            <li class="">
+                <a href="#serpackage" data-toggle="tab">
+                    服务包
+                </a>
+            </li>
+            <li class="">
+                <a href="#seritems" data-toggle="tab">
+                    服务项
+                </a>
+            </li>
+            <li class="">
+                <a href="#sertype" data-toggle="tab">
+                    服务项分类
+                </a>
+            </li>
+        </ul>
+    </header>
+    <div class="panel-body" style="background-color: white;">
+        <div class="tab-content">
+            <div id="serset" class="tab-pane active">
+                <section class="panel col-md-5" style="padding-left:0">
+                    <div class="situation">
+                        <div class="twt-feed green-bg">
+                            <h1>苏州市金阊区社区卫生服务中心</h1>
+                            <a href="#" style="border-radius: 50%!important;">
+                                <img src="../images/jinchang.jpg" alt="" style="border-radius: 50%!important;">
+                            </a>
+                        </div>
+                        <div class="weather-category twt-category">
+                            <ul>
+                                <li class="active">
+                                    <h5>5</h5>
+                                    服务包
+                                </li>
+                                <li>
+                                    <h5>5</h5>
+                                    服务项分类
+                                </li>
+                                <li>
+                                    <h5>88</h5>
+                                    服务项
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel col-md-7 situation">
+                    <div class="panel-body">
+                        <div class="text-center mbot30">
+                            <h3 class="timeline-title">服务包新建流程</h3>
+                        </div>
+                        <div class="timeline">
+                            <article class="timeline-item">
+                                <div class="timeline-desk">
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <span class="arrow"></span>
+                                            <span class="timeline-icon red" style="width: 12px;height: 12px;padding: 0px;"></span>
+                                            <span class="timeline-date">第一步：服务项分类</span>
+
+                                            <p><a class="btn btn-danger" href="#sertype" data-toggle="tab"
+                                                  style="color:white;margin-bottom: 10px;border-radius: 4px!important;"
+                                                  onclick="$(function(){$('.service').find('li').removeClass('active');$('.service').find('li').eq(3).addClass('active')})">服务项分类</a>
+                                            </p>
+
+                                            <p style="margin: 0px;">详细</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="timeline-item alt">
+                                <div class="timeline-desk">
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <span class="arrow-alt"></span>
+                                            <span class="timeline-icon green" style="width: 12px;height: 12px;padding: 0px;"></span>
+                                            <span class="timeline-date">第二步：服务项</span>
+
+                                            <p class="text-right">
+                                                <a class="btn btn-primary" href="#seritems"
+                                                   data-toggle="tab"
+                                                   style="color:white;margin-bottom: 10px;border-radius: 4px!important;"
+                                                   onclick="$(function(){$('.service').find('li').removeClass('active');$('.service').find('li').eq(2).addClass('active')})">服务项</a>
+                                            </p>
+
+                                            <p class="text-right" style="margin: 0px;">详细</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="timeline-item">
+                                <div class="timeline-desk">
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <span class="arrow"></span>
+                                            <span class="timeline-icon blue" style="width: 12px;height: 12px;padding: 0px;"></span>
+                                            <span class="timeline-date">第三步：服务包</span>
+
+                                            <p><a class="btn btn-info" href="#serpackage" data-toggle="tab"
+                                                  style="color:white;margin-bottom: 10px;border-radius: 4px!important;"
+                                                  onclick="$(function(){$('.service').find('li').removeClass('active');$('.service').find('li').eq(1).addClass('active')})">服务包</a>
+                                            </p>
+
+                                            <p style="margin: 0px;">详细</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="clearfix">&nbsp;</div>
+                    </div>
+                </section>
+            </div>
+            <div id="serpackage" class="tab-pane" style="overflow-x: hidden">
+                <header class="panel-heading" style="border-radius:0;background: #fff;">
+                    <div class="form-group col-md-1">
+                        <button href="#addserpackage" data-toggle="modal" class="btn btn-primary"
+                                style="margin-bottom: 10px">新建服务包
+                        </button>
+                    </div>
+                    <div style="clear: both;"></div>
+                </header>
+                <table class="table table-striped table-advance table-hover">
+                    <thead>
+                    <tr>
+                        <th>状态</th>
+                        <th>类别</th>
+                        <th>名称</th>
+                        <th>简介</th>
+                        <th>周期</th>
+                        <th>价格</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>激活</td>
+                        <td>基础包</td>
+                        <td>签约基本包</td>
+                        <td>家庭医生签约必选服务包，包含基本服务内容</td>
+                        <td>一年</td>
+                        <td>400.00</td>
+                        <td>
+                            <button href="#serpackagedetails" data-toggle="modal" class="btn btn-warning btn-xs">详情</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>激活</td>
+                        <td>增值包</td>
+                        <td>高血压监控包</td>
+                        <td>对于高血压患者，定期上门进行随访，远程血压监控，送药上门等服务</td>
+                        <td>一年</td>
+                        <td>1680.00</td>
+                        <td>
+                            <button href="#serpackagedetails" data-toggle="modal" class="btn btn-warning btn-xs">详情</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>隐藏</td>
+                        <td>增值包</td>
+                        <td>豪华家庭病床包</td>
+                        <td>对于有特殊需求的家庭病床患者，设置全面、完善的服务</td>
+                        <td>一日</td>
+                        <td>100.00</td>
+                        <td>
+                            <button href="#serpackagedetails" data-toggle="modal" class="btn btn-warning btn-xs">详情</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div id="page2" class="page"></div>
+            </div>
+            <div id="seritems" class="tab-pane" style="overflow-x: hidden">
+                <header class="panel-heading" style="border-radius:0;border-bottom: none;background: #fff;">
+                    <div class="form-group col-md-1">
+                        <button href="#additems" data-toggle="modal" class="btn btn-primary"
+                                style="margin-bottom: 10px" onclick="editServiceItem(1)">新建服务项
+                        </button>
+                    </div>
+                </header>
+                <table class="table table-striped table-advance table-hover">
+                    <thead>
+                    <tr>
+                        <th>状态</th>
+                        <th>名称</th>
+                        <th>服务项类别</th>
+                        <th>包括内容</th>
+                        <th>除外内容</th>
+                        <th>单位</th>
+                        <th>单价</th>
+                        <th>内容摘要</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>激活</td>
+                        <td>上门测量血压</td>
+                        <td>诊疗项</td>
+                        <td>到患者家中测量血压</td>
+                        <td>到患者家中测量</td>
+                        <td>次</td>
+                        <td>10元</td>
+                        <td>到患者家中测量</td>
+                        <td>
+                            <button href="#additems" data-toggle="modal" class="btn btn-primary btn-xs" onclick="editServiceItem(2)">编辑
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>隐藏</td>
+                        <td>换大导管</td>
+                        <td>护理项</td>
+                        <td>为患者更换大导管（仅为服务费，不包括耗材）</td>
+                        <td>为患者更换大导管）</td>
+                        <td>次</td>
+                        <td>10元</td>
+                        <td>到患者家中测量</td>
+                        <td>
+                            <button href="#additems" data-toggle="modal" class="btn btn-primary btn-xs" onclick="editServiceItem(2)">编辑
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div id="page" class="page"></div>
+            </div>
+            <div id="sertype" class="tab-pane">
+                <header class="panel-heading" style="border-radius:0;background: #fff;">
+                    <div class="form-group col-md-1">
+                        <button href="##additems-type" data-toggle="modal" class="btn btn-primary"
+                                style="margin-bottom: 10px" onclick="editServiceItemType(1)">新建服务项分类
+                        </button>
+                    </div>
+                    <div style="clear: both;"></div>
+                </header>
+                <table class="table table-striped table-advance table-hover">
+                    <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>简介</th>
+                        <th>状态</th>
+                        <th>服务数量</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>诊疗项</td>
+                        <td>医生提供的诊疗服务</td>
+                        <td>有效</td>
+                        <td>48</td>
+                        <td>
+                            <button href="#additems-type" data-toggle="modal" class="btn btn-primary btn-xs" onclick="editServiceItemType(2)">编辑
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>护理项</td>
+                        <td>护士提供的护理服务</td>
+                        <td>有效</td>
+                        <td>56</td>
+                        <td>
+                            <button href="#additems-type" data-toggle="modal" class="btn btn-primary btn-xs" onclick="editServiceItemType(2)">编辑
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>居家康复项</td>
+                        <td>为患者提供在家进行的康复服务</td>
+                        <td>有效</td>
+                        <td>52</td>
+                        <td>
+                            <button href="#additems-type" data-toggle="modal" class="btn btn-primary btn-xs" onclick="editServiceItemType(2)">编辑
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="serpackagedetails"
+     class="modal fade in" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">服务包详情</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">服务包图片</label>
+                        <div class="col-md-5">
+                            <img src="../images/fwb_chcr.png" style="max-width: 260px;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">服务包名称</label>
+                        <div class="col-md-5">
+                            <label class="control-label">签约基本包</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">服务包简介</label>
+                        <div class="col-md-5">
+                            <label class="control-label">家庭医生签约必选服务包，包含基本服务内容</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">服务周期</label>
+                        <div class="col-md-5">
+                            <label class="control-label">年</label>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">诊疗项</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-2">
+                            <table class="table table-striped table-advance table-hover" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>名称</th>
+                                    <th>单价</th>
+                                    <th>数量</th>
+                                    <th>总价</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>上门测量血压</td>
+                                    <td>30元/次</td>
+                                    <td>1次</td>
+                                    <td>30元</td>
+                                </tr>
+                                <tr>
+                                    <td>上门测量血压</td>
+                                    <td>30元/次</td>
+                                    <td>1次</td>
+                                    <td>30元</td>
+                                </tr>
+                                <tr>
+                                    <td>上门测量血压</td>
+                                    <td>30元/次</td>
+                                    <td>1次</td>
+                                    <td>30元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">护理项</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-2">
+                            <table class="table table-striped table-advance table-hover" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>名称</th>
+                                    <th>单价</th>
+                                    <th>数量</th>
+                                    <th>总价</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>换导管</td>
+                                    <td>30元/次</td>
+                                    <td>1次</td>
+                                    <td>30元</td>
+                                </tr>
+                                <tr>
+                                    <td>换导管</td>
+                                    <td>30元/次</td>
+                                    <td>1次</td>
+                                    <td>30元</td>
+                                </tr>
+                                <tr>
+                                    <td>换导管</td>
+                                    <td>30元/次</td>
+                                    <td>1次</td>
+                                    <td>30元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">康复项</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-2">
+                            <table class="table table-striped table-advance table-hover" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>名称</th>
+                                    <th>单价</th>
+                                    <th>数量</th>
+                                    <th>总价</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>针灸</td>
+                                    <td>30元/次</td>
+                                    <td>1次</td>
+                                    <td>30元</td>
+                                </tr>
+                                <tr>
+                                    <td>针灸</td>
+                                    <td>30元/次</td>
+                                    <td>1次</td>
+                                    <td>30元</td>
+                                </tr>
+                                <tr>
+                                    <td>针灸</td>
+                                    <td>30元/次</td>
+                                    <td>1次</td>
+                                    <td>30元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">总价</label>
+                        <div class="col-md-5">
+                            <label class="control-label">270元</label>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">定价</label>
+                        <div class="col-md-5">
+                            <label class="control-label">199元</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-2 control-label">状态</label>
+                        <div class="col-md-5">
+                            <label class="control-label">显示</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addserpackage"
+     class="modal fade in" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">新建服务包</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">服务包图片</label>
+
+                        <div class="col-md-4">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-preview fileinput-exists thumbnail">
+
+                                </div>
+                                <div>
+                                    <span class="btn default btn-file" style="margin-top: 8px;">
+                                        <span class="fileinput-new">选择图片</span>
+                                        <span class="fileinput-exists">重新选择</span>
+                                        <input type="file" name="...">
+                                    </span>
+                                    <a href="javascript:;" class="btn red fileinput-exists"
+                                       data-dismiss="fileinput" style="margin-top: 8px;">删除
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">选择服务包类别</label>
+
+                        <div class="col-md-4">
+                            <select class="form-control">
+                                <option>基础包</option>
+                                <option>增值包</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">服务包名称</label>
+
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" placeholder="请输入服务包名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">服务包简介</label>
+
+                        <div class="col-md-4">
+                            <textarea class="form-control" placeholder="请输入服务包简介"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">服务周期</label>
+
+                        <div class="col-md-4">
+                            <select class="form-control">
+                                <option>年</option>
+                                <option>月</option>
+                                <option>季度</option>
+                                <option>日</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">服务内容选择</label>
+                    </div>
+                    <div class="item0">
+                        <div class="form-group">
+                            <label class="col-md-2 col-md-offset-1 control-label">诊疗项</label>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-primary" onclick="additem(0)">+</button>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                        <!--<div class="col-md-2 col-md-offset-3">-->
+                        <!--<select class="form-control">-->
+                        <!--<option>条目一</option>-->
+                        <!--<option>条目二</option>-->
+                        <!--</select>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-xs">-->
+                        <!--<label class="control-label">30元/次</label>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-2">-->
+                        <!--<input type="number" class="form-control" placeholder="数量">-->
+                        <!--</div>-->
+                        <!--<div class="col-md-xs">-->
+                        <!--<label class="control-label">30元</label>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-1"><button type="button" class="btn btn-danger" onclick="del(this)">x</button></div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="item1">
+                        <div class="form-group">
+                            <label class="col-md-2 col-md-offset-1 control-label">护理项</label>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-primary" onclick="additem(1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item2">
+                        <div class="form-group">
+                            <label class="col-md-2 col-md-offset-1 control-label">康复项</label>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-primary" onclick="additem(2)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">总价</label>
+                        <div class="col-md-7">
+                            <label class="control-label">120</label>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">定价</label>
+
+                        <div class="input-group col-md-4" style="padding: 0px 15px;">
+                            <input class="form-control" type="number" placeholder="请输入价格">
+                            <span class="input-group-addon">￥</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">状态</label>
+                        <div class="col-md-4">
+                            <select class="form-control">
+                                <option>显示</option>
+                                <option>隐藏</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">是否医院持有</label>
+                        <div class="col-md-4">
+                            <input type="checkbox" name="checkbox" style="margin-top: 15px;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="additems"
+     class="modal fade in" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">选择服务项</label>
+
+                        <div class="col-md-5">
+                            <select class="form-control">
+                                <option>诊疗项</option>
+                                <option>护理项</option>
+                                <option>康复项</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">服务名称</label>
+
+                        <div class="col-md-5">
+                            <input class="form-control" type="text" placeholder="请输入服务名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">包含内容</label>
+
+                        <div class="col-md-5">
+                            <textarea class="form-control" placeholder="请输入包含内容"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">除外内容</label>
+
+                        <div class="col-md-5">
+                            <textarea class="form-control" placeholder="请输入除外内容"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">单位</label>
+
+                        <div class="col-md-5">
+                            <select class="form-control">
+                                <option>次</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">原价</label>
+
+                        <div class="input-group col-md-5" style="padding: 0px 15px">
+                            <input class="form-control" type="number" placeholder="0">
+                            <span class="input-group-addon">￥</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">现价</label>
+
+                        <div class="input-group col-md-5" style="padding: 0px 15px">
+                            <input class="form-control" type="number" placeholder="0">
+                            <span class="input-group-addon">￥</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">备注</label>
+
+                        <div class="col-md-5">
+                            <textarea class="form-control" placeholder="请输入备注"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">状态</label>
+
+                        <div class="col-md-5">
+                            <select class="form-control">
+                                <option>显示</option>
+                                <option>隐藏</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">是否医院持有</label>
+
+                        <div class="col-md-5">
+                            <input type="checkbox" name="checkbox" style="margin-top: 15px;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="additems-type"
+     class="modal fade in" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">名称</label>
+
+                        <div class="col-md-5">
+                            <input class="form-control" type="text" placeholder="请输入名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">备注</label>
+
+                        <div class="col-md-5">
+                            <textarea class="form-control" placeholder="请输入备注"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-2 control-label">状态</label>
+
+                        <div class="col-md-5">
+                            <select class="form-control">
+                                <option>显示</option>
+                                <option>隐藏</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $("#page").bs_pagination({
+        currentPage: 1,
+        rowsPerPage: 10,
+        maxRowsPerPage: 100,
+        totalPages: 100,
+        totalRows: 0,
+        showGoToPage: false,
+        showRowsPerPage: false,
+        showRowsInfo: false,
+        showRowsDefaultInfo: true,
+        onChangePage: function () { // 点击后返回page_num和rows_per_page
+        },
+        onLoad: function () { // 在插件加载时返回page_num和rows_per_page
+        }
+    });
+    $("#page2").bs_pagination({
+        currentPage: 1,
+        rowsPerPage: 10,
+        maxRowsPerPage: 100,
+        totalPages: 100,
+        totalRows: 0,
+        showGoToPage: false,
+        showRowsPerPage: false,
+        showRowsInfo: false,
+        showRowsDefaultInfo: true,
+        onChangePage: function () { // 点击后返回page_num和rows_per_page
+        },
+        onLoad: function () { // 在插件加载时返回page_num和rows_per_page
+        }
+    });
+    //添加和删除服务
+    function additem(e){
+        var op;
+        if(e==0){
+            op ="<div class='form-group'> " +
+                "<div class='col-md-3 col-md-offset-3'> " +
+                "<select class='form-control'> " +
+                "<option>诊疗项一</option> " +
+                "<option>诊疗项二</option> " +
+                "</select> " +
+                "</div> " +
+                "<div class='col-md-xs'> " +
+                "<label class='control-label'>30元/次</label>" +
+                "</div>" +
+                "<div class='col-md-2'> " +
+                "<input type='number' class='form-control' placeholder='数量'> " +
+                "</div> " +
+                "<div class='col-md-xs'> " +
+                "<label class='control-label'>30元</label>" +
+                "</div>" +
+                "<div class='col-md-1'><button type='button' class='btn btn-danger' onclick='del(this)'>x</button></div>" +
+                "</div>";
+            $(".item0").after(op);
+        }
+        if(e==1){
+            op ="<div class='form-group'> " +
+                "<div class='col-md-3 col-md-offset-3'> " +
+                "<select class='form-control'> " +
+                "<option>护理项一</option> " +
+                "<option>护理项二</option> " +
+                "</select> " +
+                "</div> " +
+                "<div class='col-md-xs'> " +
+                "<label class='control-label'>30元/次</label>" +
+                "</div>" +
+                "<div class='col-md-2'> " +
+                "<input type='number' class='form-control' placeholder='数量'> " +
+                "</div> " +
+                "<div class='col-md-xs'> " +
+                "<label class='control-label'>30元</label>" +
+                "</div>" +
+                "<div class='col-md-1'><button type='button' class='btn btn-danger' onclick='del(this)'>x</button></div>" +
+                "</div>";
+            $(".item1").after(op);
+        }
+        if(e==2){
+            op ="<div class='form-group'> " +
+                "<div class='col-md-3 col-md-offset-3'> " +
+                "<select class='form-control'> " +
+                "<option>康复项一</option> " +
+                "<option>康复项二</option> " +
+                "</select> " +
+                "</div> " +
+                "<div class='col-md-xs'> " +
+                "<label class='control-label'>30元/次</label>" +
+                "</div>" +
+                "<div class='col-md-2'> " +
+                "<input type='number' class='form-control' placeholder='数量'> " +
+                "</div> " +
+                "<div class='col-md-xs'> " +
+                "<label class='control-label'>30元</label>" +
+                "</div>" +
+                "<div class='col-md-1'><button type='button' class='btn btn-danger' onclick='del(this)'>x</button></div>" +
+                "</div>";
+            $(".item2").after(op);
+        }
+    }
+
+    function del(e){
+        $(e).parent().parent().remove();
+    }
+
+    function editServiceItem(e) {
+        if(e == 1) {
+            $("#additems .modal-title").html("新增服务项");
+        } else {
+            $("#additems .modal-title").html("编辑服务项");
+        }
+    }
+
+    function editServiceItemType(e) {
+        if(e == 1) {
+            $("#additems-type .modal-title").html("新增服务项分类");
+        } else {
+            $("#additems-type .modal-title").html("编辑服务项分类");
+        }
+    }
+</script>

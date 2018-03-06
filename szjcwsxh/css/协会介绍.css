@@ -1,0 +1,107 @@
+.content-box {
+    margin-top: 50px;
+}
+
+/* 协会介绍左边导航 */
+.contents-left {
+    padding: 0px 10px 0px 0px;
+    border-right: 1px solid #ccc;
+    margin-bottom: 40px;
+    min-height: 500px;
+    width: 200px;
+    float: left;
+}
+.contents-left_ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.contents-left_ul li {
+    text-align: left;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 4px 0;
+}
+.contents-left_ul li a {
+    padding-left: 12px;
+    font-size: 16px;
+    line-height: 34px;
+    border-left: 5px solid transparent;
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+    text-decoration: none;
+}
+.contents-left_ul li .current-li-a {
+    background: #efefef;
+    border-left: 5px solid #01a4e5;
+}
+.contents-left_ul li a span {
+    float: right;
+    line-height: 32px;
+    font-size: 12px;
+    margin-right: 12px;
+}
+.contents-right {
+    float: left;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    width: 790px;
+}
+.contents-right>h5 {
+    color: #01a4e5;
+    border-bottom: 2px solid #01a4e5;
+    line-height: 20px;
+    margin: 0;
+}
+.contents-right>h5 a {
+    line-height: 40px;
+    margin: 0 8px;
+}
+.contents-right .text-box {
+    margin: 20px 5px;
+}
+.contents-right .page-list-box {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.contents-right .page-list-box li a {
+    padding: 0;
+    line-height: 36px;
+    font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 700px;
+    display: inline-block;
+}
+.contents-right .page-list-box li a span {
+    background: #fff;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 0 12px;
+    display: inline-block;
+    margin-top: -2px;
+}
+.contents-right .part2 {
+    margin-top: 50px;
+    padding-left: 10px;
+}
+.contents-right .part2 li {
+    width: 210px;
+    float: left;
+    margin-bottom: 60px;
+    margin-right: 40px;
+    display: inline;
+}
+.contents-right .part2 .pic {
+    padding-bottom: 20px;
+}
+.contents-right .part2 h3 {
+    color: #1ad7f1;
+    font-size: 28px;
+    line-height: 40px;
+    padding-bottom: 0;
+}
+.contents-right .part2 .mb20 {
+    margin-bottom: 20px;
+}

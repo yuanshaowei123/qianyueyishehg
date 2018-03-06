@@ -1,0 +1,404 @@
+
+<style>
+    .permissionsSetting .col-md-1,
+    .permissionsSetting .col-md-2,
+    .permissionsSetting .col-md-3,
+    .permissionsSetting .col-md-4,
+    .permissionsSetting .col-md-5,
+    .permissionsSetting .col-md-6,
+    .permissionsSetting .col-md-7,
+    .permissionsSetting .col-md-8,
+    .permissionsSetting .col-md-9,
+    .permissionsSetting .col-md-10,
+    .permissionsSetting .col-md-11,
+    .permissionsSetting .col-md-12 {
+        margin: 0;
+        padding: 0;
+    }
+    .permissionsSetting .permissions_list ul li {
+        float: left;
+        display: inline-block;
+    }
+    .permissionsSetting .permissions_list .permissions_name {
+        font-weight: 600;
+        font-size: 13px;
+        color: #93a2a9;
+        padding-left: 20px;
+    }
+    .permissionsSetting .list-title {
+        border-bottom: 1px solid #F2F5F8;
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+    .permissionsSetting .title_ul li {
+        font-weight: 600;
+        font-size: 13px;
+        color: #93a2a9;
+        border: 0;
+    }
+    .permissionsSetting .second-level,
+    .permissionsSetting .third-level {
+        padding: 10px 0;
+    }
+    .permissionsSetting .first-level {
+        margin-bottom: 5px;
+    }
+    .permissionsSetting .second-level {
+        display: none;
+    }
+    .permissionsSetting .third-level {
+        display: none;
+    }
+    .permissionsSetting .first-level_name, .second-level_name, .third-level_name, .content_ul li {
+        color: #8896a0;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding-right: 10px!important;
+    }
+    .permissionsSetting .first-level_name {
+        padding-left: 20px;
+    }
+    .permissionsSetting .second-level_name {
+        padding-left: 30px;
+    }
+    .permissionsSetting .third-level_name {
+        padding-left: 55px;
+    }
+    .permissionsSetting .first-level_contents {
+        background-color: #fafafa;
+        padding: 10px 0;
+    }
+    .permissionsSetting .second-level {
+        border: 1px solid #f2f0f7;
+        border-top: 0;
+    }
+    .permissionsSetting .operation_btn {
+        margin-right: 20px;
+        padding: 5px;
+    }
+    .permissionsSetting .first-level.active .second-level {
+        display: block;
+    }
+    .permissionsSetting .second-level.active .third-level {
+        display: block;
+    }
+    #addPermission .control-label {
+        padding-left: 20px;
+    }
+    .icon-first-level {
+        font-size: 20px;
+        display: inline-block;
+        height: 25px;
+        line-height: 25px;
+        width: 25px;
+        text-align: center;
+        background-color: #bbb;
+    }
+    .icon-first-level.first-level-close {
+        display: none;
+    }
+    .icon-second-level {
+        font-size: 20px;
+        display: inline-block;
+        height: 25px;
+        line-height: 25px;
+        width: 25px;
+        text-align: center;
+        background-color: #ddd;
+    }
+    .icon-second-level.second-level-close {
+        display: none;
+    }
+    /*.permissionsSetting .relative_path {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }*/
+</style>
+<div class="col-md-12 permissionsSetting">
+    <!-- BEGIN PORTLET-->
+    <div class="portlet light portlet-fit" style="margin-bottom: 0;min-height: 600px;">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-directions font-green hide"></i>
+                <span class="caption-subject bold font-dark uppercase">权限项配置</span>
+            </div>
+            <div class="actions" style="float: right;margin-right: 50px;">
+                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                    <button type="button" class="btn btn-circle btn-primary" data-toggle="modal" href="#addPermission" onclick="editPer(0)">
+                        新增权限项
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body clearfix permissions_list">
+            <div class="col-md-12 list-title">
+                <div class="col-md-3 permissions_name">名称</div>
+                <div class="col-md-9">
+                    <ul class="title_ul">
+                        <li class="col-md-1">左侧菜单</li>
+                        <li class="col-md-3">相对路径</li>
+                        <li class="col-md-1">排序号</li>
+                        <li class="col-md-3">英文名称</li>
+                        <li class="col-md-3">操作</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12 first-level">
+                <div class="col-md-12 first-level_contents">
+                    <div class="col-md-3 first-level_name">
+                        <span class="icon-first-level first-level-open">+</span>
+                        <span class="icon-first-level first-level-close">-</span>
+                        服务设置
+                    </div>
+                    <div class="col-md-9">
+                        <ul class="content_ul">
+                            <li class="col-md-1">是</li>
+                            <li class="col-md-3">服务设置</li>
+                            <li class="col-md-1">3</li>
+                            <li class="col-md-3">q</li>
+                            <li class="col-md-3">
+                                <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(0)">新增</a>
+                                <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(1)">编辑</a>
+                                <a class="operation_btn delete_btn">删除</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-12 second-level">
+                    <div class="col-md-12 second-level_contents">
+                        <div class="col-md-3 second-level_name">
+                            <span class="icon-second-level second-level-open">+</span>
+                            <span class="icon-second-level second-level-close">-</span>
+                            服务包</div>
+                        <div class="col-md-9">
+                            <ul class="content_ul">
+                                <li class="col-md-1">否</li>
+                                <li class="col-md-3 relative_path">/familydoctor-frontend/backend/admin/index.html</li>
+                                <li class="col-md-1">1</li>
+                                <li class="col-md-3">w</li>
+                                <li class="col-md-3">
+                                    <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(0)">新增</a>
+                                    <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(1)">编辑</a>
+                                    <a class="operation_btn delete_btn">删除</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12 third-level">
+                        <div class="col-md-12 third-level_contents">
+                            <div class="col-md-3 third-level_name">服务包新增</div>
+                            <div class="col-md-9">
+                                <ul class="content_ul">
+                                    <li class="col-md-1">否</li>
+                                    <li class="col-md-3 relative_path">服务设置-服务包-服务包新增</li>
+                                    <li class="col-md-1">1</li>
+                                    <li class="col-md-3">e</li>
+                                    <li class="col-md-3">
+                                        <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(1)">编辑</a>
+                                        <a class="operation_btn delete_btn">删除</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 third-level_contents">
+                            <div class="col-md-3 third-level_name">服务包编辑</div>
+                            <div class="col-md-9">
+                                <ul class="content_ul">
+                                    <li class="col-md-1">否</li>
+                                    <li class="col-md-3 relative_path">服务设置-服务包-服务包编辑</li>
+                                    <li class="col-md-1">2</li>
+                                    <li class="col-md-3">r</li>
+                                    <li class="col-md-3">
+                                        <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(1)">编辑</a>
+                                        <a class="operation_btn delete_btn">删除</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 third-level_contents">
+                            <div class="col-md-3 third-level_name">服务包详情查看</div>
+                            <div class="col-md-9">
+                                <ul class="content_ul">
+                                    <li class="col-md-1">否</li>
+                                    <li class="col-md-3 relative_path">服务设置-服务包-服务包详情查看</li>
+                                    <li class="col-md-1">3</li>
+                                    <li class="col-md-3">t</li>
+                                    <li class="col-md-3">
+                                        <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(1)">编辑</a>
+                                        <a class="operation_btn delete_btn">删除</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 second-level">
+                    <div class="col-md-12 second-level_contents">
+                        <div class="col-md-3 second-level_name">
+                            <span class="icon-second-level second-level-open">+</span>
+                            <span class="icon-second-level second-level-close">-</span>
+                            服务项</div>
+                        <div class="col-md-9">
+                            <ul class="content_ul">
+                                <li class="col-md-1">否</li>
+                                <li class="col-md-3 relative_path">服务设置-服务项</li>
+                                <li class="col-md-1">2</li>
+                                <li class="col-md-3">y</li>
+                                <li class="col-md-3">
+                                    <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(0)">新增</a>
+                                    <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(1)">编辑</a>
+                                    <a class="operation_btn delete_btn">删除</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12 third-level">
+                        <div class="col-md-12 third-level_contents">
+                            <div class="col-md-3 third-level_name">服务项新增</div>
+                            <div class="col-md-9">
+                                <ul class="content_ul">
+                                    <li class="col-md-1">否</li>
+                                    <li class="col-md-3 relative_path">服务设置-服务项-服务项新增</li>
+                                    <li class="col-md-1">1</li>
+                                    <li class="col-md-3">u</li>
+                                    <li class="col-md-3">
+                                        <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(1)">编辑</a>
+                                        <a class="operation_btn delete_btn">删除</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 third-level_contents">
+                            <div class="col-md-3 third-level_name">服务项编辑</div>
+                            <div class="col-md-9">
+                                <ul class="content_ul">
+                                    <li class="col-md-1">否</li>
+                                    <li class="col-md-3 relative_path">服务设置-服务项-服务项编辑</li>
+                                    <li class="col-md-1">2</li>
+                                    <li class="col-md-3">i</li>
+                                    <li class="col-md-3">
+                                        <a href="#addPermission" data-toggle="modal" class="operation_btn edit_btn" onclick="editPer(1)">编辑</a>
+                                        <a class="operation_btn delete_btn">删除</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="addPermission" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog add-role" style="width: 900px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">新增权限项</h4>
+            </div>
+            <div class="modal-body" style="">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">父级菜单</label>
+
+                            <div class="col-md-6 route-option">
+                                <select class="form-control">
+                                    <option>根节点</option>
+                                    <option>医生</option>
+                                    <option>服务设置</option>
+                                    <option>服务包</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">名称</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">英文名称</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">相对路径</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">排序号</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">是否为左侧菜单</label>
+                            <div class="col-md-3">
+                                <select class="form-control">
+                                    <option>是</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /* 点击一级栏目的打开按钮 关闭其他所有的栏目，隐藏打开图标，显示打开图标*/
+    $(".permissions_list").delegate(".icon-first-level.first-level-open", "click", function() {
+        var firstLevels = $(".first-level");
+        for(var i = 0; i < firstLevels.length; i++) {
+            $(firstLevels[i]).removeClass("active");
+            $(firstLevels[i]).find(".first-level-close").css("display", "none");
+            $(firstLevels[i]).find(".first-level-open").css("display", "inline-block");
+        }
+        $(this).css("display", "none");
+        $(this).parent().find(".first-level-close").css("display", "inline-block");
+        $(this).parent().parent().parent().addClass("active");
+    })
+    /* 点击一级栏目的关闭按钮 */
+    $(".permissions_list").delegate(".icon-first-level.first-level-close", "click", function() {
+        $(this).css("display", "none");
+        $(this).parent().find(".first-level-open").css("display", "inline-block");
+        $(this).parent().parent().parent().removeClass("active");
+    })
+    /* 点击二级栏目的打开按钮 */
+    $(".permissions_list").delegate(".icon-second-level.second-level-open", "click", function() {
+        $(this).css("display", "none");
+        $(this).parent().find(".second-level-close").css("display", "inline-block");
+        $(this).parent().parent().parent().addClass("active");
+    })
+    /* 点击二级栏目的关闭按钮 */
+    $(".permissions_list").delegate(".icon-second-level.second-level-close", "click", function() {
+        $(this).css("display", "none");
+        $(this).parent().find(".second-level-open").css("display", "inline-block");
+        $(this).parent().parent().parent().removeClass("active");
+    })
+
+    /* 修改弹出框的标题，新增与编辑 */
+    function editPer(value) {
+        if(value == 0) {
+            $("#addPermission .modal-title").text("新增权限项");
+        } else if(value == 1) {
+            $("#addPermission .modal-title").text("编辑权限项");
+        }
+    };
+</script>

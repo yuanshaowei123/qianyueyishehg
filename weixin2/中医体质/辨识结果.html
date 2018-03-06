@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>辨识结果</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <link rel="stylesheet" href="../css/swiper.min.css"/>
+    <style>
+        body {
+            font-family: "微软雅黑";
+            /*background-color: #fff;*/
+        }
+        .container {
+            /*position: relative;*/
+        }
+        .label_title {
+            height: 30px;
+            line-height: 30px;
+            background-color: #fafafa;
+        }
+        .label_title h4 {
+            display: inline-block;
+            font-size: 14px;
+            color: #4d4d4d;
+            border-left: 4px solid #00c281;
+            margin-left: 15px;
+            height: 17px;
+            line-height: 17px;
+            padding-left: 8px;
+        }
+
+        .jbxx_label {
+            height: 130px;
+            margin-top: 0;
+            padding-bottom: 25px;
+        }
+        .jbxx_label.weui-panel:before {
+            border: none;
+        }
+        .jbxx_label.weui-panel:after {
+            border: none;
+        }
+        .jbxx_label .weui-media-box__hd {
+            width: 40%;
+            height: auto;
+        }
+        .jbxx_label .weui-media-box__hd .weui-media-box__thumb {
+            width: 60px;
+            height: 60px;
+        }
+        .jbxx_label .weui-media-box__hd p {
+            line-height: 20px;
+            font-size: 14px!important;
+            color: #4d4d4d!important;
+            margin-top: 10px;
+        }
+        .jbxx_label .weui-media-box__bd p {
+            font-size: 14px!important;
+            color: #4d4d4d!important;
+            padding: 0;
+            height: 30px;
+            line-height: 30px;
+        }
+        .jbxx_label .weui-media-box__bd .icon_bsjg {
+            display: inline-block;
+            width: 14px;
+            height: 30px;
+            line-height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .jbxx_label .weui-media-box__bd .icon_bsjg.icon_name {
+            background: url("../images/physique/icon_name.png") no-repeat center;
+            background-size: 14px 14px;
+        }
+        .jbxx_label .weui-media-box__bd .icon_bsjg.icon_male {
+            background: url("../images/physique/icon_male.png") no-repeat center;
+            background-size: 14px 14px;
+        }
+        .jbxx_label .weui-media-box__bd .icon_bsjg.icon_female {
+            background: url("../images/physique/icon_female.png") no-repeat center;
+            background-size: 14px 17px;
+        }
+        .jbxx_label .weui-media-box__bd .icon_bsjg.icon_age {
+            background: url("../images/physique/icon_age.png") no-repeat center;
+            background-size: 14px 14px;
+        }
+        .jbxx_label .weui-media-box__bd .icon_bsjg.icon_date {
+            background: url("../images/physique/icon_date.png") no-repeat center;
+            background-size: 14px 14px;
+        }
+
+        .tztz_label {
+            margin-top: 0;
+        }
+        .tztz_label .weui-media-box__hd {
+            margin-right: 15px;
+            height: 77px;
+            margin-top: -35px;
+        }
+        .tztz_label.weui-panel:before {
+            border: none;
+        }
+        .tztz_label.weui-panel:after {
+            border: none;
+        }
+        .tztz_label .weui-media-box__hd .weui-media-box__thumb {
+            width: 60px;
+            height: 77px;
+        }
+        .tztz_label .weui-media-box__hd span {
+            display: block;
+            border-radius: 5px;
+            background-color: #97cfc2;
+            color: #fff;
+            line-height: 25px;
+            margin-top: 10px;
+        }
+        .tztz_label .weui-media-box__bd p,
+        .tztz_label .weui-media-box__bd span {
+            display: inline-block;
+            font-size: 14px!important;
+            color: #4d4d4d!important;
+            height: 30px;
+            line-height: 27px;
+        }
+        .tztz_label .weui-media-box__bd span {
+            /*max-width: 28%;*/
+            vertical-align: top;
+            font-weight: bold;
+            padding-right: 5px;
+            display: inline-block;
+        }
+        .tztz_label .weui-media-box__bd p {
+            /*width: 70%;*/
+            display: inline-block;
+        }
+
+        .tzjg_area {
+            padding: 25px 15px 30px;
+            font-size: 14px!important;
+            color: #4d4d4d!important;
+            background-color: #fff;
+            line-height:25px;
+        }
+
+        .jyjy_area {
+            padding: 25px 15px 30px;
+            font-size: 14px!important;
+            color: #4d4d4d!important;
+            background-color: #fff;
+            line-height:25px;
+        }
+
+        .tzdf_area {
+            padding: 40px 25px;
+            height: 180px;
+            background-color: #fff;
+        }
+        .tzdf_area .weui-flex__item {
+            height: 150px;
+            text-align: center;
+        }
+        .tzdf_area .weui-flex__item .histogram {
+            height: 150px;
+            width: 15px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .tzdf_area .weui-flex__item .histogram .histogram_bottom {
+            background-color: #00c281;
+            margin:auto 0;
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+        }
+        .tzdf_area .weui-flex__item .histogram .histogram_bottom.active {
+            background-color: #ffb606;
+        }
+        .tzdf_area .weui-flex__item .histogram .histogram_bottom span {
+            width: 15px;
+            display: block;
+            margin-top: -22px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .tzdf_area .weui-flex__item .histogram_name {
+            display: block;
+            layout-flow:vertical-ideographic;
+            width: 12px;
+            color: #00c281;
+            font-size: 12px;
+            padding: 5px 6px;
+            height: 40px;
+            background-color: #f2f2f2;
+            margin: 5px auto;
+            line-height: 13px;
+            font-weight: 400;
+        }
+        .tzdf_area .weui-flex__item .histogram_name.active {
+            color: #ffb606;
+        }
+
+        .swiper-slide {
+            width: auto!important;
+            height: 40px;
+            width: 25%!important;
+            text-align: center;
+        }
+        .swiper-slide.active {
+            color: #cdfbf0;
+        }
+        .swiper-slide i {
+            width: 8px;
+            height: 12px;
+            display: inline-block;
+            margin-right: 3px;
+            vertical-align: baseline;
+        }
+        .swiper-slide.active i {
+            background: url("../images/physique/icon_tztz.png") no-repeat center;
+            background-size: 8px 12px;
+        }
+        .topmenu {
+            height: 40px;
+            background-color: #97cfc2;
+            line-height: 40px;
+            position: relative;
+            color: #fff;
+            font-size: 16px;
+        }
+        .icon_button {
+            display: block;
+            /*position: absolute;*/
+            position: fixed;
+            font-size: 12px;
+            text-align: center;
+        }
+        .icon_button.big {
+            height: 42px;
+            width: 42px;
+            background: url("../images/physique/icon_button1.png") no-repeat center;
+            background-size: 42px 42px;
+            bottom: 25px;
+            right: 20px;
+        }
+        .icon_button.big.active {
+            transform:rotate(45deg);
+        }
+        .icon_button.small {
+            height: 40px;
+            width: 40px;
+            right: 21px;
+            line-height: 39px;
+            color: #fff;
+            display: none;
+        }
+        .icon_button.small.active {
+            display: block;
+        }
+        .icon_button.small.bg {
+            background: url("../images/physique/icon_button-bg.png") no-repeat center;
+            background-size: 40px 40px;
+            bottom: 65px;
+        }
+        .icon_button.small.jy {
+            background: url("../images/physique/icon_button-bg.png") no-repeat center;
+            background-size: 40px 40px;
+            bottom: 102px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section>
+            <div class="label_title">
+                <h4>基本信息</h4>
+            </div>
+            <div class="weui-panel weui-panel_access jbxx_label">
+                <div class="weui-panel__bd">
+                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__hd">
+                            <img src="../images/physique/tx.png" alt="" class="weui-media-box__thumb">
+                            <p>评定医生：李胜利</p>
+                        </div>
+                        <div class="weui-media-box__bd">
+                            <p class="weui-media-box__desc"><span class="icon_bsjg icon_name"></span>姓名：崔胜贤</p>
+                            <p class="weui-media-box__desc"><span class="icon_bsjg icon_male"></span><span class="icon_bsjg icon_female"></span>性别：男</p>
+                            <p class="weui-media-box__desc"><span class="icon_bsjg icon_age"></span>年龄：65</p>
+                            <p class="weui-media-box__desc"><span class="icon_bsjg icon_date"></span>评定时间：2018-01-18</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="label_title">
+                <h4>体质得分</h4>
+            </div>
+            <div class="weui-flex tzdf_area">
+
+            </div>
+        </section>
+        <section>
+            <div class="label_title">
+                <h4>最明显中医体质特征</h4>
+            </div>
+            <div class="weui-panel weui-panel_access tztz_label">
+                <!-- Swiper -->
+                <div class="topmenu">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <!--<span class="swiper-slide active"><i></i>气虚质</span>
+                            <span class="swiper-slide" ><i></i>阳虚质</span>
+                            <span class="swiper-slide" onclick="clickTab(this, 3)"><i></i>阴虚质</span>
+                            <span class="swiper-slide" onclick="clickTab(this, 4)"><i></i>痰湿质</span>
+                            <span class="swiper-slide" onclick="clickTab(this, 5)"><i></i>痰湿质</span>-->
+                        </div>
+                    </div>
+                    <span class="edit_channel_btn"></span>
+                </div>
+                <div class="weui-panel__bd">
+                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__hd">
+                            <img src="" alt="" class="weui-media-box__thumb">
+                            <span class="tz_name"></span>
+                        </div>
+                        <div class="weui-media-box__bd">
+                            <div class="general">
+                                <span class="tztz_title">总体特征：</span><p></p>
+                            </div>
+                            <div class="shape">
+                                <span class="tztz_title">形体特征：</span><p></p>
+                            </div>
+                            <div class="performance">
+                                <span class="tztz_title">常见表现：</span><p></p>
+                            </div>
+                            <div class="psychological">
+                                <span class="tztz_title">心理特征：</span><p></p>
+                            </div>
+                            <div class="disease">
+                                <span class="tztz_title">发病倾向：</span><p></p>
+                            </div>
+                            <div class="adaptability">
+                                <span class="tztz_title">对外界适应能力：</span><p></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="label_title">
+                <h4>体质结果</h4>
+            </div>
+            <div class="tzjg_area">
+
+            </div>
+        </section>
+        <section style="margin-bottom: 30px;">
+            <div class="label_title">
+                <h4>家庭医生建议</h4>
+            </div>
+            <div class="jyjy_area" contenteditable="false">好好吃饭，孩子！！！好好吃饭，孩子！！！好好吃饭，孩子！！！好好吃饭，孩子！！！</div>
+        </section>
+
+        <span class="icon_button big"></span>
+        <a class="icon_button small bg" href="个人体质报告.html">报告</a>
+        <span class="icon_button small jy">建议</span>
+    </div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script src="../js/mockPtrbsjg.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script>
+    $(function() {
+        /* 获取柱状图信息 */
+        var results1 = JSON.parse (sessionStorage.getItem("identificationResults1"));
+        var results2 = JSON.parse (sessionStorage.getItem("identificationResults2"));
+
+        /* 如果缓存中没有的话，从数据库取 */
+        if(!results1) {
+            results1 = mockData1();
+        }
+        if(!results2) {
+            results2 = mockData2();
+            sessionStorage.setItem("identificationResults2", JSON.stringify(results2));
+        }
+
+        /*渲染体质得分柱状图*/
+        showHistogram(results1);
+
+        /* 渲染体质特征数据 */
+        var tzData = mockTzData();
+        var tzList = showTztzData(tzData.list, results2);
+
+
+        /*渲染体质特征时动态控制显示宽度*/
+        showTztz();
+
+        /* 渲染体质结果 */
+        showTzjg(results2);
+
+        /* 设置头部导航栏 */
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 0,
+            slidesPerView:'auto',
+            freeMode: true
+        });
+
+        // 点击体质特征导航栏
+        $(".swiper-wrapper").delegate(".swiper-slide", "click", function() {
+            var value = $(this).attr("name");
+            showTztzMainContents(tzList[parseInt(value)]);
+            $(".swiper-slide.active").removeClass("active");
+            $(this).addClass("active");
+        })
+    })
+
+    /* 渲染柱状图 */
+    function showHistogram(data) {
+        var $tzdfArea =  $(".tzdf_area");
+        var tempScore = 0;  /*临时存放分数，用来存放最大分数，最后当分数最大时颜色特殊显示*/
+        var tempType = [];   /*临时存放类型*/
+        var type = data.type;/*获取该辨识表的类型，0为老年人，1位普通人*/
+
+        for(var i = 0; i < data.list.length; i++ ) {
+            var htmlTemplate;
+            var value = data.list[i];
+
+            if(parseInt(tempScore) == parseInt(value.score)) {
+                tempScore = value.score;
+                tempType.push(value.type);
+            } else if(parseInt(tempScore) < parseInt(value.score)) {
+                tempScore = value.score;
+                tempType = [value.type];
+            }
+
+            /* 判断是老年人还是普通人，柱状图显示的分数不一样，普通人是转换分数，老年人是实际分数 */
+            if(type == "0") {
+                var histogram_percent1 = value.score/25*100; /*老年人百分比*/
+                htmlTemplate =
+                    "<div class='weui-flex__item histogram_item" + value.type + "'>" +
+                    "<div class='histogram'>" +
+                    "<div class='histogram_bottom' style='height:" + histogram_percent1 + "%;'><span>" + value.score + "</span></div>" +
+                    "</div>" +
+                    "<span class='histogram_name'>" + value.name + "</span>" +
+                    "</div>";
+            } else if(type == "1") {
+                var newScoreNormal = (value.score - value.problem_num)/(value.problem_num*4)*100;  /*普通人转换后分数*/
+                htmlTemplate =
+                    "<div class='weui-flex__item histogram_item" + value.type + "'>" +
+                    "<div class='histogram'>" +
+                    "<div class='histogram_bottom' style='height:" + Math.ceil(newScoreNormal) + "%;'><span>" + Math.ceil(newScoreNormal) + "</span></div>" +
+                    "</div>" +
+                    "<span class='histogram_name'>" + value.name + "</span>" +
+                    "</div>";
+            }
+
+            $tzdfArea.append(htmlTemplate);
+        }
+
+        /* 判断某一个类型得分最高 */
+        for(var i = 0; i < tempType.length; i++) {
+            $(".histogram_item" + tempType[i]).find(".histogram_bottom").addClass("active");
+            $(".histogram_item" + tempType[i]).find(".histogram_name").addClass("active");
+        }
+    }
+
+    /* 渲染体质特征数据 */
+    function showTztzData(list, data) {
+        console.dir(list);
+        console.dir(data);
+        var tempList = [];
+        if(data.mainPhysique.length != 0) {
+            for(var i = 0; i < list.length; i++) {
+                var name = list[i].name;
+                if(data.mainPhysique.indexOf(name) != -1) {
+                    tempList.push(list[i]);
+                }
+            }
+        } else if(data.mainPhysique.length == 0 && data.basicPhysique.length != 0) {
+            for(var i = 0; i < list.length; i++) {
+                var name = list[i].name;
+                if(data.basicPhysique.indexOf(name) != -1) {
+                    tempList.push(list[i]);
+                }
+            }
+        } else if(data.mainPhysique.length == 0 && data.basicPhysique.length == 0 && data.inclinePhysique.length != 0) {
+            for(var i = 0; i < list.length; i++) {
+                var name = list[i].name;
+                if(data.inclinePhysique.indexOf(name) != -1) {
+                    tempList.push(list[i]);
+                }
+            }
+        }
+
+        var $swiper_wrapper = $(".swiper-wrapper");
+        for(var j = 0; j < tempList.length; j++) {
+            var html = "<span class='swiper-slide' name='" + j + "'><i></i>" +
+                tempList[j].name + "</span>";
+            $swiper_wrapper.append(html);
+        }
+        $swiper_wrapper.find("span").eq(0).addClass("active");
+        showTztzMainContents(tempList[0]);
+
+        return tempList;
+    }
+
+    /* 渲染体质特征的主要内容 */
+    function showTztzMainContents(data) {
+        var $panelBd = $(".tztz_label .weui-panel__bd");
+        $panelBd.find("img").attr("src", "../images/physique/" + data.imgUrl);
+        $panelBd.find(".tz_name").text(data.name);
+        $panelBd.find(".general p").text(data.general);
+        $panelBd.find(".shape p").text(data.shape);
+        $panelBd.find(".performance p").text(data.performance);
+        $panelBd.find(".psychological p").text(data.psychological);
+        $panelBd.find(".disease p").text(data.disease);
+        $panelBd.find(".adaptability p").text(data.adaptability);
+    }
+
+    /*渲染体质特征时动态控制显示宽度*/
+    function showTztz() {
+        var $tztz_label = $(".tztz_label .weui-media-box__bd>div");
+        for(var i = 0; i < $tztz_label.length; i++) {
+            var $template = $tztz_label.eq(i);
+
+            var widthDiv = $template.css("width");
+            var widthSpan = $template.find("span").css("width");
+            var diffWidth = parseInt(widthDiv) - parseInt(widthSpan);
+            $template.find("p").css("width", (diffWidth - 10) + "px");
+        }
+    }
+
+    /* 渲染体质结果 */
+    function showTzjg(data) {
+        $tzjg_area = $(".tzjg_area");
+        var text = "通过对问卷的调查，";
+        var result;
+
+        result = MosaicString(data.mainPhysique);
+        if(result != null) {
+            text = text + "您属于（" + result + ")，";
+        };
+        result = MosaicString(data.basicPhysique);
+        if(result != null) {
+            text = text + "您基本属于（" + result + ")，";
+        };
+        result = MosaicString(data.inclinePhysique);
+        if(result != null) {
+            text = text + "有（" + result + ")倾向，";
+        };
+        text += "我们根据你的体质特征为您制定个性化的保健方案，为您日常养生保健提供依据和方法。详见各体质报告。";
+        $tzjg_area.text(text);
+    }
+
+    /* 拼接体质结果 */
+    function MosaicString(list) {
+        if(list.length == 0) {
+            return null;
+        }
+        var result;
+        for(var i = 0; i< list.length; i++) {
+            if( i == 0) {
+                result = list[i];
+            } else {
+                result = result + "、" + list[i];
+            }
+        }
+        return result;
+    }
+
+    /* 点击加号显示或隐藏建议与报告两个按钮 */
+    $(".icon_button.big").on("click", function() {
+        if($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(".small.bg").removeClass("active");
+            $(".small.jy").removeClass("active");
+        } else {
+            $(this).addClass("active");
+            $(".small.bg").addClass("active");
+            $(".small.jy").addClass("active");
+        }
+    });
+
+    /*点击建议按钮编辑建议*/
+    $(".icon_button.jy").on("click", function() {
+        var text = $(".jyjy_area").text();
+        $(".icon_button.big").removeClass("active");
+        $(".small.bg").removeClass("active");
+        $(".small.jy").removeClass("active");
+        $(".jyjy_area").attr("contenteditable", "true");
+        $(".jyjy_area").focus();
+    })
+    /*点击建议按钮编辑建议*/
+    $(".jyjy_area").blur(function() {
+        $(this).attr("contenteditable", "false");
+    })
+
+    /* mock */
+    function mockData1() {
+        // 模拟老年人体质辨识数据
+        /* type表示类型，1表示平和质，2表示气虚质 等等
+         * num表示条目数
+         * */
+        var data_old = {
+            type: "0",
+            list: [
+                {"id": "1","name":"平和质","score":25,"type":"1","problem_num": 5},
+                {"id": "2","name":"气虚质","score":20,"type":"2","problem_num": 4},
+                {"id": "3","name":"阴虚质","score":6,"type":"3","problem_num": 4},
+                {"id": "4","name":"阳虚质","score":8,"type":"4","problem_num": 4},
+                {"id": "5","name":"痰虚质","score":10,"type":"5","problem_num": 4},
+                {"id": "6","name":"湿热质","score":9,"type":"6","problem_num": 4},
+                {"id": "7","name":"血瘀质","score":7,"type":"7","problem_num": 4},
+                {"id": "8","name":"气郁质","score":5,"type":"8","problem_num": 4},
+                {"id": "9","name":"特禀质","score":12,"type":"9","problem_num": 4},
+            ]
+        }
+
+        // 模拟普通人体质辨识数据
+        /* type表示类型，1表示平和质，2表示气虚质 等等
+         * num表示条目数
+         * */
+        var data_normal = {
+            type: "1",
+            list: [
+                {"id": "1","name":"平和质","score":32,"type":"1","problem_num": 8},
+                {"id": "2","name":"气虚质","score":21,"type":"2","problem_num": 7},
+                {"id": "3","name":"阴虚质","score":24,"type":"3","problem_num": 8},
+                {"id": "4","name":"阳虚质","score":16,"type":"4","problem_num": 8},
+                {"id": "5","name":"痰虚质","score":16,"type":"5","problem_num": 8},
+                {"id": "6","name":"湿热质","score":14,"type":"6","problem_num": 7},
+                {"id": "7","name":"血瘀质","score":14,"type":"7","problem_num": 7},
+                {"id": "8","name":"气郁质","score":28,"type":"8","problem_num": 7},
+                {"id": "9","name":"特禀质","score":35,"type":"9","problem_num": 7},
+            ]
+        }
+        return data_old;
+    }
+
+    function mockData2() {
+        var data = {
+            mainPhysique: ["气虚质", "阴虚质"],
+            basicPhysique: [],
+            inclinePhysique: ["气郁质", "阳虚质"]
+        }
+        return data;
+    }
+
+</script>
+</html>

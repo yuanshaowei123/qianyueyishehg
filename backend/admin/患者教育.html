@@ -1,0 +1,254 @@
+<style>
+    .aa{
+        margin: 0 15px;
+        display: block;
+
+    }
+    .bb{
+        margin: 0 15px;
+        display: none;
+    }
+    .tab-content > .active, .pill-content > .active{
+        overflow-x: hidden;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit aa">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-directions font-green hide"></i>
+                    <span class="caption-subject bold font-dark uppercase">通知公告</span>
+                </div>
+                <div class="actions" style="float: right">
+                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                        <button type="button" class="btn btn-circle btn-primary added" data-href="患者教育_新增通知">新增通知
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body" style="min-height: 581px">
+                <div class="table-scrollable table-scrollable-borderless">
+                    <table class="table table-hover table-light">
+                        <thead>
+                        <tr class="uppercase">
+                            <th>通知类型</th>
+                            <th>标题</th>
+                            <th>发布时间</th>
+                            <th>发布范围</th>
+                            <th>状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>居民信息通知</td>
+                            <td>苏州家庭医生签约新模式</td>
+                            <td>2017-6-16 11:13:39</td>
+                            <td>居民信息通知</td>
+                            <td>显示</td>
+                        </tr>
+                        <tr>
+                            <td>居民卫生资讯</td>
+                            <td>苏州家庭医生签约新模式</td>
+                            <td>2017-6-16 11:13:39</td>
+                            <td>居民卫生资讯</td>
+                            <td>不显示</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr style="margin-top: 0">
+                <div id="pagetoolbar" class="">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 text-right">
+                            <div class="">
+                                <ul id="nav_list_pagetoolbar" class="pagination pagination_custom" unselectable="on"
+                                    style="user-select: none;">
+                                    <li class="active">
+                                        <a id="nav_item_pagetoolbar_1" href="javascript:void(0);"
+                                           title="Page 1 of 1">1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portlet light portlet-fit bb">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-directions font-green hide"></i>
+                    <span class="caption-subject bold font-dark uppercase">新增通知</span>
+                </div>
+                <div class="actions" style="float: right">
+                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                        <button type="button" class="btn btn-circle btn-primary Return" data-href="文本管理">
+                            返回
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-3">
+                        <div class="form-group">
+                            <label>标题</label>
+                            <input type="text" class="form-control" placeholder="请输入标题">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>显示状态</label>
+                            <select class="form-control">
+                                <option>显示</option>
+                                <option>隐藏</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-md-offset-3">
+                        <div class="form-group">
+                            <label>发布模块</label>
+                            <select class="form-control">
+                                <option>信息通告</option>
+                                <option>全科学堂</option>
+                                <option>宣教</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>发送人</label>
+                            <input type="text" class="form-control" placeholder="请输入发送人">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="form-group">
+                            <label style="display: block">图片</label>
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-new thumbnail">
+                                    <img id="myPic" src="../images/noImage.png" alt="" style="max-width: 100px;"/>
+                                </div>
+                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 100px;">
+
+                                </div>
+                                <div>
+                                <span class="btn default btn-file">
+                                    <span class="fileinput-new">选择图片</span>
+                                    <span class="fileinput-exists">重新选择</span>
+                                    <input type="file" name="...">
+                                </span>
+                                    <a href="javascript:;" class="btn red fileinput-exists"
+                                       data-dismiss="fileinput">删除
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="form-group">
+                            <div name="summernote" id="summernote_1"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn green">
+                            <i class="fa fa-check"></i> 发送
+                        </button>
+                        <button type="button" class="btn default Return" data-href="文本管理">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/components-editors.min.js" type="text/javascript"></script>
+<script>
+    $(".added").click(function () {
+        $(".aa").hide();
+        $(".bb").show();
+    })
+    $(".Return").click(function () {
+        $(".bb").hide();
+        $(".aa").show();
+    })
+</script>
+<!--<div class="modal fade bs-modal-lg in" id="addmodal" tabindex="-1" role="dialog" aria-hidden="true"-->
+<!--style="display: none; padding-right: 17px;">-->
+<!--<div class="modal-dialog modal-lg">-->
+<!--<div class="modal-content">-->
+<!--<div class="modal-header">-->
+<!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>-->
+<!--<h4 class="modal-title">新增通知</h4>-->
+<!--</div>-->
+<!--<div class="modal-body">-->
+<!--<div class="row">-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-6">-->
+<!--<div class="form-group">-->
+<!--<label>标题</label>-->
+<!--<input type="text" class="form-control" placeholder="请输入标题">-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-6">-->
+<!--<div class="form-group">-->
+<!--<label>显示状态</label>-->
+<!--<select class="form-control">-->
+<!--<option>显示</option>-->
+<!--<option>隐藏</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-6">-->
+<!--<div class="form-group">-->
+<!--<label style="display: block">图片</label>-->
+<!--<div class="fileinput fileinput-new" data-provides="fileinput">-->
+<!--<div class="fileinput-new thumbnail">-->
+<!--<img id="myPic" src="../images/noImage.png" alt="" style="max-width: 100px;"/>-->
+<!--</div>-->
+<!--<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 100px;">-->
+
+<!--</div>-->
+<!--<div>-->
+<!--<span class="btn default btn-file">-->
+<!--<span class="fileinput-new">选择图片</span>-->
+<!--<span class="fileinput-exists">重新选择</span>-->
+<!--<input type="file" name="...">-->
+<!--</span>-->
+<!--<a href="javascript:;" class="btn red fileinput-exists"-->
+<!--data-dismiss="fileinput">删除-->
+<!--</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-6">-->
+<!--<div class="form-group">-->
+<!--<label>类型</label>-->
+<!--<select class="form-control">-->
+<!--<option>居民信息通知</option>-->
+<!--<option>居民卫生资讯</option>-->
+<!--<option>医生排班信息</option>-->
+<!--<option>医生通知</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-12">-->
+<!--<div class="form-group">-->
+<!--<div name="summernote" id="summernote_1"> </div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="modal-footer">-->
+<!--<button type="button" class="btn dark btn-outline" data-dismiss="modal">取消</button>-->
+<!--<button type="button" class="btn green">发送</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; /.modal-content &ndash;&gt;-->
+<!--</div>-->
+<!--&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
+<!--</div>-->
+<div style="clear: both"></div>

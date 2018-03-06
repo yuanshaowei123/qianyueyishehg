@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="container familySickbed">
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-panel__bd">
+            <div class="weui-media-box weui-media-box_text">
+                <p class="weui-media-box__desc">建床期限：2015-09-10至2016-03-11</p>
+                <p class="weui-media-box__desc">责任医师：陈兰</p>
+                <p class="weui-media-box__desc">苏州市姑苏区金阊街道社区卫生服务中心</p>
+            </div>
+        </div>
+    </div>
+    <div class="weui-tab">
+        <div class="weui-navbar">
+            <a class="weui-navbar__item weui-bar__item_on" for="#xzjl">
+                巡诊记录
+            </a>
+            <a class="weui-navbar__item" for="#jdxj">
+                阶段小结
+            </a>
+            <a class="weui-navbar__item" for="#yz">
+                医嘱
+            </a>
+        </div>
+        <div class="weui-tab__panel">
+        </div>
+    </div>
+    <div class="weui-tab-body">
+        <div id="xzjl" class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">建床医生：陈兰</h4>
+                        <p class="weui-media-box__desc">建床时间：2016-06-19</p>
+                    </div>
+                </a>
+                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">建床医生：陈兰</h4>
+                        <p class="weui-media-box__desc">建床时间：2016-06-19</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="jdxj" class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        无变化
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">责任医生：陈兰 责任护士：王丽</h4>
+                        <p class="weui-media-box__desc">小结时间：2016-06-1</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="yz" class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">执行护士：陈兰</h4>
+                        <p class="weui-media-box__desc">医嘱时间：2016-06-19 8：00至9:00</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    $(function () {
+        $('.weui-navbar__item').on('click', function () {
+            $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+            $("" + $(this).attr('for') + "").show().siblings('.weui-panel').hide();
+        });
+    });
+</script>
+</body>
+</html>

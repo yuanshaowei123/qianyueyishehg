@@ -1,0 +1,604 @@
+
+*{
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+body,html{
+    background-color: #fff;
+}
+.weui-navbar{
+    position: fixed;
+    top: auto;
+    bottom:0;
+    left:0;
+    height:50px;
+    width:100%;
+
+}
+.weui-navbar + .weui-tab__bd{
+    padding-top: 0px;
+}
+#thelist{
+    margin-bottom: 70px;
+    padding-top: 50px;
+}
+.thelist{
+    margin-bottom:50px;
+    padding-top: 50px;
+}
+.titles{
+    position: relative;
+}
+
+.yys{
+    width:30px;
+    height:100%;
+    position:absolute;
+    right:0;
+    top:0;
+    transition: transform .2s linear;
+    display: none;
+}
+
+.yys_rotate{
+    transform: rotate(180deg);
+}
+.yyss{
+    width:0;
+    height:0;
+    display:block;
+    margin: 0 auto;
+    margin-top: 70%;
+    border-top:8px #888 solid;
+    border-right:8px transparent dashed;
+    border-bottom:8px transparent dashed;
+    border-left:8px transparent dashed;
+    overflow:hidden;
+}
+.yys_lei{
+    position: absolute;
+    width:100%;
+    height:auto;
+    top:100%;
+    left:0;
+    display: none;
+}
+.yys_lei li{
+    position: relative;
+    width:100%;
+    height:40px;
+    background: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+}
+.yys_lei li p{
+    position: absolute;
+    height:25px;
+    width:100%;
+    top:0;
+    bottom:0;
+    left:0;
+    margin: auto;
+    text-align: center;
+    line-height: 25px;
+}
+#wrapper{
+    background-color: #fff;
+}
+#scroller{
+    background-color: #fff;
+}
+.details{
+    display: none;
+    width:100%;
+    height:auto;
+    background-color: #f2f2f2;
+}
+.weui-panel{
+    margin-top: auto;
+}
+.weui-panel:before{
+    padding: 20px;
+    border: 0;
+}
+.weui-media-box{
+    padding: 10px 15px;
+}
+.aa{
+    display: none;
+}
+.weui-media-box__desc{
+    font-size: 17px;
+    position: relative;
+}
+.dietitian{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dietitian li{
+    width:50%;
+    font-size: 12px;
+    height:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dietitian li p{
+    padding-right: 10px;
+}
+.li2{
+    height:30px;
+    line-height: 20px;
+    border: 1px solid #999;
+    padding-left: 5px;
+    color: #000;
+}
+
+/*.dietitian li span{*/
+    /*position: absolute;*/
+    /*top:0;*/
+    /*bottom:0;*/
+    /*right:20px;*/
+    /*margin: auto;*/
+    /*height:50%;*/
+    /*border: 1px solid #999;*/
+    /*padding: 0 5px;*/
+    /*font-size: 14px;*/
+    /*color: #333;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+/*}*/
+.weui-media-box_appmsg .weui-media-box__hd{
+    margin-right: 0;
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.weui-media-box_appmsg .weui-media-box__thumb{
+    height:100%;
+}
+.weui-media-box__desc {
+    padding: 4px 10px;
+    line-height: normal;
+}
+
+.footer{
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width:100%;
+    height:50px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #888;
+}
+.footer button{
+    width:32%;
+    height:100%;
+    outline: none;
+    background: #999;
+    border: 0;
+    color: #fff;
+}
+.list{
+    display: none;
+}
+.active{
+    display: block;
+}
+.active1{
+    background-color: #0BB20C!important;
+}
+/*营养问答我的咨询*/
+.list ul li{
+    position: relative;
+    width:100%;
+    height:auto;
+    text-align: center;
+    line-height: 30px;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    background-color: #fff;
+}
+.list ul li div{
+    width:100%;
+    height:100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    line-height: 30px;
+}
+.list ul li .me-question{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.zan{
+    position: absolute;
+    width:30px;
+    height:32px;
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    font-family: "iconfont";
+    font-size: 15px;
+    color: #0BB20C;
+    z-index: 100;
+    text-align: center;
+    line-height: 32px;
+}
+.character{
+    background-color: #d7d7d7!important;
+}
+.character div{
+    box-sizing: border-box;
+    width:50% !important;
+    background-color: #f1f1f1!important;
+    border: 1px solid #999;
+}
+.contents{
+    border: 1px solid #999;
+}
+.nutrition_answer{
+    margin-left: 50%;
+}
+.operation_time{
+    position: absolute;
+    top:0;
+    right: 20px;
+    width:30%;
+    height:100%;
+    border: 1px solid #999;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+
+.name_yys{
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+.weui-panel{
+    height:auto;
+}
+.yys_title{
+    box-sizing: border-box;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:50px;
+    padding: 7px 10px;
+    border-bottom:1px solid #f2f2f2;
+    z-index:1000;
+    background-color: #fff;
+}
+#username,#username2{
+    box-sizing: border-box;
+    width:80%;
+    height:100%;
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid transparent;
+    padding-left: 35px;
+    background-color: #eef2f5;
+}
+.sousuo{
+    position: fixed;
+    width:20px;
+    height:20px;
+    top:16px;
+    left:20px;
+    /*background-color: red;*/
+}
+.sousuo img{
+    width:100%;
+    height:100%;
+}
+
+.shaixuan{
+    position: relative;
+    float: right;
+    box-sizing: border-box;
+    width:20%;
+    height:100%;
+    /*background-color: red;*/
+    text-align: center;
+    line-height: 36px;
+    font-size: 15px;
+    color: #000;
+    clear: both;
+}
+.shaixuan img{
+    display: inline-block;
+    width:18px;
+    height:18px;
+    vertical-align:middle
+}
+.screen{
+    position: absolute;
+    top:100%;
+    right:-10px;
+    width:200%;
+    height:auto;
+    z-index:101;
+    background-color: #fff;
+    display: none;
+    box-shadow: 0 1px 2px #999;
+
+}
+.screen li{
+    width:100%;
+    height:30px;
+    text-align: center;
+    line-height: 30px;
+}
+.active3{
+    display: block;!important;
+}
+.yywd_content{
+    width:100%;
+    height:100%;
+}
+.yywd_content p{
+    line-height: 25px;
+    height:25px;
+}
+.yywd_content .p1 .span1{
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    width:100%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.yywd_content .p1 .span2{
+    float: right;
+    font-size: 12px;
+    color: #888;
+}
+.yywd_content .p2 .span3{
+    font-size: 12px;
+    color: #888;
+}
+
+
+.yywd_detail{
+    width:100%;
+    height:auto;
+    padding: 10px 15px;
+    display: inline-flex;
+    justify-content:space-between;
+}
+.yywd_detail li{
+    width:70px;
+    height:70px;
+    background-color: red;
+}
+.yywd_detail li img{
+    width:100%;
+    height:100%;
+
+}
+.yyjd{
+    position: relative;
+    width:100%;
+    height:auto;
+    padding: 10px 15px;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+.me_tell{
+    justify-content: flex-start!important;
+}
+.jd_right_me{
+    margin-left: 0!important;
+}
+.jd_left{
+    display: inline-block;
+    max-width:calc(100% - 100px);
+    height:auto;
+    font-size: 12px;
+    color: #000;
+    line-height: 16px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.jd_left_me{
+    margin-left: 20px;
+}
+.zhizhen {
+    position: absolute;
+    top: 22px;
+    right: 65px;
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 10px transparent dashed;
+    border-left: 10px #fff solid;
+    border-bottom: 10px transparent dashed;
+    border-right: 10px transparent dashed;
+    overflow: hidden;
+}
+.zhizhen_me{
+    left: 65px;
+    border-right: 10px #fff solid;
+    border-left: 10px transparent dashed;
+}
+.jd_right{
+    display: inline-block;
+    width:50px;
+    height:60px;
+    margin-left:20px;
+    background-color:transparent;
+    border-radius: 50%;
+    border: none;
+}
+.jd_right img{
+    display: inline-block;
+    width:100%;
+    height:50px;
+}
+.jd_right p{
+    font-size: 12px;
+    height:20px;
+    width:100%;
+    color: #000;
+    line-height: 20px;
+}
+.ask_questions{
+    display: inline-block;
+    width:100%;
+    height:30px;
+    font-size: 15px;
+    line-height: 30px;
+    color: #4395ff;
+    text-align: center;
+    border: 0;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+.ask_questions span{
+    font-size: 15px;
+    line-height: 30px;
+    font-family: '仿宋';
+}
+.xia_line{
+    padding: 10px 15px;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+
+}
+figure{
+    float: left;
+    padding: 5px;
+    width:25%;
+    height:70px;
+}
+figure img{
+    width:100%;
+    height:100%;
+}
+.pswp__button--arrow--left {
+    display: block;
+}
+.pswp__zoom-wrap img {
+    user-select: text;
+    -webkit-touch-callout: default;
+}
+.weui-navbar__item{
+    padding: 2.5px 0;
+    text-align: center;
+
+}
+.weui-navbar__item img{
+    width:22px;
+    height:22px;
+    margin-top: 4px;
+    /*margin-bottom: -7px;*/
+    display: none;
+}
+.weui-navbar__item p{
+    font-size: 12px;
+    color: #000;
+    padding: 0;
+    margin: 0;
+}
+.active2{
+    color: #00cc87!important;
+}
+
+.active4{
+    display: block!important;
+    margin: 0 auto;
+}
+.mt-checkbox{
+    position: relative;
+}
+.mt-checkbox input{
+   opacity: 0;
+}
+.mt-checkbox img{
+    position: absolute;
+    top:0;
+    right: 0;
+    width:17px;
+    height:17px;
+    background-color: #fafafa;
+}
+.yywd_left{
+   width:20%!important;
+    height:100% !important;
+}
+.yywd_left img{
+    width: 40px !important;
+    height:40px !important;
+}
+.yywd_left p{
+    height:25px;
+    text-align: center;
+    line-height: 25px;
+    margin-top: -20px;
+    font-size: 12px;
+    color:#888;
+}
+.yywd_center{
+    width:65%!important;
+}
+.yywd_right{
+    position: relative;
+    width:15%;
+    height:60px;
+    border-radius: 0!important;
+}
+.yywd_right .span4{
+    box-sizing: border-box;
+    height:20px;
+    display: inline-block;
+    font-size: 12px;
+    border: 1px solid #00b383;
+    padding: 0 5px;
+    line-height: 20px;
+    margin-top: 5px;
+    border-radius: 15px;
+    color: #00b383;
+}
+.yywd_right .span5{
+    border: 1px solid red;
+    color: red;
+}
+.zans{
+    position: absolute;
+    bottom: 8px;
+    right:0;
+    width:30%;
+    height:15px;
+    text-align: right;
+    margin: 0;
+    z-index:100;
+    line-height: 15px;
+    padding-right: 15px;
+}
+.zans img{
+    display: inline-block;
+    width:15px;
+    height:15px;
+}
+.zans span{
+    font-size: 12px;
+    color: red;
+}

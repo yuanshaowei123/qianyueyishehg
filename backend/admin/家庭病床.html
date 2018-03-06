@@ -1,0 +1,1201 @@
+<link>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit">
+            <div class="portlet-title tabbable-line" style="background-color: #eef1f5;">
+                <ul class="nav nav-tabs" style="float: left">
+                    <li class="active">
+                        <a href="#do" data-toggle="tab" aria-expanded="false"> 待审核 </a>
+                    </li>
+                    <li class="">
+                        <a href="#done" data-toggle="tab" aria-expanded="false"> 已建床 </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="do">
+                        <div class="portlet light portlet-fit">
+                            <div class="portlet-title" style="padding:0">
+                                <div class="caption">
+                                    <i class="icon-directions font-green hide"></i>
+                                    <span class="caption-subject bold font-dark uppercase"> 待审核 </span>
+                                </div>
+                                <div class="actions" style="float: right">
+                                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                        <button type="button" class="btn btn-circle btn-primary" data-toggle="modal"
+                                                href="#addmodal">
+                                            新建家庭病床
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-scrollable table-scrollable-borderless">
+                            <table class="table table-hover table-light">
+                                <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>性别</th>
+                                    <th>身份证号码</th>
+                                    <th>社区</th>
+                                    <th>单元号</th>
+                                    <th>申请建床时间</th>
+                                    <th>责任医师</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>崔尖</td>
+                                    <td>男</td>
+                                    <td>320586199112100552</td>
+                                    <td>三元一村</td>
+                                    <td>1幢1室</td>
+                                    <td>2017-05-22</td>
+                                    <td>刘芳芳</td>
+                                    <td>
+                                        <button data-toggle="modal" class="btn btn-default btn-sm" onclick=""
+                                                href="#editmodal">建床资料
+                                        </button>
+                                        <button class="btn btn-warning btn-sm mt-sweetalert"
+                                                data-title="当前居民是否已完成审核，建立病床？"
+                                                data-type="info"
+                                                data-show-confirm-button="true"
+                                                data-confirm-button-class="btn-success"
+                                                data-show-cancel-button="true"
+                                                data-cancel-button-class="btn-danger"
+                                                data-close-on-confirm="false"
+                                                data-close-on-cancel="false"
+                                                data-confirm-button-text='同意'
+                                                data-cancel-button-text='拒绝'
+                                                data-popup-title-success="建立成功"
+                                                data-popup-title-cancel="已拒绝">
+                                            审核
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="done">
+                        <div class="portlet light portlet-fit">
+                            <div class="portlet-title" style="padding:0">
+                                <div class="caption">
+                                    <i class="icon-directions font-green hide"></i>
+                                    <span class="caption-subject bold font-dark uppercase"> 已建床 </span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                        <button type="button" class="btn btn-circle btn-success" data-toggle="modal"
+                                                style="border-radius:0 25px 25px 0!important;border-left: 0">
+                                            搜索
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="inputs" style="padding: 6px 0;">
+                                    <div class="portlet-input input-inline">
+                                        <div class="input-icon right">
+                                            <i class="icon-magnifier"></i>
+                                            <input type="text" class="form-control form-control-solid input-circle"
+                                                   placeholder="请输入姓名"
+                                                   style="border-radius: 25px 0 0 25px!important;height: 29px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <small>当前搜索记录：22</small>
+                            <div style="clear: both;"></div>
+                            <div class="col-lg-3 col-md-6">
+                                <a class="portlet light blue dashboard-stat-v2-new quick-sidebar-toggler">
+                                    <div class="card-icon">
+                                        <img src="../images/患者.png"/>
+                                    </div>
+                                    <div class="card-title">
+                                        <span> 王琦</span>
+                                        <span>男/25岁</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p> 起始：2016-02-02</p>
+                                        <p> 剩余：156天</p>
+                                        <p> 责任医生：顾俊</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <a class="portlet light blue dashboard-stat-v2-new quick-sidebar-toggler">
+                                    <div class="card-icon">
+                                        <img src="../images/患者.png"/>
+                                    </div>
+                                    <div class="card-title">
+                                        <span> 王琦</span>
+                                        <span>男/25岁</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p> 起始：2016-02-02</p>
+                                        <p> 剩余：156天</p>
+                                        <p> 责任医生：顾俊</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <a class="portlet light blue dashboard-stat-v2-new quick-sidebar-toggler">
+                                    <div class="card-icon">
+                                        <img src="../images/患者.png"/>
+                                    </div>
+                                    <div class="card-title">
+                                        <span> 王琦</span>
+                                        <span>男/25岁</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p> 起始：2016-02-02</p>
+                                        <p> 剩余：156天</p>
+                                        <p> 责任医生：顾俊</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-modal-lg" id="addmodal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">新建家庭病床</h4>
+            </div>
+            <div class="modal-body">
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto;">
+                    <div class="scroller" style="overflow: hidden; width: auto;" data-always-visible="1"
+                         data-rail-visible1="1" data-initialized="1">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>责任医生</label>
+                                        <select class="form-control">
+                                            <option>王琦</option>
+                                            <option>顾俊</option>
+                                            <option>刘芳芳</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>责任护士</label>
+                                        <select class="form-control">
+                                            <option>王琦</option>
+                                            <option>顾俊</option>
+                                            <option>刘芳芳</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>主观资料（S）</h4>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>主诉</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入主诉"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>现病史</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入现病史"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group" style="margin-bottom: 0">
+                                        <label>既往史</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 高血压
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 糖尿病
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 脑卒中
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> COPD
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 骨关节疾病
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 冠心病
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 骨质疏松
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 消化道疾病
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 儿童发育不全
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 创伤史
+                                            </label>
+                                            <label class="btn btn-default">
+                                                <input type="checkbox" class="toggle"> 癌症
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>客观资料（O）</h4>
+                                <div class="col-md-6">
+                                    <div class="input-group" style="width: 100%">
+                                        <label>体格检查</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="体温">
+                                        <span class="input-group-addon">℃</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="呼吸">
+                                        <span class="input-group-addon">次/分</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="脉搏">
+                                        <span class="input-group-addon">次/分</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="血糖">
+                                        <span class="input-group-addon">mmol/L</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="收缩压">
+                                        <span class="input-group-addon">mmhg</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="舒张压">
+                                        <span class="input-group-addon">mmhg</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>客观检查</label>
+                                        <textarea rows="5" class="col-md-12 form-control"
+                                                  placeholder="请输入客观检查"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>辅助检查</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入辅助检查"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>综合评价（A）</h4>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>建床诊断</label>
+                                        <textarea rows="4" class="col-md-12 form-control"
+                                                  placeholder="请输入建床诊断"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>心理社会方面</label>
+                                        <textarea rows="4" class="col-md-12 form-control"
+                                                  placeholder="请输入心理社会方面"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>防治计划（P）</h4>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>治疗计划</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入防治计划"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+                <button type="button" class="btn green">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="editmodal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" style="width: 70%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">建床资料</h4>
+            </div>
+            <div class="modal-body">
+                <div class="profile-sidebar">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="portlet light profile-sidebar-portlet" style="padding-top: 0!important;">
+                                <div class="profile-userpic">
+                                    <img src="../images/患者.png" class="img-responsive" alt=""></div>
+                                <div class="profile-usertitle">
+                                    <div class="profile-usertitle-name">张三</div>
+                                </div>
+                                <div class="profile-userbuttons">
+                                    <span class="badge badge-info">男</span>
+                                    <span class="badge badge-success"> 70岁</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">籍贯</label>
+                                        <div class="col-md-9">
+                                            <label class="control-label">江苏苏州</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">职业</label>
+                                        <div class="col-md-9">
+                                            <label class="control-label">工程师</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">婚姻</label>
+                                        <div class="col-md-9">
+                                            <label class="control-label">未婚</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">申请日期</label>
+                                        <div class="col-md-9">
+                                            <label class="control-label">2017/07/17</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-4">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">名族</label>
+                                        <div class="col-md-9">
+                                            <label class="control-label">汉族</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">工龄</label>
+                                        <div class="col-md-9">
+                                            <label class="control-label">3年</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">家庭地址</label>
+                                        <div class="col-md-9">
+                                            <label class="control-label">三元一村社区三香路183幢2室</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">供史者</label>
+                                        <div class="col-md-9">
+                                            <label class="control-label">付华2 夫妻</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-12" style="margin-top: 20px">
+                            <div class="portlet box red">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        主观资料（S）
+                                    </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="collapse"></a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <p>主诉</p>
+                                    <p>现病史</p>
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="portlet box blue">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        客观资料（O）
+                                    </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="expand" data-original-title="" title=""> </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body" style="display: none;">
+                                    <ol>
+                                        <li> Lorem ipsum dolor sit amet</li>
+                                        <li> Consectetur adipiscing elit</li>
+                                        <li> Integer molestie lorem at massa</li>
+                                        <li> Facilisis in pretium nisl aliquet</li>
+                                        <li> Nulla volutpat aliquam velit</li>
+                                        <li> Faucibus porta lacus fringilla vel</li>
+                                        <li> Aenean sit amet erat nunc</li>
+                                        <li> Eget porttitor lorem</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="portlet box yellow">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        综合评价（A）
+                                    </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="expand" data-original-title="" title=""> </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body" style="display: none;">
+                                    <li> Lorem ipsum dolor sit amet</li>
+                                    <li> Consectetur adipiscing elit</li>
+                                    <li> Integer molestie lorem at massa</li>
+                                    <li> Facilisis in pretium nisl aliquet</li>
+                                    <li> Nulla volutpat aliquam velit
+                                        <ul>
+                                            <li> Phasellus iaculis neque</li>
+                                            <li> Purus sodales ultricies</li>
+                                            <li> Vestibulum laoreet porttitor sem</li>
+                                            <li> Ac tristique libero volutpat at</li>
+                                        </ul>
+                                    </li>
+                                    <li> Faucibus porta lacus fringilla vel</li>
+                                    <li> Aenean sit amet erat nunc</li>
+                                    <li> Eget porttitor lorem</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="portlet box purple" style="margin-bottom: 20px">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        防治计划（P）
+                                    </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="expand" data-original-title="" title=""> </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body" style="display: none;">
+                                    <ul class="list-unstyled">
+                                        <li> Lorem ipsum dolor sit amet</li>
+                                        <li> Consectetur adipiscing elit</li>
+                                        <li> Integer molestie lorem at massa</li>
+                                        <li> Facilisis in pretium nisl aliquet</li>
+                                        <li> Nulla volutpat aliquam velit
+                                            <ul>
+                                                <li> Phasellus iaculis neque</li>
+                                                <li> Purus sodales ultricies</li>
+                                                <li> Vestibulum laoreet porttitor sem</li>
+                                                <li> Ac tristique libero volutpat at</li>
+                                            </ul>
+                                        </li>
+                                        <li> Faucibus porta lacus fringilla vel</li>
+                                        <li> Aenean sit amet erat nunc</li>
+                                        <li> Eget porttitor lorem</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-modal-lg" id="addmodalx" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">新增病床记录</h4>
+            </div>
+            <div class="modal-body">
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto;">
+                    <div class="scroller" style="overflow: hidden; width: auto;" data-always-visible="1"
+                         data-rail-visible1="1" data-initialized="1">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>日期</label>
+                                        <div class="input-group input-medium date date-picker" data-date="2017-05-11"
+                                             style="width: 100%!important;" data-date-format="yyyy-mm-dd"
+                                             data-date-viewmode="years">
+                                            <input type="text" class="form-control" readonly="" value="2017-05-11">
+                                            <span class="input-group-btn">
+                                                <button class="btn default" type="button">
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label style="display: block">时间</label>
+                                        <div class="input-group" style="width: 100%">
+                                            <input type="text" class="form-control timepicker timepicker-24" readonly>
+                                            <span class="input-group-btn">
+                                                <button class="btn default" type="button">
+                                                    <i class="fa fa-clock-o"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>执行人</label>
+                                        <select class="form-control">
+                                            <option>王琦</option>
+                                            <option>顾俊</option>
+                                            <option>刘芳芳</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>主观资料（S）</h4>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>主诉</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入主诉"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>主观检查分析</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入主观检查分析"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>客观资料（O）</h4>
+                                <div class="col-md-6">
+                                    <div class="input-group" style="width: 100%">
+                                        <label>体格检查</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="体温">
+                                        <span class="input-group-addon">℃</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="呼吸">
+                                        <span class="input-group-addon">次/分</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="脉搏">
+                                        <span class="input-group-addon">次/分</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="血糖">
+                                        <span class="input-group-addon">mmol/L</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="收缩压">
+                                        <span class="input-group-addon">mmhg</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="舒张压">
+                                        <span class="input-group-addon">mmhg</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>主观检查分析</label>
+                                        <textarea rows="5" class="col-md-12 form-control"
+                                                  placeholder="请输入主观检查分析"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>辅助检查</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入辅助检查"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>综合评价（A）</h4>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>本次评价</label>
+                                        <textarea rows="4" class="col-md-12 form-control"
+                                                  placeholder="请输入本次评价"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>防治计划（P）</h4>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>本次防治计划</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入本次防治计划"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+                <button type="button" class="btn green">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-modal-lg" id="addmodalj" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">新增阶段小结</h4>
+            </div>
+            <div class="modal-body">
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto;">
+                    <div class="scroller" style="overflow: hidden; width: auto;" data-always-visible="1"
+                         data-rail-visible1="1" data-initialized="1">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>小结日期</label>
+                                        <div class="input-group input-medium date date-picker" data-date="2017-05-11"
+                                             style="width: 100%!important;" data-date-format="yyyy-mm-dd"
+                                             data-date-viewmode="years">
+                                            <input type="text" class="form-control" readonly="" value="2017-05-11">
+                                            <span class="input-group-btn">
+                                                <button class="btn default" type="button">
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label style="display: block">时间</label>
+                                        <div class="input-group" style="width: 100%">
+                                            <input type="text" class="form-control timepicker timepicker-24" readonly>
+                                            <span class="input-group-btn">
+                                                <button class="btn default" type="button">
+                                                    <i class="fa fa-clock-o"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" style="margin-bottom: 7px;">
+                                        <label>建床日期</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>2017-6-14</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>建床评估</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入评估"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>阶段治疗经过</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入阶段治疗经过"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="margin-top: 10px">
+                                    <div class="form-group">
+                                        <label>阶段治疗评估</label>
+                                        <div class="mt-radio-inline">
+                                            <label class="mt-radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios4"
+                                                       value="option1" checked=""> 好转
+                                                <span></span>
+                                            </label>
+                                            <label class="mt-radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios5"
+                                                       value="option2"> 无变化
+                                                <span></span>
+                                            </label>
+                                            <label class="mt-radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios6"
+                                                       value="option3"> 恶化
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4 style="margin-top: 0!important;">护理干预</h4>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>相关疾病教育次数</label>
+                                        <select class="form-control">
+                                            <option>1次</option>
+                                            <option>2次</option>
+                                            <option>3次</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>时间次</label>
+                                        <select class="form-control">
+                                            <option>小于20分钟</option>
+                                            <option>20分钟</option>
+                                            <option>20-40分钟</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>患者对疾病认知度</label>
+                                        <select class="form-control">
+                                            <option>清楚</option>
+                                            <option>模糊</option>
+                                            <option>不清楚</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label></label>
+                                        <div class="mt-checkbox-inline">
+                                            <label class="mt-checkbox">
+                                                <input type="checkbox" id="inlineCheckbox21" value="option1">
+                                                药物副作用及服药方法讲解
+                                                <span></span>
+                                            </label>
+                                            <label class="mt-checkbox">
+                                                <input type="checkbox" id="inlineCheckbox22" value="option2"> 运动的干预
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>当前情况评估和防治计划</h4>
+                                <div class="col-md-6">
+                                    <div class="input-group" style="width: 100%">
+                                        <label>体格检查</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="体温">
+                                        <span class="input-group-addon">℃</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="呼吸">
+                                        <span class="input-group-addon">次/分</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="脉搏">
+                                        <span class="input-group-addon">次/分</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="血糖">
+                                        <span class="input-group-addon">mmol/L</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="收缩压">
+                                        <span class="input-group-addon">mmhg</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="舒张压">
+                                        <span class="input-group-addon">mmhg</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>主诉</label>
+                                        <textarea rows="6" class="col-md-12 form-control"
+                                                  placeholder="请输入主诉"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>下一步防治计划</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入下一步防治计划"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+                <button type="button" class="btn green">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-modal-lg" id="addmodaly" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">新增医嘱</h4>
+            </div>
+            <div class="modal-body">
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto;">
+                    <div class="scroller" style="overflow: hidden; width: auto;" data-always-visible="1"
+                         data-rail-visible1="1" data-initialized="1">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>起止日期</label>
+                                        <div class="input-group input-large date-picker input-daterange"
+                                             style="width: 100%!important;"
+                                             data-date="" data-date-format="yyyy-mm-dd">
+                                            <input type="text" class="form-control" name="from">
+                                            <span class="input-group-addon"> to </span>
+                                            <input type="text" class="form-control" name="to">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>执行护士</label>
+                                        <select class="form-control">
+                                            <option>李娟</option>
+                                            <option>王琦</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>医嘱</label>
+                                        <textarea rows="3" class="col-md-12 form-control"
+                                                  placeholder="请输入医嘱"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+                <button type="button" class="btn green">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="javascript:;" class="page-quick-sidebar-toggler">
+    <i class="icon-close"></i>
+</a>
+<div class="page-quick-sidebar-wrapper page-quick-sidebar-wrapper-new" data-close-on-body-click="false">
+    <div class="page-quick-sidebar">
+        <div class="page-quick-sidebar-title">
+            <div class="col-md-2">
+                <div class="portlet light profile-sidebar-portlet" style="padding-top: 0!important;">
+                    <img src="../images/患者.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-10">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">姓名</label>
+                            <div class="col-md-8">
+                                <label class="control-label">王琦</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">性别</label>
+                            <div class="col-md-8">
+                                <label class="control-label">男</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">年龄</label>
+                            <div class="col-md-8">
+                                <label class="control-label">70</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">家庭地址</label>
+                            <div class="col-md-8">
+                                <label class="control-label">三元一村社区三香路183幢2室</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="javascript:;" data-target="#x" data-toggle="tab"> 巡诊记录</a>
+            </li>
+            <li>
+                <a href="javascript:;" data-target="#j" data-toggle="tab"> 阶段小结</a>
+            </li>
+            <li>
+                <a href="javascript:;" data-target="#y" data-toggle="tab"> 医嘱</a>
+            </li>
+            <li>
+                <a href="javascript:;" data-target="#more" data-toggle="tab"> 更多信息</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="x">
+                <button class="btn btn-danger" data-toggle="modal" href="#addmodalx"
+                        style="width: 92%;margin: 20px 20px 5px 20px">新增巡诊记录
+                </button>
+                <div class="portlet-body xunList page-quick-sidebar-alerts-list">
+                    <div class="panel-group accordion" id="accordion1">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse"
+                                       data-parent="#accordion1" href="#x_1" aria-expanded="false">2017-05-15
+                                        15:30:00</a>
+                                </h4>
+                            </div>
+                            <div id="x_1" class="panel-collapse collapse" aria-expanded="false"
+                                 style="height: 0px;">
+                                <div class="panel-body">
+                                    <h5 class="s">主观资料(S)</h5>
+                                    <h6>主诉</h6>
+                                    <p>反复胸闷，心悸10余年，再发半月</p>
+                                    <h6>主观检查分析</h6>
+                                    <p>
+                                        患者于10年前出现不明原因胸闷，就诊于苏大附二院确诊患有冠心病，故今日办理家庭病床随诊患者于10年前出现不明原因胸闷，就诊于苏大附二院确诊患有冠心病，故今日办理家庭病床随诊。。</p>
+                                    <h5 class="o">客观资料(O)</h5>
+                                    <p>体温38℃；脉搏80次/分；呼吸20次/分;血糖：80nmoi/L 血压 80mmhg/120mmhg</p>
+                                    <h6>客观检查分析</h6>
+                                    <p> 神态清晰，精神软，行动迟缓，发育正常，体型偏瘦，无出血点，对光反射灵敏</p>
+                                    <h6>辅助检查</h6>
+                                    <p>心电图所示ST--T改变，右上肺陈旧性结核</p>
+                                    <h5 class="a">综合评价（A）</h5>
+                                    <h5 class="p">防治计划（P）</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1"
+                                       href="#x_2" aria-expanded="false"> 2017-05-14 12:30:55 </a>
+                                </h4>
+                            </div>
+                            <div id="x_2" class="panel-collapse collapse" aria-expanded="true">
+                                <div class="panel-body">
+                                    <h5 class="s">主观资料(S)</h5>
+                                    <h6>主诉</h6>
+                                    <p>反复胸闷，心悸10余年，再发半月</p>
+                                    <h6>主观检查分析</h6>
+                                    <p>
+                                        患者于10年前出现不明原因胸闷，就诊于苏大附二院确诊患有冠心病，故今日办理家庭病床随诊患者于10年前出现不明原因胸闷，就诊于苏大附二院确诊患有冠心病，故今日办理家庭病床随诊。。</p>
+                                    <h5 class="o">客观资料(O)</h5>
+                                    <p>体温38℃；脉搏80次/分；呼吸20次/分;血糖：80nmoi/L 血压 80mmhg/120mmhg</p>
+                                    <h6>客观检查分析</h6>
+                                    <p> 神态清晰，精神软，行动迟缓，发育正常，体型偏瘦，无出血点，对光反射灵敏</p>
+                                    <h6>辅助检查</h6>
+                                    <p>心电图所示ST--T改变，右上肺陈旧性结核</p>
+                                    <h5 class="a">综合评价（A）</h5>
+                                    <h5 class="p">防治计划（P）</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="j">
+                <button class="btn btn-danger" data-toggle="modal" href="#addmodalj"
+                        style="width: 92%;margin: 20px 20px 5px 20px">新增阶段小结
+                </button>
+                <div class="portlet-body xunList page-quick-sidebar-alerts-list">
+                    <div class="panel-group accordion" id="accordion2">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                                       href="#j_2" aria-expanded="false"> 2017-05-14 12:30:55 </a>
+                                </h4>
+                            </div>
+                            <div id="j_2" class="panel-collapse collapse" aria-expanded="true">
+                                <div class="panel-body">
+                                    <h6>小结日期</h6>
+                                    <p>2015-06-19</p>
+                                    <h6>建床日期</h6>
+                                    <p>2015-06-19</p>
+                                    <h6>建床评估</h6>
+                                    <p>
+                                        患者于10年前出现不明原因胸闷，就诊于苏大附二院确诊患有冠心病，故今日办理家庭病床随诊患者于10年前出现不明原因胸闷，就诊于苏大附二院确诊患有冠心病，故今日办理家庭病床随诊。。</p>
+                                    <h6>阶段治疗经过</h6>
+                                    <p>经过详情，无变化</p>
+                                    <h5 class="o">护理干预</h5>
+                                    <h6>相关疾病教育次数</h6>
+                                    <p>1次</p>
+                                    <h6>时间次</h6>
+                                    <p>小于20分钟</p>
+                                    <h6>患者对疾病认知度</h6>
+                                    <p>清楚</p>
+                                    <h6>药物副作用及服药方法讲解</h6>
+                                    <p>药物副作用及服药方法讲解详情</p>
+                                    <h5 class="s">当前情况评估和防治计划</h5>
+                                    <h6>体格检查</h6>
+                                    <p>体温38℃；脉搏80次/分；呼吸20次/分;血糖：80nmoi/L 血压 80mmhg/120mmhg</p>
+                                    <h6>主诉</h6>
+                                    <p> 神态清晰，精神软，行动迟缓，发育正常，体型偏瘦，无出血点，对光反射灵敏</p>
+                                    <h6>下一步防治计划</h6>
+                                    <p>下一步防治计划详情</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="y">
+                <button class="btn btn-danger" data-toggle="modal" href="#addmodaly"
+                        style="width: 92%;margin: 20px 20px 5px 20px">新医嘱
+                </button>
+                <div class="portlet-body xunList page-quick-sidebar-alerts-list">
+                    <div class="panel-group accordion" id="accordion3">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+                                       href="#y_2" aria-expanded="false"> 2017-05-14 12:30:55 </a>
+                                </h4>
+                            </div>
+                            <div id="y_2" class="panel-collapse collapse" aria-expanded="true">
+                                <div class="panel-body">
+                                    <h6>起止日期</h6>
+                                    <p>2017-6-15至2017-6-15</p>
+                                    <h6>执行护士</h6>
+                                    <p>李娟</p>
+                                    <h6>医嘱</h6>
+                                    <p>医嘱详情医嘱详情医嘱详情医嘱详情</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+                                       href="#y_3" aria-expanded="false"> 2017-05-14 12:30:55 </a>
+                                </h4>
+                            </div>
+                            <div id="y_3" class="panel-collapse collapse" aria-expanded="true">
+                                <div class="panel-body">
+                                    <h6>起止日期</h6>
+                                    <p>2017-6-15至2017-6-15</p>
+                                    <h6>执行护士</h6>
+                                    <p>李娟</p>
+                                    <h6>医嘱</h6>
+                                    <p>医嘱详情医嘱详情医嘱详情医嘱详情</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="more">
+                <p align="center">暂无信息</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+
+<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+        type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"
+        type="text/javascript"></script>
+
+<script src="../assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js" type="text/javascript"></script>
+<script src="../assets/layouts/global/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="../assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+
+<script>
+    //是否同意更换团队
+    var SweetAlert = function () {
+        return {
+            init: function () {
+                $(".mt-sweetalert").each(function () {
+                    var t = $(this).data("title"), a = $(this).data("message"), s = $(this).data("type"),
+                        e = $(this).data("allow-outside-click"), n = $(this).data("show-confirm-button"),
+                        c = $(this).data("show-cancel-button"), o = $(this).data("close-on-confirm"),
+                        i = $(this).data("close-on-cancel"), l = $(this).data("confirm-button-text"),
+                        u = $(this).data("cancel-button-text"), h = $(this).data("popup-title-success"),
+                        d = $(this).data("popup-message-success"), r = $(this).data("popup-title-cancel"),
+                        f = $(this).data("popup-message-cancel"), p = $(this).data("confirm-button-class"),
+                        m = $(this).data("cancel-button-class");
+                    $(this).click(function () {
+                        swal({
+                            title: t,
+                            text: a,
+                            type: s,
+                            allowOutsideClick: e,
+                            showConfirmButton: n,
+                            showCancelButton: c,
+                            confirmButtonClass: p,
+                            cancelButtonClass: m,
+                            closeOnConfirm: o,
+                            closeOnCancel: i,
+                            confirmButtonText: l,
+                            cancelButtonText: u
+                        }, function (t) {
+                            if (t) {
+                                console.log("同意事件");
+                                swal(h, d, "success");
+                            } else {
+                                console.log("拒绝事件");
+                                swal(r, f, "error");
+                            }
+                        })
+                    })
+                })
+            }
+        }
+    }();
+    jQuery(document).ready(function () {
+        SweetAlert.init()
+    });
+</script>

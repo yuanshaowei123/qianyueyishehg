@@ -1,0 +1,116 @@
+<div class="col-md-12">
+    <div class="portlet light portlet-fit ">
+        <div class="portlet-title">
+            <div class="actions" style="float: left">
+                <div id="dataPicker_td" class="input-group input-large date-picker input-daterange"
+                     data-date="2016-08"
+                     data-date-format="yyyy-mm-dd" data-date-minviewmode="months">
+                    <input type="text" class="form-control" name="from" value="">
+                    <span class="input-group-addon"> 至 </span>
+                    <input type="text" class="form-control" name="to" value="">
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="table-scrollable table-scrollable-borderless">
+                <table class="table table-hover table-light">
+                    <thead>
+                    <tr class="uppercase">
+                        <th>姓名</th>
+                        <th class="form-group form-md-line-input has-info" style="padding-bottom: 3px;">
+                            <select class="form-control input-sm" style="color: #93a2a9;border-bottom: 0;width: inherit;">
+                                <option value="1">归属团队</option>
+                                <option value="2">王琦团队</option>
+                                <option value="3">归月平团队</option>
+                            </select>
+                        </th>
+                        <th>签约人数</th>
+                        <th>回复咨询</th>
+                        <th>上门次数</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td> 王斌</td>
+                        <td> 刘芳芳团队</td>
+                        <td> 23</td>
+                        <td> 123</td>
+                        <td> 123</td>
+                    </tr>
+                    <tr>
+                        <td> 王斌</td>
+                        <td> 刘芳芳团队</td>
+                        <td> 23</td>
+                        <td> 123</td>
+                        <td> 123</td>
+                    </tr>
+                    <tr>
+                        <td> 王斌</td>
+                        <td> 刘芳芳团队</td>
+                        <td> 23</td>
+                        <td> 123</td>
+                        <td> 123</td>
+                    </tr>
+                    <tr>
+                        <td> 王斌</td>
+                        <td> 刘芳芳团队</td>
+                        <td> 23</td>
+                        <td> 123</td>
+                        <td> 123</td>
+                    </tr>
+                    <tr>
+                        <td> 王斌</td>
+                        <td> 刘芳芳团队</td>
+                        <td> 23</td>
+                        <td> 123</td>
+                        <td> 123</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr style="margin-top: 0">
+            <div id="pagetoolbar" class="">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 text-right">
+                        <div class="">
+                            <ul id="nav_list_pagetoolbar" class="pagination pagination_custom" unselectable="on" style="user-select: none;">
+                                <li class="active">
+                                    <a id="nav_item_pagetoolbar_1" href="javascript:void(0);" title="Page 1 of 1">1</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        if(month < 10) {
+            month = "0" + month;
+        }
+        var m = date.getFullYear() + "-" + month + "-" + date.getDate();
+        var fromTime = $("input[name='from']");
+        var toTime = $("input[name='to']");
+        fromTime.val("2016-8-1");
+        toTime.val(m);
+
+        $('#dataPicker_td').datepicker({
+//            rtl: false,
+//            orientation: "left",
+            autoclose: true,
+//            minViewMode: 1,
+//            maxViewMode: 2,
+            startDate: "2016-08-1",
+            endDate: m
+        }).on('changeDate', function (e) {
+            var from = $(this).find("input[name='from']");
+            var to = $(this).find("input[name='to']");
+            var id = this.id.substring(11);
+//            alert(from.val() + "至" + to.val() + " " + id);
+        });
+    })
+</script>

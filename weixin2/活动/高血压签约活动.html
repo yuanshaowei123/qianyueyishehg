@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        body {
+            background: white;
+            overflow-x: hidden;
+        }
+        .weui-article {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .weui-article .title {
+            font-size: 24px;
+            font-weight: 400;
+            padding: 10px 10px 10px 0;
+            border-bottom: 1px solid #e7e7eb;
+            margin-bottom: 10px;
+        }
+        .meta_content {
+            padding: 5px 0 25px;
+            position: relative;
+        }
+        .meta_content span {
+            margin-right: 10px;
+            color: #8c8c8c;
+        }
+        .meta_content a {
+            color: #607fa6;
+        }
+        .notice p {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            margin: 0;
+        }
+        .profile_container {
+            width: 535px;
+            position: absolute;
+            top: 38px;
+            left: 65px;
+            font-size: 14px;
+            height: 239px;
+            color: #000;
+            display: none;
+        }
+        .profile_container .profile_inner {
+            position: relative;
+            padding: 30px 22px 36px 144px;
+            background-color: #fff;
+            border: 1px solid #d9dadc;
+        }
+        .profile_container .profile_nickname {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .profile_container .profile_avatar  {
+            position: absolute;
+            width: 100px;
+            left: 24px;
+            top: 24px;
+            height: 100px;
+        }
+        .profile_container .profile_meta  {
+            margin-top: 5px;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+        .profile_container .profile_meta_label   {
+            float: left;
+            width: 56px;
+            margin-right: 5px;
+        }
+        .profile_container .profile_meta_value   {
+            display: block;
+            overflow: hidden;
+            color: #adadad;
+        }
+        .profile_container .profile_arrow_wrp {
+            left: 110px;
+            position: absolute;
+            top: -8px;
+            background-color: #fff;
+        }
+        .profile_container .profile_arrow_wrp .profile_arrow  {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: dashed;
+            border-width: 8px;
+            border-color: transparent;
+            border-top-width: 0;
+            border-bottom-color: #d9dadc;
+            border-bottom-style: solid;
+            position: absolute;
+            top: 0;
+        }
+        .profile_container .profile_arrow.arrow_in {
+            margin-top: 1px;
+            border-bottom-color: #fff;
+        }
+        @media screen and (max-width: 640px) {
+            .profile_container {
+                left: 0;
+            }
+            .profile_container .profile_inner {
+                padding: 30px 22px 36px 110px;
+            }
+            .profile_container .profile_avatar  {
+                width: 70px;
+                left: 15px;
+                top: 24px;
+                height:70px;
+            }
+            .profile_container .profile_arrow_wrp {
+                left: 180px;
+            }
+            .profile_container {
+                font-size: 12px;
+            }
+            .profile_container .profile_nickname {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <article class="weui-article" style="margin-bottom: 55px">
+        <h1 class="title">
+            【福利】速来领取，千份高血压慢病管理服务包送送送
+        </h1>
+        <div class="meta_content">
+            <span>2017-09-18</span>
+            <span>家庭医生</span>
+            <a href="##" onclick="clickTitle(this)" onblur="blurTitle(this)">亭湖社康微平台
+                <div class="profile_container">
+                    <div class="profile_inner">
+                        <strong class="profile_nickname">亭湖社康微平台</strong>
+                        <img class="profile_avatar" src="../images/thskgzh.bmp" />
+                        <p class="profile_meta">
+                            <label class="profile_meta_label">微信号</label>
+                            <span class="profile_meta_value">xinchenghospital</span>
+                        </p>
+                        <p class="profile_meta">
+                            <label class="profile_meta_label">功能介绍</label>
+                            <span class="profile_meta_value">
+                            提供公共卫生服务和基本医疗服务，开展健康教育、预防、保健、康复、计划生育技术服务和一般常见病、多发病的诊疗服务。
+                            诊疗科目包括预防保健科、全科医疗科、内科、外科（普通外科）、妇科、耳鼻喉科、康复医学科、医学检验科、医学影像科、中医科、口腔科。
+                        </span>
+                        </p>
+                    </div>
+                    <span class="profile_arrow_wrp">
+                    <i class="profile_arrow arrow_out"></i>
+                    <i class="profile_arrow arrow_in"></i>
+                </span>
+                </div>
+            </a>
+
+        </div>
+        <section class="main-contents">
+            <p>
+                <img src="../images/gxyhd01.png" alt="">
+            </p>
+            <p>
+                <img src="../images/gxyhd02.png" alt="">
+            </p>
+            <p>
+                <img src="../images/gxyhd03.png" alt="">
+            </p>
+            <p>
+                <img src="../images/gxyhd04.png" alt="">
+            </p>
+            <p>
+                <img src="../images/gxyhd05.png" alt="">
+            </p>
+        </section>
+        <div class="notice">
+            <p>注意：</p>
+            <p>活动名额有限，大家火速领取啦~</p>
+            <p>本次活动面对广大亭湖区居民</p>
+            <p>最终解释权归亭湖区卫计委</p>
+        </div>
+    </article>
+</div>
+<div class="weui-btn-rea fix_btn">
+    <a class="weui-btn weui-btn_primary">我要签约</a>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script>
+    $(".fix_btn a").on("click", function () {
+        window.location.href = "亭湖_签约活动_提交.html";
+    })
+    function clickTitle(e) {
+        var display = $(e).find(".profile_container").css("display");
+        if(display == "none") {
+            $(e).find(".profile_container").css("display", "block");
+        }
+    }
+    function blurTitle(e) {
+        var display = $(e).find(".profile_container").css("display");
+        if(display == "block") {
+            $(e).find(".profile_container").css("display", "none");
+        }
+    }
+</script>
+</body>
+</html>

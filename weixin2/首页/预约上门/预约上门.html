@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>预约上门</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="container appointment">
+    <div class="weui-panel weui-panel_access" style="margin-top: 20px;">
+        <div class="weui-panel__bd">
+            <div class="weui-media-box weui-media-box_appmsg" style="padding: 10px 15px;">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../../images/doctor.png" style="border-radius: 12px;">
+                </div>
+                <div class="weui-media-box__bd personInfo">
+                    <h4 class="weui-media-box__title personName">张朝阳
+                        <span id="familyMember"><i></i><span class="icon-changeUser">切换</span></span>
+                    </h4>
+                    <p class="weui-media-box__desc"><span>男</span><span>43岁</span></p>
+                    <p class="weui-media-box__desc"><span>苏州工业园区纳米科技园A7幢403室</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label class="weui-label">服务类型</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select2">
+                    <option value="1">居家上门服务</option>
+                    <option value="2">社区门诊服务</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__hd">
+                <label class="weui-label">预约时间</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="datetime-local" placeholder="点击选择上门日期">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">发起人</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="请输入发起人姓名" value="张朝阳">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">联系电话</label>
+            </div>
+            <div class="weui-cell__bd">
+                <a href="tel:13861973219">13861973219</a>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells serviceTeam">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <h4 class="weui-media-box__title">金阊社区卫生服务中心<a href="tel:13861973219"></a></h4>
+                <p class="weui-media-box__desc">刘芳芳团队</p>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <textarea id="symptom" class="weui-textarea" placeholder="请输入你的症状或服务" rows="3"></textarea>
+                <div class="weui-textarea-counter"><span>0</span>/200</div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells__tips " style="margin-bottom:61px;">
+        <i></i>部分服务暂不支持预约上门方式，具体以医生回复为准
+    </div>
+
+    <!-- 切换家庭成员 -->
+    <div class="js_dialog" id="dialog_familyMember" style="opacity: 1;display: none">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+            <div class="weui-grids">
+                <div class="weui-cells_radio">
+                    <label class="weui-cell weui-check__label weui-grid">
+                        <div class="weui-cell__hd">
+                            <input type="radio" class="weui-check" name="radio1" checked>
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>张三</p>
+                        </div>
+                    </label>
+                    <label class="weui-cell weui-check__label weui-grid">
+                        <div class="weui-cell__hd">
+                            <input type="radio" class="weui-check" name="radio1">
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>张四</p>
+                        </div>
+                    </label>
+                    <label class="weui-cell weui-check__label weui-grid">
+                        <div class="weui-cell__hd">
+                            <input type="radio" class="weui-check" name="radio1">
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>张五</p>
+                        </div>
+                    </label>
+                    <label class="weui-cell weui-check__label weui-grid">
+                        <div class="weui-cell__hd">
+                            <input type="radio" class="weui-check" name="radio1">
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>张六</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="gallery" class="weui-gallery" style="display: none">
+    <span id="galleryImg" class="weui-gallery__img" style=""></span>
+    <div class="weui-gallery__opr">
+        <a href="javascript:" class="weui-gallery__del">
+            <i class="weui-icon-delete weui-icon_gallery-delete"></i>
+        </a>
+    </div>
+</div>
+<div class="weui-btn-rea fix_btn">
+    <a class="weui-btn weui-btn_primary">提交</a>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/weui.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+//    var $showDatePicker = $("#time");
+//    $showDatePicker.on('click', function () {
+//        weui.datePicker({
+//            start: new Date().getFullYear(),
+//            end: new Date().getFullYear(),
+//            onChange: function (result) {
+//                console.log(result);
+//            },
+//            onConfirm: function (result) {
+//                console.log(result);
+//                $showDatePicker.val(result[0] + "-" + (result[1] + 1) + "-" + result[2]);
+//            }
+//        });
+//    });
+
+    $(function () {
+        //切换家庭成员
+        f.dialog("familyMember");
+    });
+    $(".fix_btn a").on("click", function () {
+        if (f.reg_txt($("#symptom").val(), "症状不能为空")) {
+            f.successToptips("预约成功","预约详情_评价.html")
+        }
+    });
+</script>
+</body>
+</html>

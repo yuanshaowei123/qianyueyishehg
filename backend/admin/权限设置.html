@@ -1,0 +1,447 @@
+<style>
+    .maintitle h2 {
+        margin: 0;
+    }
+    .maintitle span {
+        margin-top: 5px;
+    }
+    .editArea {
+        border: 1px solid #bbb;
+        padding: 15px 15px 0;
+        margin-bottom: 20px;
+    }
+    .editArea label {
+        margin-right: 10px;
+    }
+    .subtitle {
+        display: block;
+        margin-bottom: 20px;
+        width: 15%;
+    }
+    .subtitle span {
+        margin-top: 3px;
+    }
+</style>
+<div class="col-md-12">
+    <!-- BEGIN PORTLET-->
+    <div class="portlet light portlet-fit" style="margin-bottom: 0">
+        <!-- 判断如果页面有修改则显示保存按钮，如果页面没有改动，则保存按钮隐藏 -->
+        <div style="width: 100%; text-align: right">
+            <button type="button" class="btn green" style="padding: 10px 20px;">保存</button>
+        </div>
+        <ul>
+            <li>
+                <!--  医生 -->
+                <label class="mt-checkbox maintitle">
+                    <h2>医生</h2>
+                    <input type="checkbox"/>
+                    <span></span>
+                </label>
+                <div class="editArea">
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>新增医生
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>删除医生
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>编辑医生信息
+                        <span></span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <!-- 居民 -->
+                <label class="mt-checkbox maintitle">
+                    <h2>居民</h2>
+                    <input type="checkbox"/>
+                    <span></span>
+                </label>
+                <div class="editArea">
+                    <label class="mt-checkbox subtitle">
+                        <h3>已签约</h3>
+                        <input type="checkbox"/>
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>签约/添加家庭成员
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>慢病数据新增
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>慢病数据修改删除
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>健康档案修改
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>居民巡诊数据修改删除
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>删除居民
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>签约协议打印
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>居民随访数据修改删除
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>未签约居民删除
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>家庭病床
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>居民信息修改（更换团队，手机号修改，姓名修改，服务包修改，既往史修改，特殊人群修改）
+                        <span></span>
+                    </label>
+                </div>
+
+                <div class="editArea">
+                    <label class="mt-checkbox subtitle">
+                        <h3>未签约</h3>
+                        <input type="checkbox"/>
+                        <span></span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <!-- 家庭病床 -->
+                <label class="mt-checkbox maintitle">
+                    <h2>家庭病床</h2>
+                    <input type="checkbox"/>
+                    <span></span>
+                </label>
+                <div class="editArea">
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>查看待审核建床资料
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>审核家庭病床
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>新增巡诊记录
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>新增阶段小结
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>新增医嘱
+                        <span></span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <!-- 团队 -->
+                <label class="mt-checkbox maintitle">
+                    <h2>团队</h2>
+                    <input type="checkbox"/>
+                    <span></span>
+                </label>
+                <div class="editArea">
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>新增团队
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>编辑团队
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>修改负责人
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>查看成员
+                        <span></span>
+                    </label>
+                </div></li>
+            <li>
+                <!-- 服务设置 -->
+                <label class="mt-checkbox maintitle">
+                    <h2>服务设置</h2>
+                    <input type="checkbox"/>
+                    <span></span>
+                </label>
+                <div class="editArea">
+                    <label class="mt-checkbox subtitle">
+                        <h3>服务设置</h3>
+                        <input type="checkbox"/>
+                        <span></span>
+                    </label>
+                </div>
+                <div class="editArea">
+                    <label class="mt-checkbox subtitle">
+                        <h3>服务包</h3>
+                        <input type="checkbox"/>
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>服务包新增
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>服务包编辑
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>服务包详情查看
+                        <span></span>
+                    </label>
+                </div>
+                <div class="editArea">
+                    <label class="mt-checkbox subtitle">
+                        <h3>服务项</h3>
+                        <input type="checkbox"/>
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>服务项新增
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>服务项编辑
+                        <span></span>
+                    </label>
+                </div>
+                <div class="editArea">
+                    <label class="mt-checkbox subtitle">
+                        <h3>服务项类别</h3>
+                        <input type="checkbox"/>
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>服务项类别新增
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>服务项类别编辑
+                        <span></span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <!-- 在线咨询 -->
+                <label class="mt-checkbox maintitle">
+                    <h2>在线咨询</h2>
+                    <input type="checkbox"/>
+                    <span></span>
+                </label>
+                <div class="editArea">
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>在线咨询回复
+                        <span></span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <!-- 资讯 -->
+                <label class="mt-checkbox maintitle">
+                    <h2>资讯</h2>
+                    <input type="checkbox"/>
+                    <span></span>
+                </label>
+                <div class="editArea">
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>资讯新增
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>资讯编辑修改
+                        <span></span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <!-- 区域 -->
+                <label class="mt-checkbox maintitle">
+                    <h2>区域</h2>
+                    <input type="checkbox"/>
+                    <span></span>
+                </label>
+                <div class="editArea">
+                    <label class="mt-checkbox subtitle">
+                        <h3>社区</h3>
+                        <input type="checkbox"/>
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>新增社区
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>社区编辑修改
+                        <span></span>
+                    </label>
+                </div>
+                <div class="editArea">
+                    <label class="mt-checkbox subtitle">
+                        <h3>小区</h3>
+                        <input type="checkbox"/>
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>新增小区
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>小区编辑修改
+                        <span></span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <!-- 考核统计 -->
+                <label class="mt-checkbox maintitle">
+                    <h2>考核统计</h2>
+                    <input type="checkbox"/>
+                    <span></span>
+                </label>
+                <div class="editArea">
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>查看区域概览
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>查看社区中心概览
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>查看团队统计
+                        <span></span>
+                    </label>
+                    <label class="mt-checkbox option_content">
+                        <input type="checkbox"/>查看患者统计
+                        <span></span>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    /* maintitle为主标题;subtitle为副标题;option_content为普通选项; */
+    /* 主标题点击事件 */
+    $(".maintitle input[type=checkbox]").on("click", function() {
+        if($(this)[0].checked == true) {
+            /* 点击选中主标题，主标题所包含的所有副标题以及选项全都选中 */
+            var checkboxs = $(this).parent().parent().find("input[type=checkbox]");
+            for(var i = 0; i < checkboxs.length; i++) {
+                checkboxs[i].checked = true;
+            }
+        } else {
+            /* 点击取消主标题，主标题所包含的所有副标题以及选项全都取消 */
+            var checkboxs = $(this).parent().parent().find("input[type=checkbox]");
+            for(var i = 0; i < checkboxs.length; i++) {
+                checkboxs[i].checked = false;
+            }
+        }
+    });
+
+    /* 副标题点击事件 */
+    $(".subtitle input[type=checkbox]").on("click", function() {
+        if($(this)[0].checked == true) {
+            /* 点击选中副标题，副标题所包含的所有选项全都选中 */
+            var checkboxs = $(this).parent().parent().find("input[type=checkbox]");
+            for(var i = 0; i < checkboxs.length; i++) {
+                checkboxs[i].checked = true;
+            }
+
+            /* 点击选中副标题，主标题选中 */
+            var checkbox_main = $(this).parent().parent().parent().find("input[type=checkbox]");
+            if(checkbox_main.length != 0) {
+                checkbox_main[0].checked = true;
+            }
+        } else {
+            /* 点击取消副标题，副标题所包含的所有选项全都取消 */
+            var checkboxs = $(this).parent().parent().find("input[type=checkbox]");
+            for(var i = 0; i < checkboxs.length; i++) {
+                checkboxs[i].checked = false;
+            }
+            /*取消副标题时，判断同一个主标题中其他副标题是否全部是未选中选中状态*/
+            var checkflag = true;
+            var all_sub_checkboxs = $(this).parent().parent().parent().find(".subtitle input[type=checkbox]");
+            for(var j = 0; j< all_sub_checkboxs.length; j++) {
+                if(all_sub_checkboxs[j].checked) {
+                    checkflag = false;
+                    break;
+                }
+            }
+            /*如果当前取消的是最后一个副标题，则取消主标题的选中状态*/
+            if(checkflag) {
+                var checkbox_main = $(this).parent().parent().parent().find(".maintitle input[type=checkbox]");
+                if(checkbox_main.length != 0) {
+                    checkbox_main[0].checked = false;
+                }
+            }
+        }
+    });
+
+    /*普通选项点击事件*/
+    $(".option_content input[type=checkbox]").on("click", function() {
+        var bool = $(this)[0].checked;
+        if(bool) {
+            /* 当第一次点击选中某一个标题内的普通选项时，连带勾上副标题以及主标题 */
+            var checkbox_sub = $(this).parent().parent().find(".subtitle input[type=checkbox]");
+            var checkbox_main = $(this).parent().parent().parent().find(".maintitle input[type=checkbox]");
+            if(checkbox_sub.length != 0) {
+                checkbox_sub[0].checked = true;
+            }
+            if(checkbox_main.length != 0) {
+                checkbox_main[0].checked = true;
+            }
+        } else {
+            /*点击取消时，判断该选项所在副标题中的所有选项的选中状态*/
+            var flag = true
+            var checkbox_opt = $(this).parent().parent().find(".option_content input[type=checkbox]");
+            for(var i = 0; i < checkbox_opt.length; i++) {
+                if(checkbox_opt[i].checked) {
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag) {
+                /*取消副标题的选中状态*/
+                var checkbox_sub = $(this).parent().parent().find(".subtitle input[type=checkbox]");
+                if(checkbox_sub.length != 0) {
+                    checkbox_sub[0].checked = false;
+                }
+                /*判断主标题中的副标题是否为选中状态*/
+                var checkflag = true;
+                var all_sub_checkboxs = $(this).parent().parent().parent().find(".subtitle input[type=checkbox]");
+                for(var j = 0; j< all_sub_checkboxs.length; j++) {
+                    if(all_sub_checkboxs[j].checked) {
+                        checkflag = false;
+                        break;
+                    }
+                }
+
+                /*点击取消某一选项时，如果该选项是副标题中最后一个选项时，同时取消副标题，如果该副标题是主标题中最后一个选中的标题时，同时取消主标题*/
+                if(checkflag) {
+                    var checkbox_main = $(this).parent().parent().parent().find(".maintitle input[type=checkbox]");
+                    if(checkbox_main.length != 0) {
+                        checkbox_main[0].checked = false;
+                    }
+                }
+            }
+        }
+    });
+</script>

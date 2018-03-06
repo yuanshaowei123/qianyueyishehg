@@ -1,0 +1,1130 @@
+<style>
+     /*.form-horizontal .form-group {
+        margin: 0;
+    }*/
+    .form-horizontal .item .control-label {
+        padding-top: 0;
+        text-align: right;
+        width: 70px;
+        padding-right: 5px;
+    }
+    .form-horizontal .item {
+        float: left;
+        margin: 5px 15px;
+        display: inline-flex;
+    }
+    .form-horizontal .item>div {
+        display: inline-block;
+    }
+    .people_label {
+        margin: 0!important;
+        background: url('../images/icon_defa.png') no-repeat;
+        background-size: 220px 100%;
+        height: 34px;
+        line-height: 34px;
+        width: 220px!important;
+        text-align: left!important;
+    }
+    .people_label.active {
+        background: url('../images/icon_sele.png') no-repeat;
+        background-size: 220px 100%;
+        color: #fff;
+    }
+     .people_label.active::after {
+         content: "";
+         position:absolute;
+         margin-left: -45px;
+         border-width: 13px;
+         border-style: solid;
+         border-color:  #eee transparent transparent;
+         box-sizing: border-box;
+         left: 65%;
+         top: 34px;
+     }
+    .people_checkboxs {
+        border: 1px solid #eee;
+        margin: 10px 40px;
+        padding: 20px 0;
+        display: none;
+        width: 95%!important;
+    }
+    .people_checkboxs label {
+        margin-right: 10px;
+    }
+    .datepicker-orient-left {
+        z-index: 9996;
+    }
+    .select_div .select2-selection {
+        outline: none;
+    }
+     .address_name {
+         max-width: 200px;
+     }
+     .address_name span {
+         display: block;
+         overflow: hidden;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+     }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-directions font-green hide"></i>
+                    <span class="caption-subject bold font-dark uppercase">签约居民</span>
+                </div>
+                <div class="actions" style="float: right">
+                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                        <button id="idCard" type="button" class="btn btn-circle btn-primary">
+                            签约 / 添加家庭成员
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-title" style="padding: 0px;">
+                <form class="form-horizontal" role="form" method="get" id="searchform" action="/Patient/List">
+                    <div class="form-group  item">
+                        <label class="control-label">姓名</label>
+                        <div style="width: 180px;">
+                            <input type="text" class="form-control name_select" placeholder="请输入姓名" id="PatientName" name="PatientName" value />
+                        </div>
+                    </div>
+                    <div class="form-group  item">
+                        <label class="control-label">身份证号</label>
+                        <div style="width: 180px;">
+                            <input type="text" class="form-control id_select" placeholder="请输入身份证号" value />
+                        </div>
+                    </div>
+                    <div class="form-group  item">
+                        <label class="control-label">年龄</label>
+                        <div>
+                            <input type="text" class="form-control" placeholder="岁" value style="text-align: right;width: 83px;display: inline-block;" />
+                            <span style="display: inline-block;width: 5px;">-</span>
+                            <input type="text" class="form-control" placeholder="岁" value style="text-align: right;width: 83px;display: inline-block;" />
+                        </div>
+                    </div>
+                    <div class="form-group item">
+                        <label class="control-label">审核状态</label>
+                        <div style="width: 180px;">
+                            <select class="form-control examine" id="Status" name="Status">
+                                <option value>--请选择--</option>
+                                <option value="0">待审核</option>
+                                <option value="1">已审核</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group  item">
+                        <label class="control-label">微信绑定</label>
+                        <div style="width: 180px;">
+                            <select class="form-control wxbd" id="IsBindWX" name="IsBindWX">
+                                <option value>--请选择--</option>
+                                <option value="">是</option>
+                                <option value="">否</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group  item">
+                        <label class="control-label">归属团队</label>
+                        <div class="select_div" style="width: 180px;">
+                            <select class="form-control js-example-basic-single" data-val="true" data-val-required="The TeamId field is required." id="TeamId" name="TeamId" style="">
+                                <option value>--请选择--</option>
+                                <option value="">黑芝麻崔尖团队</option>
+                                <option value="">测试2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group  item">
+                        <label class="control-label">社区</label>
+                        <div class="select_div" style="width: 180px;">
+                            <select class="form-control js-example-basic-single" id="" name="">
+                                <option value>--请选择--</option>
+                                <option value="">黑芝麻虹桥社区</option>
+                                <option value="">运河社区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group  item">
+                        <label class="control-label">签约医生</label>
+                        <div class="select_div" style="width: 180px;">
+                            <select class="form-control js-example-basic-single" id="AddDoctorId" name="AddDoctorId">
+                                <option value>--请选择--</option>
+                                <option value="">崔尖</option>
+                                <option value="">黑芝麻韩梅梅</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group  item">
+                        <label class="control-label">分管团队</label>
+                        <div class="select_div" style="width: 180px;">
+                            <select class="form-control js-example-basic-single" data-val="true" >
+                                <option value>--请选择--</option>
+                                <option value="">黑芝麻大团队</option>
+                                <option value="">黑芝麻小团队</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group  item">
+                        <label class="control-label">分管医生</label>
+                        <div class="select_div" style="width: 180px;">
+                            <select class="form-control js-example-basic-single" >
+                                <option value>--请选择--</option>
+                                <option value="">黑芝麻大崔</option>
+                                <option value="">黑芝麻小崔</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group item">
+                        <label class="control-label" style="vertical-align: top;">签约时间</label>
+                        <div id="dataPicker_zx_fw" class="input-group input-large date-picker input-daterange"
+                             data-date="2016-08"
+                             data-date-format="yyyy-mm-dd" data-date-minviewmode="day">
+                            <input type="text" class="form-control" name="from" value="" style="width: 150px;">
+                            <span  style="width: 20px; float: left;display: inline-block;text-align: center;height: 34px;line-height: 34px;"> - </span>
+                            <input type="text" class="form-control" name="to" value="" style="width: 150px;">
+                        </div>
+                    </div>
+                    <div class="form-group item">
+                        <label class="control-label">人群筛选</label>
+                        <label class="control-label col-md-12 people_label">既往病史/重点人群/特殊人群</label>
+                    </div>
+                    <div class="col-md-12 people_checkboxs">
+                        <div class="col-md-12" style="margin-bottom: 10px;">
+                            <label class="control-label">既往病史：</label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>高血压
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>糖尿病
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>脑卒中
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>骨关节疾病
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>消化道疾病
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>儿童发育不良
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>骨质疏松
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>创伤史
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>癌症
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>COPD
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>冠心病
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>其他
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="col-md-12" style="margin-bottom: 10px;">
+                            <label class="control-label">重点人群：</label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>孕产妇
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>儿童
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>老年人
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="control-label">特殊人群：</label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>慢性病患者
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>残疾人
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>特困人群
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>特殊家庭
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>精神障碍
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group  item" style="float: right;">
+                        <button type="button" class="btn btn-success" style="margin-left: 15px;" onclick="search()">搜索</button>
+                        <button type="button" class="btn btn-success" style="margin-left: 15px;" onclick="">导出</button>
+                        <button type="button" class="btn btn-success" style="margin-left: 15px;" data-toggle="modal" onclick="" href="#editTeamInfo">修改</button>
+                    </div>
+                </form>
+            </div>
+            <div class="portlet-body">
+                <small>当前搜索记录：22</small>
+                <div class="table-scrollable table-scrollable-borderless">
+                    <table class="table table-hover table-light">
+                        <thead>
+                        <tr class="uppercase">
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>身份证号码</th>
+                            <th>地址</th>
+                            <th>签约方式</th>
+                            <th>申请签约时间</th>
+                            <th class="form-group form-md-line-input has-info" style="padding-bottom: 3px">
+                                <select class="form-control input-sm"
+                                        style="color: #93a2a9;border-bottom: 0;width: inherit">
+                                    <option value="1">归属团队</option>
+                                    <option value="2">王琦团队</option>
+                                    <option value="3">归月平团队</option>
+                                </select>
+                            </th>
+                            <th>签约归属家庭</th>
+                            <th>签约通过时间</th>
+                            <th class="form-group form-md-line-input has-info" style="padding-bottom: 3px">
+                                <select class="form-control input-sm"
+                                        style="color: #93a2a9;border-bottom: 0;width: inherit">
+                                    <option value="1">微信是否绑定</option>
+                                    <option value="2">是</option>
+                                    <option value="3">否</option>
+                                </select>
+                            </th>
+                            <th class="form-group form-md-line-input has-info" style="padding-bottom: 3px">
+                                <select class="form-control input-sm"
+                                        style="color: #93a2a9;border-bottom: 0;width: inherit">
+                                    <option value="1">审核状态</option>
+                                    <option value="2">待审核</option>
+                                    <option value="3">已通过</option>
+                                    <option value="3">已拒绝</option>
+                                </select>
+                            </th>
+                            </th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>王芳芳</td>
+                            <td>女</td>
+                            <td>341124199310203679</td>
+                            <td class="address_name">
+                                <span title="黑芝麻社区生物纳米园1区2幢201黑芝麻社区生物纳米园1区2幢201">
+                                    黑芝麻社区生物纳米园1区2幢201黑芝麻社区生物纳米园1区2幢201
+                                </span>
+                            </td>
+                            <td>微信自主签约</td>
+                            <td>2017年5月2日</td>
+                            <td>刘芳芳团队</td>
+                            <td>付华</td>
+                            <td>2017年5月2日</td>
+                            <td>是</td>
+                            <td>
+                                <a style="color: red" class="mt-sweetalert"
+                                   data-title="居民申请签约，是否同意？"
+                                   data-message=
+                                           "<a class='glyphicon glyphicon-remove close-operation'
+                                            style='width:20px;height:20px;position:absolute;top:10px;right:10px;'></a>"
+                                   data-html="true"
+                                   data-type="info"
+                                   data-show-confirm-button="true"
+                                   data-confirm-button-class="btn-success"
+                                   data-show-cancel-button="true"
+                                   data-cancel-button-class="btn-danger"
+                                   data-close-on-confirm="false"
+                                   data-close-on-cancel="false"
+                                   data-confirm-button-text='同意'
+                                   data-cancel-button-text='拒绝'
+                                   data-popup-title-success="签约成功"
+                                   data-popup-title-cancel="已拒绝">
+                                    待审核
+                                </a>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-default btn-sm" data-href="居民信息"
+                                        onclick="$.index.pageJump(this)">详情
+                                </button>
+                                <!--<div class="btn-group" style="position: absolute;">-->
+                                <!--<a class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown"-->
+                                <!--href="javascript:;"> 更多-->
+                                <!--<i class="fa fa-angle-down"></i>-->
+                                <!--</a>-->
+                                <!--<ul class="dropdown-menu pull-right">-->
+                                <!--<li>-->
+                                <!--<a data-href="居民信息" onclick="$.index.pageJump(this)">-->
+                                <!--<small><b>居民信息</b></small>-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                <!--<a href="javascript:;">-->
+                                <!--<small><b>家庭病床</b></small>-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <!--</ul>-->
+                                <!--</div>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>王芳芳</td>
+                            <td>女</td>
+                            <td>341124199310203679</td>
+                            <td class="address_name">
+                                <span title="黑芝麻社区生物纳米园1区2幢201黑芝麻社区生物纳米园1区2幢201">
+                                    黑芝麻社区生物纳米园1区2幢201黑芝麻社区生物纳米园1区2幢201
+                                </span>
+                            </td>
+                            <td>微信自主签约</td>
+                            <td>2017年5月2日</td>
+                            <td>
+                                <a style="color: red" class="mt-sweetalert"
+                                   data-title="当前居民（刘芳芳团队）申请更换团队为王志团队，是否同意更换？"
+                                   data-message=
+                                           "<a class='glyphicon glyphicon-remove close-operation'
+                                            style='width:20px;height:20px;position:absolute;top:10px;right:10px;'></a>"
+                                   data-html="true"
+                                   data-type="info"
+                                   data-show-confirm-button="true"
+                                   data-confirm-button-class="btn-success"
+                                   data-show-cancel-button="true"
+                                   data-cancel-button-class="btn-danger"
+                                   data-close-on-confirm="false"
+                                   data-close-on-cancel="false"
+                                   data-confirm-button-text='同意'
+                                   data-cancel-button-text='拒绝'
+                                   data-popup-title-success="更换成功"
+                                   data-popup-title-cancel="已拒绝">
+                                    王琦团队
+                                    <i class="icon-question"></i>
+                                </a>
+                            </td>
+                            <td>付华</td>
+                            <td>2017年5月2日</td>
+                            <td>是</td>
+                            <td>
+                                已通过
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-default btn-sm" data-href="居民信息"
+                                        onclick="$.index.pageJump(this)">详情
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>王芳芳</td>
+                            <td>女</td>
+                            <td>341124199310203679</td>
+                            <td class="address_name">
+                                <span title="黑芝麻社区生物纳米园1区2幢201黑芝麻社区生物纳米园1区2幢201">
+                                    黑芝麻社区生物纳米园1区2幢201黑芝麻社区生物纳米园1区2幢201
+                                </span>
+                            </td>
+                            <td>微信自主签约</td>
+                            <td>2017年5月2日</td>
+                            <td>刘芳芳团队</td>
+                            <td>付华</td>
+                            <td>2017年5月2日</td>
+                            <td>是</td>
+                            <td>
+                                已拒绝
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-default btn-sm" data-href="居民信息"
+                                        onclick="$.index.pageJump(this)">详情
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr style="margin-top: 0">
+                <div id="pagetoolbar" class="">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 text-right">
+                            <div class="">
+                                <ul id="nav_list_pagetoolbar" class="pagination pagination_custom" unselectable="on"
+                                    style="user-select: none;">
+                                    <li class="active">
+                                        <a id="nav_item_pagetoolbar_1" href="javascript:void(0);"
+                                           title="Page 1 of 1">1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="editmodal" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" style="width:70%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" style="text-align: center">
+                    <div style="float: left">签约 / 添加家庭成员</div>
+                    <div style="margin-right: 150px;">
+                        <input id="switch" type="checkbox" data-size="small" class="make-switch" data-on-color="info"
+                               data-off-color="danger" checked data-on-text="签约" data-off-text="添加家庭成员">
+                    </div>
+                </h4>
+            </div>
+            <div class="modal-body familyModal" style="display: none">
+                <div style="margin: 0 35%">
+                    <div class="form-group" style="margin-bottom: 0">
+                        <!--<label>Default Input Button Group</label>-->
+                        <div class="input-group">
+                            <input id="searchInput" type="text" class="form-control circle-left"
+                                   placeholder="根据手机号/身份证号码搜索家庭">
+                            <span class="input-group-btn">
+                                <button class="btn red circle-right" type="button" onclick="search($('#searchInput'))">搜索</button>
+                            </span>
+                        </div>
+                        <h6 class="mt-comments-null" style="text-align: center;display: none;margin-top: 15px">
+                            没有此家庭</h6>
+                        <a class="mt-comments" style="display: none;width: 100%;margin-top: 15px"
+                           onclick="familyClick()">
+                            <div class="mt-comment">
+                                <div class="mt-comment-img">
+                                    <img src="../images/患者.png" style="width: 50px;">
+                                </div>
+                                <div class="mt-comment-body">
+                                    <div class="mt-comment-info">
+                                        <span class="mt-comment-author">王琦</span>
+                                    </div>
+                                    <div class="mt-comment-text">黑芝麻街道A7 403室
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body toggleModal" style="border-top: 1px solid #EFEFEF;">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div style="clear: both;"></div>
+                        <div class="col-md-6">
+                            <div class="form-group last">
+                                <label class="col-md-4 control-label">
+                                    头像
+                                </label>
+                                <div class="col-md-6">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="fileinput-new thumbnail">
+                                            <img id="myPic" src="../images/noImage.png" alt=""/>
+                                        </div>
+                                        <div class="fileinput-preview fileinput-exists thumbnail">
+
+                                        </div>
+                                        <div>
+                                        <span class="btn default btn-file">
+                                            <span class="fileinput-new">选择头像</span>
+                                            <span class="fileinput-exists">重新选择</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                            <a href="javascript:;" class="btn red fileinput-exists"
+                                               data-dismiss="fileinput">删除
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">姓名</label>
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control" placeholder="请输入">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">手机号</label>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="请输入">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">身份证号</label>
+                                <div class="col-md-6">
+                                    <input id="cardNo" type="text" class="form-control" placeholder="请输入">
+                                </div>
+                            </div>
+                            <div class="form-group signModal">
+                                <label class="col-md-4 control-label">家庭住址</label>
+                                <div class="col-md-6" style="margin-bottom: 15px">
+                                    <select class="form-control">
+                                        <option>请选择社区</option>
+                                        <option>金阊社区</option>
+                                        <option>五星社区</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-md-offset-4">
+                                    <select class="form-control">
+                                        <option>请选择小区</option>
+                                        <option>黑芝麻小区</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group signModal">
+                                <label class="col-md-4 control-label">门牌号</label>
+                                <div class="col-md-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="输入">
+                                        <span class="input-group-addon" style="padding: 5px;">幢/组</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="输入">
+                                        <span class="input-group-addon" style="padding: 5px;">室/号</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">特殊人群</label>
+                                <div class="col-md-6">
+                                    <div class="mt-radio-inline">
+                                        <label class="mt-radio">
+                                            <input type="radio" name="optionsRadios" value="" checked="">孕产妇
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-radio">
+                                            <input type="radio" name="optionsRadios" value="" checked=""> 儿童
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-radio">
+                                            <input type="radio" name="optionsRadios" value="" checked=""> 老年人
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="mt-checkbox-inline">
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" value="">残疾人
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" value=""> 慢性病患者
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">既往病史</label>
+                                <div class="col-md-6">
+                                    <div class="mt-checkbox-inline">
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" value="">高血压
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" value=""> 高血糖
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" value=""> 脑卒中
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" value=""> 骨关节
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group signModal">
+                                <label class="col-md-4 control-label">签约协议</label>
+                                <div class="col-md-6">
+                                    <label class="control-label">201705期家庭医生签约合同</label>
+                                </div>
+                            </div>
+                            <div class="form-group signModal">
+                                <label class="col-md-4 control-label">签约服务包</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" data-val="true" data-val-range="请选择服务包"
+                                            data-val-range-max="9.22337203685478E+18" data-val-range-min="1"
+                                            data-val-required="请选择服务包" id="ServicePackageId" name="ServicePackageId">
+                                        <option value="1">免费签约包</option>
+                                    </select>
+                                    <span style="color:red;" class="field-validation-valid"
+                                          data-valmsg-for="ServicePackageId" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="form-group signModal">
+                                <label class="control-label col-md-4">签约日期</label>
+                                <div class="col-md-6">
+                                    <div class="input-group input-medium date date-picker" data-date=""
+                                         style="width: 100%!important;"
+                                         data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                                        <input type="text" class="form-control" readonly="" value="">
+                                        <span class="input-group-btn">
+                                        <button class="btn default" type="button">
+                                            <i class="fa fa-calendar"></i>
+                                        </button>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group signModal">
+                                <label class="col-md-4 control-label">签约团队</label>
+                                <div class="col-md-6">
+                                    <select class="form-control">
+                                        <option>王琦团队</option>
+                                        <option>王琦团队</option>
+                                        <option>王琦团队</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group signModal">
+                                <label class="col-md-4 control-label">签名</label>
+                                <a id="sign_show" class="col-md-6 control-label" data-toggle="modal" href="#signCanvas"
+                                   style="text-align: left">点击签名</a>
+                            </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green" id="signNext">下一步</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade signCanvas" id="signCanvas" aria-hidden="true" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <canvas id="canvasEdit"></canvas>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">取消</button>
+                <a id="sign_clear" type="button" class="btn red">清除</a>
+                <a id="sign_ok" type="button" class="btn green" data-dismiss="modal">确认</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="qyxyModal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!--startprint1-->
+            <div class="modal-body qyxyModal">
+                <div class="row blog-content-2">
+                    <div class="col-md-12">
+                        <div class="blog-single-content bordered blog-container">
+                            <div class="blog-single-head">
+                                <h2 class="blog-single-head-title"><img src="../images/shequlogo.png"> 苏州市社区居民家庭医生服务合约
+                                </h2>
+                                <p align="right">编号：100001</p>
+                            </div>
+                            <div class="blog-single-desc">
+                                <p>甲方（社区居民）：付华</p>
+                                <p>甲方联系电话：18550253902</p>
+                                <p>家庭住址：三园一村12幢201</p>
+                                <p>乙方（家庭医生）：刘芳芳</p>
+                                <p>乙方联系电话：18321219890</p>
+                                <p>丙方：苏州市金阊区社区卫生服务中心</p>
+                                <p>
+                                    为满足居民不断增长的医疗卫生需求，根据国家和省有关政策文件规定，乙方将向甲方提供健康管理和寻医问药为主要内容的基本医疗卫生服务。甲、乙、丙三方本着自愿平等的原则，经友好协商达成如下协议</p>
+                                <h4>一、乙方为甲方提供以下签约服务</h4>
+                                <p>免费服务包</p>
+                                <p>
+                                    1.建立健康档案服务。建立居民健康档案，根据居民个人健康信息，每年对其进行一次健康状况评估，制定个性化的健康计划，使居民及时了解自身的健康状况。并及时更新，保证健康档案资料的完整性和准确性，为档案隐私尽保护责任。</p>
+                                <p>2.健康教育和健康咨询服务。每个季度至少发放一份健教材料；每月组织一次健康教育讲座，普及健康知识，开展健康咨询。</p>
+                                <p>3.7岁以下儿童健康管理服务。为适龄儿童提供一类疫苗接种和为新生儿提供家庭访视，为7岁以下儿童提供健康管理、咨询健康指导服务。</p>
+                                <p>4.孕产妇保健管理服务。对孕妇提供不少于5次孕期健康管理服务，为产妇提供产后访视和42天健康检查；为育龄妇女提供优生优育、避孕节育等健康知识咨询和指导。</p>
+                                <p>5.老年人健康管理服务。每年对65岁以上老年人提供健康咨询和指导服务不少于4次</p>
+                                <p>6.慢性病患者管理服务。为明确诊断的高血压、2型糖尿病等慢性病患者进行治疗、行为干预、监测和健康评估，提供定期随访、用药指导、健康教育及咨询等服务每季度不少于1次</p>
+                                <p>7.精神疾病患者管理服务。对居家知情同意的重性精神疾病患者提供随访、康复指导服务，对患者家属进行培训，每季度不少于1次；每年提供1次健康体检</p>
+                                <p>8.传染病管理。对居家医学观察的传染病密切接触者提供预防指导</p>
+                                <p>9.咨询服务。对在健康管理中发现问题的，及时给予医学指导或转诊建议</p>
+                                <p>10.转诊和预约服务。优先提供三级医院转诊和预约服务。</p>
+                                <h4>二、服务收费和结算：</h4>
+                                <p>免费服务包由政府向乙方单位购买免费提供给甲方，增值服务包，由乙方根据物价部门定价或双方协商后报价物价部门备案确定。出诊、药品、检查等费用由乙方单位收取，出具收据。</p>
+                                <h4>三、三方权利与义务</h4>
+                                <p>（一）甲方</p>
+                                <p>甲方家庭成员自愿接受以上签约服务，并以健康状况及时、如实告知乙方，尊重乙方服务过程，配合卫生行政部门和社区卫生服务机构等对乙方服务工作的考核
+                                    评估。按照双方约定，按时足额支付费用。</p>
+                                <p>（二）乙方</p>
+                                <p>乙方应保护甲方的个人隐私，履行服务内容告知义务，主动提醒甲方接受服务，及时整理服务信息，保持服务的连续性、综合性、主动性。</p>
+                                <p>（三）丙方</p>
+                                <p>丙方需加强对乙方的管理，并为乙方在对甲方服务过程中提供相关支持和后勤保障。督促乙方按协议做好相关工作。遇到甲乙两方的纠纷，丙方负责协商解决，或通过其他途径解决。
+                                </p>
+                                <h4>四、协议有效期</h4>
+                                <p>本协议有效期为一年，从2016年7月1日至2017年7月1日.....</p>
+                                <h4>五、家庭成员</h4>
+                                <p>姓名：付华</p>
+                                <p>性别：男</p>
+                                <p>手机号：18550221212</p>
+                                <p>身份证号：341124199320102999</p>
+                                <p>加入家庭时间：2017-06-12</p>
+                                <h4>六、附则</h4>
+                                <p>（一）任何一方为履行本协议项下的义务均视为违约。遇不可抗力造成协议不能履行的，乙方不负责任。</p>
+                                <p>（二）本协议一式三份。甲乙丙三方各执一份。甲乙双方签字后生效。</p>
+                                <p>（三）未尽事宜甲乙双方协商处理。如发生争议，由丙方协调甲乙双方协商解决。协商不成，甲方可向当地卫生行政部门反映。</p>
+                            </div>
+                            <div class="blog-single-img">
+                                <p style="">甲方签名：</p>
+                                <img src="../images/qianming.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--endprint1-->
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green" onclick="preview(1)">导出</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #editTeamInfo .jiantou {
+        padding: 0;
+        text-align: center;
+    }
+    #editTeamInfo .jiantou i {
+        background: url('../images/jiantou.png') no-repeat;
+        background-size: 25px 20px;
+        width: 25px;
+        height: 20px;
+        display: inline-block;
+        margin-top: 6px;
+    }
+    #editTeamInfo .control-label {
+        margin-top: 0;
+    }
+</style>
+<div class="modal fade" id="editTeamInfo" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">修改分管信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">签约团队</label>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option>黑芝麻团队</option>
+                                    <option>崔尖团队</option>
+                                    <option>全部</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 jiantou">
+                                <i></i>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option>陈利团队</option>
+                                    <option>小莉莉团队</option>
+                                    <option>大尖团队</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">分管团队</label>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option>崔一团队</option>
+                                    <option>崔二团队</option>
+                                    <option>全部</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 jiantou">
+                                <i></i>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option>崔十一团队</option>
+                                    <option>崔十二团队</option>
+                                    <option>崔十三团队</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">分管医生</label>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option>崔尖</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 jiantou">
+                                <i></i>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option>小崔</option>
+                                    <option>大崔</option>
+                                    <option>崔崔</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">保存更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--身份证阅读器-->
+<OBJECT classid="clsid:10946843-7507-44FE-ACE8-2B3483D179B7" id="CVR_IDCard" name="CVR_IDCard" width="0"
+        height="0"></OBJECT>
+<!--医保卡阅读器-->
+<OBJECT classid=clsid:D9532F10-603B-4BF7-87AE-F4130EF43553 id="CSSCARDCtrl" HSPACE=0 VSPACE=0 width=0 height=0
+        align="center"></OBJECT>
+<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+        type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/esign/esign.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/idCardRead.js"></script>
+<script>
+    //是否同意更换团队
+    var SweetAlert = function () {
+        return {
+            init: function () {
+                $(".mt-sweetalert").each(function () {
+                    var t = $(this).data("title"), a = $(this).data("message"), s = $(this).data("type"),
+                        e = $(this).data("allow-outside-click"), n = $(this).data("show-confirm-button"),
+                        c = $(this).data("show-cancel-button"), o = $(this).data("close-on-confirm"),
+                        i = $(this).data("close-on-cancel"), l = $(this).data("confirm-button-text"),
+                        u = $(this).data("cancel-button-text"), h = $(this).data("popup-title-success"),
+                        d = $(this).data("popup-message-success"), r = $(this).data("popup-title-cancel"),
+                        f = $(this).data("popup-message-cancel"), p = $(this).data("confirm-button-class"),
+                        m = $(this).data("cancel-button-class"), w = $(this).data("html")
+                    $(this).click(function () {
+                        swal({
+                            title: t,
+                            text: a,
+                            html: w,
+                            type: s,
+                            allowOutsideClick: e,
+                            showConfirmButton: n,
+                            showCancelButton: c,
+                            confirmButtonClass: p,
+                            cancelButtonClass: m,
+                            closeOnConfirm: o,
+                            closeOnCancel: i,
+                            confirmButtonText: l,
+                            cancelButtonText: u
+                        }, function (t) {
+                            if (t) {
+                                console.log("同意事件");
+                                swal(h, d, "success");
+                            } else {
+                                console.log("拒绝事件");
+                                swal(r, f, "error");
+                            }
+                        })
+                    })
+                })
+            }
+        }
+    }();
+    jQuery(document).ready(function () {
+        SweetAlert.init();
+        $().esign("canvasEdit", "sign_show", "sign_clear", "sign_ok");
+        var h = document.body.offsetHeight;
+        $("#canvasEdit").height(h - 75);
+        $(".date-picker").attr("data-date", signData());
+        $(".date-picker input").val(signData());
+
+    });
+
+    $("#idCard").on("click", function () {
+        $("#editmodal").modal('show');
+        var data = Button1_onclick();
+        var ajax = "320500000000000000";
+
+        //判断该身份证的患者是否存在
+        if (data !== undefined) {
+            if (data.CardNo === ajax) {
+                //跳转至记录血压
+            }
+            else {
+                var pic = "data:image/jpeg;base64," + data.Picture;
+                $("#myPic").attr("src", pic);
+                $("#name").val(data.Name);
+                $("#cardNo").val(data.CardNo);
+            }
+        }
+        else {
+            var data2 = Button2_onclick();
+            if (data2 !== undefined) {
+                if (data2[1] === ajax) {
+                    //跳转至记录血压
+                }
+                else {
+                    $("#name").val(data2[4]);
+                    $("#cardNo").val(data2[1]);
+                }
+            }
+        }
+    });
+
+    //签约和添加家庭成员状态切换
+    $(".make-switch").bootstrapSwitch();
+    $(".bootstrap-switch-label").html("添加家庭成员");
+    $(".bootstrap-switch-label").css("color", "#dedede");
+    $('.make-switch').on('switchChange.bootstrapSwitch', function (event, state) {
+        //state为true，签约状态
+        if (state) {
+            $(".toggleModal").show(100)
+            $(".signModal").show(100);
+            $(".familyModal").hide(100);
+            $(".bootstrap-switch-label").html("添加家庭成员");
+        }
+        //state为false，添加家庭成员状态
+        else {
+            $(".toggleModal").hide(100)
+            $(".signModal").hide(100);
+            $(".familyModal").show(100);
+            $(".bootstrap-switch-label").html("签约");
+        }
+    });
+
+    function search(e) {
+        if ($(e).val() !== "") {
+            $(".mt-comments").show(100);
+            $(".mt-comments-null").hide(100);
+        }
+        else {
+            $(".mt-comments").hide(100);
+            $(".mt-comments-null").show(100);
+            $(".toggleModal").hide(100)
+        }
+    }
+
+    function familyClick() {
+        $(".toggleModal").show(100)
+    }
+
+    $("#signNext").click(function () {
+        $("#editmodal").modal("hide");
+        $("#qyxyModal").modal("show");
+    });
+
+    function preview(oper) {
+        if (oper < 10) {
+            bdhtml = window.document.body.innerHTML;//获取当前页的html代码
+            sprnstr = "<!--startprint" + oper + "-->";//设置打印开始区域
+            eprnstr = "<!--endprint" + oper + "-->";//设置打印结束区域
+            prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 18); //从开始代码向后取html
+            prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html
+            window.document.body.innerHTML = prnhtml;
+            window.print();
+            window.document.body.innerHTML = bdhtml;
+            $("#qyxyModal").modal("show");
+            $("#qyxyModal").modal("hide");
+            $(".modal-backdrop").remove();
+
+        }
+        else {
+            window.print();
+        }
+    }
+
+    function signData() {
+        var date = new Date();
+        var seperator1 = "-";
+        var seperator2 = ":";
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate;
+        // + " 至 " + (date.getFullYear() + 1) + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
+
+    $("body").delegate(".close-operation", "click", function() {
+        $("div[class^=sweet-]").css("display", "none");
+    })
+
+    $(".people_label").on("click", function() {
+       if($(this).hasClass("active")) {
+           $(this).removeClass("active");
+           $(".people_checkboxs").css("display", "none");
+       }  else {
+           $(this).addClass("active");
+           $(".people_checkboxs").css("display", "block");
+       }
+    });
+
+    //    姓名，身份证查询实时监控
+    $(".name_select").keydown(function() {//给输入框绑定按键事件
+        if(event.keyCode == "13") {//判断如果按下的是回车键则执行下面的代码
+            alert($(this).val());//弹出提示信息
+            $(this).blur();
+        }})
+    //    按身份证号查询
+    $(".id_select").keydown(function() {//给输入框绑定按键事件
+        if(event.keyCode == "13") {//判断如果按下的是回车键则执行下面的代码
+            alert($(this).val());//弹出提示信息
+            $(this).blur();
+        }})
+    //    监控审核查询
+    $('.examine').bind('input propertychange', function() {
+        console.log($(this).val());//value 值
+        console.log($(this).find("option:selected").text());//获取当前选中的text值
+    });
+    //    微信绑定查询
+    $('.wxbd').bind('input propertychange', function() {
+        console.log($(this).val());//value 值
+        console.log($(this).find("option:selected").text());//获取当前选中的text值
+    });
+
+    $(function() {
+        /* 下拉框可以被搜索 */
+        $('.js-example-basic-single').select2({
+            language:'zh-CN'
+        });
+        $('.select_div').find(".select2 ").addClass("form-control");
+    })
+</script>

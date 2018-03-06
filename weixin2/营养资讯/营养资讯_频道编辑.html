@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        .weui-cells__title {
+            margin: 0;
+            padding: 15px;
+        }
+        .channels_title {
+            font-size: 16px;
+            color: #000;
+            margin-right: 10px;
+        }
+        .nutrition_ul {
+            display: inline-block;
+            clear: both;
+            padding: 5px 15px;
+        }
+        .nutrition_ul li {
+            float: left;
+            margin: 8px 5px;
+            padding: 4px 10px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            border-radius: 6px;
+            position: relative;
+        }
+        .my_channel_title .btn{
+            margin-left: 10px;
+            padding: 2px 5px;
+            outline: none;
+            border-radius: 3px;
+            border: 0;
+            height: 22px;
+            line-height: 22px;
+        }
+        .my_channel_title .btn_edit {
+            background-color: #ccc;
+            color: #fff;
+        }
+        .my_channel_title .btn_ok {
+            display: none;
+            background-color: #1aad19;
+            color: #fff;
+        }
+        .close_btn {
+            font-size: 20px;
+            display: inline-block;
+            transform:rotate(45deg);
+            float: right;
+            margin-top: -10px;
+            margin-right: -5px;
+        }
+        .close_label {
+            display: none;
+            transform:rotate(45deg);
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            width: 14px;
+            height: 14px;
+            font-size: 16px;
+            border-radius: 50%;
+            background-color: #ccc;
+            line-height: 14px;
+            text-align: center;
+        }
+        .my_channel.active .close_label {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div style="background-color: #fff;">
+        <div class="weui-cells__title my_channel_title">
+            <span class="channels_title">我的频道</span>
+            <span class="channels_tips">点击编辑后可以拖拽/删除</span>
+            <button class="btn btn_edit">编辑</button>
+            <button class="btn btn_ok">完成</button>
+            <span class="close_btn">+</span>
+        </div>
+        <ul class="nutrition_ul my_channel special">
+            <li><span class="label_name">儿童</span><span class="close_label">+</span></li>
+            <li><span class="label_name">高血压</span><span class="close_label">+</span></li>
+            <li><span class="label_name">高血脂</span><span class="close_label">+</span></li>
+            <li><span class="label_name">高血糖</span><span class="close_label">+</span></li>
+            <li><span class="label_name">糖尿病</span><span class="close_label">+</span></li>
+            <li><span class="label_name">老年人</span><span class="close_label">+</span></li>
+            <li><span class="label_name">亚健康</span><span class="close_label">+</span></li>
+            <li><span class="label_name">孕妇</span><span class="close_label">+</span></li>
+            <li><span class="label_name">艾滋病</span><span class="close_label">+</span></li>
+            <li><span class="label_name">残疾人</span><span class="close_label">+</span></li>
+        </ul>
+    </div>
+    <div class="weui-cells__title">
+        <span class="channels_title">推荐频道</span>
+        <span>点击添加频道</span>
+    </div>
+    <ul class="nutrition_ul rec-channel">
+        <li>心脏病</li>
+        <li>老年痴呆</li>
+        <li>残疾人</li>
+        <li>精神障碍</li>
+        <li>慢性病</li>
+        <li>精神病</li>
+    </ul>
+</div>
+
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script src="../js/Sortable.min.js"></script>
+
+<script>
+    $(function() {
+
+        /* 使用sortable插件进行元素的拖拽排序 */
+        var el = $(".my_channel");
+        var sortable = Sortable.create(el[0],{
+            disabled: true,
+        });
+
+        /* 点击我的频道的编辑按钮，可以编辑拖拽排序和删除 */
+        $(".btn_edit").on("click", function() {
+            $(".my_channel").addClass("active");
+            $(this).css("display", "none");
+            $(".my_channel_title .btn_ok").css("display", "inline-block");
+            $(this).parent().find(".channels_tips").text("点击完成后不可拖拽/删除");
+
+            sortable.options.disabled = false;
+        });
+
+        /* 点击我的频道中的删除按钮，该频道回到推荐频道中 */
+        $(".my_channel").delegate(".close_label", "click", function() {
+            var value = $(this).parent().find(".label_name").text();
+            $(this).parent().remove();
+            var html = "<li>" + value + "</li>";
+            $(".rec-channel li:last-child").after(html);
+        });
+
+        /* 点击完成按钮后，不可再编辑我的频道中的内容 */
+        $(".btn_ok").on("click", function() {
+            $(".my_channel").removeClass("active");
+            $(this).css("display", "none");
+            $(".my_channel_title .btn_edit").css("display", "inline-block");
+            $(this).parent().find(".channels_tips").text("点击编辑后可以拖拽/删除");
+
+            sortable.options.disabled = true;
+        });
+
+        /* 点击推荐频道添加到我的频道中 */
+        $(".rec-channel").delegate("li", "click", function() {
+            var value = $(this).text();
+            $(this).remove();
+            var html = "<li><span class='label_name'>" + value + "</span><span class='close_label'>+</span></li>";
+            $(".my_channel li:last-child").after(html);
+        });
+
+        /* 从URL中获取当前的频道 */
+        var channel_value = getUrlParam("channel_value");
+        if(channel_value == "") {
+            channel_value = 1;
+        }
+        console.log("channel_value11111===", channel_value);
+
+        /* 点击频道编辑页面关闭按钮,当我的频道模块还在编辑时，先完成在关闭页面，然后更换营养资讯头部的导航栏 */
+        $(".close_btn").on("click", function() {
+            location.href = "营养资讯.html?channel_value=" + channel_value;
+        });
+
+        /*  */
+        $(".my_channel").delegate(".label_name", "click", function() {
+            var html = $(this);
+            if(!$(".my_channel").hasClass("active")) {
+                var spans = $(".my_channel .label_name");
+                for(var i = 0; i<spans.length; i++) {
+                    if(spans[i] == html[0]) {
+                        flag = false;
+                        location.href = "营养资讯.html?channel_value=" + i;
+                    }
+                }
+            }
+        });
+    })
+
+    /* 从Url中获取参数的值 */
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        } else {
+            return "";
+        }
+    }
+</script>
+</body>
+</html>

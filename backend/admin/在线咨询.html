@@ -1,0 +1,30 @@
+<div class="portlet">
+    <div class="portlet-title tabbable-line" style="padding: 0 15px;">
+        <ul class="nav nav-tabs" style="float: left">
+            <li class="active">
+                <a href="#notReply" data-toggle="tab" aria-expanded="true"> 未回复 </a>
+            </li>
+            <li class="">
+                <a href="#reply" data-toggle="tab" aria-expanded="true"> 已回复 </a>
+            </li>
+        </ul>
+    </div>
+    <div class="portlet-body">
+        <div class="tab-content">
+            <div class="tab-pane active" id="notReply">
+
+            </div>
+            <div class="tab-pane" id="reply">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<script src="../assets/global/plugins/masonry/masonry.pkgd.min.js"></script>
+<script>
+    $(function () {
+        $("#notReply").load("在线咨询_未回复.html");
+        $("#reply").load("在线咨询_已回复.html");
+    });
+</script>

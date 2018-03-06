@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_286960_553fy5wsp1uu9pb9.css">
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/f.css"/>
+    <link rel="stylesheet prefetch" href="../css/photoswipe.css">
+    <link rel="stylesheet prefetch" href="../css/default-skin/default-skin.css">
+    <!--<link rel="stylesheet" href="../css/营养师.css">-->
+    <script src="../js/photoswipe.js"></script>
+    <script src="../js/photoswipe-ui-default.min.js"></script>
+    <title>咨询界面</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+        }
+        #wrapper{
+            position: static;
+            background-color: #fff;
+            height:60%;
+
+        }
+        #scroller{
+            /*height:60%;*/
+            background-color: #eaeaea;
+            /*overflow: hidden;*/
+            /*overflow-y: auto;*/
+        }
+        /*#thelist{*/
+            /*height: auto;*/
+            /*width:100%;*/
+
+        /*}*/
+
+
+        .Symptom{
+            width:100%;
+            height:40%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #9AA5AD;
+        }
+        .Symptom_1{
+            width:100%;
+            height:100%;
+            border: none;
+            outline: none;
+            resize:none;
+        }
+
+        footer{
+            position: fixed;
+            bottom: 0;
+            left:0;
+            width:100%;
+            height:40px;
+
+        }
+        .submit1{
+            width:100%;
+            height:100%;
+            box-sizing: border-box;
+            border: none;
+            background-color: #00b477;
+            color: #fff;
+            font-size: 20px;
+        }
+        .up{
+            width:100%;
+            height:60%;
+            box-sizing: border-box;
+            padding-bottom: 10px;
+        }
+        .tishi{
+            width:100%;
+            line-height: 20px;
+            font-size: 12px;
+            color: #888888;
+        }
+        .weui-uploader__input-box {
+            float: left;
+            position: relative;
+            margin-right: 9px;
+            margin-bottom: 9px;
+            width: 100%;
+            height: 77px;
+            border: 1px dashed  #d9d9d9;
+        }
+        .weui-uploader__input-box:before {
+            width: 2px;
+            height: 39.5px;
+        }
+        .weui-uploader__input-box:before, .weui-uploader__input-box:after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #d9d9d9;
+        }
+        .weui-uploader__input {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left:100%;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            /*-webkit-tap-highlight-color: rgba(0,0,0,0);*/
+            background-color: red;
+        }
+        .weui-uploader__input-box:after {
+            width: 39.5px;
+            height: 2px;
+        }
+        .weui-uploader__input-box:before, .weui-uploader__input-box:after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            background-color: #d9d9d9;
+        }
+
+        #preview5 {
+            margin: 0!important;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .add_pic{
+            width:100%;
+            height:77px;
+            opacity:0;
+        }
+        .link{
+            display:inline-block;
+            box-sizing: border-box;
+            margin-top: 0!important;
+            width:23%;
+            height:77px;
+            margin-right: 5px;
+            border: 1px solid #888888;
+        }
+        .link1{
+            width:100%;
+            height:100%;
+        }
+        .yanzRight{
+            display: inline-block;
+        }
+        .hidden{
+            display: none;!important;
+        }
+        .bianji{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0 10px 40px 10px;
+            height: 40%;
+            width:100%;
+            background-color: #fff;
+        }
+        .yanzRight{
+            width:23%;
+        }
+        .speechkuang{
+            position: relative;
+            box-sizing: border-box;
+            padding: 20px 10px;
+            width:100%;
+            height:auto;
+
+        }
+        .me_speech{
+           display: flex;
+           justify-content: flex-end;
+        }
+        .yisheng_speech{
+            display: flex;
+            justify-content: flex-start;
+        }
+        .touxiang{
+            left:10px;
+            width: 40px;
+            height:40px;
+        }
+        .speech{
+            max-width:calc(100% - 100px);
+            font-size: 12px;
+            color: #000;
+            line-height: 20px;
+            display: inline-block;
+            padding: 10px;
+            background-color: pink;
+            height:auto;
+            overflow: hidden;
+            border-radius: 5px;
+            word-wrap: break-word;
+            margin:  0 20px;
+            z-index: 100;
+        }
+        .speech_img{
+            padding: 0;
+            border: 0;
+        }
+        .speech img{
+            max-width: 100%;
+            max-height: 200px;
+            vertical-align:middle;
+        }
+        .speech_yisheng{
+            margin:  0 15px;
+            background-color: #fff;
+        }
+        .zhizhen{
+            position: absolute;
+            top:30px;
+            right:50px;
+            width:0;
+            height:0;
+            display:block;
+            border-top:10px transparent dashed;
+            border-left:10px pink solid;
+            border-bottom:10px transparent dashed;
+            border-right:10px transparent dashed;
+            overflow:hidden;
+        }
+        .zhizhen_img{
+            box-sizing: border-box;
+            position: absolute;
+            top:30px;
+            right:62px;
+            width:16px;
+            height:16px;
+            /*display:block;*/
+            overflow: hidden;
+            transform: rotate(45deg);
+        }
+        .zhizhen_imgys{
+            left:58px;
+        }
+        .zhizhen_img img{
+            width:100%;
+            height:100%;
+        }
+        .zhizhen_yisheng{
+            left: 45px !important;
+            border-right:10px #fff solid!important;
+            border-left:10px transparent dashed!important;
+        }
+        .weui-uploader__input-box{
+            width:70px;
+            height:70px;;
+            margin:  0 5px;
+        }
+        .weui-uploader__input{
+            position: absolute;
+            left: 0;
+            width:100%;
+            height:100%;
+        }
+        .weui-uploader__file{
+            width: 70px !important;
+            height: 70px !important;
+            margin: 0 5px;
+        }
+        .uploader_tips{
+            margin: 0!important;
+            font-size: 12px;
+            line-height: 30px;
+        }
+        #pullDown {
+            text-align: center;
+            padding: 15px 0;
+        }
+        .pullDownLabel {
+            color: #666;
+            font-size: 12px;
+            overflow-y: auto;
+            height: 100%;
+        }
+        .my-gallery{
+            display: none;
+        }
+    </style>
+</head>
+<body class="Chat" ontouchstart>
+<div id="wrapper">
+    <div id="scroller">
+        <div id="pullDown">
+            <span class="pullDownLabel">上拉加载更多...</span>
+        </div>
+
+        <div id="thelist">
+            <div class="details">
+                <div class="speechkuang me_speech">
+                    <div class="speech">在此描述在此描述在此描述在此描述在此描述</div>
+                    <img class="touxiang me_touxiang" src="../images/440364196732792978.png" alt="">
+                    <div class="zhizhen"></div>
+                </div>
+                <div class="speechkuang me_speech">
+                    <div class="speech speech_img">
+                        <img src="../images/fwb_jkgl.png" alt="">
+                    </div>
+                    <img class="touxiang me_touxiang" src="../images/440364196732792978.png" alt="">
+                    <div class="zhizhen_img">
+                        <img src="../images/fwb_jkgl.png" alt="">
+                    </div>
+                </div>
+                <div class="speechkuang yisheng_speech">
+                    <img class="touxiang touxiang_yisheng" src="../images/doctor.png" alt="">
+                    <div class="speech speech_yisheng">456</div>
+                    <div class="zhizhen zhizhen_yisheng"></div>
+                </div>
+                <div class="speechkuang yisheng_speech">
+                    <img class="touxiang touxiang_yisheng" src="../images/doctor.png" alt="">
+                    <div class="speech speech_yisheng speech_img">
+                        <img src="../images/fwb_gxt.png" alt="">
+                    </div>
+                    <div class="zhizhen_img zhizhen_imgys">
+                        <img src="../images/fwb_gxt.png" alt="">
+                    </div>
+                </div>
+                <div class="speechkuang me_speech">
+                    <div class="speech">在此描述在</div>
+                    <img class="touxiang me_touxiang" src="../images/440364196732792978.png" alt="">
+                    <div class="zhizhen"></div>
+                </div>
+                <div class="speechkuang yisheng_speech">
+                    <img class="touxiang touxiang_yisheng" src="../images/doctor.png" alt="">
+                    <div class="speech speech_yisheng">上拉加载更多上拉加载更多上拉加载更多</div>
+                    <div class="zhizhen zhizhen_yisheng"></div>
+                </div>
+            </div>
+
+        </div>
+        <div id="pullUp">
+            <!--<span class="pullUpLabel">下拉加载更多...</span>-->
+        </div>
+    </div>
+</div>
+<!--症状和图片-->
+<div class="bianji">
+    <!--症状填写-->
+    <div class="Symptom">
+        <textarea type="text" class="Symptom_1" placeholder="在此描述并输入您的症状"></textarea>
+    </div>
+    <!--<div class="Symptom_kuang">-->
+    <!--上传照片-->
+    <div class="up">
+        <div class="weui-uploader">
+            <div class="weui-uploader__bd">
+                <p class="uploader_tips">选择上传症状照片/病例/检查单，方便医生做诊断（不超过4张）</p>
+                <ul class="weui-uploader__files" id="uploaderFiles"></ul>
+                <div class="weui-uploader__input-box">
+                    <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--提交-->
+<footer>
+    <button class="submit1">提交</button>
+</footer>
+
+<!--删除图片页-->
+<div class="weui-gallery" id="gallery" style="display: none;">
+    <span class="weui-gallery__img" id="galleryImg" style="background-image:url()"></span>
+    <div class="weui-gallery__opr">
+        <a href="javascript:" class="weui-gallery__del">
+            <i class="weui-icon-delete weui-icon_gallery-delete"></i>
+        </a>
+    </div>
+</div>
+
+<!--实现点击图片放大可以滑动，加入四个css和两个js -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+    It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+        PhotoSwipe keeps only 3 of them in the DOM to save memory.
+        Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!-- Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter" style="display: block;"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)" style="display: block; visibility: visible;">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)" style="display: block; visibility: visible;">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--聊天的所有图片-->
+<div class="my-gallery" data-pswp-uid="1">
+    <figure>
+        <a href="../images/fwb_jkgl.png" data-size="472x314">
+            <img src="../images/fwb_jkgl.png">
+        </a>
+    </figure>
+    <figure>
+        <a href="../images/fwb_gxt.png" data-size="472x314">
+            <img src="../images/fwb_gxt.png">
+        </a>
+    </figure>
+
+</div>
+
+
+
+
+
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/iscroll.js"></script>
+<script src="../js/f.js"></script>
+<script src="../js/报告单.js"></script>
+
+<!--添加图片-->
+
+<script>
+//    点击聊天图
+
+    $(".speech img").each(function(index,value){
+        $(".speech img").eq(index).click(function () {
+            $("figure img").eq(index).click();
+        })
+    });
+
+
+
+
+    //    上拉刷新
+    function grain() {
+        var data = [
+            {
+                id: "1",
+                title: "在此描述在此描述在此描述在此描述在此描述",
+                time: "2017年02月04日",
+                name: "付华",
+                href: "卫生资讯_详情.html？a=1",
+                look: 2,
+                img:"../images/doctor.png"
+            }
+        ];
+        return data;
+    }
+
+    f.loaded(grain(), "Chat");
+</script>
+<!--上传-->
+<script>
+    $("#date").val(f.signData());
+
+    $(".fix_btn button").on("click", function () {
+        if (f.reg_photo($(".weui-uploader__files").find("li").length)) {
+
+            //上传时置灰按钮
+            $(this).removeClass("weui-btn_primary");
+            $(this).attr("type", "default");
+            $(this).attr("disabled", "true");
+            $(this).text("上传中...");
+
+            f.successToptips("上传成功", "个人中心.html");
+        }
+    })
+
+
+
+
+    //点击大图下面的删除按钮，删除图片
+    $(".weui-gallery .weui-gallery__del").on("click", function() {
+//        当图片小于四张，显示input框
+        if($('#uploaderFiles').find('li').length <= 4){
+            $('.weui-uploader__input-box').show();
+        }
+        console.log($('#uploaderFiles').find('li').length);
+        var pa = /.*\((.*)\)/;
+        var imgPath = "";
+        //获取大图地址
+        var imgs = $(this).parent().parent().find(".weui-gallery__img");
+        $.each(imgs, function(index, img) {
+            imgPath = img.getAttribute("style").match(pa)[1];
+        });
+        //获取图片列表，与大图匹配
+        var lis = $(".weui-uploader__files li");
+        $.each(lis, function(index, li) {
+            var path = li.getAttribute("style").match(pa)[1];
+            if(imgPath == path) {
+                $(li).remove();
+                return false;
+            }
+        });
+
+    });
+//    当图片大于四张隐藏input框
+    $("#uploaderInput").on("change",function(){
+        if($('#uploaderFiles').find('li').length >=3){
+            $('.weui-uploader__input-box').hide();
+        }
+    })
+
+</script>
+
+
+
+</body>
+</html>

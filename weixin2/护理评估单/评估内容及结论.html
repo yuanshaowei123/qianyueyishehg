@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0">
+    <title>评估内容及结论</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        html {
+            background-color: #fff;
+        }
+        .text {
+            width: 22.333333rem;
+            height: 8.666667rem;
+            margin: 1.333333rem 1rem 0rem;
+            font-size: 1rem;
+            color: #b2b2b2;
+            background-color: #eee;
+            border: none;
+            padding: 0.333333rem;
+            outline: none;
+        }
+        .weui-btn-rea {
+            height: 3rem;
+        }
+        .weui-btn-rea .weui-btn_primary {
+            font-size: 1.2rem;
+        }
+        @media screen and (min-device-width: 1080px) {
+            .text {
+                width: 90%;
+                height: 270px;
+                margin: 40px 30px 0px;
+                font-size: 30px;
+                color: #b2b2b2;
+                background-color: #eee;
+                border: none;
+                padding: 10px;
+                outline: none;
+            }
+            .weui-btn-rea {
+                height: 90px;
+            }
+            .weui-btn-rea .weui-btn_primary {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div style="text-align: center">
+        <textarea class="text" placeholder="请填写评估内容及结论"></textarea>
+    </div>
+    <div class="weui-btn-rea fix_btn">
+        <a class="weui-btn weui-btn_primary">保存</a>
+    </div>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script>
+    $(function () {
+        cal();
+    });
+
+    window.onresize = function(){
+        cal();
+    };
+
+    function cal() {
+        if(screen.width < 1080) {
+            //通过window.screen.width获取屏幕的宽度
+            var width = screen.width * 2;
+            var zoom = (width/750) * 2.8;
+            $("input[type=checkbox]").css("zoom", zoom);
+
+            var offWidth = width / 25; //这里用宽度/30表示1rem取得的px
+            document.getElementsByTagName("html")[0].style.fontSize = offWidth + 'px'; //把rem的值复制给顶级标签html的font-size
+        }
+    };
+
+    $(".fix_btn a").on("click", function () {
+        location.href = "护理评估单.html"
+    });
+</script>
+</body>
+</html>

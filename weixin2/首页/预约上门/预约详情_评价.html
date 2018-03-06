@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>评价</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/starability-all.css"/>
+</head>
+<body ontouchstart>
+<div class="appointment_common container">
+    <div class="weui-cells assessment">
+        <div class="weui-cell" style="display: block">
+            <h4>家庭医生团队响应时间(35分钟)</h4>
+            <fieldset class="starability-basic star-area">
+                <input type="radio" id="rate5-1" name="rating" value="5"/>
+                <label for="rate5-1" title="Amazing">5 stars</label>
+
+                <input type="radio" id="rate4-1" name="rating" value="4"/>
+                <label for="rate4-1" title="Very good">4 stars</label>
+
+                <input type="radio" id="rate3-1" name="rating" value="3"/>
+                <label for="rate3-1" title="Average">3 stars</label>
+
+                <input type="radio" id="rate2-1" name="rating" value="2"/>
+                <label for="rate2-1" title="Not good">2 stars</label>
+
+                <input type="radio" id="rate1-1" name="rating" value="1"/>
+                <label for="rate1-1" title="Terrible">1 star</label>
+            </fieldset>
+        </div>
+        <div class="weui-cell" style="display: block">
+            <h4>测血压(刘芳芳)</h4>
+            <fieldset class="starability-basic star-area">
+                <input type="radio" id="rate5-2" name="rating1" value="5"/>
+                <label for="rate5-2" title="Amazing">5 stars</label>
+
+                <input type="radio" id="rate4-2" name="rating1" value="4"/>
+                <label for="rate4-2" title="Very good">4 stars</label>
+
+                <input type="radio" id="rate3-2" name="rating1" value="3"/>
+                <label for="rate3-2" title="Average">3 stars</label>
+
+                <input type="radio" id="rate2-2" name="rating1" value="2"/>
+                <label for="rate2-2" title="Not good">2 stars</label>
+
+                <input type="radio" id="rate1-2" name="rating1" value="1"/>
+                <label for="rate1-2" title="Terrible">1 star</label>
+            </fieldset>
+        </div>
+        <div class="weui-cell" style="display: block">
+            <h4>测血糖(李雷)</h4>
+            <fieldset class="starability-basic star-area">
+                <input type="radio" id="rate5-3" name="rating2" value="5"/>
+                <label for="rate5-3" title="Amazing">5 stars</label>
+
+                <input type="radio" id="rate4-3" name="rating2" value="4"/>
+                <label for="rate4-3" title="Very good">4 stars</label>
+
+                <input type="radio" id="rate3-3" name="rating2" value="3"/>
+                <label for="rate3-3" title="Average">3 stars</label>
+
+                <input type="radio" id="rate2-3" name="rating2" value="2"/>
+                <label for="rate2-3" title="Not good">2 stars</label>
+
+                <input type="radio" id="rate1-3" name="rating2" value="1"/>
+                <label for="rate1-3" title="Terrible">1 star</label>
+            </fieldset>
+        </div>
+    </div>
+    <div class="weui-cells__title">意见</div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <textarea id="symptom" class="weui-textarea" placeholder="说说您的意见吧！" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells__tips " style="margin-bottom:61px;">
+        <i></i>您的评价将以匿名形式发送
+    </div>
+</div>
+<div class="weui-btn-rea fix_btn">
+    <a class="weui-btn weui-btn_primary">提交评价</a>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    $(".fix_btn a").on("click", function () {
+        var inputNum = $("input[name^='rating']").length;
+        var checkedInputNum = $("input[name^='rating']:checked").length;
+        if ((inputNum/5) != checkedInputNum) {
+            f.toptips("请评分");
+        }
+        else {
+            f.successToptips("评价成功", "../首页.html");
+        }
+    });
+</script>
+</body>
+</html>

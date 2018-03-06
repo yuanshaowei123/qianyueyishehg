@@ -1,0 +1,269 @@
+<style>
+    .lbt_table .up_icon {
+        background: url("../images/up_icon.png") no-repeat center;
+        height: 40px;
+        width: 40px;
+        background-size: 25px 25px;
+        display: block;
+        cursor: pointer;
+    }
+    .lbt_table tr .operation_btn {
+        margin-top: 0px;
+        margin-right: 10px;
+    }
+    .lbt_table .team_name {
+        max-width: 200px;
+    }
+    .lbt_table .team_name span {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .lbt_info .control-label {
+        margin-top: 0;
+        height: 34px;
+        line-height: 34px;
+        padding-top: 0;
+    }
+    .lbt_info .form-group {
+        margin-bottom: 30px;
+    }
+</style>
+<div class="col-md-12">
+    <!-- BEGIN PORTLET-->
+    <div class="portlet light portlet-fit" style="margin-bottom: 0;min-height: 650px;">
+        <header class="panel-heading" style="background: #fff;">
+            <div class="form-group col-md-12" style="margin-bottom: 0;">
+                <button href="#addBanner" data-toggle="modal" class="btn btn-primary"
+                        style="float: right;border-radius: 15px!important;" onclick="editbanner(1)">添加轮播图
+                </button>
+            </div>
+            <div style="clear: both;"></div>
+        </header>
+        <div class="portlet-body onlineConsulting">
+            <div class="table-scrollable table-scrollable-borderless">
+                <table class="table table-hover table-light lbt_table">
+                    <thead>
+                    <tr class="uppercase">
+                        <th>编号</th>
+                        <th>名称</th>
+                        <th>开始日期</th>
+                        <th>
+                            <select style="padding: 3px;">
+                                <option>状态</option>
+                                <option>开启</option>
+                                <option>关闭</option>
+                            </select>
+                        </th>
+                        <th>点击次数</th>
+                        <th>上升</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="team_name">
+                                <span>
+                                    签约活动周开签约活动开始啦！
+                                </span>
+                            </td>
+                            <td>2017-10-30</td>
+                            <td>开启</td>
+                            <td>99次</td>
+                            <td><i class="up_icon"></i></td>
+                            <td>
+                                <a href="#addBanner" data-toggle="modal" class="operation_btn edit_btn" onclick="editbanner(2)">编辑</a>
+                                <a class="operation_btn delete_btn">删除</a>
+                                <a class="operation_btn top_btn">置顶</a>
+                                <a class="operation_btn preview_btn" style="background-image: url(../images/fwb_wksk.png);background-size: 0px;"
+                                   data-toggle="modal" href="#onlineConsultingImg">
+                                    预览图片
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>签约活动周开始啦！</td>
+                            <td>2017-10-30</td>
+                            <td>开启</td>
+                            <td>99次</td>
+                            <td><i class="up_icon"></i></td>
+                            <td>
+                                <a href="#addBanner" data-toggle="modal" class="operation_btn edit_btn" onclick="editbanner(2)">编辑</a>
+                                <a class="operation_btn delete_btn">删除</a>
+                                <a class="operation_btn top_btn">置顶</a>
+                                <a class="operation_btn preview_btn" style="background-image: url(../images/fwb_wksk.png);background-size: 0px;"
+                                   data-toggle="modal" href="#onlineConsultingImg">
+                                    预览图片
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>签约活动周开始啦！</td>
+                            <td>2017-10-30</td>
+                            <td>开启</td>
+                            <td>99次</td>
+                            <td><i class="up_icon"></i></td>
+                            <td>
+                                <a href="#addBanner" data-toggle="modal" class="operation_btn edit_btn" onclick="editbanner(2)">编辑</a>
+                                <a class="operation_btn delete_btn">删除</a>
+                                <a class="operation_btn top_btn">置顶</a>
+                                <a class="operation_btn preview_btn" style="background-image: url(../images/fwb_wksk.png);background-size: 0px;"
+                                   data-toggle="modal" href="#onlineConsultingImg">
+                                    预览图片
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr style="margin-top: 0">
+            <div id="pagetoolbar" class="">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 text-right">
+                        <div class="">
+                            <ul id="nav_list_pagetoolbar" class="pagination pagination_custom" unselectable="on"9
+                                style="user-select: none;">
+                                <li class="active">
+                                    <a id="nav_item_pagetoolbar_1" href="javascript:void(0);"
+                                       title="Page 1 of 1">1</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="clear: both"></div>
+
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addBanner"
+     class="modal fade in lbt_info" data-backdrop="static">
+    <div class="modal-dialog" style="width: 700px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">上传图片</label>
+
+                        <div class="col-md-4">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-preview fileinput-exists thumbnail">
+
+                                </div>
+                                <div>
+                                    <span class="btn default btn-file">
+                                        <span class="fileinput-new">选择图片</span>
+                                        <span class="fileinput-exists">重新选择</span>
+                                        <input type="file" name="...">
+                                    </span>
+                                    <a href="javascript:;" class="btn red fileinput-exists"
+                                       data-dismiss="fileinput">删除
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="height: 34px; line-height: 34px;">(图片标准大小：710x268)</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">图片链接</label>
+
+                        <div class="col-md-4">
+                            <select class="form-control">
+                                <option>全科学堂</option>
+                                <option>信息通告</option>
+                                <option>宣教</option>
+                            </select>
+                        </div>
+                        <div class="col-md-5">
+                            <select class="form-control">
+                                <option>重磅好消息：苏大附一院内分泌王金红主任本周六（10月14日）</option>
+                                <option>重磅好消息：苏大附一院内分泌王金红主任本周六（10月14日）</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">是否开启</label>
+                        <div class="col-md-4">
+                            <select class="form-control">
+                                <option>开启</option>
+                                <option>关闭</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label">开始日期</label>
+                        <div class="col-md-4">
+                            <!--<input class="form-control" type="date" />-->
+                            <div id="dataPicker_start" class="input-group input-large date-picker input-daterange"
+                                 data-date="2016-08"
+                                 data-date-format="yyyy-mm-dd" data-date-minviewmode="day">
+                                <input type="text" class="date-select-input form-control" name="start-date" value="">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade in" id="onlineConsultingImg" tabindex="-1" role="onlineConsultingImg" aria-hidden="true"
+     style="display: none; padding-right: 17px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img class="modalImg" src="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //点击预览图片
+    smallImg = $(".lbt_table tr");
+    bigImg = $(".modalImg");
+    var pa = /.*\((.*)\)/;
+
+    smallImg.on("click", ".preview_btn", function () {
+        bigImg.attr("src", this.getAttribute("style").match(pa)[1]);
+        console.log(this.getAttribute("style").match(pa)[1]);
+    });
+
+    //点击弹出编辑框，判断是新增还是更新
+    function editbanner(e) {
+        if(e == 1) {
+            $("#addBanner .modal-title").html("添加轮播图");
+        } else {
+            $("#addBanner .modal-title").html("编辑轮播图");
+        }
+    }
+
+    //初期化轮播图弹出框里的开始日期，最小日期为当天
+    var date = new Date();
+    var month = date.getMonth() + 1;
+    if(month < 10) {
+        month = "0" + month;
+    }
+    var n = date.getFullYear() + "-" + month + "-" + date.getDate();
+    var startDate = $("input[name='start-date']");
+    startDate.val(n);
+
+    $('#dataPicker_start').datepicker({
+        autoclose: true,
+        startDate: n
+    });
+</script>

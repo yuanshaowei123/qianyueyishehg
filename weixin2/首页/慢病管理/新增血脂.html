@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>血脂</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-form-preview">
+        <div class="weui-form-preview__hd">
+            <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">血脂参考范围</label>
+            </div>
+        </div>
+        <div class="weui-form-preview__bd">
+            <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">总胆固醇（mmol/L）</label>
+                <span class="weui-form-preview__value">小于5.18</span>
+            </div>
+            <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">高密度脂蛋白（mmol/L）</label>
+                <span class="weui-form-preview__value">1.04~1.55</span>
+            </div>
+            <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">低密度脂蛋白（mmol/L）</label>
+                <span class="weui-form-preview__value">小于3.37</span>
+            </div>
+            <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">甘油三脂（mmol/L）</label>
+                <span class="weui-form-preview__value">小于1.7</span>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells weui-cells_form">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">总胆固醇</label></div>
+            <div class="weui-cell__bd">
+                <input id="dgc" class="weui-input" type="number" pattern="[0-9]*" placeholder="mmol/L">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">高密度脂蛋白</label></div>
+            <div class="weui-cell__bd">
+                <input id="gdb" class="weui-input" type="number" pattern="[0-9]*" placeholder="mmol/L">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">低密度脂蛋白</label></div>
+            <div class="weui-cell__bd">
+                <input id="ddb" class="weui-input" type="number" pattern="[0-9]*" placeholder="mmol/L">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">甘油三脂</label></div>
+            <div class="weui-cell__bd">
+                <input id="gysz" class="weui-input" type="number" pattern="[0-9]*" placeholder="mmol/L">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui-btn-rea fix_btn onlineConsulting_btn">
+    <button class="weui-btn weui-btn_primary">确认录入</button>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    $(".fix_btn button").on("click", function () {
+        if (f.reg_common($("#dgc").val(), "总胆固醇") &&
+            f.reg_common($("#gdb").val(), "高密度脂蛋白") &&
+            f.reg_common($("#ddb").val(), "低密度脂蛋白") &&
+            f.reg_common($("#gysz").val(), "甘油三脂")
+        ) {
+
+            //录入时置灰按钮
+            $(this).removeClass("weui-btn_primary");
+            $(this).attr("type", "default");
+            $(this).attr("disabled", "true");
+            $(this).text("录入中...");
+
+
+            //录入成功后清空输入框里的文字
+            var inputs = $("input.weui-input");
+            for(var i = 0; i < inputs.length; i++) {
+                $(inputs[i])[0].value = "";
+            }
+
+            f.successToptips("录入成功", "慢病管理.html")
+        }
+    })
+</script>
+</body>
+</html>

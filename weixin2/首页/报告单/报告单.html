@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>报告单</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <link rel="stylesheet prefetch" href="../../css/photoswipe.css">
+    <link rel="stylesheet prefetch" href="../../css/default-skin/default-skin.css">
+    <script src="../../js/photoswipe.js"></script>
+    <script src="../../js/photoswipe-ui-default.min.js"></script>
+    <style>
+        #thelist {
+            padding-top: 32px;
+        }
+
+        .weui-uploader__file {
+            margin-right: 9px;
+        }
+        .bgd_delete {
+            float: right;
+        }
+        .bgd_delete button {
+            background-color: #00a5e0;
+            color: #fff;
+            padding: 2px 5px;
+            border: none;
+            outline: none;
+            margin-top: -4px;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+        .pswp__button--arrow--left {
+            display: block;
+        }
+        figure {
+            float: left;
+            margin-right: 10px;
+        }
+        figure img {
+            width: 100px;
+            height: 100px;
+        }
+        .pswp__zoom-wrap img {
+            user-select: text;
+            -webkit-touch-callout: default;
+        }
+    </style>
+</head>
+<body ontouchstart class="report">
+<div class="weui-toptips weui-toptips_primary js_tooltips">2017年09月19日</div>
+<div id="wrapper">
+    <div id="scroller">
+        <div id="pullDown">
+        </div>
+        <div id="thelist">
+            <div class="weui-panel">
+                <div class="weui-panel__bd" data-time="2017年09月19日">
+                    <div class="weui-media-box_text">
+                        <div class="weui-cells" style="margin-top: 0">
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd">
+                                    <label class="weui-label">报告类型</label>
+                                </div>
+                                <div class="weui-cell__ft">体检</div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd">
+                                    <label class="weui-label">就诊日期</label>
+                                </div>
+                                <div id="birth" class="weui-cell__ft">2017-09-19</div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd">
+                                    <label class="weui-label">就诊人</label>
+                                </div>
+                                <div id="name" class="weui-cell__ft">陈海雷</div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd">
+                                    <label class="weui-label">就诊医院</label>
+                                </div>
+                                <div id="tel" class="weui-cell__ft">黑芝麻</div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd">
+                                    <label class="weui-label">就诊科室</label>
+                                </div>
+                                <div id="sex" class="weui-cell__ft">内科</div>
+                            </div>
+                        </div>
+                        <div class="weui-uploader weui-media-box">
+                            <div class="weui-uploader__bd">
+                                <div class="my-gallery" data-pswp-uid="1">
+                                    <figure>
+                                        <a href="../../images/fwb_gxt.png" data-size="800x1142">
+                                            <img src="../../images/fwb_gxt.png">
+                                        </a>
+                                    </figure>
+                                    <figure>
+                                        <a href="../../images/fwb_chcr.png" data-size="800x1142">
+                                            <img src="../../images/fwb_chcr.png">
+                                        </a>
+                                    </figure>
+                                    <figure>
+                                        <a href="../../images/fwb_jkgl.png" data-size="800x1142">
+                                            <img src="../../images/fwb_jkgl.png">
+                                        </a>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="weui-media-box__info weui-media-box" style="margin-top:0px;">
+                            <li class="weui-media-box__info__meta" style="margin-bottom: 10px;">2017-09-19 10:58:26</li>
+                            <li class="bgd_delete"><button id="deleteBgd" type="button">删除</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pullUp" style="padding: 30px 0">
+            <span class="pullUpLabel">上拉加载更多...</span>
+        </div>
+    </div>
+</div>
+<a class="add-family" style="bottom: 30px;z-index: 1" href="报告单_上传.html">
+    <img src="../../images/addfamily.png">
+    <p class="weui_cell_ft">上传报告</p>
+</a>
+
+<div class="js_dialog" id="dialog_deleteBgd" style="opacity: 1;display: none">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <p style="margin: 20px auto;font-size: 18px;">确定删除吗？</p>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+        </div>
+    </div>
+</div>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+    It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+        PhotoSwipe keeps only 3 of them in the DOM to save memory.
+        Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!-- Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter" style="display: block;"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)" style="display: block; visibility: visible;">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)" style="display: block; visibility: visible;">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/iscroll.js"></script>
+<script src="../../js/f.js"></script>
+<script src="../../js/报告单.js"></script>
+<script>
+    $(function () {
+        f.dialog("deleteBgd");
+        auto_data_size();
+    });
+
+    function auto_data_size(){
+        var imgss= $("figure img");
+        $("figure img").each(function() {
+            var imgs = new Image();
+            imgs.src=$(this).attr("src");
+            var w = imgs.width,
+                h =imgs.height;
+            $(this).parent("a").attr("data-size","").attr("data-size",w+"x"+h);
+        })
+    };
+
+    //初始化绑定iScroll控件
+    //接口获取数据
+    function getdata() {
+        var data = [
+            {
+                id: "1",
+                title: "体检",
+                time: "2017年02月04日",
+                name: "付华",
+                pic: [
+                    {
+                        url: "../images/fwb_wksk.png"
+                    },
+                    {
+                        url: "../images/fwb_wgl.png"
+                    },
+                    {
+                        url: "../images/fwb_jkgl.png"
+                    }
+                ]
+            },
+            {
+                id: "1",
+                title: "体检",
+                time: "2017年01月30日",
+                name: "付华",
+                pic: [
+                    {
+                        url: "../images/fwb_wksk.png"
+                    },
+                    {
+                        url: "../images/fwb_wgl.png"
+                    },
+                    {
+                        url: "../images/fwb_jkgl.png"
+                    }
+                ]
+            },
+            {
+                id: "1",
+                title: "体检",
+                time: "2016年12月01日",
+                name: "付华",
+                pic: [
+                    {
+                        url: "../images/fwb_wksk.png"
+                    },
+                    {
+                        url: "../images/fwb_wgl.png"
+                    },
+                    {
+                        url: "../images/fwb_jkgl.png"
+                    }
+                ]
+            },
+            {
+                id: "1",
+                title: "体检",
+                time: "2015年01月01日",
+                name: "付华",
+                pic: [
+                    {
+                        url: "../images/fwb_wksk.png"
+                    },
+                    {
+                        url: "../images/fwb_wgl.png"
+                    },
+                    {
+                        url: "../images/fwb_jkgl.png"
+                    }
+                ]
+            }
+        ];
+        return data;
+    }
+
+    f.loaded(getdata(), "report");
+
+    document.addEventListener('touchmove', function (e) {
+        var time=f.topFixed($(".weui-panel"));
+        $(".weui-toptips").text(time);
+    }, false);
+
+    //动态添加的li绑定事件
+    smallImg = $(".report");
+    bigImg = $("#galleryImg");
+    gallery = $("#gallery");
+    smallImg.on("click", ".weui-uploader__file", function () {
+        bigImg.attr("style", this.getAttribute("style"));
+        console.log(this.getAttribute("style"));
+        gallery.fadeIn(100);
+    });
+    gallery.on("click", function () {
+        gallery.fadeOut(100);
+    });
+
+</script>
+</body>
+</html>

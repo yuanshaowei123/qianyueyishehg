@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>体质报告</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #FAFAFA;
+        }
+        .frame{
+            width:100%;
+            height:auto;
+            padding: 0 15px;
+            overflow: hidden;
+        }
+        .frame li{
+            width:100%;
+            height:auto;
+            padding: 15px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        .frame li h1{
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .frame li p{
+            font-size: 14px;
+            color: #fff;
+            outline: none;
+        }
+        .frame li:nth-child(1){
+            background-image: url("../images/背景1-体质报告@2x.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .frame li:nth-child(2){
+            background-image: url("../images/背景2-体质报告@2x.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .frame li:nth-child(3){
+            background-image: url("../images/背景3-体质报告@2x.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .frame li:nth-child(4){
+            background-image: url("../images/背景4-体质报告@2x.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .frame li:nth-child(5){
+            background-image: url("../images/背景5-体质报告@2x.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .frame li:nth-child(6){
+            background-image: url("../images/背景3-体质报告@2x.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .frame li:nth-child(7){
+            background-image: url("../images/背景4-体质报告@2x.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .frame li:nth-child(8){
+            background-image: url("../images/背景2-体质报告@2x.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .frame li:nth-child(9){
+            background-image: url("../images/背景5-体质报告@2x.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-panel weui-panel_access">
+        <ul class="frame">
+            <li id="0">
+                <h1>平和质</h1>
+                <p>阴阳气血调和，以体态适中、面色红润、精力充沛等为主要特征。</p>
+            </li>
+
+            <li id="1">
+                <h1>气虚质</h1>
+                <p>元气不足，以疲乏、气短、自汗等气虚表现为主要特征。</p>
+            </li>
+
+            <li id="2">
+                <h1>阴虚质</h1>
+                <p>阴液亏少，以口燥咽干、手足心热等虚热表现为主要特征。
+                </p>
+            </li>
+
+            <li id="3">
+                <h1>痰湿质</h1>
+                <p>痰湿凝聚，以形体肥胖、腹部肥满、口黏苔腻等痰湿表现为主要特征。</p>
+            </li>
+
+            <li id="4">
+                <h1>湿热质</h1>
+                <p>湿热内蕴，以面垢油光、口苦、苔黄腻等湿热表现为主要特征。</p>
+            </li>
+
+            <li id="5">
+                <h1>血淤质</h1>
+                <p>血行不畅，以肤色晦黯、舌质紫黯等血瘀表现为主要特征。</p>
+            </li>
+
+            <li id="6">
+                <h1>气郁质</h1>
+                <p>气机郁滞，以神情抑郁、忧虑脆弱等气郁表现为主要特征。</p>
+            </li>
+
+            <li id="7">
+                <h1>特禀质</h1>
+                <p>先天失常，以生理缺陷、过敏反应等为主要特征。</p>
+            </li>
+            <li id="8">
+                <h1>阳虚质</h1>
+                <p>阳气不足，以畏寒怕冷、手足不温等虚寒表现为主要特征。</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--<script src="../js/zepto.min.js"></script>-->
+<!--<script src="../js/f.js"></script>-->
+<script src="../js/jquery.min.js"></script>
+
+<script>
+    $('.frame li').click(function () {
+        var index = $(this).attr('id');
+        console.log(index);
+        window.location.href = '体质报告详情.html?flag='+index;
+
+    })
+</script>
+</body>
+</html>

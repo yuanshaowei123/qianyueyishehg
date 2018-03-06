@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>服务记录</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <style>
+        body {
+            background-color: #eeefef;
+        }
+
+        #wrapper {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #pullUp {
+            text-align: center;
+            padding-bottom: 15px;
+        }
+
+        .weui-form-preview {
+            margin-bottom: 15px;
+        }
+
+        .pullUpLabel {
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div id="wrapper">
+    <div id="scroller">
+        <div id="pullDown">
+        </div>
+        <div id="thelist">
+            <div class="weui-form-preview">
+                <div class="weui-form-preview__hd">
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label">预约上门</label>
+                        <em class="weui-form-preview__value todo">等待处理</em>
+                    </div>
+                </div>
+                <div class="weui-form-preview__bd">
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label">家庭成员</label>
+                        <span class="weui-form-preview__value">王琦</span>
+                    </div>
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label">建立时间</label>
+                        <span class="weui-form-preview__value">2017-12-01</span>
+                    </div>
+                </div>
+                <div class="weui-form-preview__ft">
+                    <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="服务记录_服务详情（旧）.html">查看</a>
+                </div>
+            </div>
+            <div class="weui-form-preview">
+                <div class="weui-form-preview__hd">
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label">预约上门</label>
+                        <em class="weui-form-preview__value doing">正在进行</em>
+                    </div>
+                </div>
+                <div class="weui-form-preview__bd">
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label">家庭成员</label>
+                        <span class="weui-form-preview__value">王琦</span>
+                    </div>
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label">建立时间</label>
+                        <span class="weui-form-preview__value">2017-12-01</span>
+                    </div>
+                </div>
+                <div class="weui-form-preview__ft">
+                    <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="服务记录_服务详情（旧）.html">查看</a>
+                </div>
+            </div>
+            <div class="weui-form-preview">
+                <div class="weui-form-preview__hd">
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label">预约上门</label>
+                        <em class="weui-form-preview__value done">已经完成</em>
+                    </div>
+                </div>
+                <div class="weui-form-preview__bd">
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label">家庭成员</label>
+                        <span class="weui-form-preview__value">王琦</span>
+                    </div>
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label">建立时间</label>
+                        <span class="weui-form-preview__value">2017-12-01</span>
+                    </div>
+                </div>
+                <div class="weui-form-preview__ft">
+                    <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="服务记录_服务详情（旧）.html">查看</a>
+                </div>
+            </div>
+        </div>
+        <div id="pullUp">
+            <span class="pullUpLabel">上拉加载更多...</span>
+        </div>
+    </div>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/iscroll.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    //接口获取数据
+    function getdata() {
+        var data = [
+            {id: "1", family: "王琦", time: "2017-05-04"},
+            {id: "2", family: "顾俊", time: "2017-06-04"},
+            {id: "3", family: "归月平", time: "2017-06-04"}
+        ];
+        return data;
+    }
+    //初始化绑定iScroll控件
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, false);
+    document.addEventListener('DOMContentLoaded', f.loaded(getdata(), "serviceRecord"), false);
+</script>
+<script></script>
+</body>
+</html>

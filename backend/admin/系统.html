@@ -1,0 +1,37 @@
+<div class="portlet">
+    <div class="portlet-title tabbable-line" style="padding: 0 15px;">
+        <ul class="nav nav-tabs" style="float: left">
+            <li class="active">
+                <a href="#systemUserList" data-toggle="tab" aria-expanded="true"> 系统用户列表 </a>
+            </li>
+            <li class="">
+                <a href="#rolePermissionsSetting" data-toggle="tab" aria-expanded="true"> 角色权限设置 </a>
+            </li>
+            <li class="">
+                <a href="#PermissionsSetting" data-toggle="tab" aria-expanded="true"> 权限项配置 </a>
+            </li>
+        </ul>
+    </div>
+    <div class="portlet-body">
+        <div class="tab-content">
+            <div class="tab-pane active" id="systemUserList">
+
+            </div>
+            <div class="tab-pane" id="rolePermissionsSetting">
+
+            </div>
+            <div class="tab-pane" id="PermissionsSetting">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<script src="../assets/global/plugins/masonry/masonry.pkgd.min.js"></script>
+<script>
+    $(function () {
+        $("#systemUserList").load("系统_用户列表.html");
+        $("#rolePermissionsSetting").load("系统_角色权限设置.html");
+        $("#PermissionsSetting").load("系统_权限项配置.html");
+    });
+</script>

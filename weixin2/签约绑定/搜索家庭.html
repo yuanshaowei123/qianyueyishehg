@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>搜索家庭</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="container">
+
+    <div class="weui-cells" style="margin-top: 0px;">
+        <!-- 新建签约家庭 -->
+        <div class="weui-cell" id="newFamily" style="padding-top: 20px;">
+            <div class="weui-cell__hd">
+                <div style="border-radius: 50%; width: 30px;height: 30px; background-color: #bcbcbc; margin-right: 10px;">
+                    <span style="display: inline-block; margin: 5px 10px">
+                        1
+                    </span>
+                </div>
+            </div>
+            <div class="weui-cell__bd" style="font-size: 14px">
+                <p>欢迎签约家庭医生，如果您的家庭尚未签约</p>
+                <p>点击下方“新建签约家庭”进行签约，建立您的家庭</p>
+            </div>
+        </div>
+        <div class="weui-btn-rea" id="signBtnArea" style="margin: 10px 20px">
+            <a class="weui-btn weui-btn_primary" style="border-radius: 25px">新建签约家庭</a>
+        </div>
+
+        <!-- 已经签约家庭 -->
+        <div class="weui-cell" id="signedFamily" style="border-top: none;padding-top: 20px;">
+            <div class="weui-cell__hd">
+                <div style="border-radius: 50%; width: 30px;height: 30px; background-color: #bcbcbc; margin-right: 10px;">
+                    <span style="display: inline-block; margin: 5px 10px">
+                        2
+                    </span>
+                </div>
+            </div>
+            <div class="weui-cell__bd" style="font-size: 14px">
+                <p>如果您的家人已签约</p>
+                <p>根据身份证号搜索家庭后添加家庭成员</p>
+            </div>
+        </div>
+        <div class="weui-search-bar" id="searchBar" style="padding: 8px 20px">
+            <form class="weui-search-bar__form">
+                <div class="weui-search-bar__box">
+                    <i class="weui-icon-search"></i>
+                    <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required/>
+                    <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                </div>
+                <label class="weui-search-bar__label" id="searchText">
+                    <i class="weui-icon-search"></i>
+                    <span>搜索</span>
+                </label>
+            </form>
+            <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+        </div>
+    </div>
+
+    <!--<div class="searchbar-result" id="searchDefalt">
+        <div class="weui-cells__title" style="text-align: center">根据手机号/身份证号搜索家庭后添加家庭成员</div>
+    </div>-->
+    <div class="weui-cells searchbar-result" id="searchResult">
+        <div class="weui-panel weui-panel_access team">
+            <div class="weui-panel__bd">
+                <a class="weui-media-box weui-media-box_appmsg" href="家庭成员.html">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../images/doctor.png" alt="">
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">王琦</h4>
+                        <p class="weui-media-box__desc">姑苏区金昌街道社区红岭新村25幢1201室</p>
+                    </div>
+                </a>
+                <a class="weui-media-box weui-media-box_appmsg" href="家庭成员.html">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../images/doctor.png" alt="">
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">归月平</h4>
+                        <p class="weui-media-box__desc">亭湖区五星街道到实打实的达萨里的巴萨社区101幢1201室</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/weui.min.js"></script>
+<script src="../js/f.js"></script>
+<script>
+    $(".weui-btn-rea a").on("click", function () {
+        location.href = "基本信息.html"
+    });
+
+    //搜索
+    var searchBar = $('#searchBar'),
+        searchResult = $('#searchResult'),
+        searchText = $('#searchText'),
+        searchInput = $('#searchInput'),
+        searchClear = $('#searchClear'),
+        searchCancel = $('#searchCancel'),
+        searchDefalt = $('#searchDefalt'),
+        newFamily = $('#newFamily'),
+        signBtnArea = $('#signBtnArea'),
+        signedFamily = $('#signedFamily');
+
+    searchResult.hide();
+
+    function hideSearchResult() {
+        searchResult.hide();
+        searchInput.val('');
+    }
+
+    function cancelSearch() {
+        hideSearchResult();
+        searchBar.removeClass('weui-search-bar_focusing');
+        searchText.show();
+        newFamily.show();
+        signBtnArea.show();
+        signedFamily.show();
+    }
+
+    searchText.on('click', function () {
+        searchBar.addClass('weui-search-bar_focusing');
+        searchInput.focus();
+        newFamily.hide();
+        signBtnArea.hide();
+        signedFamily.hide();
+    });
+
+    searchInput
+        .on('blur', function () {
+            if (!this.value.length) cancelSearch();
+        })
+        .on('input', function () {
+            if (this.value.length >0) {
+                searchResult.show();
+                searchDefalt.hide();
+                newFamily.hide();
+                signBtnArea.hide();
+                signedFamily.hide();
+            } else {
+                searchResult.hide();
+                searchDefalt.show();
+            }
+        });
+
+    searchClear.on('click', function () {
+        hideSearchResult();
+        searchInput.focus();
+        searchDefalt.show();
+    });
+    searchCancel.on('click', function () {
+        cancelSearch();
+        searchInput.blur();
+        searchDefalt.show();
+    });
+</script>
+</body>
+</html>

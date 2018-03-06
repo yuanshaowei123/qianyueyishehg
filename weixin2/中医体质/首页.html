@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        body {
+            background-color: #e5f8f2;
+            font-family: "微软雅黑";
+        }
+        .container {
+            padding: 10px 5px;
+        }
+        .index_top {
+            height: 245px;
+            background: url("../images/physique/topbg.png") no-repeat center;
+            background-size: 100% 275px;
+            padding: 35px 10px 0 25px;
+            margin-bottom: 20px;
+        }
+        .index_top p {
+            font-size: 13px;
+            font-weight: bold;
+            text-align: left;
+            letter-spacing: 1px;
+        }
+        .index_top p.color_blue {
+            color: #609ff3;
+            margin-bottom: 15px;
+        }
+        .index_top p.color_white {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .main_label {
+            margin: 10px 8px;
+            height: 90px;
+            background-color: #fff;
+            line-height: 90px;
+            text-align: center;
+            border: 1px solid #97cfc2;
+            border-radius: 6px;
+            color: #97cfc2;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        .main_label i {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="index_top">
+            <p class="color_blue">1、为什么有人喜欢夏天，有人喜欢冬天？</p>
+            <p class="color_blue">2、为什么有人天生就像林妹妹？</p>
+            <p class="color_white">原来这都是由不同的中医体质决定的！</p>
+            <p class="color_white">体质不同，易患疾病也不同，采取的养身方法也就不一样！</p>
+            <p class="color_white">体质因人而异，并不会因时因地而变！</p>
+            <p class="color_white">及时掌握自身体质特点，针对预防，享受健康人生！</p>
+        </section>
+
+        <div class="main_label jdtz">
+            <i style="background: url('../images/physique/icon_jdtz.png') no-repeat center;background-size: 24px 24px;"></i>
+            <span>九大体质</span>
+        </div>
+        <div class="main_label tzjl">
+            <i style="background: url('../images/physique/icon_tzjl.png') no-repeat center;background-size: 24px 24px;"></i>
+            <span>体质记录</span>
+        </div>
+        <div class="main_label ksbb">
+            <i style="background: url('../images/physique/icon_ksbb.png') no-repeat center;background-size: 24px 24px;"></i>
+            <span>开始辨别</span>
+        </div>
+    </div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script>
+    $(function() {
+        $(".jdtz").on("click", function() {
+            window.location = "九大体质.html";
+        })
+        $(".tzjl").on("click", function() {
+            window.location = "体质记录.html";
+        })
+        $(".ksbb").on("click", function() {
+            window.location = "普通人辨识.html";
+        })
+    })
+</script>
+</html>

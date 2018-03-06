@@ -1,0 +1,99 @@
+<style>
+    .form-horizontal .form-group {
+        margin: 0;
+    }
+    .form-horizontal .item .control-label {
+        padding-top: 0;
+        text-align: right;
+        width: 70px;
+        padding-right: 5px;
+    }
+    .form-horizontal .item {
+        float: left;
+        margin: 5px 15px;
+    }
+    .form-horizontal .item>div {
+        display: inline-block;
+    }
+    .sidebar-area {
+        top: 0;
+        bottom: 0;
+        z-index: 9996;
+        overflow: hidden;
+        transition: right 0.3s;
+        box-shadow: #bbb 0px 0px 10px;
+        border-top: 10px solid #17C4BB;
+    }
+    .sidebar-area.active {
+        right: 0;
+    }
+    .sidebar_close_icon {
+        z-index: 9999;
+        width: 28px;
+        height: 27px;
+        top: 10px;
+        right: 15px;
+        position: absolute;
+        padding-top: 6px;
+        text-align: center;
+        display: none;
+    }
+    #yyszx tr.checked {
+        background-color: #eee;
+    }
+</style>
+
+<div class="col-md-12 baseInfo">
+    <div class="portlet">
+        <div class="portlet-title tabbable-line" style="padding: 0 15px;">
+            <ul class="nav nav-tabs" style="float: left">
+                <li class="active">
+                    <a href="#lbt" data-toggle="tab" aria-expanded="true"> 轮播图 </a>
+                </li>
+                <li class="">
+                    <a href="#yyzx" data-toggle="tab" aria-expanded="true"> 营养资讯 </a>
+                </li>
+                <li class="">
+                    <a href="#yyszx" data-toggle="tab" aria-expanded="true"> 营养师咨询 </a>
+                </li>
+                <li class="">
+                    <a href="#hzjy" data-toggle="tab" aria-expanded="true"> 患者教育 </a>
+                </li>
+                <li class="">
+                    <a href="#sfbd" data-toggle="tab" aria-expanded="true"> 随访表单 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="lbt">
+
+                </div>
+                <div class="tab-pane" id="yyzx">
+
+                </div>
+                <div class="tab-pane" id="yyszx" style="position: relative;overflow-x: hidden;">
+
+                </div>
+                <div class="tab-pane" id="hzjy">
+
+                </div>
+                <div class="tab-pane" id="sfbd">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+        type="text/javascript"></script>
+<script>
+    $(function () {
+        $("#lbt").load("文本管理_轮播图.html");
+        $("#hzjy").load("患者教育.html");
+        $("#yyzx").load("文本管理_营养资讯.html");
+        $("#yyszx").load("文本管理_营养师咨询.html");
+        $("#sfbd").load("文本管理_随访表单.html");
+    });
+</script>

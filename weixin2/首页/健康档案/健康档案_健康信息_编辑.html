@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0">
+    <title>健康信息</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <link rel="stylesheet" href="../../css/健康档案.css"/>
+    <style>
+        html {
+            font-size: 30px;
+        }
+        .ycbs .ycbs_text {
+            display: none;
+        }
+        .jzs .jzs_text {
+            display: none;
+        }
+        .jwbs .jwbs_text {
+            display: none;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" id="height" type="number" placeholder="cm">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">体&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" id="weight" type="number" placeholder="kg">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">腰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" id="waist" type="number" placeholder="cm">
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">血&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">A型</option>
+                    <option value="2">B型</option>
+                    <option value="3">O型</option>
+                    <option value="4">AB型</option>
+                    <option value="5">不详</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">阴性</option>
+                    <option value="2">阳性</option>
+                    <option value="3">不详</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">医疗费用支付方式：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="" id="select_ylfy">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">城镇职工基本医疗保险</option>
+                    <option value="2">城镇居民基本医疗保险</option>
+                    <option value="3">新型农村合作医疗</option>
+                    <option value="4">贫困救助</option>
+                    <option value="5">商业医疗保险</option>
+                    <option value="6">全公费</option>
+                    <option value="7">全自费</option>
+                    <option value="8">其他</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">药物过敏史：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">无</option>
+                    <option value="2">青霉素</option>
+                    <option value="3">磺胺</option>
+                    <option value="4">链霉素</option>
+                    <option value="5">其他</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>暴露历史</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox3" value="无" />无<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="化学品" />化学品<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="毒物" />毒物<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="射线" />射线<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells ycbs">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>遗传病史</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell ycbs_text">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text" placeholder="请填写遗传病名称" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>残疾情况</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox3" value="无残疾" />无残疾<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="视力残疾" />视力残疾<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="听力残疾" />听力残疾<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="言语残疾" />言语残疾<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="肢体残疾" />肢体残疾<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="智力残疾" />智力残疾<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="精神残疾" />精神残疾<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox4" value="其他残疾" />其他残疾<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells__title">
+        既往病史
+    </div>
+    <div class="jwbs_template" style="display: none;">
+        <div class="weui-flex special">
+            <div class="weui-flex__item" style="flex: 3">
+                <input class="weui-input" type="text" name="text" placeholder="请输入名称">
+            </div>
+            <div class="weui-flex__item" style="flex: 2">
+                <input class="weui-input assessmentDate" type="date" value="" style="width: 90%;text-align: right;"/>
+            </div>
+        </div>
+    </div>
+    <div class="jwbs_template_special" style="display: none;">
+        <div class="weui-flex special">
+            <div class="weui-flex__item" style="flex: 3">
+                <select class="weui-select" name="" style="background-color: #eeeeee;color: #aaa;">
+                    <option value='0'>请选择疾病</option>
+                    <option value="1">无</option>
+                    <option value="2">高血压</option>
+                    <option value="3">糖尿病</option>
+                    <option value="4">冠心病</option>
+                    <option value="5">慢性阻塞性肺疾病</option>
+                    <option value="6">恶性肿瘤</option>
+                    <option value="7">脑卒中</option>
+                    <option value="8">严重精神障碍</option>
+                    <option value="9">结核病</option>
+                    <option value="10">肝炎</option>
+                    <option value="11">其他法定传染病</option>
+                    <option value="12">职业病</option>
+                    <option value="13">其他</option>
+                </select>
+            </div>
+            <div class="weui-flex__item" style="flex: 2">
+                <input class="weui-input assessmentDate" type="date" value="" style="width: 90%;text-align: right;"/>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells jwbs">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>疾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell jwbs_text">
+            <div class="weui-flex">
+                <div class="weui-flex__item" style="flex: 3">
+                    <select class="weui-select" name="" style="background-color: #eeeeee;color: #aaa;">
+                        <option value='0'>请选择疾病</option>
+                        <option value="1">无</option>
+                        <option value="2">高血压</option>
+                        <option value="3">糖尿病</option>
+                        <option value="4">冠心病</option>
+                        <option value="5">慢性阻塞性肺疾病</option>
+                        <option value="6">恶性肿瘤</option>
+                        <option value="7">脑卒中</option>
+                        <option value="8">严重精神障碍</option>
+                        <option value="9">结核病</option>
+                        <option value="10">肝炎</option>
+                        <option value="11">其他法定传染病</option>
+                        <option value="12">职业病</option>
+                        <option value="13">其他</option>
+                    </select>
+                </div>
+                <div class="weui-flex__item" style="flex: 2">
+                    <input class="weui-input assessmentDate" type="date" value="" style="width: 90%;text-align: right;"/>
+                </div>
+            </div>
+            <div style="padding-right: 20px;float: right;">
+                <div class="add-icon_special"></div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells jwbs">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;术</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell jwbs_text">
+            <div class="weui-flex">
+                <div class="weui-flex__item" style="flex: 3">
+                    <input class="weui-input" type="text" name="text" placeholder="请输入名称">
+                </div>
+                <div class="weui-flex__item" style="flex: 2">
+                    <input class="weui-input assessmentDate" type="date" value="" style="width: 90%;text-align: right;"/>
+                </div>
+            </div>
+            <div style="padding-right: 20px;float: right;">
+                <div class="add-icon"></div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells jwbs">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>外&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;伤</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell jwbs_text">
+            <div class="weui-flex">
+                <div class="weui-flex__item" style="flex: 3">
+                    <input class="weui-input" type="text" name="text" placeholder="请输入名称">
+                </div>
+                <div class="weui-flex__item" style="flex: 2">
+                    <input class="weui-input assessmentDate" type="date" value="" style="width: 90%;text-align: right;"/>
+                </div>
+            </div>
+            <div style="padding-right: 20px;float: right;">
+                <div class="add-icon"></div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells jwbs">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>输&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;血</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell jwbs_text">
+            <div class="weui-flex">
+                <div class="weui-flex__item" style="flex: 3">
+                    <input class="weui-input" type="text" name="text" placeholder="请输入名称">
+                </div>
+                <div class="weui-flex__item" style="flex: 2">
+                    <input class="weui-input assessmentDate" type="date" value="" style="width: 90%;text-align: right;"/>
+                </div>
+            </div>
+            <div style="padding-right: 20px;float: right;">
+                <div class="add-icon"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="weui-cells__title">家族史</div>
+    <div class="weui-cells jzs">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>父&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;亲</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell jzs_text">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="高血压" />高血压<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="糖尿病" />糖尿病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="冠心病" />冠心病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="脑卒中" />脑卒中<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="肝炎" />肝炎<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="恶性肿瘤" />恶性肿瘤<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="结核病" />结核病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="先天畸形" />先天畸形<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item" style="flex: 2;">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="慢性阻塞性肺疾病" />慢性阻塞性肺疾病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="严重精神障碍" />严重精神障碍<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="其他" />其他<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells jzs">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>母&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;亲</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell jzs_text">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="高血压" />高血压<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="糖尿病" />糖尿病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="冠心病" />冠心病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="脑卒中" />脑卒中<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="肝炎" />肝炎<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="恶性肿瘤" />恶性肿瘤<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="结核病" />结核病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="先天畸形" />先天畸形<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item" style="flex: 2;">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="慢性阻塞性肺疾病" />慢性阻塞性肺疾病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="严重精神障碍" />严重精神障碍<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="其他" />其他<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells jzs">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>兄弟姐妹</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell jzs_text">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="高血压" />高血压<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="糖尿病" />糖尿病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="冠心病" />冠心病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="脑卒中" />脑卒中<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="肝炎" />肝炎<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="恶性肿瘤" />恶性肿瘤<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="结核病" />结核病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="先天畸形" />先天畸形<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item" style="flex: 2;">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="慢性阻塞性肺疾病" />慢性阻塞性肺疾病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="严重精神障碍" />严重精神障碍<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="其他" />其他<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells jzs" style="margin-bottom: 120px;">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>子&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;女</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell jzs_text">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="高血压" />高血压<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="糖尿病" />糖尿病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="冠心病" />冠心病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="脑卒中" />脑卒中<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="肝炎" />肝炎<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="恶性肿瘤" />恶性肿瘤<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="结核病" />结核病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="先天畸形" />先天畸形<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item" style="flex: 2;">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="慢性阻塞性肺疾病" />慢性阻塞性肺疾病<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="严重精神障碍" />严重精神障碍<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox2" value="其他" />其他<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-btn-rea fix_btn">
+        <a class="weui-btn weui-btn_primary">保存</a>
+    </div>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+
+    $(function () {
+        cal();
+
+        //初期化评估日期
+        var date = new Date();
+        var mon = date.getMonth() + 1;
+        var day = date.getDate();
+        var nowDay = date.getFullYear() + "-" + (mon<10?"0"+mon:mon) + "-" +(day<10?"0"+day:day);
+        $("input[type=date]").val(nowDay);
+    });
+    //监控屏幕小大变化
+    window.onresize = function(){
+        cal();
+    };
+    //改变rem值
+    function cal() {
+        if(screen.width < 1080) {
+            //通过window.screen.width获取屏幕的宽度
+            var width = screen.width * 2;
+            var zoom = (width/750) * 2.8;
+            $("input[type=checkbox]").css("zoom", zoom);
+
+            var offWidth = width / 25; //这里用宽度/30表示1rem取得的px
+            document.getElementsByTagName("html")[0].style.fontSize = offWidth + 'px'; //把rem的值复制给顶级标签html的font-size
+        }
+    };
+    //点击保存
+    $(".fix_btn a").on("click", function () {
+        if (
+            f.reg_height($("#height").val())
+            && f.reg_weight($("#weight").val())
+            && f.reg_waist($("#waist").val())) {
+            location.href = "创建健康档案.html"
+        }
+    });
+    //展开、关闭标签，关闭时把选中的值显示在右上角
+    $(".title").on("click", function () {
+        var $self = $(this);
+        var display = $self.parent().find(".selection-area").css("display");
+        if( display == "none") {
+            $self.parent().find(".selection-area").show();
+        } else {
+            $self.parent().find(".selection-area").hide();
+        }
+    });
+    //设置checkbox框为单选
+    $('input[name=checkbox]').click(function(){
+        $this = $(this);
+        if($this[0].checked) {
+            var checkboxs = $this.parent().parent().parent().parent().find("input[name=checkbox]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                }
+            }
+            $this[0].checked = true;
+        }
+    });
+    //设置(带有正常或完整)checkbox框为单选
+    $('input[name=checkbox3]').click(function(){
+        $this = $(this);
+        if($this[0].checked) {
+            var checkboxs = $this.parent().parent().parent().parent().find("input[name=checkbox4]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                    $(checkboxs[i]).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+                }
+            }
+            $(this).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_sele@2x.png') !important");
+        } else {
+            $(this).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+        }
+    });
+    //设置(带有正常或完整)checkbox框为单选
+    $('input[name=checkbox4]').click(function(){
+        $this = $(this);
+        if($this[0].checked) {
+            var checkboxs = $this.parent().parent().parent().parent().find("input[name=checkbox3]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                    $(checkboxs[i]).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+                }
+            }
+            $(this).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_sele@2x.png') !important");
+        } else {
+            $(this).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+        }
+    });
+
+    $(".add-icon").on("click", function() {
+        var template = $(".jwbs_template");
+        $(this).parent().before(template.html());
+
+        //初期化评估日期
+        var date = new Date();
+        var mon = date.getMonth() + 1;
+        var day = date.getDate();
+        var nowDay = date.getFullYear() + "-" + (mon<10?"0"+mon:mon) + "-" +(day<10?"0"+day:day);
+        var length = $(this).parent().parent().find("input[type=date]").length;
+        $(this).parent().parent().find("input[type=date]")[length-1].value = nowDay;
+    });
+
+    $(".add-icon_special").on("click", function() {
+        var template = $(".jwbs_template_special");
+        $(this).parent().before(template.html());
+
+        //初期化评估日期
+        var date = new Date();
+        var mon = date.getMonth() + 1;
+        var day = date.getDate();
+        var nowDay = date.getFullYear() + "-" + (mon<10?"0"+mon:mon) + "-" +(day<10?"0"+day:day);
+        var length = $(this).parent().parent().find("input[type=date]").length;
+        $(this).parent().parent().find("input[type=date]")[length-1].value = nowDay;
+    });
+
+    //既往病史
+    $(".jwbs .weui-cell__ft .yes").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            $(this).parent().parent().parent().parent().find(".jwbs_text").css("display", "block");
+        }
+    });
+    $(".jwbs .weui-cell__ft .no").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            var inputs = $(this).parent().parent().parent().parent().find(".jwbs_text input");
+            var elements = $(this).parent().parent().parent().parent().find(".jwbs_text .special");
+            for(var i = 0; i< elements.length; i++) {
+                elements[i].remove();
+            }
+            for(var i = 0; i< inputs.length; i++) {
+                inputs[i].value = "";
+            }
+            inputs = $(this).parent().parent().parent().parent().find(".jwbs_text input[type=date]");
+            for(var i = 0; i< inputs.length; i++) {
+                var date = new Date();
+                var mon = date.getMonth() + 1;
+                var day = date.getDate();
+                var nowDay = date.getFullYear() + "-" + (mon<10?"0"+mon:mon) + "-" +(day<10?"0"+day:day);
+                inputs[i].value = nowDay;
+            }
+            $(this).parent().parent().parent().parent().find(".jwbs_text").css("display", "none");
+        }
+    });
+
+    //遗传病史
+    $(".ycbs .weui-cell__ft .yes").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            $(".ycbs .ycbs_text").css("display", "block");
+        }
+    });
+    $(".ycbs .weui-cell__ft .no").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            $(".ycbs .ycbs_text input[type=text]").val("");
+            $(".ycbs .ycbs_text").css("display", "none");
+        }
+    });
+
+    //家族史
+    $(".jzs .weui-cell__ft .yes").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            $(this).parent().parent().parent().parent().find(".jzs_text").css("display", "block");
+        }
+    });
+    $(".jzs .weui-cell__ft .no").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            var checkboxs = $(this).parent().parent().parent().parent().find(".jzs_text input[type=checkbox]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                    $(checkboxs[i]).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+                }
+            }
+            $(this).parent().parent().parent().parent().find(".jzs_text").css("display", "none");
+        }
+    });
+
+    $(".weui-cell__ft .me_checkbox").on("click", function() {
+       if($(this).find("input[name=checkbox]")[0].checked == true) {
+           var checkboxs = $(this).parent().find("input[name=checkbox]");
+           for(var i = 0; i< checkboxs.length; i++) {
+               if(checkboxs[i].checked) {
+                   checkboxs[i].checked = false;
+                   $(checkboxs[i]).parent().parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+               }
+           }
+           $(this).find("input[name=checkbox]")[0].checked = true;
+           $(this).find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_sele@2x.png') !important");
+       }
+    });
+    //改变checkbox样式
+    $(".weui-cell__bd .me_checkbox").on("click", function() {
+        if($(this).find("input[name=checkbox2]").length > 0) {
+            if($(this).find("input[name=checkbox2]")[0].checked == true) {
+                $(this).find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_sele@2x.png') !important");
+            } else {
+                $(this).find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+            }
+        }
+    });
+
+    //当select框选中的文本过长时，切割文本用...代替
+    var text_selected = "";
+    var val_select = "";
+    $("#select_ylfy").on("change", function(){
+        //获取选中的option内容
+        var newText = $(this).find('option:selected').text();
+        //获取选中的option的value
+        var newVal = $(this).find('option:selected').val();
+        if(text_selected == newText) {
+            return false;
+        } else {
+            if(val_select != "") {
+                $(this).find("option[value =" +  val_select.toString() + "]").html(text_selected);
+            }
+            text_selected = newText;
+            val_select = newVal;
+            //当文本超过7个字时进行切割
+            if(text_selected.length > 7) {
+                var value = text_selected.substring(0,7) + "...";
+                $(this).find('option:selected').html(value);
+            }
+        }
+    });
+</script>
+</body>
+</html>

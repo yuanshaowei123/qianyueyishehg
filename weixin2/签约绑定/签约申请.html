@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>团队</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        body{
+            background-color: white;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-msg">
+        <a href="选择团队.html" class="teamImg" style="background-image: url(../images/wangqi.jpg);">
+            <img src="../images/pen.png">
+        </a>
+        <p class="weui-msg__desc">王琦团队</p>
+        <p class="weui-msg__desc" style="margin-bottom: 30px;padding:15px 50px 0 50px">如果您想更换为您服务的团队，请点击团队头像申请更换</p>
+        <div class="weui-btn-rea" style="padding: 0 15px">
+            <a class="weui-btn weui-btn_primary">继续</a>
+        </div>
+    </div>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script>
+    $(".weui-btn-rea a").on("click", function () {
+        location.href = "签约审核中.html";
+    })
+</script>
+</body>
+</html>

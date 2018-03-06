@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>订单支付</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        .labels_btns {
+            position: fixed;
+            bottom: -2px;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+        }
+        .labels_btns .labels_btns_item {
+            width: 49.5%;
+            display: inline-block;
+            padding: 10px 0;
+        }
+        .labels_btns .labels_btns_item.weui-dialog__btn_default {
+            border: 1px solid #eee;
+            background-color: #eee;
+        }
+        .labels_btns .labels_btns_item.weui-dialog__btn_primary {
+            margin-left: -4px;
+            border-top: 1px solid #eee;
+            background-color: #1aad19;
+            color: #fff;
+        }
+    </style>
+</head>
+<body ontouchstart>
+    <div class="container">
+        <!-- 订单信息 -->
+        <div class="weui-cells" style="margin-top: 0px;">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p style="padding-left: 10px;font-size: 24px;">北峰社区卫生服务中心</p>
+                </div>
+            </div>
+            <div class="weui-cell" style="font-size: 20px;">
+                <div class="weui-cell__bd">
+                    <p style="padding-left: 20px">基础服务包</p>
+                </div>
+                <div class="weui-cell__ft">16元</div>
+            </div>
+            <div class="weui-cell" style="font-size: 20px;">
+                <div class="weui-cell__bd">
+                    <p style="padding-left: 20px">慢病管理包</p>
+                </div>
+                <div class="weui-cell__ft">240元</div>
+            </div>
+        </div>
+
+        <div class="weui-cells" style="margin-top: 20px;">
+            <div class="weui-cell" style="font-size: 20px;">
+                <div class="weui-cell__bd">
+                    <p>共需支付</p>
+                </div>
+                <div class="weui-cell__ft" style="color: #e71e20">160元</div>
+            </div>
+        </div>
+
+        <div class="weui-cells" style="margin-bottom: 100px;">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><img src="../images/weixin_pay.jpg" alt="" style="width:50px;margin-right:5px;display:block"></div>
+                <div class="weui-cell__bd">
+                    <p style="color: #1fba18">微信支付</p>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="weui-btn-rea fix_btn">
+            <a id="sign_ok" class="weui-btn weui-dialog__btn_default">支付成功，等待跳转...</a>
+        </div>-->
+
+        <div class="labels_btns">
+            <a class="labels_btns_item weui-dialog__btn_default">取消支付</a>
+            <a class="labels_btns_item weui-dialog__btn_primary">去支付</a>
+        </div>
+    </div>
+<script src="../js/zepto.min.js"></script>
+<script>
+</script>
+</body>
+</html>

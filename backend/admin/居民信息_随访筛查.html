@@ -1,0 +1,1792 @@
+<style>
+    .form-horizontal .form-group {
+        margin: 0;
+    }
+    .form-horizontal .item .control-label {
+        padding-top: 0;
+        text-align: right;
+        width: 70px;
+        padding-right: 5px;
+    }
+    .form-horizontal .item {
+        float: left;
+        margin: 5px 15px;
+    }
+    .form-horizontal .item>div {
+        display: inline-block;
+    }
+</style>
+<div class="col-md-12">
+    <!-- BEGIN PORTLET-->
+    <div class="portlet light portlet-fit" style="margin-bottom: 0">
+        <div style="padding: 20px 20px 0 20px">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a id="jmsfjlA" href="#jmsfjl" data-toggle="tab"> 随访记录 </a>
+                </li>
+                <li class="">
+                    <a id="jmsfjhA" href="#jmsfjh" data-toggle="tab"> 随访计划 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="scroller" style="overflow:auto;height: 570px">
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="jmsfjl">
+                        <form class="form-horizontal clearfix" role="form" method="get" style="margin: 20px 0;">
+                            <div class="form-group item">
+                                <label class="control-label" style="text-align: center;">人群筛选</label>
+                                <div class="select_div">
+                                    <!-- 下拉框根据该居民有几种随访表就有几个选项 -->
+                                    <select class="form-control" >
+                                        <option value>--请选择--</option>
+                                        <option value="1">高血压人群随访</option>
+                                        <option value="1">糖尿病人群随访</option>
+                                        <option value="1">老年人人群随访</option>
+                                        <option value="1">531人群随访</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="table-scrollable table-scrollable-borderless">
+                            <table class="table table-hover table-light">
+                                <thead>
+                                <tr class="uppercase">
+                                    <th>计划随访时间</th>
+                                    <th>随访人</th>
+                                    <th>随访方式</th>
+                                    <th>实际随访时间</th>
+                                    <th>完成人</th>
+                                    <th>完成方式</th>
+                                    <th>计划添加人</th>
+                                    <th>添加时间</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>2017-02-12</td>
+                                    <td>陈利</td>
+                                    <td>门诊</td>
+                                    <td>2017-02-12</td>
+                                    <td>陈利</td>
+                                    <td>面对面</td>
+                                    <td>陈利</td>
+                                    <td>2017-02-05</td>
+                                    <td>
+                                        <a class="edit_btn" style="margin-top: 0px;margin-right: 15px;" data-toggle="modal" href="#edit-sfsx-tnb">编辑</a>
+                                        <a class="delete_btn" style="margin-top: 0px;">删除</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017-02-12</td>
+                                    <td>陈利</td>
+                                    <td>门诊</td>
+                                    <td>2017-02-12</td>
+                                    <td>陈利</td>
+                                    <td>面对面</td>
+                                    <td>陈利</td>
+                                    <td>2017-02-05</td>
+                                    <td>
+                                        <a class="edit_btn" style="margin-top: 0px;margin-right: 15px;" data-toggle="modal" href="#edit-sfsx-tnb">编辑</a>
+                                        <a class="delete_btn" style="margin-top: 0px;">删除</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017-02-12</td>
+                                    <td>陈利</td>
+                                    <td>门诊</td>
+                                    <td>2017-02-12</td>
+                                    <td>陈利</td>
+                                    <td>面对面</td>
+                                    <td>陈利</td>
+                                    <td>2017-02-05</td>
+                                    <td>
+                                        <a class="edit_btn" style="margin-top: 0px;margin-right: 15px;" data-toggle="modal" href="#edit-sfsx-tnb">编辑</a>
+                                        <a class="delete_btn" style="margin-top: 0px;">删除</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row" style="margin: 40px 0 0">
+                            <div class="col-md-12 col-sm-12" style="padding: 0;">
+                                <div class="dataTables_paginate paging_bootstrap_full_number" style="text-align: center">
+                                    <ul class="pagination" style="visibility: visible;">
+                                        <li class="prev disabled"><a href="#" title=""><i
+                                                class="fa fa-angle-double-left"></i></a></li>
+                                        <li class="prev disabled"><a href="#" title=""><i class="fa fa-angle-left"></i></a></li>
+                                        <li class="active"><a href="#"><font><font>1</font></font></a></li>
+                                        <li><a href="#"><font><font>2</font></font></a></li>
+                                        <li><a href="#"><font><font>3</font></font></a></li>
+                                        <li><a href="#"><font><font>4</font></font></a></li>
+                                        <li><a href="#"><font><font>5</font></font></a></li>
+                                        <li class="next"><a href="#" title=""><i class="fa fa-angle-right"></i></a></li>
+                                        <li class="next"><a href="#" title=""><i class="fa fa-angle-double-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="jmsfjh">
+                        <form class="form-horizontal clearfix" role="form" method="get" id="" style="margin: 20px 0;">
+                            <div class="form-group item">
+                                <label class="control-label" style="text-align: center;">人群筛选</label>
+                                <div class="select_div">
+                                    <!-- 下拉框根据该居民有几种随访表就有几个选项 -->
+                                    <select class="form-control" >
+                                        <option value>--请选择--</option>
+                                        <option value="1">高血压人群随访</option>
+                                        <option value="1">糖尿病人群随访</option>
+                                        <option value="1">老年人人群随访</option>
+                                        <option value="1">531人群随访</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="table-scrollable table-scrollable-borderless">
+                            <table class="table table-hover table-light">
+                                <thead>
+                                <tr class="uppercase">
+                                    <th>开始时间</th>
+                                    <th>结束时间</th>
+                                    <th>随访人</th>
+                                    <th>随访方式</th>
+                                    <th>计划添加人</th>
+                                    <th>添加计划时间</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>2017-02-12</td>
+                                    <td>2017-02-12</td>
+                                    <td>陈利</td>
+                                    <td>门诊</td>
+                                    <td>陈利</td>
+                                    <td>2017-02-05</td>
+                                </tr>
+                                <tr>
+                                    <td>2017-02-12</td>
+                                    <td>2017-02-12</td>
+                                    <td>陈利</td>
+                                    <td>门诊</td>
+                                    <td>陈利</td>
+                                    <td>2017-02-05</td>
+                                </tr>
+                                <tr>
+                                    <td>2017-02-12</td>
+                                    <td>2017-02-12</td>
+                                    <td>陈利</td>
+                                    <td>门诊</td>
+                                    <td>陈利</td>
+                                    <td>2017-02-05</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row" style="margin: 40px 0 0">
+                            <div class="col-md-12 col-sm-12" style="padding: 0;">
+                                <div class="dataTables_paginate paging_bootstrap_full_number" style="text-align: center">
+                                    <ul class="pagination" style="visibility: visible;">
+                                        <li class="prev disabled"><a href="#" title=""><i
+                                                class="fa fa-angle-double-left"></i></a></li>
+                                        <li class="prev disabled"><a href="#" title=""><i class="fa fa-angle-left"></i></a></li>
+                                        <li class="active"><a href="#"><font><font>1</font></font></a></li>
+                                        <li><a href="#"><font><font>2</font></font></a></li>
+                                        <li><a href="#"><font><font>3</font></font></a></li>
+                                        <li><a href="#"><font><font>4</font></font></a></li>
+                                        <li><a href="#"><font><font>5</font></font></a></li>
+                                        <li class="next"><a href="#" title=""><i class="fa fa-angle-right"></i></a></li>
+                                        <li class="next"><a href="#" title=""><i class="fa fa-angle-double-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .sf-contents input[type=text] {
+        border: 0;
+        border-bottom: 1px solid #e2e2e4;
+        width: 50%;
+        display: inline-block;
+    }
+    .sf-contents .mt-checkbox.other {
+        width: 100%;
+    }
+    .sf-contents .mt-checkbox input[type=text] {
+        opacity: 1;
+        z-index: 0;
+        margin-top: -10px;
+    }
+    .sf-contents hr {
+        margin: 5px 0;
+    }
+    .sf-contents p {
+        margin: 0;
+    }
+    .sf-contents .one-level,
+    .sf-contents .two-level {
+        padding-left: 20px;
+    }
+    .sf-contents .tk_text {
+        padding: 0;
+    }
+    .sf-contents .addBtn {
+        background-color: #32c5d2;
+        color: #fff;
+        padding: 5px 10px;
+        border: 0;
+        margin-left: 70%;
+    }
+    .disease{
+        padding: 3px 0;
+    }
+    .frequency{
+        padding: 0!important;
+        width:60px!important;
+        height:30px;
+        line-height: 30px;
+        text-align: center;
+    }
+    .mechanism{
+        width:80% !important;
+    }
+    #sf_time input, #sf_time1 input, #sf_time2 input{
+        border: 1px solid #e2e2e4;
+    }
+    .optional{
+        display: inline-block;
+        font-size: 12px;
+        color: orange;
+        height:20px;
+        padding: 0px 5px;
+        border: 1px solid orange;
+        border-radius: 10px!important;
+    }
+    .form-control{
+        text-align: center;
+    }
+    .death{
+        padding: 0 5px;
+        background-color: #f5f6fa;
+    }
+</style>
+<!-- 点击添加用药情况模板 -->
+<div class="yyqk-template" style="display: none;">
+    <div class="groupDiv">
+        <button aria-hidden="true" class="close special" type="button" style="margin: 15px 15px 0 0;">×</button>
+        <label class="control-label">药物</label>
+        <div class="two-level">
+            <!-- 填空题 -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">药品名称</label>
+                <div class="col-md-6 tk_text">
+                    <input type="text" class="form-control" placeholder="请输入" value="">
+                </div>
+            </div>
+            <!-- 填空题 -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">次数</label>
+                <div class="col-md-6 tk_text">
+                    <input type="text" class="form-control" placeholder="请输入" value="">次/每日
+                </div>
+            </div>
+            <!-- 填空题 -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">用量</label>
+                <div class="col-md-6 tk_text">
+                    <input type="text" class="form-control" placeholder="请输入" value="">mg/每次
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 糖尿病详情 -->
+<div class="modal fade in edit_sfsx" id="edit-sfsx-tnb" aria-hidden="true" style="display:none; padding-left: 17px;">
+    <div class="modal-dialog" style="width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">编辑</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body sf-contents">
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">随访方式</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>门诊
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>家庭
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>电话
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 多选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">症状</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="special_checkbox"/>无症状
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>多饮
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>多食
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>多尿
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>感染
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>视力模糊
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>手脚麻木
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>下肢浮肿
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>体重明显下降
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox other">
+                                    <input type="checkbox" class="common_checkbox"/>其他
+                                    <span></span>
+                                    <input type="text" class="form-control" placeholder="请输入" value="">
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <p class="control-label">体征</p>
+                        <div class="one-level">
+                            <label class="control-label">血压</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">舒张压：</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">mmHg
+                                    </div>
+                                </div>
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">收缩压：</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">mmHg
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 多选题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">足背动脉搏动</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class=""/>双侧减弱
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class=""/>左侧减弱
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class=""/>右侧减弱
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class=""/>双侧消失
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class=""/>左侧消失
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class=""/>右侧消失
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class=""/>触及正常
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class=""/>下肢浮肿
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class=""/>体重明显下降
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox other">
+                                        <input type="checkbox" class=""/>其他
+                                        <span></span>
+                                        <input type="text" class="form-control" placeholder="请输入" value="">
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- 多行文本题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">其他体征</label>
+                                <div class="col-md-6">
+                                    <textarea placeholder="其他体征" style="width: 80%; display: block;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <p class="control-label">生活方式指导</p>
+                        <div class="one-level">
+                            <label class="control-label">运动</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">次数</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">次/周
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 单选题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">心里调整</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>良好
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>一般
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>差
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- 单选题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">遵医行为</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>良好
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>一般
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>差
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <p class="control-label">辅助检查</p>
+                        <div class="one-level">
+                            <label class="control-label">空腹血糖值</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">血糖值</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">mmmol/L
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="control-label">糖化血红蛋白</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">时间</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">%
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">服药依从性</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>规律
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>间断
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>不服药
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">药物不良反应</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>无
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>有
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">低血糖反应</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>无
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>偶尔
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>频繁
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">此次随访分类</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>控制满意
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>控制不满意
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>不良反应
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>并发症
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <p class="control-label">用药情况</p>
+                        <div class="one-level">
+                            <div class="groupDiv">
+                                <button aria-hidden="true" class="close special" type="button" style="margin: 15px 15px 0 0;">×</button>
+                                <label class="control-label">药物</label>
+                                <div class="two-level">
+                                    <!-- 填空题 -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">药品名称</label>
+                                        <div class="col-md-6 tk_text">
+                                            <input type="text" class="form-control" placeholder="请输入" value="">
+                                        </div>
+                                    </div>
+                                    <!-- 填空题 -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">次数</label>
+                                        <div class="col-md-6 tk_text">
+                                            <input type="text" class="form-control" placeholder="请输入" value="">次/每日
+                                        </div>
+                                    </div>
+                                    <!-- 填空题 -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">用量</label>
+                                        <div class="col-md-6 tk_text">
+                                            <input type="text" class="form-control" placeholder="请输入" value="">mg/每次
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="groupDiv">
+                                <button aria-hidden="true" class="close special" type="button" style="margin: 15px 15px 0 0;">×</button>
+                                <label class="control-label">药物</label>
+                                <div class="two-level">
+                                    <!-- 填空题 -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">药品名称</label>
+                                        <div class="col-md-6 tk_text">
+                                            <input type="text" class="form-control" placeholder="请输入" value="">
+                                        </div>
+                                    </div>
+                                    <!-- 填空题 -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">次数</label>
+                                        <div class="col-md-6 tk_text">
+                                            <input type="text" class="form-control" placeholder="请输入" value="">次/每日
+                                        </div>
+                                    </div>
+                                    <!-- 填空题 -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">用量</label>
+                                        <div class="col-md-6 tk_text">
+                                            <input type="text" class="form-control" placeholder="请输入" value="">mg/每次
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="addBtn">添加</button>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">转诊</label>
+                        <div class="one-level">
+                            <!-- 多行文本题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">转诊原因</label>
+                                <div class="col-md-6">
+                                    <textarea placeholder="转诊原因" style="width: 80%; display: block;"></textarea>
+                                </div>
+                            </div>
+                            <label class="control-label">机构</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">机构名称</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="control-label">科别</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">科别名称</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">保存更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 高血压详情 -->
+<div class="modal fade in edit_sfsx" id="edit-sfsx-gxy" aria-hidden="true" style="display:none; padding-left: 17px;">
+    <div class="modal-dialog" style="width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">编辑</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body sf-contents">
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">随访方式</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>门诊
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>家庭
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>电话
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 多选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">症状</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="special_checkbox"/>无症状
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>多饮
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>多食
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>多尿
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>感染
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>视力模糊
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>手脚麻木
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>下肢浮肿
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>体重明显下降
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox other">
+                                    <input type="checkbox" class="common_checkbox"/>其他
+                                    <span></span>
+                                    <input type="text" class="form-control" placeholder="请输入" value="">
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">体征</label>
+                        <div class="one-level">
+                            <label class="control-label">血压</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">舒张压：</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">mmHg
+                                    </div>
+                                </div>
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">收缩压：</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">mmHg
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="control-label">心率</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">心率：</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">bpm
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 多行文本题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">其他体征</label>
+                                <div class="col-md-6">
+                                    <textarea placeholder="其他体征" style="width: 80%; display: block;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">生活方式指导</label>
+                        <div class="one-level">
+                            <label class="control-label">运动</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">次数</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">次/周
+                                    </div>
+                                </div>
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">时间</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">分钟/次
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 单选题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">摄盐情况</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>轻
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>中
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>重
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- 单选题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">心里调整</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>良好
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>一般
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>差
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- 单选题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">遵医行为</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>良好
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>一般
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>差
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">辅助检查</label>
+                        <div class="one-level">
+                            <!-- 多行文本题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">辅助检查</label>
+                                <div class="col-md-6">
+                                    <textarea placeholder="辅助检查" style="width: 80%; display: block;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">服药依从性</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>规律
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>间断
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>不服药
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">药物不良反应</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>无
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>有
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">此次随访分类</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>控制满意
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>控制不满意
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>不良反应
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>并发症
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">用药情况</label>
+                        <div class="one-level">
+                            <label class="control-label">药物</label>
+                            <div class="two-level">
+                                <!-- 下拉框选择 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">药品名称</label>
+                                    <div class="col-md-6 tk_text">
+                                        <select class="form-control">
+                                            <option>阿莫西林</option>
+                                            <option>感冒灵颗粒</option>
+                                            <option>咳嗽药</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">次数</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">次/每日
+                                    </div>
+                                </div>
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">用量</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">mg/每次
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="addBtn">添加</button>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">转诊</label>
+                        <div class="one-level">
+                            <!-- 多行文本题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">转诊原因</label>
+                                <div class="col-md-6">
+                                    <textarea placeholder="转诊原因" style="width: 80%; display: block;"></textarea>
+                                </div>
+                            </div>
+                            <label class="control-label">机构</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">机构名称</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="control-label">科别</label>
+                            <div class="two-level">
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">科别名称</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">保存更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 精神病详情 -->
+<div class="modal fade in edit_sfsx" id="edit-sfsx-jsza" aria-hidden="true" style="display:none; padding-left: 17px;">
+    <div class="modal-dialog" style="width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">编辑</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body sf-contents">
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">随访方式</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>门诊
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>家庭
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>电话
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 多选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">若失访，原因&nbsp;&nbsp;<span class="optional">选填</span></label>
+                            <div class="col-md-6 optionals">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="loss "/>外出打工
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="loss "/>迁居它处
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="loss "/>走失
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="loss "/>连续三次未到访
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox other">
+                                    <input type="checkbox" class="loss "/>其它
+                                    <span></span>
+                                    <input type="text" class="form-control" placeholder="请输入" value="">
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">是否死亡，日期和原因&nbsp;&nbsp;<span class="optional">选填</span></label>
+                        <div class="one-level">
+                            <!--日期选择-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">随访时间</label>
+                                <div class="col-md-6">
+                                    <div id="sf_time" class="input-group input-large date-picker input-daterange"
+                                         data-date="2016-08"
+                                         data-date-format="yyyy-mm-dd" data-date-minviewmode="months">
+                                        <input type="text" class="date-select-input form-control" name="look-date" value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">死亡原因</label>
+                                <div class="col-md-6 optionals">
+                                    <div class="death">
+                                        <!-- 多选题 -->
+                                        <p class="disease">躯体疾病</p>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" class="cause_death"/>传染病和寄生虫病
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" class="cause_death"/>肿瘤
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" class="cause_death"/>心脏病
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" class="cause_death"/>脑血管病
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" class="cause_death"/>呼吸系统疾病
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" class="cause_death"/>消化系统疾病
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" class="cause_death"/>其它疾病
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox">
+                                            <input type="checkbox" class="cause_death"/>不详
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="cause_death"/>自杀
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="cause_death"/>他杀
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="cause_death"/>意外
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="cause_death"/>精神疾病相关并发症
+                                        <span></span>
+                                    </label>
+
+                                    <label class="mt-checkbox other">
+                                        <input type="checkbox" class="cause_death"/>其它
+                                        <span></span>
+                                        <input type="text" class="form-control" placeholder="请输入" value="">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">危险性评估</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>0级
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>1级
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>2级
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>3级
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>4级
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>5级
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 多选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">目前症状</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>幻觉
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>交流困难
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>猜疑
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>喜怒无常
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>行为怪异
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>兴奋话多
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>伤人毁物
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>悲观厌世
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>无故外出
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>自言自语
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="common_checkbox"/>孤僻懒散
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox other">
+                                    <input type="checkbox" class="special_checkbox"/>其它
+                                    <span></span>
+                                    <input type="text" class="form-control" placeholder="请输入" value="">
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">自知力</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>自知力完全
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>自知力不全
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>自知力缺失
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">睡眠情况</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>良好
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>一般
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>较差
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">饮食情况</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>良好
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>一般
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>较差
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">社会功能情况</label>
+                        <div class="one-level">
+                            <!-- 多选题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">个人生活料理</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>良好
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>一般
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>较差
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <label class="col-md-4 control-label">家务劳动</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>良好
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>一般
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>较差
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <label class="col-md-4 control-label">学习能力</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>良好
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>一般
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>较差
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <label class="col-md-4 control-label">社会人际交往</label>
+                                <div class="col-md-6">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>良好
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>一般
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" class="unique_checkbox"/>较差
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 填空题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">危险行为 <span>(不填写，默认无危险行为)</span></label>
+                            <div class="col-md-6">
+                                轻度滋事：<input type="text" class="form-control frequency" placeholder="" value="">次&nbsp;&nbsp;&nbsp;&nbsp;
+                                肇事：<input type="text" class="form-control frequency" placeholder="" value="">次&nbsp;&nbsp;&nbsp;&nbsp;
+                                <br>
+                                肇祸：<input type="text" class="form-control frequency" placeholder="" value="">次&nbsp;&nbsp;&nbsp;&nbsp;
+                                其他危害行为：<input type="text" class="form-control frequency" placeholder="" value="">次&nbsp;&nbsp;&nbsp;&nbsp;
+                                <br>
+                                自伤：<input type="text" class="form-control frequency" placeholder="" value="">次&nbsp;&nbsp;&nbsp;&nbsp;
+                                重度滋事：<input type="text" class="form-control frequency" placeholder="" value="">次&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">两次随访期间关锁情况</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>无关锁
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>关锁
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>关锁已解除
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">两次随访期间住院情况</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>未住院
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>正在住院
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>曾住院，现未住院
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>曾住院，现未住院
+                                    <span></span>
+                                </label>
+                            </div>
+                            <div class="one-level">
+                                <!--日期选择-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">末次出院时间</label>
+                                    <div class="col-md-6">
+                                        <div id="sf_time1" class="input-group input-large date-picker input-daterange"
+                                             data-date="2016-08"
+                                             data-date-format="yyyy-mm-dd" data-date-minviewmode="months">
+                                            <input type="text" class="date-select-input form-control" name="look-date" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">实验室检查</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>有
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>无
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">服药依从性</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>规律
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>间断
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>不服药
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">是否转诊</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>否
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>是
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>不服药
+                                    <span></span>
+                                </label>
+                            </div>
+                            <div class="one-level" style="padding-left: 40px">
+                                <!--文本编辑-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label hierarchy">转诊原因</label>
+                                    <div class="col-md-6">
+                                        <textarea placeholder="其他体征" style="width: 80%; display: block;"></textarea>
+                                    </div>
+                                    <label class="col-md-4 control-label">转诊机构</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control mechanism" placeholder="请输入" value="">
+                                    </div>
+                                    <label class="col-md-4 control-label">转诊科室</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control mechanism" placeholder="请输入" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">用药情况</label>
+                        <div class="one-level">
+                            <label class="control-label">药物</label>
+                            <div class="two-level">
+                                <!-- 下拉框选择 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">药品名称</label>
+                                    <div class="col-md-6 tk_text">
+                                        <select class="form-control">
+                                            <option>阿莫西林</option>
+                                            <option>感冒灵颗粒</option>
+                                            <option>咳嗽药</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">次数</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">次/每日
+                                    </div>
+                                </div>
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">用量</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">mg/每次
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="addBtn">添加</button>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">用药指导</label>
+                        <div class="one-level">
+                            <label class="control-label">药物</label>
+                            <div class="two-level">
+                                <!-- 下拉框选择 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">药品名称</label>
+                                    <div class="col-md-6 tk_text">
+                                        <select class="form-control">
+                                            <option>阿莫西林</option>
+                                            <option>感冒灵颗粒</option>
+                                            <option>咳嗽药</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">次数</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">次/每日
+                                    </div>
+                                </div>
+                                <!-- 填空题 -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">用量</label>
+                                    <div class="col-md-6 tk_text">
+                                        <input type="text" class="form-control" placeholder="请输入" value="">mg/每次
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="addBtn">添加</button>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">康复措施</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>生活劳动能力
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>职业训练
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>学习能力
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>社会交往
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox other">
+                                    <input type="checkbox" class="unique_checkbox"/>其他
+                                    <span></span>
+                                    <input type="text" class="form-control" placeholder="请输入" value="">
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 单选题 -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">本次随访分类</label>
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>本稳定
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>基本稳定
+                                    <span></span>
+                                </label>
+                                <label class="mt-checkbox">
+                                    <input type="checkbox" class="unique_checkbox"/>稳定
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 组合 -->
+                        <label class="control-label">下次随访日期</label>
+                        <div class="one-level">
+                            <!-- 多选题 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">请选择时间</label>
+                                <div class="col-md-6">
+                                    <div id="sf_time2" class="input-group input-large date-picker input-daterange"
+                                         data-date="2016-08"
+                                         data-date-format="yyyy-mm-dd" data-date-minviewmode="months">
+                                        <input type="text" class="date-select-input form-control" name="look-date" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">保存更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    /* 单选控制 */
+    $(".unique_checkbox").on("click", function() {
+        var checked = $(this)[0].checked;
+
+        var checkboxs = $(this).parent().parent().find("label input[class=unique_checkbox]");
+        for(var i = 0; i < checkboxs.length; i++) {
+            checkboxs[i].checked = false;
+        }
+        /*判断点击时该选项的选中状态*/
+        if(checked) {
+            $(this)[0].checked = true;
+        }
+    });
+    /* 控制带有排斥的多选 */
+    $(".special_checkbox").on("click", function() {
+        var checked = $(this)[0].checked;
+
+        var checkboxs = $(this).parent().parent().parent().find("label input[class=common_checkbox]");
+        for(var i = 0; i < checkboxs.length; i++) {
+            checkboxs[i].checked = false;
+        }
+        /*判断点击时该选项的选中状态*/
+        if(checked) {
+            $(this)[0].checked = true;
+        }
+    });
+    /* 控制带有排斥的多选 */
+    $(".common_checkbox").on("click", function() {
+        var checked = $(this)[0].checked;
+
+        var checkboxs = $(this).parent().parent().parent().find("label input[class=special_checkbox]");
+        for(var i = 0; i < checkboxs.length; i++) {
+            checkboxs[i].checked = false;
+        }
+        /*判断点击时该选项的选中状态*/
+        if(checked) {
+            $(this)[0].checked = true;
+        }
+    });
+    /* 药物的添加 */
+    $(".addBtn").on("click", function() {
+        var html = $(".yyqk-template").html();
+        $(this).before(html);
+    });
+    //    死亡原因
+    $(".death>label>input").on("click", function() {
+        var checkboxs = $(this).parent().parent().siblings().find("input");
+        for(var i = 0; i < checkboxs.length; i++) {
+            checkboxs[i].checked = false;
+        }
+        $(this).checked = true;
+    });
+
+    //    时间选择
+    var date = new Date();
+    var month = date.getMonth() + 1;
+    if(month < 10) {
+        month = "0" + month;
+    }
+    var n = date.getFullYear() + "-" + month + "-" + date.getDate();
+    var lookDate = $("input[name='look-date']");
+    lookDate.val(n);
+    $('#sf_time, #sf_time1, #sf_time2').datepicker({
+        autoclose: true,
+        startDate: "2016-08-31",
+        endDate: n
+    }).on('changeDate', function (e) {
+        alert(n);
+    });
+//    失访选填optionals/
+    $(".optionals .loss ").on("click", function() {
+        var bool = $(this)[0].checked;
+        if(bool) {
+            var checkboxs = $(".optionals .loss ");
+            for(var i = 0; i < checkboxs.length; i++) {
+                checkboxs[i].checked = false;
+            }
+            $(this)[0].checked = true;
+        }
+    });
+    //   死亡选填optionals/
+    $(".optionals .cause_death").on("click", function() {
+        var bool = $(this)[0].checked;
+        if(bool) {
+            var checkboxs = $(".optionals .cause_death");
+            for(var i = 0; i < checkboxs.length; i++) {
+                checkboxs[i].checked = false;
+            }
+            $(this)[0].checked = true;
+        }
+    });
+
+    /* 表单中题目的删除按钮 */
+    $(".edit_sfsx").delegate(".close.special", "click", function() {
+        $(this).parent().remove();
+    });
+</script>

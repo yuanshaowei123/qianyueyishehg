@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>服务包选择</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        .weui-grid {
+            width: 50%;
+            padding: 15px;
+        }
+
+        .weui-cells_radio .weui-check:checked + .weui-icon-checked:before {
+            width: 0;
+            height: 0;
+            border-width: 20px 20px;
+            border-style: solid;
+            border-color: #09bb07 #09bb07 transparent transparent;
+            color: white;
+            top: 0;
+            line-height: 0;
+            margin: 0;
+            content: ""
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-grids weui-cells_radio" style="margin-bottom: 55px">
+        <label class="weui-grid package weui-check__label">
+            <div class="packageRadio">
+                <input type="checkbox" class="weui-check" name="radio1" checked="">
+                <span class="weui-icon-checked"></span>
+            </div>
+            <h4 class="packageTitle weui-grid__label text_left">基础服务包</h4>
+            <p class="packageDesc weui-grid__label text_left">免费服务 免费享受</p>
+            <img class="packageImg" src="../images/pic_160.png" alt="">
+            <div class="weui-grid__label">
+                <p class="packagePrice">￥0</p>
+                <a class="packageDetail">查看详情</a>
+            </div>
+        </label>
+        <label class="weui-grid package weui-check__label">
+            <div class="packageRadio">
+                <input type="checkbox" class="weui-check" name="radio1">
+                <span class="weui-icon-checked"></span>
+            </div>
+            <h4 class="packageTitle weui-grid__label text_left">血糖包</h4>
+            <p class="packageDesc weui-grid__label text_left">血糖测量服务</p>
+            <img class="packageImg" src="../images/pic_160.png" alt="">
+            <div class="weui-grid__label">
+                <p class="packagePrice">￥99.00</p>
+                <a class="packageDetail">查看详情</a>
+            </div>
+        </label>
+        <label class="weui-grid package weui-check__label">
+            <div class="packageRadio">
+                <input type="checkbox" class="weui-check" name="radio1">
+                <span class="weui-icon-checked"></span>
+            </div>
+            <h4 class="packageTitle weui-grid__label text_left">血压包</h4>
+            <p class="packageDesc weui-grid__label text_left">血压测量服务</p>
+            <img class="packageImg" src="../images/pic_160.png" alt="">
+            <div class="weui-grid__label">
+                <p class="packagePrice">￥99.00</p>
+                <a class="packageDetail">查看详情</a>
+            </div>
+        </label>
+    </div>
+</div>
+<div class="js_dialog" id="dialog_packageDetail" style="display: none">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">基础服务包</strong></div>
+        <div class="weui-dialog__bd dialog_p">
+            <article class="weui_article clause">
+                <p>服务内容</p>
+                <p>1、提供健康教育、健康咨询、妇幼保健及健康档案管理等基本公共卫生服务。</p>
+                <p>2、65周岁以上老人每年一次健康体检，每3个月提供一次健康指导及随访。</p>
+                <p>3、高血压、糖尿病居民提供血压血糖监测、用药指导、不良生活方式干预、综合评估等服务。</p>
+                <p>4、对肿瘤、精神病、传染病等特殊病提供健康管理服务。</p>
+                <p>5、因长期卧床行动不便居民，提供家庭病床式上门服务；病情复杂或病情控制不佳的居民协助专科医生给予个性化诊疗。</p>
+                <p>6、因病情需要转上级二、三级医院、专科医院就诊住院的提供转诊服务。</p>
+                <p>7、提供慢性病医保申请、药费报销等相关医保服务。对全年医药费个人负担较重的提出合理化诊疗方案，减轻家庭医疗费用支出。</p>
+                <p>8、对签约家庭成员定期提供健康、疾病诊疗综合评价。</p>
+            </article>
+        </div>
+        <div class="weui-dialog__ft"><a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">关闭</a>
+        </div>
+    </div>
+</div>
+<div class="weui-btn-rea fix_btn">
+    <a class="weui-btn weui-btn_primary">确定选择</a>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script>
+    $(function () {
+        f.dialog_class("packageDetail");
+    })
+    $(".fix_btn a").on("click", function () {
+        location.href = "签约信息.html";
+    });
+    //必选一个服务包，可以多选
+    $("input[type=checkbox]").on("click", function() {
+       var checkboxs = $("input[type=checkbox]");
+       var count = 0;
+       for(var i = 0; i < checkboxs.length; i++ ) {
+           if(checkboxs[i].checked == true ) {
+               count++ ;
+           }
+       }
+       if(count == 0) {
+           $(this)[0].checked = true;
+       }
+    });
+</script>
+</body>
+</html>

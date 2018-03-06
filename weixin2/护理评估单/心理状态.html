@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0">
+    <title>心理状态</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <link rel="stylesheet" href="../css/心理状态.css"/>
+</head>
+<body ontouchstart>
+<div class="container">
+    <!-- 情绪 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>情绪</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="steady">稳定</label>
+                        <input type="checkbox" name="checkbox" id="steady" value="稳定" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="hotbed">易激动</label>
+                        <input type="checkbox" name="checkbox" id="hotbed" value="易激动" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="anxious">焦虑</label>
+                        <input type="checkbox" name="checkbox" id="anxious" value="焦虑" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="fear">恐惧</label>
+                        <input type="checkbox" name="checkbox" id="fear" value="恐惧" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="lonely" class="weui-flex__item">孤独无助</label>
+                        <input type="checkbox" name="checkbox" id="lonely" value="孤独无助" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="inhibition" class="weui-flex__item">压抑</label>
+                        <input type="checkbox" name="checkbox" id="inhibition" value="压抑" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="optimistic" class="weui-flex__item">开朗</label>
+                        <input type="checkbox" name="checkbox" id="optimistic" value="开朗" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="grief" class="weui-flex__item">悲哀</label>
+                        <input type="checkbox" name="checkbox" id="grief" value="悲哀" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 对疾病态度 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>对疾病态度</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="positive" class="weui-flex__item">积极</label>
+                        <input type="checkbox" name="checkbox" id="positive" value="积极" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="negative" class="weui-flex__item">消极</label>
+                        <input type="checkbox" name="checkbox" id="negative" value="消极" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="acceptable" class="weui-flex__item">可接受</label>
+                        <input type="checkbox" name="checkbox" id="acceptable" value="可接受" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="non-acceptance" class="weui-flex__item">不接受</label>
+                        <input type="checkbox" name="checkbox" id="non-acceptance" value="不接受" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 对疾病认识 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>对疾病认识</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="incomprehension" class="weui-flex__item">不理解</label>
+                        <input type="checkbox" name="checkbox" id="incomprehension" value="不理解" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="partial-understanding" class="weui-flex__item">部分理解</label>
+                        <input type="checkbox" name="checkbox" id="partial-understanding" value="部分理解" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="fully-understand" class="weui-flex__item">完全理解</label>
+                        <input type="checkbox" name="checkbox" id="fully-understand" value="完全理解" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 解决问题能力 -->
+    <div class="weui-cells last-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>解决问题能力</h4>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="discuss" class="weui-flex__item">与人商量</label>
+                        <input type="checkbox" name="checkbox" id="discuss" value="与人商量" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="independent-processing" class="weui-flex__item">独立处理</label>
+                        <input type="checkbox" name="checkbox" id="independent-processing" value="独立处理" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="laissez-faire" class="weui-flex__item">听其自然</label>
+                        <input type="checkbox" name="checkbox" id="laissez-faire" value="听其自然" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-btn-rea">
+        <a class="weui-btn btn-all-open">全部展开</a>
+        <a class="weui-btn btn-all-close">全部合上</a>
+    </div>
+
+    <div class="weui-btn-rea fix_btn">
+        <a class="weui-btn weui-btn_primary">保存</a>
+    </div>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script>
+
+    $(function () {
+        cal();
+    });
+    //监控屏幕大小变化
+    window.onresize = function(){
+        cal();
+    };
+    //根据屏幕变化，改变rem值
+    function cal() {
+        if(screen.width < 1080) {
+            //通过window.screen.width获取屏幕的宽度
+            var width = screen.width * 2;
+            var zoom = (width/750) * 2.8;
+            $("input[type=checkbox]").css("zoom", zoom);
+
+            var offWidth = width / 25; //这里用宽度/30表示1rem取得的px
+            document.getElementsByTagName("html")[0].style.fontSize = offWidth + 'px'; //把rem的值复制给顶级标签html的font-size
+        }
+    };
+    //点击保存按钮
+    $(".fix_btn a").on("click", function () {
+        location.href = "护理评估单.html"
+    });
+    //获取checkbox选中的值
+    function getCheckboxValues($self) {
+        var checkBoxs = $self.parent().find(".selection-area input[type=checkbox]");
+        var html = '';
+        var count = 0;
+        for(var i = 0; i < checkBoxs.length; i++) {
+            var checkbox = checkBoxs[i];
+            if(checkbox.checked) {
+                html = "<span>" + checkbox.value + "</span>";
+            }
+        }
+        return html;
+    };
+    //展开、关闭标签，关闭时把选中的值显示在右上角
+    $(".title").on("click", function () {
+        var $self = $(this);
+        var display = $self.parent().find(".selection-area").css("display");
+        if( display == "none") {
+            $self.find(".weui-cell__ft").html("");
+            $self.parent().find(".selection-area").show();
+            var $areas = $self.parent().parent().find(".selection-area");
+            var count = 0;
+            for(var i = 0; i < $areas.length; i++) {
+                area = $areas[i];
+                var display2 = $(area).css("display");
+                if(display2 == "none") {
+                    count ++;
+                }
+            }
+            //当全部标签展开时，把全部展开按钮更换为全部合上按钮
+            if(count == 0) {
+                $(".btn-all-close").show();
+                $(".btn-all-open").hide();
+            }
+        } else {
+            var html = getCheckboxValues($self);
+            $self.find(".weui-cell__ft").html(html);
+            $self.parent().find(".selection-area").hide();
+
+            var $areas = $self.parent().parent().find(".selection-area");
+            var count = 0;
+            for(var i = 0; i < $areas.length; i++) {
+                area = $areas[i];
+                var display2 = $(area).css("display");
+                if(display2 != "none") {
+                    count ++;
+                }
+            }
+            //只要有一个标签是合上的，就显示全部展开的
+            if(count != 4) {
+                $(".btn-all-close").hide();
+                $(".btn-all-open").show();
+            }
+        }
+    });
+    //点击全部展开按钮
+    $(".btn-all-open").on("click", function() {
+        $self = $(this);
+        $(".selection-area").show();
+        $(".selection-area").parent().find(".title .weui-cell__ft").html('');
+        $self.hide();
+        $self.parent().find(".btn-all-close").show();
+    });
+    //点击全部合上按钮
+    $(".btn-all-close").on("click", function() {
+        $self = $(this);
+        $(".selection-area").hide();
+        $self.hide();
+        $self.parent().find(".btn-all-open").show();
+
+        var $titles = $self.parent().parent().find(".title");
+        for(var i = 0; i < $titles.length; i++) {
+            title = $titles[i];
+            var html = getCheckboxValues($(title));
+            $(title).find(".weui-cell__ft").html(html);
+        }
+    });
+    //设置checkbox为单选按钮
+    $('input[type=checkbox]').click(function(){
+        $this = $(this);
+        if($this[0].checked) {
+            var checkboxs = $this.parent().parent().parent().find("input[type=checkbox]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                }
+            }
+            $this[0].checked = true;
+        }
+    });
+</script>
+</body>
+</html>

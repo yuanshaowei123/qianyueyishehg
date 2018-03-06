@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        body {
+            background: white;
+        }
+
+        h2 {
+            font-weight: bold !important;
+        }
+
+        h1 {
+            font-weight: bold !important;
+        }
+
+        p{
+            line-height: 1.8em;
+        }
+
+        .weui-cell__hd {
+            min-width: 150px;
+        }
+
+        .weui-label {
+            min-width: 125px;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <h1 align="center" style="color: #3988e6">立即签约</h1>
+    <div class="weui-cells weui-cells_form" style="margin-bottom: 65px">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+            <div class="weui-cell__bd">
+                <input id="name" class="weui-input" type="text" placeholder="请输入姓名">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
+            <div class="weui-cell__bd">
+                <input id="tel" class="weui-input" type="number" placeholder="请输入手机号">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">身份证</label></div>
+            <div class="weui-cell__bd">
+                <input id="id" class="weui-input" type="text" placeholder="请输入身份证号">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">邀请人</label></div>
+            <div class="weui-cell__bd">
+                <input id="invite" class="weui-input" type="text" placeholder="请输入邀请人姓名">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">区域</label></div>
+            <div class="weui-cell__bd">
+                <p>亭湖区</p>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">小区、村、单位</label></div>
+            <div class="weui-cell__bd">
+                <input id="areaONE" class="weui-input" type="text" placeholder="例：亭湖区卫计委">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">幢室、组</label></div>
+            <div class="weui-cell__bd">
+                <input id="areaTWO" class="weui-input" type="text" placeholder="例：1-1-101">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui-btn-rea fix_btn">
+    <a class="weui-btn weui-btn_primary">提交</a>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script>
+    $(".fix_btn a").on("click", function () {
+        window.scrollTo(0, document.body.scrollHeight);
+        if (
+            f.reg_name($("#name").val())
+            && f.reg_tel($("#tel").val())
+            && f.reg_id($("#id").val())
+            && f.reg_txt($("#invite").val(), "请填写邀请人")
+            && f.reg_txt($("#areaONE").val(), "请填写小区、村、单位")
+            && f.reg_txt($("#areaTWO").val(), "幢室、组")
+        ) {
+            f.successToptips("签约成功","亭湖_签约活动_提交.html");
+        }
+    })
+</script>
+</body>
+</html>

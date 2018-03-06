@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="container serviceShop_order">
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p>服务地址</p>
+            </div>
+            <div class="weui-cell__ft">白莲社区枫桥路69号1幢101室</div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label class="weui-label">服务对象</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select2" dir="rtl">
+                    <option value="1">王琦</option>
+                    <option value="2">王少思</option>
+                    <option value="3">武艳</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p>联系电话</p>
+            </div>
+            <div class="weui-cell__ft">15950035957</div>
+        </div>
+    </div>
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-panel__bd">
+            <div class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../../images/fwb_gxt.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title home_myDoctor">高血压服务包</h4>
+                    <p class="weui-media-box__desc">总计：<b>￥80</b> 医保减免：<b>￥10</b> 实付：<b>￥70</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui-btn-rea fix_btn">
+    <a class="weui-btn weui-btn_primary">确定</a>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    $(".fix_btn a").on("click", function () {
+        location.href = "../首页.html";
+    });
+</script>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+</body>
+</html>

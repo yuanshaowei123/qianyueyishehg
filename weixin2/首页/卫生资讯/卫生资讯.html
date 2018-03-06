@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>卫生资讯</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body class="hygiene" ontouchstart>
+<div id="wrapper">
+    <div id="scroller">
+        <div id="pullDown">
+        </div>
+        <div class="weui-panel weui-panel_access">
+            <div id="thelist" class="weui-panel__bd">
+                <a class="weui-media-box weui-media-box_appmsg" href="卫生资讯_详情.html">
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title home_myDoctor">糖尿病心肌病治疗</h4>
+                        <div>
+                            <p class="weui-media-box__desc hygiene_desc">2017年6月6日</p>
+                            <div class="weui-media-box__desc hygiene_look">
+                                <img src="../../images/look.png">191
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../../images/zixun2.jpg">
+                    </div>
+                </a>
+                <a class="weui-media-box weui-media-box_appmsg" href="卫生资讯_详情.html">
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title home_myDoctor">让血糖飙高的5款家常菜</h4>
+                        <div>
+                            <p class="weui-media-box__desc hygiene_desc">2017年6月6日</p>
+                            <div class="weui-media-box__desc hygiene_look">
+                                <img src="../../images/look.png">191
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../../images/zixun1.jpg">
+                    </div>
+                </a>
+                <a class="weui-media-box weui-media-box_appmsg" href="卫生资讯_详情.html">
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title home_myDoctor">糖尿病心肌病治疗</h4>
+                        <div>
+                            <p class="weui-media-box__desc hygiene_desc">2017年6月6日</p>
+                            <div class="weui-media-box__desc hygiene_look">
+                                <img src="../../images/look.png">191
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../../images/zixun2.jpg">
+                    </div>
+                </a>
+                <a class="weui-media-box weui-media-box_appmsg" href="卫生资讯_详情.html">
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title home_myDoctor">糖尿病心肌病治疗</h4>
+                        <div>
+                            <p class="weui-media-box__desc hygiene_desc">2017年6月6日</p>
+                            <div class="weui-media-box__desc hygiene_look">
+                                <img src="../../images/look.png">191
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../../images/zixun2.jpg">
+                    </div>
+                </a>
+                <a class="weui-media-box weui-media-box_appmsg" href="卫生资讯_详情.html">
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title home_myDoctor">让血糖飙高的5款家常菜</h4>
+                        <div>
+                            <p class="weui-media-box__desc hygiene_desc">2017年6月6日</p>
+                            <div class="weui-media-box__desc hygiene_look">
+                                <img src="../../images/look.png">191
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../../images/zixun1.jpg">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="pullUp">
+            <span class="pullUpLabel">上拉加载更多...</span>
+        </div>
+    </div>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/iscroll.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    function getdata() {
+        var data = [
+            {
+                id: "1",
+                title: "体检",
+                time: "2017年02月04日",
+                name: "付华",
+                href: "卫生资讯_详情.html",
+                look: 2,
+                img:"../images/zixun2.jpg"
+            }
+        ];
+        return data;
+    }
+
+    f.loaded(getdata(), "hygiene");
+</script>
+</body>
+</html>

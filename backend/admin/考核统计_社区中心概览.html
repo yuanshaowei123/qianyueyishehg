@@ -1,0 +1,712 @@
+<style>
+    .caption {
+        line-height: 1.8em !important;
+    }
+
+    .col-md-6 {
+        margin-bottom: 20px;
+    }
+    .contract{
+        position: relative;
+    }
+    .mores{
+        position: absolute;
+        top:10px;
+        right:80px;
+        z-index:1000;
+        display: none;
+    }
+    .btn:not(.btn-sm):not(.btn-lg){
+        line-height: 0.8;
+    }
+    @media (min-width: 992px){
+        .all {
+            width: 1000px;
+        }
+    }
+    .modal, .modal-open, .scroll{
+        overflow-y: hidden!important;
+    }
+    .btn.btn-outline.dark {
+        color: #FFF;
+        background-color: #32c5d2;
+        border-color: #32c5d2;
+    }
+    .modal-header{
+        position: relative;
+    }
+    .data{
+        position: absolute;
+        top:10px;
+        right:50px;
+    }
+</style>
+<div class="clearfix" style="background-color: #dbdbdb; margin: 15px;">
+    <div class="actions col-md-12" style="margin: 20px 3px;">
+        <div id="dataPicker_zx_sqzxgl" class="input-group input-large date-picker input-daterange"
+             data-date="2016-08"
+             data-date-format="yyyy-mm-dd" data-date-minviewmode="months">
+            <label class="date-select-label">数据看板</label>
+            <input type="text" class="date-select-input form-control" name="look-date" value="">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-green-sharp">
+                        <span data-counter="counterup" data-value="15">15 <small> / 68</small></span>
+                    </h3>
+                    <small>签约人数</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-pie-chart"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 100%;" class="progress-bar progress-bar-success green-sharp">
+                        <span class="sr-only">76% progress</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-red-haze">
+                        <span data-counter="counterup" data-value="5">5<small> / 78</small></span>
+                    </h3>
+                    <small>绑定人数</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-pie-chart"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 100%;" class="progress-bar progress-bar-success red-haze">
+                        <span class="sr-only">85% change</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-blue-sharp">
+                        <span data-counter="counterup" data-value="30">30<small> / 99</small></span>
+                    </h3>
+                    <small>预约人数</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-pie-chart"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 100%;" class="progress-bar progress-bar-success blue-sharp">
+                        <span class="sr-only">100% grow</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-purple-soft">
+                        <span data-counter="counterup" data-value="30">30<small> / 67</small></span>
+                    </h3>
+                    <small>居民咨询</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-pie-chart"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 100%;" class="progress-bar progress-bar-success purple-soft">
+                        <span class="sr-only">100% change</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="portlet light portlet-fit ">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">社区总计签约及微信绑定情况</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div id="sq_wx" style="height:300px;"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="portlet light portlet-fit ">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">各团队签约及微信绑定情况</span>
+            </div>
+            <div class="actions" style="float: right">
+                <div id="dataPicker_td_wx" class="input-group input-large date-picker input-daterange"
+                     data-date="2016-08"
+                     data-date-format="yyyy-mm" data-date-minviewmode="months">
+                    <input type="text" class="form-control" name="from1" value="">
+                    <span class="input-group-addon"> 至 </span>
+                    <input type="text" class="form-control" name="to1" value="">
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body contract">
+            <button id="more3" type="button" class="btn btn-circle btn-primary mores" data-toggle="modal"
+                    href="#addmoda7">
+                更多
+            </button>
+            <div id="td_wx" style="height:300px;"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="portlet light portlet-fit ">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">社区总计服务情况</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div id="sq_fw" style="height:300px;"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="portlet light portlet-fit ">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">各团队服务情况</span>
+            </div>
+            <div class="actions" style="float: right">
+                <div id="dataPicker_td_fw" class="input-group input-large date-picker input-daterange"
+                     data-date="2016-08"
+                     data-date-format="yyyy-mm" data-date-minviewmode="months">
+                    <input type="text" class="form-control" name="from1" value="">
+                    <span class="input-group-addon"> 至 </span>
+                    <input type="text" class="form-control" name="to1" value="">
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body contract">
+            <button id="more4" type="button" class="btn btn-circle btn-primary mores" data-toggle="modal"
+                    href="#addmoda8">
+                更多
+            </button>
+            <div id="td_fw" style="height:300px;"></div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<div class="modal fade bs-modal-lg scroll " id="addmoda7" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg all">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">各团队签约及微信绑定情况</h4>
+                <div class="actions data" style="float: right">
+                    <div id="dataPicker_zx_wx3" class="input-group input-large date-picker input-daterange" data-date="2016-08" data-date-format="yyyy-mm" data-date-minviewmode="months">
+                        <input type="text" class="form-control" name="from1" value="">
+                        <span class="input-group-addon"> 至 </span>
+                        <input type="text" class="form-control" name="to1" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="td1_wx" style="width: 970px;height:500px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+                <!--<button type="button" class="btn green">确定</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-modal-lg scroll " id="addmoda8" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg all">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">各团队服务情况</h4>
+                <div class="actions data" style="float: right">
+                    <div id="dataPicker_zx_wx4" class="input-group input-large date-picker input-daterange" data-date="2016-08" data-date-format="yyyy-mm" data-date-minviewmode="months">
+                        <input type="text" class="form-control" name="from1" value="">
+                        <span class="input-group-addon"> 至 </span>
+                        <input type="text" class="form-control" name="to1" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="td1_fw" style="width: 970px;height:500px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/global/plugins/echarts/echarts.js" type="text/javascript"></script>
+<script>
+    $(function () {
+        var date = new Date();
+        var m1 = date.getFullYear() + "-" + (date.getMonth() + 1);
+        var fromTime = $("input[name='from1']");
+        var toTime = $("input[name='to1']");
+        fromTime.val("2016-08");
+        toTime.val(m1);
+
+        $('#dataPicker_td_wx,#dataPicker_td_fw,#dataPicker_zx_wx3,#dataPicker_zx_wx4').datepicker({
+            rtl: false,
+            orientation: "left",
+            autoclose: true,
+            minViewMode: 1,
+            maxViewMode: 2,
+            startDate: "2016-08",
+            endDate: m1
+        }).on('changeDate', function (e) {
+            var from = $(this).find("input[name='from']");
+            var to = $(this).find("input[name='to']");
+            var id = this.id.substring(11);
+//            alert(from.val() + "至" + to.val() + " " + id);
+        });
+
+        var month = date.getMonth() + 1;
+        if(month < 10) {
+            month = "0" + month;
+        }
+        var n = date.getFullYear() + "-" + month + "-" + date.getDate();
+        var lookDate = $("input[name='look-date']");
+        lookDate.val(n);
+
+        $('#dataPicker_zx_sqzxgl').datepicker({
+            autoclose: true,
+            startDate: "2016-08-31",
+            endDate: n
+        }).on('changeDate', function (e) {
+//            alert(n);
+        });
+
+        require.config({paths: {echarts: "../assets/global/plugins/echarts/"}}),
+            require(["echarts", "echarts/chart/bar", "echarts/chart/line"], function (e) {
+
+                var td_wx = e.init(document.getElementById("td_wx"));
+                sq_option = {
+                    tooltip: {trigger: "axis"},
+                    legend: {data: ["签约", "微信绑定"]},
+                    toolbox: {
+                        show: !0,
+                        feature: {
+                            restore: {show: !0},
+                            saveAsImage: {show: !0}
+                        }
+                    },
+                    calculable: !0,
+                    xAxis: [{
+                        type: "category",
+                        data: ["李娟团队李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队"],
+                        axisLabel : {
+                            interval : 0,
+                            formatter : function(params){
+                                var newParamsName = "";
+                                var paramsNameNumber = params.length;
+                                var provideNumber = 5;
+                                var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                                if (paramsNameNumber > provideNumber) {
+                                    for (var p = 0; p < rowNumber; p++) {
+                                        var tempStr = "";
+                                        var start = p * provideNumber;
+                                        var end = start + provideNumber;
+                                        if (p == rowNumber - 1) {
+                                            tempStr = params.substring(start, paramsNameNumber);
+                                        } else {
+                                            tempStr = params.substring(start, end) + "\n";
+                                        }
+                                        newParamsName += tempStr;
+                                    }
+
+                                } else {
+                                    newParamsName = params;
+                                }
+                                return newParamsName
+                            }
+
+                        }
+                    }],
+                    grid:{
+                        y2: 80,
+                    },
+                    yAxis: [{type: "value", splitArea: {show: !0}}],
+                    series: [
+                        {
+                            name: "签约",
+                            type: "bar",
+                            data: [14, 19, 24]
+                        },
+                        {
+                            name: "微信绑定",
+                            type: "bar",
+                            data: [16, 12, 21]
+                        }]
+                };
+                let more3 = document.querySelector("#more3");
+                if(sq_option.xAxis[0].data.length>8){//如果显示大于8，显现更多，当前页面只显示8个数据`
+                    more3.style.cssText = 'display:block';
+                    var data1 = sq_option.xAxis[0].data.slice(0,8);
+                    sq_option.xAxis[0].data = data1;
+                }
+                td_wx.setOption(sq_option);
+
+//                更多
+                var td1_wx = e.init(document.getElementById("td1_wx"));
+                var sq1_option = {
+                    tooltip: {trigger: "axis"},
+                    legend: {data: ["签约", "微信绑定"]},
+                    toolbox: {
+                        show: !0,
+                        feature: {
+                            restore: {show: !0},
+                            saveAsImage: {show: !0}
+                        }
+                    },
+                    calculable: !0,
+                    xAxis: [{
+                        type: "category",
+                        data: ["李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队","张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队"],
+                        axisLabel : {
+                            interval : 0,
+                            formatter : function(params,long){
+                                var newParamsName = "";
+                                var paramsNameNumber = params.length;
+                                var provideNumber = sq_nub1;
+                                var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                                if (paramsNameNumber > provideNumber) {
+                                    for (var p = 0; p < rowNumber; p++) {
+                                        var tempStr = "";
+                                        var start = p * provideNumber;
+                                        var end = start + provideNumber;
+                                        if (p == rowNumber - 1) {
+                                            tempStr = params.substring(start, paramsNameNumber);
+                                        } else {
+                                            tempStr = params.substring(start, end) + "\n";
+                                        }
+                                        newParamsName += tempStr;
+                                    }
+
+                                } else {
+                                    newParamsName = params;
+                                }
+                                return newParamsName
+                            }
+
+                        }
+                    }],
+                    grid:{
+                        y2: 100,
+                    },
+                    yAxis: [{type: "value", splitArea: {show: !0}}],
+                    series: [
+                        {
+                            name: "签约",
+                            type: "bar",
+                            data: [14, 19, 24]
+                        },
+                        {
+                            name: "微信绑定",
+                            type: "bar",
+                            data: [16, 12, 21]
+                        }]
+                };
+//                var sq_height1;
+                var sq_nub1;
+                if(sq1_option.xAxis[0].data.length<=15){
+                    sq_nub1 = 4;
+                }else if(15<sq1_option.xAxis[0].data.length && sq1_option.xAxis[0].data.length<=20){
+                    sq_nub1 = 3;
+//                    sq_height1 = 130;
+//                    sq1_option.grid.y2 = sq_height1;
+                }else if(20<sq1_option.xAxis[0].data.length && sq1_option.xAxis[0].data.length<=30){
+                    sq_nub1 = 2;
+//                    sq_height1 = 130;
+//                    sq1_option.grid.y2 = sq_height1;
+                }else{
+                    sq_nub1 = 1;
+//                    sq_height1 = 200;
+//                    sq1_option.grid.y2 = sq_height1;
+                }
+                td1_wx.setOption(sq1_option);
+
+                var td_fw = e.init(document.getElementById("td_fw"));
+                var td_option = {
+                    tooltip: {trigger: "axis"},
+                    legend: {data: ["咨询", "预约上门", "家庭病床申请家庭", "随访筛查", "社区巡诊"]},
+                    toolbox: {
+                        show: !0,
+                        feature: {
+                            restore: {show: !0},
+                            saveAsImage: {show: !0}
+                        }
+                    },
+                    calculable: !0,
+                    xAxis: [{
+                        type: "category",
+                        data: ["李娟团队李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队"],
+                        axisLabel : {
+                            interval : 0,
+                            formatter : function(params){
+                                var newParamsName = "";
+                                var paramsNameNumber = params.length;
+                                var provideNumber = 5;
+                                var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                                if (paramsNameNumber > provideNumber) {
+                                    for (var p = 0; p < rowNumber; p++) {
+                                        var tempStr = "";
+                                        var start = p * provideNumber;
+                                        var end = start + provideNumber;
+                                        if (p == rowNumber - 1) {
+                                            tempStr = params.substring(start, paramsNameNumber);
+                                        } else {
+                                            tempStr = params.substring(start, end) + "\n";
+                                        }
+                                        newParamsName += tempStr;
+                                    }
+
+                                } else {
+                                    newParamsName = params;
+                                }
+                                return newParamsName
+                            }
+
+                        }
+                    }],
+                    grid:{
+                        y2: 80,
+                    },
+                    yAxis: [{type: "value", splitArea: {show: !0}}],
+                    series: [
+                        {
+                            name: "咨询",
+                            type: "bar",
+                            data: [165, 224, 155, 179]
+                        },
+                        {
+                            name: "预约上门",
+                            type: "bar",
+                            data: [146, 154, 140, 138]
+                        },
+                        {
+                            name: "家庭病床申请家庭",
+                            type: "bar",
+                            data: [88, 67, 111, 86]
+                        },
+                        {
+                            name: "随访筛查",
+                            type: "bar",
+                            data: [88, 67, 111, 86]
+                        },
+                        {
+                            name: "社区巡诊",
+                            type: "bar",
+                            data: [88, 67, 111, 86]
+                        }
+                    ]
+                };
+                let more4 = document.querySelector("#more4");
+                if(td_option.xAxis[0].data.length>8){//如果显示大于8，显现更多，当前页面只显示8个数据`
+                    more4.style.cssText = 'display:block';
+                    var data1 = td_option.xAxis[0].data.slice(0,8);
+                    td_option.xAxis[0].data = data1;
+                }
+                td_fw.setOption(td_option);
+
+//                查看更多
+                var td1_fw = e.init(document.getElementById("td1_fw"));
+                var td1_option = {
+                    tooltip: {trigger: "axis"},
+                    legend: {data: ["咨询", "预约上门", "家庭病床申请家庭", "随访筛查", "社区巡诊"]},
+                    toolbox: {
+                        show: !0,
+                        feature: {
+                            restore: {show: !0},
+                            saveAsImage: {show: !0}
+                        }
+                    },
+                    calculable: !0,
+                    xAxis: [{
+                        type: "category",
+                        data: ["李娟团队李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "张燕团队", "吴明珠团队","李娟团队", "张燕团队", "吴明珠团队"],
+                        axisLabel : {
+                            interval : 0,
+                            formatter : function(params){
+                                var newParamsName = "";
+                                var paramsNameNumber = params.length;
+                                var provideNumber = sq_nub2;
+                                var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                                if (paramsNameNumber > provideNumber) {
+                                    for (var p = 0; p < rowNumber; p++) {
+                                        var tempStr = "";
+                                        var start = p * provideNumber;
+                                        var end = start + provideNumber;
+                                        if (p == rowNumber - 1) {
+                                            tempStr = params.substring(start, paramsNameNumber);
+                                        } else {
+                                            tempStr = params.substring(start, end) + "\n";
+                                        }
+                                        newParamsName += tempStr;
+                                    }
+
+                                } else {
+                                    newParamsName = params;
+                                }
+                                return newParamsName
+                            }
+
+                        }
+                    }],
+                    grid:{
+                        y2: 100,
+                    },
+                    yAxis: [{type: "value", splitArea: {show: !0}}],
+                    series: [
+                        {
+                            name: "咨询",
+                            type: "bar",
+                            data: [165, 224, 155, 179]
+                        },
+                        {
+                            name: "预约上门",
+                            type: "bar",
+                            data: [146, 154, 140, 138]
+                        },
+                        {
+                            name: "家庭病床申请家庭",
+                            type: "bar",
+                            data: [88, 67, 111, 86]
+                        },
+                        {
+                            name: "随访筛查",
+                            type: "bar",
+                            data: [88, 67, 111, 86]
+                        },
+                        {
+                            name: "社区巡诊",
+                            type: "bar",
+                            data: [88, 67, 111, 86]
+                        }
+                    ]
+                };
+                var sq_nub2;
+                if(td1_option.xAxis[0].data.length<=15){
+                    sq_nub2 = 4;
+                }else if(15<td1_option.xAxis[0].data.length && td1_option.xAxis[0].data.length<=20){
+                    sq_nub2 = 3;
+                }else if(20<td1_option.xAxis[0].data.length && td1_option.xAxis[0].data.length<=30){
+                    sq_nub2 = 2;
+                }else{
+                    sq_nub2 = 1;
+                }
+                td1_fw.setOption(td1_option);
+
+                var sq_wx = e.init(document.getElementById("sq_wx"));
+                sq_wx.setOption({
+                    tooltip: {trigger: "axis"},
+                    legend: {data: ["签约", "微信绑定"]},
+                    toolbox: {
+                        show: !0,
+                        feature: {
+                            restore: {show: !0},
+                            saveAsImage: {show: !0}
+                        }
+                    },
+                    calculable: !0,
+                    xAxis: [{
+                        type: "category",
+                        boundaryGap: !1,
+                        data: ["16年1月", "16年2月", "16年3月", "16年4月", "16年5月", "16年6月"]
+                    }],
+                    yAxis: [{type: "value", axisLabel: {formatter: "{value}"}}],
+                    series: [{
+                        name: "签约",
+                        type: "line",
+                        data: [110, 112, 153, 134, 125, 135],
+                        markPoint: {data: [{type: "max", name: "最高"}, {type: "min", name: "最低"}]},
+                        markLine: {data: [{type: "average", name: "平均"}]}
+                    }, {
+                        name: "微信绑定",
+                        type: "line",
+                        data: [98, 88, 76, 86, 73, 84],
+                        markPoint: {data: [{type: "max", name: "最高"}, {type: "min", name: "最低"}]},
+                        markLine: {data: [{type: "average", name: "Mean"}]}
+                    }]
+                });
+
+                var sq_fw = e.init(document.getElementById("sq_fw"));
+                sq_fw.setOption({
+                    tooltip: {trigger: "axis"},
+                    legend: {data: ["回复咨询", "完成上门", "家庭病床成功建床", "随访筛查", "社区巡诊"]},
+                    toolbox: {
+                        show: !0,
+                        feature: {
+                            restore: {show: !0},
+                            saveAsImage: {show: !0}
+                        }
+                    },
+                    calculable: !0,
+                    xAxis: [{
+                        type: "category",
+                        boundaryGap: !1,
+                        data: ["16年1月", "16年2月", "16年3月", "16年4月", "16年5月", "16年6月"]
+                    }],
+                    yAxis: [{type: "value", axisLabel: {formatter: "{value}"}}],
+                    series: [{
+                        name: "回复咨询",
+                        type: "line",
+                        data: [120, 312, 253, 134, 225, 335],
+                        markPoint: {data: [{type: "max", name: "最高"}, {type: "min", name: "最低"}]},
+                        markLine: {data: [{type: "average", name: "平均"}]}
+                    }, {
+                        name: "完成上门",
+                        type: "line",
+                        data: [134, 225, 335, 286, 173, 658],
+                        markPoint: {data: [{type: "max", name: "最高"}, {type: "min", name: "最低"}]},
+                        markLine: {data: [{type: "average", name: "Mean"}]}
+                    }, {
+                        name: "家庭病床成功建床",
+                        type: "line",
+                        data: [222, 111, 234, 135, 232, 321],
+                        markPoint: {data: [{type: "max", name: "最高"}, {type: "min", name: "最低"}]},
+                        markLine: {data: [{type: "average", name: "Mean"}]}
+                    }, {
+                        name: "随访筛查",
+                        type: "line",
+                        data: [222, 111, 234, 135, 232, 321],
+                        markPoint: {data: [{type: "max", name: "最高"}, {type: "min", name: "最低"}]},
+                        markLine: {data: [{type: "average", name: "Mean"}]}
+                    }, {
+                        name: "社区巡诊",
+                        type: "line",
+                        data: [222, 111, 234, 135, 232, 321],
+                        markPoint: {data: [{type: "max", name: "最高"}, {type: "min", name: "最低"}]},
+                        markLine: {data: [{type: "average", name: "Mean"}]}
+                    }]
+                });
+            })
+    });
+</script>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <link rel="stylesheet" href="../css/cropper.css">
+
+    <style>
+        /*底部导航*/
+        .myDoctor_tabbar {
+            height: 53px;
+            background-color: #fcfcfc;
+            position: fixed;
+        }
+        .myDoctor_tabbar .weui-tabbar__item{
+            padding: 2.5px 0;
+        }
+        .myDoctor_tabbar img {
+            width: 22px;
+            height: 22px;
+            margin: 8px 0 3px;
+        }
+        .myDoctor_tabbar p {
+            font-size: 12px!important;
+            /*font-weight: bold;*/
+            color: #4c4c4c;
+            height: 13px;
+            line-height: 13px;
+            margin: 0;
+        }
+        .myDoctor_tabbar .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+            color: #00cc88;
+        }
+        .myDoctor_tabbar::before {
+            border-top: 1px solid #e6e6e6;
+        }
+    </style>
+    <style>
+        .container {
+            max-width: 640px;
+            /*margin: 20px auto;*/
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* Override Cropper's styles */
+        .cropper-view-box,
+        .cropper-face {
+            border-radius: 50%;
+        }
+        .weui-mask{
+            background-color: #fff;
+        }
+
+        .tuk{
+            margin-bottom: 20px;
+        }
+        .button{
+            width: 80%;
+            height:40px;
+            font-size: 14px;
+            color: #000;
+            text-align: center;
+            line-height: 40px;
+            margin-top: 10px;
+            margin-left: 10%;
+            background-color: #fff;
+            border: 1px solid #dcdcdc;
+            outline:none;
+        }
+        .weui-mask--visible{
+            transform: scale(0.5,0.5);
+            transition: transform .3s ease;
+        }
+
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-panel__bd">
+            <div class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../images/doctor.png">
+                </div>
+                <div class="weui-media-box__bd">
+
+                    <h4 class="weui-media-box__title home_myDoctor">王琦</h4>
+                    <p class="weui-media-box__desc">白莲社区枫桥路69号1幢101室</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-grids center_icon">
+        <a href="健康档案/健康档案.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/icon_jkda.png" alt="">
+            </div>
+            <p class="weui-grid__label">健康档案</p>
+        </a>
+        <a href="家庭病床/家庭病床.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/icon_jtbc.png" alt="">
+            </div>
+            <p class="weui-grid__label">家庭病床</p>
+        </a>
+        <a href="家庭成员/家庭成员.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/icon_jbxx.png" alt="">
+            </div>
+            <p class="weui-grid__label">家庭成员</p>
+        </a>
+        <a href="签约记录/签约记录.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/icon_mbsj.png" alt="">
+            </div>
+            <p class="weui-grid__label">签约记录</p>
+        </a>
+    </div>
+    <div class="weui-cells">
+        <a class="weui-cell weui-cell_access" href="服务记录/服务记录.html">
+            <div class="weui-cell__bd">
+                <p>服务记录</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="报告单/报告单.html">
+            <div class="weui-cell__bd">
+                <p>报告单</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="签约协议/签约协议.html">
+            <div class="weui-cell__bd">
+                <p>签约协议</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+        </a>
+    </div>
+</div>
+<div class="weui-tabbar myDoctor_tabbar">
+    <a href="首页.html" class="weui-tabbar__item" style="border-right: 1px solid #e6e6e6;">
+        <img src="../images/@2x/icon_home_defa@2x.png" alt="" class="weui-tabbar__icon">
+        <p class="weui-tabbar__label">首页</p>
+    </a>
+    <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+        <img src="../images/@2x/icon_mine_sele@2x.png" alt="" class="weui-tabbar__icon">
+        <p class="weui-tabbar__label">个人中心</p>
+    </a>
+</div>
+
+<!--弹出框-->
+<div class="dialog-box" style="display: none">
+    <div class="weui-mask weui-mask--visible"></div>
+    <div class="weui-mask weui-mask--visible">
+        <div class="container">
+            <div class="tuk" id="result">
+                <img id="image" src="../images/doctor.png" alt="Picture">
+            </div>
+            <button type="button" id="btn" class="button">更换头像</button>
+            <button type="button" id="button" class="button">确定</button>
+            <button type="button" id="cancel" class="button">取消</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script src="../js/jquery-3.1.1.slim.min.js"></script>
+<script src="../js/cropper.js"></script>
+<script type='text/javascript' src="../js/cslCamera.js"></script>
+<script>
+    $('.weui-media-box__hd').click(function () {
+        $('.dialog-box').show();
+        $('.weui-mask--visible').css('transform','scale(1,1)');
+    });
+    $('.weui-dialog__btn').click(function(){
+        setTimeout(function () {
+            $('.dialog-box').hide();
+        },200)
+        $('.weui-mask--visible').css('transform','scale(0.5,0.5)');
+
+    });
+
+    $(function () {
+        $('#image').cropper({
+            viewMode: 1,
+            dragMode: 'move',
+            autoCropArea: 0.65,
+            restore: false,
+            guides: false,
+            highlight: false,
+            cropBoxMovable: false,
+            cropBoxResizable: false
+        });
+
+        function getRoundedCanvas(sourceCanvas) {
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            var width = sourceCanvas.width;
+            var height = sourceCanvas.height;
+
+            canvas.width = width;
+            canvas.height = height;
+            context.beginPath();
+            context.arc(width / 2, height / 2, Math.min(width, height) / 2, 0, 2 * Math.PI);
+            context.strokeStyle = 'rgba(0,0,0,0)';
+            context.stroke();
+            context.clip();
+            context.drawImage(sourceCanvas, 0, 0, width, height);
+
+            return canvas;
+        }
+        var $image = $('#image');
+        var $button = $('#button');
+        var $result = $('#result');
+        $image.cropper({
+            aspectRatio: 1,
+            viewMode: 1,
+            ready: function () {
+               croppable = true;
+            }
+        });
+
+        $button.on('click', function () {
+            var croppedCanvas;
+            var roundedCanvas;
+
+//        if (!croppable) {
+//          return;
+//        }
+
+            // Crop
+            croppedCanvas = $image.cropper('getCroppedCanvas');
+
+            // Round
+            roundedCanvas = getRoundedCanvas(croppedCanvas);
+
+            // Show
+            $('.weui-media-box__hd').html('<img src="' + roundedCanvas.toDataURL() + '" class="weui-media-box__thumb">')
+            setTimeout(function () {
+                $('.dialog-box').hide();
+            },100);
+            $('.weui-mask--visible').css('transform','scale(0.5,0.5)');
+
+        });
+
+//        点击取消
+        $('#cancel').click(function () {
+            setTimeout(function () {
+                $('.dialog-box').hide();
+            },100);
+            $('.weui-mask--visible').css('transform','scale(0.5,0.5)');
+
+        })
+
+
+    });
+
+</script>
+<script type="text/javascript">
+//    添加相机功能
+    var img=$(".img");
+    var callBack=function(album){
+        //alert(album);
+        console.log(album);
+        console.log(img);
+        album.forEach(function(val,idx){
+            $('#image').attr("src",val.data);
+            $('.cropper-canvas').find('img').attr('src',val.data);
+            $('.cropper-view-box').find('img').attr('src',val.data);
+        });
+    }
+    var carera=new $.Pgater($("#btn"),callBack);
+</script>
+</body>
+</html>

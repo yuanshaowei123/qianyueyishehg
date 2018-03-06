@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/f.css"/>
+    <title>谷物杂粮</title>
+    <style>
+        #wrapper{
+            background-color: #fff;
+        }
+        #scroller{
+            background-color: #fff;
+        }
+        .weui-panel{
+            margin-top: 0;
+        }
+        .weui-panel:before{
+            padding: 20px;
+            border: 0;
+        }
+        .weui-media-box{
+            padding: 10px 15px;
+        }
+        .weui-media-box__desc:after {
+            content: " ";
+            display: inline-block;
+            height: 10px;
+            width:10px;
+            border-width: 2px 2px 0 0;
+            border-color: #C8C8CD;
+            border-style: solid;
+            -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+            transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+            position: absolute;
+            top: 50%;
+            margin-top: -4px;
+            right: 2px;
+        }
+        .weui-media-box__desc{
+            font-size: 17px;
+            position: relative;
+        }
+        .weui-media-box_appmsg .weui-media-box__hd{
+            margin-right: 0;
+            height:80px;
+            width:110px;
+        }
+        .weui-media-box__desc {
+            padding: 4px 10px;
+            line-height: normal;
+        }
+
+    </style>
+</head>
+<body ontouchstart>
+<div id="wrapper">
+    <div id="scroller">
+        <div id="pullDown">
+        </div>
+        <div id="thelist">
+            <div class="weui-panel weui-panel_access">
+                <div class="page__bd">
+                    <div class="weui-panel weui-panel_access">
+                        <div class="weui-panel__bd">
+                            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__hd">
+                                    <img src="../images/img_swzl_defa@2x.png" alt="" class="weui-media-box__thumb">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <p class="weui-media-box__desc">煎饼</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-panel weui-panel_access">
+                <div class="page__bd">
+                    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__hd">
+                            <img src="../images/img_swzl_defa@2x.png" alt="" class="weui-media-box__thumb">
+                        </div>
+                        <div class="weui-media-box__bd">
+                            <p class="weui-media-box__desc">荞麦</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="weui-panel weui-panel_access">
+                <div class="page__bd">
+                    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__hd">
+                            <img src="../images/img_swzl_defa@2x.png" alt="" class="weui-media-box__thumb">
+                        </div>
+                        <div class="weui-media-box__bd">
+                            <p class="weui-media-box__desc">米小米小米小米小米小米米小米小米小米小米小米小米小米小米小米小米小米小米</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="pullUp">
+            <span class="pullUpLabel">上拉加载更多...</span>
+        </div>
+    </div>
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/iscroll.js"></script>
+<script src="../js/f.js"></script>
+<script>
+    //    下拉刷新
+    function grain() {
+        var data = [
+            {
+                id: "1",
+                title: "体检",
+                time: "2017年02月04日",
+                name: "付华",
+                href: "卫生资讯_详情.html",
+                look: 2,
+                img:"../images/zixun2.jpg"
+            }
+        ];
+        return data;
+    }
+
+    f.loaded(grain(), "Cereal_grains");
+</script>
+
+
+</body>
+</html>

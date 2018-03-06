@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="cDisease">
+        <a href="血压.html" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="../../images/chronic_bp.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">血压</h4>
+                <p class="weui-media-box__desc">血压平稳控制</p>
+            </div>
+            <div class="weui-media-box__bd cDisease_blood_desc">
+                <p class="weui-media-box__desc cDisease_warning">
+                    <img src="../../images/chronic_warning.png">70mmhg/95mmhg
+                </p>
+                <p class="weui-media-box__desc">02-12 13:20</p>
+            </div>
+        </a>
+        <a href="血糖.html" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="../../images/chronic_bs.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">血糖</h4>
+                <p class="weui-media-box__desc">保持血糖稳定</p>
+            </div>
+            <div class="weui-media-box__bd cDisease_blood_desc">
+                <p class="weui-media-box__desc">70mmol/L</p>
+                <p class="weui-media-box__desc">02-12 13:20</p>
+            </div>
+        </a>
+        <a href="血脂.html" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="../../images/chronic_bf.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">血脂</h4>
+                <p class="weui-media-box__desc">饮食合理搭配</p>
+            </div>
+            <div class="weui-media-box__bd cDisease_blood_desc">
+                <p class="weui-media-box__desc">70mmol/L</p>
+                <p class="weui-media-box__desc">02-12 13:20</p>
+            </div>
+        </a>
+    </div>
+</div>
+<a class="cDisease_add">
+    <img src="../../images/chronic_pen.png">
+</a>
+<div class="weui-skin_android cDisease_actionsheet" id="actionsheet">
+    <div class="weui-mask"></div>
+    <div class="weui-actionsheet">
+        <div class="weui-actionsheet__menu">
+            <a href="新增血压.html" class="weui-actionsheet__cell">
+                <img src="../../images/icon_chronic_bp.png">
+                <p>血压</p>
+            </a>
+            <a href="新增血糖.html" class="weui-actionsheet__cell">
+                <img src="../../images/icon_chronic_bs.png">
+                <p>血糖</p>
+            </a>
+            <a href="新增血脂.html" class="weui-actionsheet__cell">
+                <img src="../../images/icon_chronic_bf.png">
+                <p>血脂</p>
+            </a>
+        </div>
+    </div>
+    <div class="weui-mask weui-actionsheet cDisease_cancel">
+        <img src="../../images/chronic_cha.png">
+    </div>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    $(function () {
+        var actionsheet = $('#actionsheet');
+        var mask = actionsheet.find('.weui-mask');
+
+        $(".cDisease_add").on('click', function () {
+            actionsheet.fadeIn(200);
+            $(".cDisease_add").fadeOut(200);
+            mask.on('click', function () {
+                $(".cDisease_add").fadeIn(200);
+                actionsheet.fadeOut(200);
+            });
+        });
+    });
+</script>
+</body>
+</html>

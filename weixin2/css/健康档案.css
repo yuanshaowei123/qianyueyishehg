@@ -1,0 +1,273 @@
+body {
+    color: #333333;
+}
+.weui-toptips {
+    font-size: 28px;
+}
+.weui-cells__title {
+    font-size: 1.066667rem;
+}
+.weui-cells {
+    margin-top:0px;
+    font-size: 1.066667rem;
+}
+.weui-cells__title {
+    margin: 0;
+}
+.weui-cells .weui-cell{
+    padding: 0.333333rem 1rem;
+}
+.weui-cells:last-child {
+     margin-bottom: 3.03rem;
+ }
+.weui-cell_select .weui-cell__bd:after {
+    right: 1.666667rem;
+    height: 20px;
+    width: 20px;
+}
+.weui-cells .weui-cell:first-child{
+    height: 2.6rem;
+}
+.weui-cell__hd h4,
+.weui-cell__bd h4 {
+    font-weight: 400;
+}
+.selection-area{
+    display: none;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.weui-cells .weui-cell:first-child>div>div {
+    display: inline-block !important;
+    vertical-align: top !important;
+    background-image: url("../images/assessment/@2x/mess_icon_opti_defa-@2x.png");
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem 1.5rem;
+    margin-right: 0.3rem;
+}
+.weui-cells .weui-cell__ft label {
+    color: #999;
+}
+.weui-cells .weui-cell__ft label:first-child {
+    margin-right: 30px;
+}
+.weui-flex__item {
+    height: 3.266667rem;
+    line-height: 3.266667rem;
+    color: #999;
+    font-size: 1rem;
+}
+input[type=checkbox] {
+    vertical-align: middle;
+}
+.weui-btn-rea {
+    height: 3rem;
+}
+.weui-btn-rea .weui-btn_primary {
+    font-size: 1.2rem;
+}
+input[type=date]::-webkit-clear-button { display:none }
+input[type=date],
+input[type=text] {
+    color: #000;
+    padding-left: 0.333333rem;
+}
+input[name=text] {
+    height: 1.8rem;
+    width: 90%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background-color: #eeeeee;
+}
+.input-icon {
+    display: inline-block !important;
+    vertical-align: top !important;
+    background-image: url("../images/assessment/@2x/mess_icon_input_defa@2x.png") !important;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem 1.5rem;
+    margin-right: 0.3rem;
+}
+.date-icon {
+    display: inline-block !important;
+    vertical-align: top !important;
+    background-image: url("../images/assessment/@2x/mess_icon_opti_defa@2x.png") !important;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem 1.5rem;
+    margin-right: 0.3rem;
+}
+.add-icon,
+.add-icon_special {
+    background: url("../images/assessment/@2x/resi_icon_plus_defa@2x.png") no-repeat!important;
+    width: 1.06rem;
+    height: 1.06rem;
+    background-size: 1.06rem 1.06rem;
+    padding: 0.166667rem;
+
+}
+.other-text {
+    display: none;
+}
+.title .weui-cell__ft {
+    width: 30%;
+}
+@media screen and ( -webkit-min-device-pixel-ratio : 3) {
+    .weui-cells .weui-cell:first-child>div>img {
+        width: 1.333333rem;
+        height: 1.333333rem;
+        background-image: url("../images/assessment/@3x/mess_icon_opti_defa-@3x.png");
+        -webkit-background-size: 1.333333rem 1.333333rem;
+        background-size: 1.333333rem 1.333333rem;
+        margin-right: 0.666667rem;
+        display: block;
+    }
+    .input-icon {
+        background-image: url("../images/assessment/@3x/mess_icon_input_defa@3x.png") !important;
+    }
+    .date-icon {
+        background-image: url("../images/assessment/@3x/mess_icon_opti_defa@3x.png") !important;
+    }
+    .add-icon,
+    .add-icon_special {
+        background: url("../images/assessment/@3x/resi_icon_plus_defa@3x.png") no-repeat!important;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-size: 1.6rem 1.6rem;
+    }
+}
+@media screen and (min-device-width: 1080px) {
+    .weui-cells .weui-cell:first-child > div > img {
+        width: 40px;
+        height: 40px;
+        background-image: url("../images/assessment/@3x/mess_icon_opti_defa-@3x.png");
+        -webkit-background-size: 40px 40px;
+        background-size: 40px 40px;
+        margin-right: 20px;
+    }
+    .weui-cells {
+        margin-top: 0px;
+        font-size: 32px;
+    }
+    .weui-cells .weui-cell {
+        padding: 10px 30px;
+    }
+    .top-cells {
+        padding-top: 40px;
+    }
+    .last-cells {
+        margin-bottom: 99px;
+    }
+    .weui-cells:last-child {
+        margin-bottom: 93px;
+    }
+    .weui-cells .weui-cell:first-child {
+        height: 78px;
+    }
+    .selection-area {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .weui-flex__item {
+        height: 98px;
+        line-height: 98px;
+        font-size: 30px;
+    }
+    input[type=checkbox] {
+        vertical-align: middle;
+        zoom: 2 !important;
+    }
+    .weui-btn-rea {
+        height: 90px;
+    }
+    .weui-btn-rea .weui-btn_primary {
+        font-size: 36px;
+    }
+    input[type=date],
+    input[type=text] {
+        padding-bottom: 5px;
+        padding-left: 10px;
+    }
+    input[name=text] {
+        height: 68px;
+        width: 90%;
+        font-size: 30px;
+        outline: none;
+    }
+    .input-icon {
+        background-image: url("../images/assessment/@3x/mess_icon_input_defa@3x.png") !important;
+    }
+    .date-icon {
+        display: inline-block !important;
+        vertical-align: top !important;
+        background-image: url("../images/assessment/@3x/mess_icon_opti_defa@3x.png") !important;
+    }
+    .add-icon,
+    .add-icon_special {
+        background: url("../images/assessment/@3x/resi_icon_plus_defa@3x.png") no-repeat!important;
+        width: 48px;
+        height: 48px;
+        background-size: 48px 48px;
+    }
+}
+.create_jkda {
+    padding: 1.333333rem 1rem;
+}
+.create_jkda .item {
+    background-color: #fff;
+    padding: 0.6666667rem;
+    margin: 0.6666667rem 0;
+}
+.create_jkda .item h4 {
+    position: relative;
+    font-weight: 400;
+}
+.create_jkda .item p {
+    text-align: right;
+    color: #bbb;
+}
+.create_jkda .item .weui-progress {
+    padding: 0.333333rem 0;
+}
+.create_jkda .item .weui-progress__bar {
+    height: 0.3rem;
+}
+.create_jkda .item .editIcon  {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.create_jkda .item .editIcon >div {
+    width: 0.933333rem;
+    height: 0.933333rem;
+    background: url("../images/assessment/@2x/mess_icon_edit_defa@2x.png") no-repeat;
+    background-size: 0.933333rem 0.933333rem;
+    display: inline-block;
+}
+.create_jkda .item .editIcon >span{
+    margin-left: 0.166667rem;
+    font-size: 1rem;
+    color: #24ba8c;
+    display: inline-block;
+}
+.me_checkbox {
+    position: relative;
+}
+.me_checkbox>span {
+    background-image: url("../images/assessment/@2x/mess_iocn_radi_defa@2x.png") !important;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+.me_checkbox input[type=checkbox] {
+    opacity: 0;
+    z-index: -1;
+}

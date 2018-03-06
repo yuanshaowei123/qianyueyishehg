@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        body {
+            background-color: #fff;
+        }
+        /*底部导航*/
+        .myDoctor_tabbar {
+            height: 53px;
+            background-color: #fcfcfc;
+            position: fixed;
+        }
+        .myDoctor_tabbar .weui-tabbar__item{
+            padding: 2.5px 0;
+        }
+        .myDoctor_tabbar img {
+            width: 22px;
+            height: 22px;
+            margin: 8px 0 3px;
+        }
+        .myDoctor_tabbar p {
+            font-size: 12px!important;
+            /*font-weight: bold;*/
+            color: #4c4c4c;
+            height: 13px;
+            line-height: 13px;
+            margin: 0;
+        }
+        .myDoctor_tabbar .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+            color: #00cc88;
+        }
+        .myDoctor_tabbar::before {
+            border-top: 1px solid #e6e6e6;
+        }
+        .weui-cells__title {
+            margin-top: 20px;
+            padding-top: 0.3em;
+            padding-bottom: 0.3em;
+            color: #b3b3b3;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .weui-cells__title .title_line {
+            border: 2px solid #00b383;
+            margin-right: 8px;
+        }
+        .weui-grids .weui-grid {
+            padding: 0 10px;
+        }
+        .weui-grids .weui-grid .weui-grid__icon {
+            width: 40px;
+            height: 40px;
+        }
+        .weui-grids .weui-grid__label {
+            white-space: normal;
+        }
+        .weui-grids.center_icon:before {
+            border: 0;
+        }
+        .weui-grids.center_icon .weui-grid:after {
+            border: 0;
+        }
+        .weui-tabbar__item.weui-bar__item_on{
+            background-color: #f2f2f2;
+        }
+        .person-top {
+            background: url('../images/@2x/bg@2x.png');
+        }
+        .person-top h4 {
+            font-weight: bold;
+            color: #fff;
+            font-size: 16px;
+        }
+        .person-top p {
+            color: #fff;
+        }
+        .person-top .tx-area {
+            padding: 5px;
+            background: url('../images/@2x/bg_Avatar@2x.png');
+            text-align: center;
+            background-size: 100%;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-panel__bd person-top">
+            <div class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd tx-area">
+                    <img class="weui-media-box__thumb" src="../images/doctor.png">
+                </div>
+                <div class="weui-media-box__bd">
+
+                    <h4 class="weui-media-box__title home_myDoctor">王琦</h4>
+                    <p class="weui-media-box__desc">白莲社区枫桥路69号1幢101室</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells__title"><i class="title_line"></i>营养健康</div>
+    <div class="weui-grids center_icon" style="background-color: white;">
+        <a href="../食物速查/食物速查.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/yyzx-icon/icon_yyjsq.png" alt="">
+            </div>
+            <p class="weui-grid__label">营养计算器</p>
+        </a>
+        <a href="../营养资讯/营养资讯.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/yyzx-icon/icon_yyzs.png" alt="">
+            </div>
+            <p class="weui-grid__label">营养知识</p>
+        </a>
+    </div>
+
+    <div class="weui-cells__title"><i class="title_line"></i>家庭医生</div>
+    <div class="weui-grids center_icon">
+        <a href="../首页/健康档案/健康档案.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/yyzx-icon/icon_jkda.png" alt="">
+            </div>
+            <p class="weui-grid__label">健康档案</p>
+        </a>
+        <a href="../首页/家庭病床/家庭病床.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/yyzx-icon/icon_jtbc.png" alt="">
+            </div>
+            <p class="weui-grid__label">家庭病床</p>
+        </a>
+        <a href="../首页/家庭成员/家庭成员.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/yyzx-icon/icon_jtcy.png" alt="">
+            </div>
+            <p class="weui-grid__label">家庭成员</p>
+        </a>
+        <a href="../首页/签约记录/签约记录.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/yyzx-icon/icon_qyjl.png" alt="">
+            </div>
+            <p class="weui-grid__label">签约记录</p>
+        </a>
+    </div>
+
+    <div class="weui-cells__title"><i class="title_line"></i>健康咨询</div>
+    <div class="weui-grids center_icon" style="background-color: white;">
+        <a href="../营养师/营养师.html?flag=0" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/yyzx-icon/icon_yyszx.png" alt="">
+            </div>
+            <p class="weui-grid__label">营养师咨询</p>
+        </a>
+        <a href="../首页/健康咨询/热门问题.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/yyzx-icon/icon_jyzx.png" alt="">
+            </div>
+            <p class="weui-grid__label">家医咨询</p>
+        </a>
+        <a href="营养问答.html" class="weui-grid">
+            <div class="weui-grid__icon">
+                <img src="../images/yyzx-icon/icon_zxjl.png" alt="">
+            </div>
+            <p class="weui-grid__label">咨询记录</p>
+        </a>
+    </div>
+    <div style="height: 70px;width: 100%;"></div>
+</div>
+<div class="weui-tabbar myDoctor_tabbar">
+    <a href="营养师.html" class="weui-tabbar__item" style="border-right: 1px solid #e6e6e6;">
+        <img src="../images/@2x/icon_Nut_defa@2x.png" alt="" class="weui-tabbar__icon">
+        <p class="weui-tabbar__label">营养师</p>
+    </a>
+    <a href="营养问答.html" class="weui-tabbar__item" style="border-right: 1px solid #e6e6e6;">
+        <img src="../images/@2x/icon_problem_defa@2x.png" alt="" class="weui-tabbar__icon">
+        <p class="weui-tabbar__label">营养问答</p>
+    </a>
+    <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+        <img src="../images/@2x/icon_mine_sele@2x.png" alt="" class="weui-tabbar__icon">
+        <p class="weui-tabbar__label">个人中心</p>
+    </a>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+</body>
+</html>

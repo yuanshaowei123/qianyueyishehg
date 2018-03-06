@@ -1,0 +1,480 @@
+<div class="col-md-12 baseInfo">
+    <div class="portlet">
+        <div class="portlet-title tabbable-line" style="padding: 0 15px;">
+            <!--<div class="caption">-->
+            <!--<div class="btn-group btn-group-devided" data-toggle="buttons">-->
+            <!--<label class="btn btn-circle grey-salsa btn-sm active">-->
+            <!--<input type="radio" name="options" class="toggle" value="患者" data-href="居民信息"-->
+            <!--onchange="$.index.pageJump(this)">返回-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="actions" style="float: right">
+                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                    <button type="button" class="btn btn-circle btn-primary" data-href="签约居民"
+                            onclick="$.index.pageJump(this)">
+                        返回
+                    </button>
+                </div>
+            </div>
+            <ul class="nav nav-tabs" style="float: left">
+                <li class="active">
+                    <a href="#fw" data-toggle="tab" aria-expanded="true"> 更多信息 </a>
+                </li>
+                <li class="">
+                    <a href="#mb" data-toggle="tab" aria-expanded="true"> 慢病管理 </a>
+                </li>
+                <li class="">
+                    <a href="#jk" data-toggle="tab" aria-expanded="true"> 健康档案 </a>
+                </li>
+                <li class="">
+                    <a href="#sf" data-toggle="tab" aria-expanded="true"> 随访 </a>
+                </li>
+                <li class="">
+                    <a href="#xz" data-toggle="tab" aria-expanded="true"> 社区巡诊 </a>
+                </li>
+                <li class="">
+                    <a href="#bgd" data-toggle="tab" aria-expanded="true"> 报告单 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <div class="portlet light profile-sidebar-portlet">
+                        <div class="portlet-title tabbable-line">
+                            <div class="actions" style="float: right">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <button type="button" class="btn btn-circle btn-default" href="#editmodal" data-toggle="modal">
+                                        编辑
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="actions" style="float: left;margin-right: 5px">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <a id="qyxyBtn" class="btn btn-circle btn-default" href="#qyxy" data-toggle="tab" onclick="tab()">
+                                        签约协议
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-userpic">
+                            <img src="../images/患者.png" class="img-responsive" alt=""></div>
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name">张三</div>
+                        </div>
+                        <div class="profile-userbuttons">
+                            <span class="badge badge-info">男</span>
+                            <span class="badge badge-warning">25岁</span>
+                        </div>
+                        <div class="profile-usermenu">
+                            <ul class="nav">
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="float-right">320586199112100000</div>
+                                        <div>身份证号</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="float-right">15950035957</div>
+                                        <div>手机号</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="float-right">刘芳芳团队</div>
+                                        <div>签约团队</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="float-right">服务包</div>
+                                        <div>免费服务包</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="float-right">付华</div>
+                                        <div>紧急联系人</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="float-right">15950000000</div>
+                                        <div>联系人电话</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="tagA">
+                                        <div class="float-right"
+                                             style="text-align: right;max-width: 200px;height: 100%">
+                                            <span class="tag label label-info">糖尿病</span>
+                                            <span class="tag label label-info">高血压</span>
+                                            <span class="tag label label-info">糖尿病</span>
+                                        </div>
+                                        <div>既往病史</div>
+                                    </a>
+                                    <div style="clear: both"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="tagA">
+                                        <div class="float-right" style="text-align: right;max-width: 200px">
+                                            <span class="tag label label-info">老人</span>
+                                        </div>
+                                        <div>特殊人群</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="fw">
+
+                </div>
+                <div class="tab-pane" id="mb">
+
+                </div>
+                <div class="tab-pane" id="jk">
+
+                </div>
+                <div class="tab-pane" id="sf">
+
+                </div>
+                <div class="tab-pane" id="xz">
+
+                </div>
+                <div class="tab-pane" id="bgd">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade in" id="editmodal" aria-hidden="true" style="display:none; padding-left: 17px;">
+    <div class="modal-dialog" style="width: 800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">编辑</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">姓名</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">电话</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">身份证号</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group home_address">
+                            <label class="col-md-4 control-label">家庭住址</label>
+                            <div class="col-md-4">
+                                <span>金阊社区黑芝麻小区0幢/组0室/号金阊社区黑芝麻小区0幢/组0室/号</span>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn green address_edit" style="color: #fff;">编辑</button>
+                            </div>
+                        </div>
+                        <div class="form-group community" style="display: none">
+                            <label class="col-md-4 control-label">归属社区</label>
+                            <div class="col-md-6" style="margin-bottom: 15px">
+                                <select class="form-control">
+                                    <option>请选择社区</option>
+                                    <option>金阊社区</option>
+                                    <option>五星社区</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-md-offset-4">
+                                <select class="form-control">
+                                    <option>请选择小区</option>
+                                    <option>黑芝麻小区</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group house_number" style="display: none">
+                            <label class="col-md-4 control-label">门牌号</label>
+                            <div class="col-md-2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="输入">
+                                    <span class="input-group-addon" style="padding: 5px;">幢/组</span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="输入">
+                                    <span class="input-group-addon" style="padding: 5px;">室/号</span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn green address_revoke" style="color: #fff;">撤销</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">签约团队</label>
+                            <div class="col-md-6">
+                                <select class="form-control">
+                                    <option>第一健康团队</option>
+                                    <option>第二健康团队</option>
+                                    <option>第三健康团队</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">分管医生</label>
+                            <div class="col-md-6">
+                                <select class="form-control">
+                                    <option>付华</option>
+                                    <option>付小华</option>
+                                    <option>付老华</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">签约医生</label>
+                            <div class="col-md-6">
+                                <p>付华</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">紧急联系人</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-control">
+                                    <option>与居民关系</option>
+                                    <option>夫妻</option>
+                                    <option>父母</option>
+                                    <option>子女</option>
+                                    <option>兄妹</option>
+                                    <option>其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">联系电话</label>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">既往病史</label>
+                            <div class="col-md-6">
+                                <div class="mt-checkbox-inline">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 高血压
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 糖尿病
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 脑卒中
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> COPD
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 骨关节疾病
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 消化道疾病
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 儿童发育不良
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 冠心病
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 骨质疏松
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 创伤史
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 癌症
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value=""> 其他
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">特殊人群</label>
+                            <div class="col-md-6">
+                                <div class="mt-radio-inline">
+                                    <label class="mt-radio">
+                                        <input type="radio" name="optionsRadios" value="" checked="" onclick="check(this)">孕产妇
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio">
+                                        <input type="radio" name="optionsRadios" value="" checked="" onclick="check(this)"> 儿童
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio">
+                                        <input type="radio" name="optionsRadios" value="" checked="" onclick="check(this)"> 老年人
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="mt-checkbox-inline">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="">慢性病患者
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="">残疾人
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="">特困人群
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="">特殊家庭
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="">精神障碍
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-md-4 control-label">姓名</label>-->
+                            <!--<div class="col-md-6">-->
+                                <!--<input type="text" class="form-control" placeholder="请输入" value="">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-md-4 control-label">手机号</label>-->
+                            <!--<div class="col-md-6">-->
+                                <!--<input type="tel" class="form-control" placeholder="请输入" value="">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-md-4 control-label">性别</label>-->
+                            <!--<div class="col-md-6">-->
+                                <!--<select class="form-control">-->
+                                    <!--<option>男</option>-->
+                                    <!--<option>女</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="control-label col-md-4">出生日期</label>-->
+                            <!--<div class="col-md-6">-->
+                                <!--<div class="input-group input-medium date date-picker" data-date="2017-05-11" style="width: 100%!important;" data-date-format="yyyy-mm-dd" data-date-viewmode="years">-->
+                                    <!--<input type="text" class="form-control" readonly="" value="2017-05-11">-->
+                                    <!--<span class="input-group-btn">-->
+                                        <!--<button class="btn default" type="button">-->
+                                            <!--<i class="fa fa-calendar"></i>-->
+                                        <!--</button>-->
+                                    <!--</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-md-4 control-label">职称</label>-->
+                            <!--<div class="col-md-6">-->
+                                <!--<select class="form-control">-->
+                                    <!--<option>医生</option>-->
+                                    <!--<option>护士长</option>-->
+                                    <!--<option>护士</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-md-4 control-label">团队</label>-->
+                            <!--<div class="col-md-6">-->
+                                <!--<select class="form-control">-->
+                                    <!--<option>王琦团队</option>-->
+                                    <!--<option>王琦团队</option>-->
+                                    <!--<option>王琦团队</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">保存更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<script>
+    $(function () {
+        $("#fw").load("居民信息_更多信息.html");
+        $("#mb").load("居民信息_慢病管理.html");
+        $("#jk").load("居民信息_健康档案.html");
+        $("#sf").load("居民信息_随访筛查.html");
+        $("#xz").load("居民信息_社区巡诊.html");
+        $("#bgd").load("居民信息_报告单.html");
+    });
+
+    function tab() {
+        if ($("#qyxyA").parent().hasClass("active")) {
+        }
+        else {
+            $("#fwjuA").parent().removeClass("active");
+            $("#qyxyA").parent().addClass("active");
+            $("#fwjuA").attr("aria-expanded", "false");
+            $("#qyxyA").attr("aria-expanded", "true");
+        }
+    };
+
+    var tempradio= null;
+    function check(checkedRadio)
+    {
+        if(tempradio== checkedRadio){
+            tempradio.checked=false;
+            tempradio=null;
+        }
+        else{
+            tempradio= checkedRadio;
+        }
+    }
+    //点击编辑地址
+    $(".address_edit").on("click",function() {
+       $(".home_address").css("display", "none");
+       $(".community").css("display", "block");
+       $(".house_number").css("display", "block");
+    });
+    //撤销编辑地址
+    $(".address_revoke").on("click",function() {
+        $(".home_address").css("display", "block");
+        $(".community").css("display", "none");
+        $(".house_number").css("display", "none");
+    });
+</script>

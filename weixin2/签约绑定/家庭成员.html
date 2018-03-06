@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>添加家庭成员</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        .weui-grid {
+            width: 50%;
+        }
+
+        .weui-cells_radio .weui-cell__hd {
+            min-width: 25px;
+        }
+
+        body {
+            font-family: Microsoft Yahei,SimSun,Helvetica;
+            background-color: #fff;
+        }
+        .labels li {
+            padding: 5px;
+            font-size: 9px;
+            color: #fff;
+            display: inline-block;
+            margin-bottom: 3px;
+        }
+        .labels .jwbs_item {
+            background-color: #3867ff;
+        }
+        .labels .zdrq_item {
+            background-color: #fa5e37;
+        }
+        .labels .tsrq_item {
+            background-color: #fa5e37;
+        }
+
+        section {
+            margin: 10px 0;
+        }
+        section p {
+            padding: 5px 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        section .label_area {
+            padding: 5px 15px;
+        }
+        section .jwbs li.active {
+            background-color: #3867ff;
+            color: #fff;
+        }
+        section .zdrq li.active,
+        section .tsrq li.active {
+            background-color: #fa5e37;
+            color: #fff;
+        }
+        section li {
+            padding: 5px;
+            background-color: #f5f6fa;
+            margin-right: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #666;
+            font-weight: 400;
+        }
+        .labels_btns {
+            position: fixed;
+            bottom: -2px;
+            width: 100%;
+            background-color: #fff;
+        }
+        .labels_btns .labels_btns_item {
+            width: 49.5%;
+            display: inline-block;
+            padding: 10px 0;
+        }
+        .labels_btns .labels_btns_item.weui-dialog__btn_default {
+            border: 1px solid #eee;
+            background-color: #eee;
+        }
+        .labels_btns .labels_btns_item.weui-dialog__btn_primary {
+            margin-left: -4px;
+            border-top: 1px solid #eee;
+            background-color: #1aad19;
+            color: #fff;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-cells__title">已签约家庭成员</div>
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-cell__hd">
+            <p style="padding: 3px 0px 3px 15px;font-size: 20px;">黑芝麻社区生物纳米园1幢301室</p>
+        </div>
+        <div class="weui-cell__bd">
+            <ul class="familyPhoto">
+                <li class="" style="background-image:url(../images/wangqi.jpg)"><p class="">王琦</p></li>
+                <li class="" style="background-image:url(../images/wangqi.jpg)"><p class="">王琦</p></li>
+                <li class="" style="background-image:url(../images/wangqi.jpg)"><p class="">王琦</p></li>
+                <li class="" style="background-image:url(../images/wangqi.jpg)"><p class="">王琦</p></li>
+                <li class="" style="background-image:url(../images/wangqi.jpg)"><p class="">王琦</p></li>
+            </ul>
+        </div>
+    </div>
+    <div class="weui-cells__title">基本信息(必填)</div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">添加照片</label>
+            </div>
+            <div class="weui-cell__bd">
+                <div class="weui-uploader">
+                    <div class="weui-uploader__bd">
+                        <ul class="weui-uploader__files" id="uploaderFiles2">
+                        </ul>
+                        <div class="weui-uploader__input-box" style="margin:0;">
+                            <input id="uploaderIdPhoto" class="weui-uploader__input" type="file">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">姓名</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="name" class="weui-input" type="text" placeholder="请输入姓名">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">联系电话</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="tel" class="weui-input" type="text" placeholder="请输入联系电话">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">身份证号</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="id" class="weui-input" type="text" placeholder="请输入身份证号">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells__title">签约信息(选填)</div>
+    <div class="weui-cells" style="margin-bottom: 70px">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">签约日期</label>
+            </div>
+            <div class="weui-cell__ft weui-cell__bd text_left">2017-05-01</div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">有效日期</label>
+            </div>
+            <div class="weui-cell__ft weui-cell__bd text_left">一年</div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">服务团队</label>
+            </div>
+            <div class="weui-cell__ft weui-cell__bd text_left">刘芳芳团队</div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">紧急联系人</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="cname" class="weui-input" type="text" placeholder="请输入">
+            </div>
+            <div class="weui-cell__ft">
+                <select style="border: 0; outline: none;">
+                    <option value="">与该居民关系</option>
+                    <option value="1">夫妻</option>
+                    <option value="2">父母</option>
+                    <option value="3">子女</option>
+                    <option value="4">兄妹</option>
+                    <option value="5">其他</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">联系电话</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="ctel" class="weui-input" type="text" placeholder="请输入">
+            </div>
+        </div>
+        <a class="weui-cell" href="#" id="AddBq">
+            <img src="../images/newh_img_addt_defa@2x.png" width="100%" />
+        </a>
+        <a class="weui-cell weui-cell_access" id="EditBq">
+            <div class="weui-cell__hd">
+                <label class="weui-label">标签</label>
+            </div>
+            <div class="weui-cell__ft weui-cell__bd text_left"></div>
+        </a>
+        <div class="weui-cell">
+            <ul class="labels">
+                <!--
+                 wbs_item：既往病史标签
+                 zdrq_item：重点人群标签
+                 tsrq_item：特殊人群标签
+                -->
+                <li class="jwbs_item">消化道疾病</li>
+                <li class="jwbs_item">儿童发育不良</li>
+                <li class="jwbs_item">骨质疏松</li>
+                <li class="zdrq_item">儿童</li>
+                <li class="tsrq_item">慢性病患者</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="weui-btn-rea fix_btn">
+    <a class="weui-btn weui-btn_primary">下一步</a>
+</div>
+
+
+<!-- 新增标签选择 -->
+<div class="js_dialog" id="dialog_AddBq" style="opacity: 1;display: none">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog" style="width: 100%;height: 100%;max-width: 100%;overflow: auto;">
+        <div class="weui-dialog__bd" style="text-align: left;padding: 0;height: 100%;overflow: auto;">
+            <section>
+                <p>既往病史</p>
+                <ul class="label_area jwbs">
+                    <li>高血压</li>
+                    <li>糖尿病</li>
+                    <li>脑卒中</li>
+                    <li>COPD</li>
+                    <li>骨关节疾病</li>
+                    <li>消化道疾病</li>
+                    <li>儿童发育不全</li>
+                    <li>冠心病</li>
+                    <li>骨质疏松</li>
+                    <li>创伤史</li>
+                    <li>癌症</li>
+                    <li>其他</li>
+                </ul>
+            </section>
+            <section>
+                <p>重点人群(单选)</p>
+                <ul class="label_area zdrq">
+                    <li>孕产妇</li>
+                    <li>儿童</li>
+                    <li>老年人</li>
+                </ul>
+            </section>
+            <section style="margin-bottom: 50px;">
+                <p>特殊人群</p>
+                <ul class="label_area tsrq">
+                    <li>慢性病患者</li>
+                    <li>残疾人</li>
+                    <li>特困人群</li>
+                    <li>特殊家庭</li>
+                    <li>精神障碍</li>
+                </ul>
+            </section>
+        </div>
+        <div class="labels_btns">
+            <a class="labels_btns_item weui-dialog__btn_default">取消</a>
+            <a class="labels_btns_item weui-dialog__btn_primary">确定</a>
+        </div>
+    </div>
+</div>
+
+<!-- 编辑标签选择 -->
+<div class="js_dialog" id="dialog_EditBq" style="opacity: 1;display: none">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog" style="width: 100%;height: 100%;max-width: 100%;overflow: auto;">
+        <div class="weui-dialog__bd" style="text-align: left;padding: 0;height: 100%;overflow: auto;">
+            <section>
+                <p>既往病史</p>
+                <ul class="label_area jwbs">
+                    <li>高血压</li>
+                    <li>糖尿病</li>
+                    <li>脑卒中</li>
+                    <li>COPD</li>
+                    <li>骨关节疾病</li>
+                    <li>消化道疾病</li>
+                    <li>儿童发育不全</li>
+                    <li>冠心病</li>
+                    <li>骨质疏松</li>
+                    <li>创伤史</li>
+                    <li>癌症</li>
+                    <li>其他</li>
+                </ul>
+            </section>
+            <section>
+                <p>重点人群(单选)</p>
+                <ul class="label_area zdrq">
+                    <li>孕产妇</li>
+                    <li>儿童</li>
+                    <li>老年人</li>
+                </ul>
+            </section>
+            <section style="margin-bottom: 50px;">
+                <p>特殊人群</p>
+                <ul class="label_area tsrq">
+                    <li>慢性病患者</li>
+                    <li>残疾人</li>
+                    <li>特困人群</li>
+                    <li>特殊家庭</li>
+                    <li>精神障碍</li>
+                </ul>
+            </section>
+        </div>
+        <div class="labels_btns">
+            <a class="labels_btns_item weui-dialog__btn_default">取消</a>
+            <a class="labels_btns_item weui-dialog__btn_primary">确定</a>
+        </div>
+    </div>
+</div>
+
+<script src="../js/zepto.min.js"></script>
+<script src="../js/weui.min.js"></script>
+<script src="../js/f.js"></script>
+<script>
+    $(function () {
+        //弹出标签选择框
+        f.dialog("AddBq");
+        f.dialog("EditBq");
+    });
+
+    $(".fix_btn a").on("click", function () {
+        if (
+            f.reg_name($("#name").val())
+            && f.reg_tel($("#tel").val())
+            && f.reg_id($("#id").val())
+        ) {
+            location.href = "家庭成员_签约信息.html"
+        }
+    })
+
+    //点击弹出模态框时body的滚动条禁止
+    $("#AddBq, #EditBq").on("click", function() {
+        $("body").css("overflow", "hidden");
+    })
+    //弹出模态框关闭时body的滚动条有效
+    $(".weui-dialog__btn_default").on("click", function() {
+        $("body").css("overflow", "auto");
+    })
+
+    //切换选中状态
+    $("ul li").on("click", function() {
+        if($(this).hasClass("active")) {
+            $(this).removeClass("active");
+        } else {
+            $(this).addClass("active");
+        }
+    });
+    //控制重点人群
+    $(".zdrq li").on("click", function() {
+        if($(this).hasClass("active")) {
+            var lis = $(".zdrq li");
+            for(var i = 0; i< lis.length; i++ ) {
+                if($(lis[i]).hasClass("active")) {
+                    $(lis[i]).removeClass("active");
+                }
+            }
+            $(this).addClass("active");
+        }
+    });
+</script>
+</body>
+</html>

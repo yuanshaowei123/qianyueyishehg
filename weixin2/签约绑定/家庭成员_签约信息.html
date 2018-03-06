@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>签约信息</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+</head>
+<style>
+    .weui-grid {
+        width: 50%;
+    }
+
+    .weui-cells_radio .weui-cell__hd {
+        min-width: 25px;
+    }
+</style>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-tab">
+        <div class="progress_bar">
+            <div class="progress_bar_item">
+                基本信息
+            </div>
+            <div class="progress_bar_item progress_bar_item_on_end">
+                签约信息
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells__title title_dialog" style="margin-top: 37px">
+        签约信息
+        <!--<a id="clause">签约条款</a>-->
+    </div>
+    <div class="weui-cells ">
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__hd">
+                <label class="weui-label">服务包</label>
+            </div>
+            <a id="fwb" class="weui-cell__ft weui-cell__bd text_left">基础服务包</a>
+        </div>
+    </div>
+   <!-- <div class="weui-cells__title">
+        签名
+        <i>(请在下面蓝色区域签名)</i>
+    </div>
+    <div class="esign">
+        <a id="sign_clear" type="button" class="weui-btn weui-btn_mini weui-btn_warn">清除</a>
+        <canvas id="canvasEdit" style="background-color: #89e7e5"></canvas>
+        <div id="sign_show" data-hasDrawImage="false" data-imgbase64=""></div>
+    </div>-->
+</div>
+<!--<div class="js_dialog" id="dialog_clause">-->
+<!--<div class="weui-mask"></div>-->
+<!--<div class="weui-dialog">-->
+<!--<div class="weui-dialog__hd"><strong class="weui-dialog__title">签约条款（盐城市亭湖区）</strong></div>-->
+<!--<div class="weui-dialog__bd dialog_p">clause-->
+<!--<article class="weui_article ">-->
+<!--<h4>亭湖区家庭医生签约服务协议书</h4>-->
+<!--<p>为进一步开展社区卫生服务工作，充分发挥家庭医生的健康守门人作用，本着平等、自愿的原则，经双方协商，达成如下协议：</p>-->
+<!--<p>一、服务内容</p>-->
+<!--<p>1、提供健康教育、健康咨询、妇幼保健及健康档案管理等基本公共卫生服务。</p>-->
+<!--<p>2、65周岁以上老人每年一次健康体检，每3个月提供一次健康指导及随访。</p>-->
+<!--<p>3、高血压、糖尿病居民提供血压血糖监测、用药指导、不良生活方式干预、综合评估等服务。</p>-->
+<!--<p>4、对肿瘤、精神病、传染病等特殊病提供健康管理服务。</p>-->
+<!--<p>5、因长期卧床行动不便居民，提供家庭病床式上门服务；病情复杂或病情控制不佳的居民协助专科医生给予个性化诊疗。</p>-->
+<!--<p>6、因病情需要转上级二、三级医院、专科医院就诊住院的提供转诊服务。</p>-->
+<!--<p>7、提供慢性病医保申请、药费报销等相关医保服务。对全年医药费个人负担较重的提出合理化诊疗方案，减轻家庭医疗费用支出。</p>-->
+<!--<p>8、对签约家庭成员定期提供健康、疾病诊疗综合评价。</p>-->
+<!--<p>二、接受家庭医生签约服务可享受如下优惠政策：</p>-->
+<!--<p>1、到社区卫生服务中心就诊免收挂号诊费。</p>-->
+<!--<p>2、协调医保部门为签约人员提供住院起付线减免等相关服务。</p>-->
+<!--<p>3、为糖尿病居民免费提供测血糖4次。</p>-->
+<!--<p>三、双方权利与义务</p>-->
+<!--<p>-->
+<!--签约人应将自己的健康状况如实告知乙方，尊重乙方服务过程，配合卫计部门和社区卫生服务机构等对签约团队服务工作的考核评估。签约团队医生应保护签约人的个人隐私，履行服务内容告知义务，主动提醒签约人接受服务，及时整理服务信息，保护服务的连续性、综合性、主动性。</p>-->
+<!--<p>四、签约家庭对签约服务团队服务不满意，可向所辖街道社区卫生服务中心或亭湖区卫计委投诉，并在签约期满后提出调换服务团队。</p>-->
+<!--<p>1、新城街道社区卫生服务中心投诉电话：0515-89811866</p>-->
+<!--<p>2、区卫计委投诉电话：0515-68552098 0515-68552880</p>-->
+<!--<p>五、本协议为期一年，从 年 月 日起至 年 月 日止。协议期满，签约家庭如无异议，自动续约；如需解约，应提前一个月告知对方。</p>-->
+<!--<p>签约家庭代表：</p>-->
+<!--<p>年 月 日</p>-->
+<!--<p>签约团队负责人：</p>-->
+<!--<p>年 月 日</p>-->
+<!--</article>-->
+<!--</div>-->
+<!--<div class="weui-dialog__ft"><a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">我同意</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<style>
+    .select_fwb .weui-cells:after {
+        border-bottom: 0;
+    }
+    .select_fwb .weui-dialog {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        overflow: auto;
+    }
+    .select_fwb .weui-dialog .weui-dialog__bd {
+        text-align: left;
+        padding: 0;
+        height: 100%;
+        overflow: auto;
+    }
+    .select_fwb .labels_btns {
+        position: fixed;
+        bottom: -2px;
+        width: 100%;
+        background-color: #fff;
+    }
+    .select_fwb .labels_btns .labels_btns_item {
+        width: 49.5%;
+        display: inline-block;
+        padding: 10px 0;
+    }
+    .select_fwb .labels_btns .labels_btns_item.weui-dialog__btn_default {
+        border: 1px solid #eee;
+        background-color: #eee;
+    }
+    .select_fwb .labels_btns .labels_btns_item.weui-dialog__btn_primary {
+        margin-left: -4px;
+        border-top: 1px solid #eee;
+        background-color: #1aad19;
+        color: #fff;
+    }
+    .select_fwb .weui-grid {
+        width: 50%;
+        padding: 15px;
+    }
+
+    .select_fwb .weui-cells_radio .weui-check:checked + .weui-icon-checked:before {
+        width: 0;
+        height: 0;
+        border-width: 20px 20px;
+        border-style: solid;
+        border-color: #09bb07 #09bb07 transparent transparent;
+        color: white;
+        top: 0;
+        line-height: 0;
+        margin: 0;
+        content: ""
+    }
+</style>
+<!-- 服务包弹出框 -->
+<div class="js_dialog select_fwb" id="dialog_fwb" style="opacity: 1;display: none">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__bd">
+
+            <div class="weui-grids weui-cells_radio" style="margin-bottom: 55px">
+                <label class="weui-grid package weui-check__label">
+                    <div class="packageRadio">
+                        <input type="checkbox" class="weui-check" name="radio1" checked="">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                    <h4 class="packageTitle weui-grid__label text_left">基础服务包</h4>
+                    <p class="packageDesc weui-grid__label text_left">免费服务 免费享受</p>
+                    <img class="packageImg" src="../images/pic_160.png" alt="">
+                    <div class="weui-grid__label">
+                        <p class="packagePrice">￥0</p>
+                        <a class="packageDetail">查看详情</a>
+                    </div>
+                </label>
+                <label class="weui-grid package weui-check__label">
+                    <div class="packageRadio">
+                        <input type="checkbox" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                    <h4 class="packageTitle weui-grid__label text_left">血糖包</h4>
+                    <p class="packageDesc weui-grid__label text_left">血糖测量服务</p>
+                    <img class="packageImg" src="../images/pic_160.png" alt="">
+                    <div class="weui-grid__label">
+                        <p class="packagePrice">￥99.00</p>
+                        <a class="packageDetail">查看详情</a>
+                    </div>
+                </label>
+                <label class="weui-grid package weui-check__label">
+                    <div class="packageRadio">
+                        <input type="checkbox" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                    <h4 class="packageTitle weui-grid__label text_left">血压包</h4>
+                    <p class="packageDesc weui-grid__label text_left">血压测量服务</p>
+                    <img class="packageImg" src="../images/pic_160.png" alt="">
+                    <div class="weui-grid__label">
+                        <p class="packagePrice">￥99.00</p>
+                        <a class="packageDetail">查看详情</a>
+                    </div>
+                </label>
+            </div>
+
+        </div>
+        <div class="labels_btns">
+            <a class="labels_btns_item weui-dialog__btn_default">取消</a>
+            <a class="labels_btns_item weui-dialog__btn_primary">确定</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="js_dialog" id="dialog_packageDetail" style="display: none">
+    <div class="weui-mask" style="z-index: 5000;"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">基础服务包</strong></div>
+        <div class="weui-dialog__bd dialog_p">
+            <article class="weui_article clause">
+                <p>服务内容</p>
+                <p>1、提供健康教育、健康咨询、妇幼保健及健康档案管理等基本公共卫生服务。</p>
+                <p>2、65周岁以上老人每年一次健康体检，每3个月提供一次健康指导及随访。</p>
+                <p>3、高血压、糖尿病居民提供血压血糖监测、用药指导、不良生活方式干预、综合评估等服务。</p>
+                <p>4、对肿瘤、精神病、传染病等特殊病提供健康管理服务。</p>
+                <p>5、因长期卧床行动不便居民，提供家庭病床式上门服务；病情复杂或病情控制不佳的居民协助专科医生给予个性化诊疗。</p>
+                <p>6、因病情需要转上级二、三级医院、专科医院就诊住院的提供转诊服务。</p>
+                <p>7、提供慢性病医保申请、药费报销等相关医保服务。对全年医药费个人负担较重的提出合理化诊疗方案，减轻家庭医疗费用支出。</p>
+                <p>8、对签约家庭成员定期提供健康、疾病诊疗综合评价。</p>
+            </article>
+        </div>
+        <div class="weui-dialog__ft"><a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">关闭</a>
+        </div>
+    </div>
+</div>
+
+<div class="weui-btn-rea fix_btn">
+    <a id="sign_ok" class="weui-btn weui-btn_primary">下一步</a>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/weui.min.js"></script>
+<script src="../js/esign.js" type="text/javascript"></script>
+<script src="../js/f.js"></script>
+<script>
+    $(function () {
+        //特殊人群弹出框
+        f.dialog("sper");
+        //服务包弹出框
+        f.dialog("fwb");
+        //弹出服务包详情框
+        f.dialog_class("packageDetail");
+        //签约日期
+        $("#startTime").text(f.signData());
+    });
+    $("#sign_ok").on("click", function () {
+        if (f.reg_canvas($("#sign_show"))) {
+            location.href = "订单支付.html";
+        }
+    });
+
+    //必选一个服务包，可以多选
+    $(".select_fwb input[type=checkbox]").on("click", function() {
+        var checkboxs = $("input[type=checkbox]");
+        var count = 0;
+        for(var i = 0; i < checkboxs.length; i++ ) {
+            if(checkboxs[i].checked == true ) {
+                count++ ;
+            }
+        }
+        if(count == 0) {
+            $(this)[0].checked = true;
+        }
+    });
+</script>
+</body>
+</html>

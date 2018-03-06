@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0">
+    <title>基本信息</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <link rel="stylesheet" href="../../css/健康档案.css"/>
+    <style>
+        html {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">身份证号：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" id="id" type="text" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">民&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">现在住址：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">户籍住址：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">联系电话：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells" style="padding-top: 50px;">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">区（乡镇）：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">社区（村）：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">工作单位：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="">
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells" style="padding-top: 50px;">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">常住类型：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">户籍</option>
+                    <option value="2">非户籍</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">文化程度：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">研究生</option>
+                    <option value="2">大学本科</option>
+                    <option value="3">大学专科和专科院校</option>
+                    <option value="4">中等专业学校</option>
+                    <option value="5">技工学校</option>
+                    <option value="6">高中</option>
+                    <option value="7">大学本科</option>
+                    <option value="8">初中</option>
+                    <option value="9">小学</option>
+                    <option value="10">文盲或半文盲</option>
+                    <option value="11">不详</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="" id="select_zhiye">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">国家机关、党群组织、企业、事业单位负责人</option>
+                    <option value="2">专业技术人员</option>
+                    <option value="3">办事人员和有关人员</option>
+                    <option value="4">商业、服务业人员</option>
+                    <option value="5">农、林、牧、渔、水利业生产人员</option>
+                    <option value="6">生产、运输设备操作人 员及有关人员</option>
+                    <option value="7">军人</option>
+                    <option value="8">不便分类的其他从业人员</option>
+                    <option value="9">无职业</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">婚姻状况：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">未婚</option>
+                    <option value="2">已婚</option>
+                    <option value="3">丧偶</option>
+                    <option value="4">离异</option>
+                    <option value="5">未说明的婚姻状况</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="weui-cells" style="padding-top: 50px;">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">紧急联系人：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells" style="margin-bottom: 120px;">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <div class="input-icon"></div>
+                <h4 style="display: inline-block">联系人电话：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="weui-btn-rea fix_btn">
+        <a class="weui-btn weui-btn_primary">保存</a>
+    </div>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+
+    $(function () {
+        cal();
+    });
+
+    //监控屏幕小大变化
+    window.onresize = function(){
+        cal();
+    };
+
+    //改变rem值
+    function cal() {
+        if(screen.width < 1080) {
+            //通过window.screen.width获取屏幕的宽度
+            var width = screen.width * 2;
+            var zoom = (width/750) * 2.8;
+            $("input[type=checkbox]").css("zoom", zoom);
+
+            var offWidth = width / 25; //这里用宽度/30表示1rem取得的px
+            document.getElementsByTagName("html")[0].style.fontSize = offWidth + 'px'; //把rem的值复制给顶级标签html的font-size
+        }
+    };
+
+    //点击保存
+    $(".fix_btn a").on("click", function () {
+        if (f.reg_id($("#id").val())) {
+            location.href = "创建健康档案.html"
+        }
+    });
+
+    //当select框选中的文本过长时，切割文本用...代替
+    var text_selected = "";
+    var val_select = "";
+    $("#select_zhiye").on("change", function(){
+        //获取选中的option内容
+        var newText = $(this).find('option:selected').text();
+        //获取选中的option的value
+        var newVal = $(this).find('option:selected').val();
+        if(text_selected == newText) {
+            return false;
+        } else {
+            if(val_select != "") {
+                $(this).find("option[value =" +  val_select.toString() + "]").html(text_selected);
+            }
+            text_selected = newText;
+            val_select = newVal;
+            //当文本超过10个字时进行切割
+            if(text_selected.length > 10) {
+                var value = text_selected.substring(0,10) + "...";
+                $(this).find('option:selected').html(value);
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<style>
+    .form-horizontal .form-group {
+        margin: 0;
+    }
+    .form-horizontal .item .control-label {
+        padding-top: 0;
+        text-align: right;
+        width: 70px;
+        padding-right: 5px;
+    }
+    .form-horizontal .item {
+        float: left;
+        margin: 5px 15px;
+    }
+    .form-horizontal .item>div {
+        display: inline-block;
+    }
+    .sidebar-area {
+        top: 0;
+        bottom: 0;
+        z-index: 9996;
+        overflow: hidden;
+        transition: right 0.3s;
+        box-shadow: #bbb 0px 0px 10px;
+        border-top: 10px solid #17C4BB;
+    }
+    .sidebar-area.active {
+        right: 0;
+    }
+    .sidebar_close_icon {
+        z-index: 9999;
+        width: 28px;
+        height: 27px;
+        top: 10px;
+        right: 15px;
+        position: absolute;
+        padding-top: 6px;
+        text-align: center;
+        display: none;
+    }
+    #zxzx tr.checked,
+    #bgd tr.checked,
+    #mbgl tr.checked,
+    #sfsc tr.checked,
+    #sqxz tr.checked {
+        background-color: #eee;
+    }
+</style>
+<div class="col-md-12 baseInfo">
+    <div class="portlet">
+        <div class="portlet-title tabbable-line" style="padding: 0 15px;">
+            <ul class="nav nav-tabs" style="float: left">
+                <li class="active">
+                    <a href="#zxzx" data-toggle="tab" aria-expanded="true"> 在线咨询 </a>
+                </li>
+                <li class="">
+                    <a href="#bgd" data-toggle="tab" aria-expanded="true"> 报告单 </a>
+                </li>
+                <li class="">
+                    <a href="#mbgl" data-toggle="tab" aria-expanded="true"> 慢病管理 </a>
+                </li>
+                <li class="">
+                    <a href="#sfsc" data-toggle="tab" aria-expanded="true"> 随访 </a>
+                </li>
+                <li class="">
+                    <a href="#sqxz" data-toggle="tab" aria-expanded="true"> 社区巡诊 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="zxzx" style="position: relative;overflow-x: hidden;">
+
+                </div>
+                <div class="tab-pane" id="bgd" style="position: relative;overflow-x: hidden;">
+
+                </div>
+                <div class="tab-pane" id="mbgl" style="position: relative;overflow-x: hidden;">
+
+                </div>
+                <div class="tab-pane" id="sfsc" style="position: relative;overflow-x: hidden;">
+
+                </div>
+                <div class="tab-pane" id="sqxz" style="position: relative;overflow-x: hidden;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+        type="text/javascript"></script>
+<script>
+    $(function () {
+        $("#zxzx").load("工作台_在线咨询.html");
+        $("#bgd").load("工作台_报告单.html");
+        $("#mbgl").load("工作台_慢病管理.html");
+        $("#sfsc").load("工作台_随访筛查.html");
+        $("#sqxz").load("工作台_社区巡诊.html");
+    });
+</script>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>血脂</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="container cDisease_container" style="overflow: hidden">
+    <div class="weui-tab cDisease_weui-tab" style="z-index: -1;">
+        <div class="weui-navbar cDisease_tab">
+            <a class="weui-navbar__item weui-bar__item_on">
+                最近10次
+            </a>
+            <a class="weui-navbar__item">
+                最近20次
+            </a>
+            <a class="weui-navbar__item">
+                最近30次
+            </a>
+        </div>
+    </div>
+    <div id="chartContainer"></div>
+    <div class="mb_record">
+        <div class="weui-form-preview ">
+            <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">检测时间<i></i>05-17 16:32</label>
+                    <span class="weui-form-preview__value"><img src="../../images/chronic_ys.png"/></span>
+                </div>
+            </div>
+            <div class="weui-form-preview__bd">
+                <div class="weui-form-preview__item cDisease_list_5">
+                    <label class="weui-form-preview__label">总胆固醇</label>
+                    <label class="weui-form-preview__label">高密度脂蛋白</label>
+                    <label class="weui-form-preview__label">甘油三脂</label>
+                    <label class="weui-form-preview__label">低密度脂蛋白</label>
+                    <label class="weui-form-preview__label">检测结果</label>
+                </div>
+                <div class="weui-form-preview__item cDisease_list_5">
+                    <label class="weui-form-preview__label">90</label>
+                    <label class="weui-form-preview__label">70</label>
+                    <label class="weui-form-preview__label">70</label>
+                    <label class="weui-form-preview__label">2.1</label>
+                    <label class="weui-form-preview__label cDisease_warning">偏高</label>
+                </div>
+            </div>
+        </div>
+        <div class="btn-delete">
+            <span >删除</span>
+        </div>
+    </div>
+    <div class="mb_record">
+        <div class="weui-form-preview ">
+            <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">检测时间<i></i>05-17 16:32</label>
+                    <span class="weui-form-preview__value"><img src="../../images/chronic_ys.png"/></span>
+                </div>
+            </div>
+            <div class="weui-form-preview__bd">
+                <div class="weui-form-preview__item cDisease_list_5">
+                    <label class="weui-form-preview__label">总胆固醇</label>
+                    <label class="weui-form-preview__label">高密度脂蛋白</label>
+                    <label class="weui-form-preview__label">甘油三脂</label>
+                    <label class="weui-form-preview__label">低密度脂蛋白</label>
+                    <label class="weui-form-preview__label">检测结果</label>
+                </div>
+                <div class="weui-form-preview__item cDisease_list_5">
+                    <label class="weui-form-preview__label">90</label>
+                    <label class="weui-form-preview__label">70</label>
+                    <label class="weui-form-preview__label">70</label>
+                    <label class="weui-form-preview__label">2.1</label>
+                    <label class="weui-form-preview__label">正常</label>
+                </div>
+            </div>
+        </div>
+        <div class="btn-delete">
+            <span>删除</span>
+        </div>
+    </div>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script src="../../js/fusioncharts.js"></script>
+<script src="../../js/fusioncharts.charts.js"></script>
+<script type="text/javascript">
+    FusionCharts.ready(function () {
+        var revenueChart = new FusionCharts({
+            "type": "msline",
+            "renderAt": "chartContainer",
+            "width": "100%",
+            "height": "300",
+            "dataFormat": "json",
+            "dataSource": {
+                "chart": {
+                    "caption": " ",
+                    "numberprefix": "",
+                    "plotgradientcolor": "",
+                    "bgcolor": "FFFFFF",
+                    "showalternatehgridcolor": "0",
+                    "divlinecolor": "CCCCCC",
+                    "showvalues": "0",
+                    "showcanvasborder": "0",
+                    "canvasborderalpha": "0",
+                    "canvasbordercolor": "CCCCCC",
+                    "canvasborderthickness": "1",
+                    "yaxismaxvalue": "",
+                    "yaxisminvalue": "30",
+                    "captionpadding": "0",
+                    "linethickness": "3",
+                    "yaxisvaluespadding": "5",
+                    "legendshadow": "0",
+                    "legendborderalpha": "0",
+                    "palettecolors": "#f8bd19,#008ee4,#33bdda,#e44a00,#6baa01,#583e78",
+                    "showborder": "0"
+                },
+                "categories": [
+                    {
+                        "category": [
+                            {
+                                "label": "11.1"
+                            },
+                            {
+                                "label": "11.2"
+                            },
+                            {
+                                "label": "11.3"
+                            },
+                            {
+                                "label": "11.4"
+                            },
+                            {
+                                "label": "11.5"
+                            },
+                            {
+                                "label": "11.6"
+                            },
+                            {
+                                "label": "11.7"
+                            },
+                            {
+                                "label": "11.8"
+                            },
+                            {
+                                "label": "11.9"
+                            },
+                            {
+                                "label": "11.10"
+                            },
+                            {
+                                "label": "11.11"
+                            },
+                            {
+                                "label": "11.12"
+                            }
+                        ]
+                    }
+                ],
+                "dataset": [
+                    {
+                        "seriesname": "总胆固醇",
+                        "data": [
+                            {
+                                "value": "124"
+                            },
+                            {
+                                "value": "148"
+                            },
+                            {
+                                "value": "118"
+                            },
+                            {
+                                "value": "118"
+                            },
+                            {
+                                "value": "126"
+                            },
+                            {
+                                "value": "126"
+                            },
+                            {
+                                "value": "118"
+                            },
+                            {
+                                "value": "127"
+                            },
+                            {
+                                "value": "137"
+                            },
+                            {
+                                "value": "105"
+                            },
+                            {
+                                "value": "140"
+                            },
+                            {
+                                "value": "122"
+                            }
+                        ]
+                    },
+                    {
+                        "seriesname": "高密度脂蛋白",
+                        "data": [
+                            {
+                                "value": "80"
+                            },
+                            {
+                                "value": "95"
+                            },
+                            {
+                                "value": "75"
+                            },
+                            {
+                                "value": "85"
+                            },
+                            {
+                                "value": "86"
+                            },
+                            {
+                                "value": "96"
+                            },
+                            {
+                                "value": "78"
+                            },
+                            {
+                                "value": "79"
+                            },
+                            {
+                                "value": "91"
+                            },
+                            {
+                                "value": "92"
+                            },
+                            {
+                                "value": "93"
+                            },
+                            {
+                                "value": "98"
+                            }
+                        ]
+                    }
+                    ,
+                    {
+                        "seriesname": "甘油三脂",
+                        "data": [
+                            {
+                                "value": "8.0"
+                            },
+                            {
+                                "value": "9.5"
+                            },
+                            {
+                                "value": "7.5"
+                            },
+                            {
+                                "value": "8.5"
+                            },
+                            {
+                                "value": "8.6"
+                            },
+                            {
+                                "value": "9.6"
+                            },
+                            {
+                                "value": "7.8"
+                            },
+                            {
+                                "value": "7.9"
+                            },
+                            {
+                                "value": "9.1"
+                            },
+                            {
+                                "value": "9.2"
+                            },
+                            {
+                                "value": "9.3"
+                            },
+                            {
+                                "value": "9.8"
+                            }
+                        ]
+                    }
+                    ,
+                    {
+                        "seriesname": "低密度脂蛋白",
+                        "data": [
+                            {
+                                "value": "180"
+                            },
+                            {
+                                "value": "195"
+                            },
+                            {
+                                "value": "175"
+                            },
+                            {
+                                "value": "185"
+                            },
+                            {
+                                "value": "186"
+                            },
+                            {
+                                "value": "196"
+                            },
+                            {
+                                "value": "178"
+                            },
+                            {
+                                "value": "179"
+                            },
+                            {
+                                "value": "191"
+                            },
+                            {
+                                "value": "192"
+                            },
+                            {
+                                "value": "193"
+                            },
+                            {
+                                "value": "198"
+                            }
+                        ]
+                    }
+                ]
+            }
+        });
+        revenueChart.render();
+    })
+</script>
+<script>
+    $(document).ready(function() {
+        f.slide();
+    });
+    $(".btn-delete").on("click", function() {
+        f.successToptips("删除成功", "血脂.html");
+    });
+</script>
+</body>
+</html>

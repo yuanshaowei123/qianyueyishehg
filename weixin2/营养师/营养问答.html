@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>营养问答</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_286960_553fy5wsp1uu9pb9.css">
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/f.css"/>
+    <link rel="stylesheet prefetch" href="../css/photoswipe.css">
+    <link rel="stylesheet prefetch" href="../css/default-skin/default-skin.css">
+    <link rel="stylesheet" href="../css/营养师.css">
+    <script src="../js/photoswipe.js"></script>
+    <script src="../js/photoswipe-ui-default.min.js"></script>
+    <style>
+        #wrapper{
+            position: static;
+            height:665px;
+            padding-bottom: 50px;
+        }
+        #thelist{
+            margin-bottom: 0!important;
+        }
+        .weui-tabbar{
+            bottom: -2px!important;
+        }
+        .myDoctor_tabbar .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label{
+            color: #999;
+        }
+        /*底部导航*/
+        .myDoctor_tabbar {
+            height: 53px;
+            background-color: #fcfcfc;
+            position: fixed;
+        }
+        .myDoctor_tabbar .weui-tabbar__item{
+            padding: 2.5px 0;
+        }
+        .myDoctor_tabbar img {
+            width: 22px;
+            height: 22px;
+            margin: 8px 0 3px;
+        }
+        .myDoctor_tabbar p {
+            font-size: 12px!important;
+            /*font-weight: bold;*/
+            color: #4c4c4c;
+            height: 13px;
+            line-height: 13px;
+            margin: 0;
+        }
+        .myDoctor_tabbar .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+            color: #00cc88;
+        }
+        .myDoctor_tabbar::before {
+            border-top: 1px solid #e6e6e6;
+        }
+        .weui-bar__item_on{
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body ontouchstart class="report doctor">
+<div class="container">
+    <!--搜索-->
+    <div class="yys_title">
+        <div class="sousuo">
+            <img src="../images/783409925728340873.png" alt="">
+        </div>
+        <input type="text" id="username2" autoComplete='off' placeholder="陈医生">
+        <div class="shaixuan shaixuan2">
+            <span>筛选</span>
+            <img src="../images/311051486809532481.png" alt="">
+            <ul class="screen screen2">
+                <li>
+                    <p>
+                        <label class="mt-checkbox">
+                            已经回答&nbsp;&nbsp;
+                            <input type="checkbox" class="yywd_list" >
+                            <img src="../images/351142816061694610.png" alt="">
+                        </label>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <label class="mt-checkbox">
+                            等待回答&nbsp;&nbsp;
+                            <input type="checkbox" class="yywd_list" >
+                            <img src="../images/351142816061694610.png" alt="">
+                        </label>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <label class="mt-checkbox">
+                            我的咨询&nbsp;&nbsp;
+                            <input type="checkbox" class="yywd_list">
+                            <img src="../images/351142816061694610.png" alt="">
+                        </label>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="scroller">
+            <div id="pullDown">
+            </div>
+            <div id="thelist">
+                <div class="weui-panel weui-panel_access details_list">
+                    <div class="page__bd">
+                        <div class="weui-panel weui-panel_access">
+                            <div class="weui-panel__bd">
+                                <div class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd yywd_left">
+                                        <img src="../images/440364196732792978.png" alt="" class="weui-media-box__thumb">
+                                        <p>9/28</p>
+                                    </div>
+                                    <div class="weui-media-box__bd yywd_center">
+                                        <div class="weui-media-box__desc">
+                                            <ul class="yywd_content">
+                                                <li>
+                                                    <p class="p1">
+                                                        <span class="span1">关于慢性心脏病的问题关于慢性心脏病的问题关于慢性心脏病的问题</span>
+                                                    </p>
+                                                    <p class="p2">
+                                                        <span class="span3">金闾社区卫生服务中心</span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="weui-media-box__hd yywd_right">
+                                        <span class="span4">已解答</span>
+                                    </div>
+                                    <div class="zans">
+                                        <img src="../images/88224803472618659.png" alt="">
+                                        <span>1319</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="weui-uploader weui-media-box">
+                                    <div class="weui-uploader__bd">
+                                        <div class="my-gallery" data-pswp-uid="1">
+                                            <figure>
+                                                <a href="../images/fwb_gxt.png" data-size="472x314">
+                                                    <img src="../images/fwb_gxt.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_chcr.png" data-size="472x314">
+                                                    <img src="../images/fwb_chcr.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_jkgl.png" data-size="472x314">
+                                                    <img src="../images/fwb_jkgl.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_jkgl.png" data-size="472x314">
+                                                    <img src="../images/fwb_jkgl.png">
+                                                </a>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yyjd">
+                                    <div class="jd_left">
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                    </div>
+                                    <div class="jd_right">
+                                        <img src="../images/doctor.png" alt="">
+                                        <p>陈少思思</p>
+                                    </div>
+
+                                    <div class="zhizhen"></div>
+                                </div>
+                                <div class="yyjd me_tell">
+                                    <div class="jd_right jd_right_me">
+                                        <img src="../images/440364196732792978.png" alt="">
+                                        <!--<p>陈少思思</p>-->
+                                    </div>
+                                    <div class="zhizhen zhizhen_me"></div>
+                                    <div class="jd_left jd_left_me">
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                    </div>
+                                </div>
+                                <a class="ask_questions" href="咨询界面.html">
+                                    继续提问
+                                    <span>&gt;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-panel weui-panel_access details_list">
+                    <div class="page__bd">
+                        <div class="weui-panel weui-panel_access">
+                            <div class="weui-panel__bd">
+                                <div class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd yywd_left">
+                                        <img src="../images/440364196732792978.png" alt="" class="weui-media-box__thumb">
+                                        <p>9/28</p>
+                                    </div>
+                                    <div class="weui-media-box__bd yywd_center">
+                                        <div class="weui-media-box__desc">
+                                            <ul class="yywd_content">
+                                                <li>
+                                                    <p class="p1">
+                                                        <span class="span1">慢性心脏病的问题关于慢性心脏病的问题</span>
+                                                    </p>
+                                                    <p class="p2">
+                                                        <span class="span3">金闾社区卫生服务中心</span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="weui-media-box__hd yywd_right">
+                                        <span class="span4 span5">已解答</span>
+                                    </div>
+                                    <div class="zans">
+                                        <img src="../images/88224803472618659.png" alt="">
+                                        <span>1319</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="weui-uploader weui-media-box">
+                                    <div class="weui-uploader__bd">
+                                        <div class="my-gallery" data-pswp-uid="1">
+                                            <figure>
+                                                <a href="../images/fwb_gxt.png" data-size="472x314">
+                                                    <img src="../images/fwb_gxt.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_chcr.png" data-size="472x314">
+                                                    <img src="../images/fwb_chcr.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_jkgl.png" data-size="472x314">
+                                                    <img src="../images/fwb_jkgl.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_jkgl.png" data-size="472x314">
+                                                    <img src="../images/fwb_jkgl.png">
+                                                </a>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yyjd">
+                                    <div class="jd_left">
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                    </div>
+                                    <div class="jd_right">
+                                        <img src="../images/doctor.png" alt="">
+                                        <p>陈少思思</p>
+                                    </div>
+
+                                    <div class="zhizhen"></div>
+                                </div>
+                                <div class="yyjd me_tell">
+                                    <div class="jd_right jd_right_me">
+                                        <img src="../images/440364196732792978.png" alt="">
+                                        <!--<p>陈少思思</p>-->
+                                    </div>
+                                    <div class="zhizhen zhizhen_me"></div>
+                                    <div class="jd_left jd_left_me">
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                    </div>
+                                </div>
+                                <a class="ask_questions" href="咨询界面.html">
+                                    继续提问
+                                    <span>&gt;</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-panel weui-panel_access details_list">
+                    <div class="page__bd">
+                        <div class="weui-panel weui-panel_access">
+                            <div class="weui-panel__bd">
+                                <div class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd yywd_left">
+                                        <img src="../images/440364196732792978.png" alt="" class="weui-media-box__thumb">
+                                        <p>9/28</p>
+                                    </div>
+                                    <div class="weui-media-box__bd yywd_center">
+                                        <div class="weui-media-box__desc">
+                                            <ul class="yywd_content">
+                                                <li>
+                                                    <p class="p1">
+                                                        <span class="span1">关于慢性心脏病的问题关于慢性心脏病的问题关于慢性心脏病的问题</span>
+                                                    </p>
+                                                    <p class="p2">
+                                                        <span class="span3">金闾社区卫生服务中心</span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="weui-media-box__hd yywd_right">
+                                        <span class="span4">已解答</span>
+                                    </div>
+                                    <div class="zans">
+                                        <img src="../images/88224803472618659.png" alt="">
+                                        <span>1319</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="weui-uploader weui-media-box">
+                                    <div class="weui-uploader__bd">
+                                        <div class="my-gallery" data-pswp-uid="1">
+                                            <figure>
+                                                <a href="../images/fwb_gxt.png" data-size="472x314">
+                                                    <img src="../images/fwb_gxt.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_chcr.png" data-size="472x314">
+                                                    <img src="../images/fwb_chcr.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_jkgl.png" data-size="472x314">
+                                                    <img src="../images/fwb_jkgl.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_jkgl.png" data-size="472x314">
+                                                    <img src="../images/fwb_jkgl.png">
+                                                </a>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yyjd">
+                                    <div class="jd_left">
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                    </div>
+                                    <div class="jd_right">
+                                        <img src="../images/doctor.png" alt="">
+                                        <p>陈少思思</p>
+                                    </div>
+
+                                    <div class="zhizhen"></div>
+                                </div>
+                                <div class="yyjd me_tell">
+                                    <div class="jd_right jd_right_me">
+                                        <img src="../images/440364196732792978.png" alt="">
+                                        <!--<p>陈少思思</p>-->
+                                    </div>
+                                    <div class="zhizhen zhizhen_me"></div>
+                                    <div class="jd_left jd_left_me">
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                    </div>
+                                </div>
+                                <a class="ask_questions" href="咨询界面.html">
+                                    继续提问
+                                    <span>&gt;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-panel weui-panel_access details_list">
+                    <div class="page__bd">
+                        <div class="weui-panel weui-panel_access">
+                            <div class="weui-panel__bd">
+                                <div class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd yywd_left">
+                                        <img src="../images/440364196732792978.png" alt="" class="weui-media-box__thumb">
+                                        <p>9/28</p>
+                                    </div>
+                                    <div class="weui-media-box__bd yywd_center">
+                                        <div class="weui-media-box__desc">
+                                            <ul class="yywd_content">
+                                                <li>
+                                                    <p class="p1">
+                                                        <span class="span1">慢性心脏病的问题关于慢性心脏病的问题</span>
+                                                    </p>
+                                                    <p class="p2">
+                                                        <span class="span3">金闾社区卫生服务中心</span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="weui-media-box__hd yywd_right">
+                                        <span class="span4 span5">已解答</span>
+                                    </div>
+                                    <div class="zans">
+                                        <img src="../images/88224803472618659.png" alt="">
+                                        <span>1319</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="weui-uploader weui-media-box">
+                                    <div class="weui-uploader__bd">
+                                        <div class="my-gallery" data-pswp-uid="1">
+                                            <figure>
+                                                <a href="../images/fwb_gxt.png" data-size="472x314">
+                                                    <img src="../images/fwb_gxt.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_chcr.png" data-size="472x314">
+                                                    <img src="../images/fwb_chcr.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_jkgl.png" data-size="472x314">
+                                                    <img src="../images/fwb_jkgl.png">
+                                                </a>
+                                            </figure>
+                                            <figure>
+                                                <a href="../images/fwb_jkgl.png" data-size="472x314">
+                                                    <img src="../images/fwb_jkgl.png">
+                                                </a>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yyjd">
+                                    <div class="jd_left">
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                    </div>
+                                    <div class="jd_right">
+                                        <img src="../images/doctor.png" alt="">
+                                        <p>陈少思思</p>
+                                    </div>
+
+                                    <div class="zhizhen"></div>
+                                </div>
+                                <div class="yyjd me_tell">
+                                    <div class="jd_right jd_right_me">
+                                        <img src="../images/440364196732792978.png" alt="">
+                                        <!--<p>陈少思思</p>-->
+                                    </div>
+                                    <div class="zhizhen zhizhen_me"></div>
+                                    <div class="jd_left jd_left_me">
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                        阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止阻止冒泡阻止冒泡阻止
+                                    </div>
+                                </div>
+                                <a class="ask_questions" href="咨询界面.html">
+                                    继续提问
+                                    <span>&gt;</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pullUp" >
+                <span class="pullUpLabel">下拉加载更多...</span>
+            </div>
+        </div>
+    </div>
+    <div class="weui-tabbar myDoctor_tabbar">
+        <a href="营养师.html" class="weui-tabbar__item" style="border-right: 1px solid #e6e6e6;">
+            <img src="../images/@2x/icon_Nut_defa@2x.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">营养师</p>
+        </a>
+        <a href="javascript:" class="weui-tabbar__item  weui-bar__item_on" style="border-right: 1px solid #e6e6e6;">
+            <img src="../images/@2x/icon_problem_sele@2x.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label active2">营养问答</p>
+        </a>
+        <a href="营养_个人中心.html" class="weui-tabbar__item">
+            <img src="../images/@2x/icon_mine_defa@2x.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">个人中心</p>
+        </a>
+    </div>
+</div>
+
+<!--实现点击图片放大可以滑动，加入四个css和两个js -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+    It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+        PhotoSwipe keeps only 3 of them in the DOM to save memory.
+        Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!-- Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter" style="display: block;"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)" style="display: block; visibility: visible;">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)" style="display: block; visibility: visible;">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/iscroll.js"></script>
+<script src="../js/f.js"></script>
+<script src="../js/报告单.js"></script>
+
+<script>
+    //    下拉刷新
+    function grain() {
+        var data = [
+            {
+                id: "1",
+                title: "在此描述在此描述在此描述在此描述在此描述",
+                time: "2017年02月09999日",
+                problem: "慢性心脏病的问题关于慢性心脏病的问题",
+                region: "金闾社区卫生服务中心",
+                answer: "已解答",
+                head: "../images/88224803472618659.png",
+                level: "初级营养师",
+                href: "咨询界面.html",
+                look: 2,
+                img:"../images/440364196732792978.png"
+            }
+        ];
+        return data;
+    }
+    f.loaded(grain(), "problem");
+</script>
+<script>
+
+
+
+
+    $('.shaixuan1').click(function (event) {
+        event.stopPropagation();//阻止冒泡
+        $('.screen1').slideToggle();
+        $('html').click(function () {
+            $('.screen1').slideUp();
+        })
+    })
+    $('.shaixuan2').click(function (event) {
+        event.stopPropagation();//阻止冒泡
+        $(this).find('.screen2').slideToggle();
+
+        $('html').click(function () {
+            $('.screen2').slideUp();
+        })
+    })
+
+    $('.screen1 li').click(function () {
+        alert($(this).find('p').html());
+    })
+    $('.screen2 li').click(function (event) {
+        event.stopPropagation();//阻止冒泡
+        $('html').click(function () {
+            $('.screen2').slideUp();
+        })
+    })
+    //      点击筛选选中样式
+    $("input[type='checkbox']").click(function (event) {
+        event.stopPropagation();
+        alert($(this).is(':checked'));
+        if($(this).next().attr('src') == '../images/351142816061694610.png'){
+            $(this).next().attr('src','../images/667250948435274791.png');
+        }else{
+            $(this).next().attr('src','../images/351142816061694610.png');
+        }
+    })
+
+    //营养问答页面底部分页
+    $('.list_footer').each(function (index,value) {
+        value.onclick = function () {
+            $('.list_footer').removeClass('active1').eq(index).addClass('active1');
+            $('.list').removeClass('active').eq(index).addClass('active')
+        }
+    })
+    //    点击问题栏目
+    $('.contents').click(function () {
+        $(this).nextAll().removeClass('aa')
+    });
+
+    //    实时监控搜索栏的值、
+    $('#username , #username2').bind('input propertychange', function(event) {
+        event.stopPropagation();
+        if(!$(this).val()){
+            console.log($(this).val())
+        }
+    });
+
+    //      点击营养问答展现详情
+    $("#thelist").delegate(".details_list","click",function(){
+        let id = $(this).index();
+        $('.details_list').each(function (index,value) {
+            if(id == index){
+                $(value).find('.details').stop().slideToggle(500);
+            }else{
+                $(value).find('.details').stop().slideUp(500);
+            }
+        })
+    });
+
+
+    //      点击下拉框里面的东西阻冒泡事件
+    $('.details').click(function (event) {
+        event.stopPropagation();
+    })
+
+    /* 从Url中获取参数的值 */
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        } else {
+            return "";
+        }
+    }
+
+    //      点赞换图片
+    $("div").delegate(".zans","click",function(event){
+        event.stopPropagation();
+        if($(this).find('img').attr('src') == '../images/88224803472618659.png'){
+            $(this).find('img').attr('src','../images/233683489105292631.png');
+            var num = $(this).find('span').text()
+            var num1 = Number(num)+1;
+            $(this).find('span').text(num1);
+            console.log(num1)
+        }else{
+            $(this).find('img').attr('src','../images/88224803472618659.png');
+            var num = $(this).find('span').text();
+            var num1 = Number(num)-1;
+            $(this).find('span').text(num1);
+        }
+    });
+
+
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,302 @@
+<style>
+    .search_condition  {
+        margin-bottom: 0!important;
+    }
+    .search_condition .control-label {
+        margin-top: 0;
+        text-align: center;
+    }
+    .team_list {
+        background-color: #eef1f5;
+        margin-bottom: 0!important;
+        max-height: 468px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 5px 20px!important;
+    }
+    .team_list .mt {
+        margin: 5px 0;
+    }
+    .team_list .mt .mt-body-top p {
+        margin: 0;
+        padding: 10px;
+    }
+    .team_list .mt .mt-stats {
+        margin: 0!important;
+    }
+    .select_div .select2-selection {
+        outline: none;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-dark"></i>
+                    <span class="caption-subject font-dark sbold uppercase">团队</span>
+                </div>
+                <div class="actions" style="float: right">
+                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                        <button type="button" class="btn btn-circle btn-primary"  data-toggle="modal" href="#editmodal" onclick="Edit()">新增团队</button>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-title search_condition">
+                <form class="form-horizontal doctor_sx" role="form" method="get" id="searchform">
+                    <div class="form-group col-md-3">
+                        <label class="col-md-4 control-label">区域</label>
+                        <div class="col-md-8 select_div">
+                            <select class="form-control js-example-basic-single" name="">
+                                <option value>--请选择--</option>
+                                <option value="0">北峰街道</option>
+                                <option value="1">亭湖社区</option>
+                                <option value="1">元和街道</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="col-md-4 control-label">社区</label>
+                        <div class="col-md-8 select_div">
+                            <select class="form-control js-example-basic-single">
+                                <option value>--请选择--</option>
+                                <option value="0">北峰街道社区</option>
+                                <option value="1">黑芝麻社区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group  col-md-3">
+                        <button type="button" class="btn btn-success" style="margin-left: 15px;">搜索</button>
+                    </div>
+                </form>
+            </div>
+            <div class="portlet-body">
+                <small>当前搜索记录：4</small>
+                <div class="table-scrollable table-scrollable-borderless">
+                    <table class="table table-hover table-light">
+                        <thead>
+                        <tr class="uppercase">
+                            <th>团队名称</th>
+                            <th>单位名称</th>
+                            <th>团队负责人</th>
+                            <th>团队人数</th>
+                            <th>签约家庭数</th>
+                            <th>团队电话</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>崔尖团队</td>
+                            <td>黑芝麻医院</td>
+                            <td>崔尖</td>
+                            <td>19</td>
+                            <td>225</td>
+                            <td>0512-88888888</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" onclick="" href="#editmodal">编辑
+                                </button>
+                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" onclick="" href="#editTeamLeader">负责人
+                                </button>
+                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" onclick="" href="#lookmMembers">查看成员
+                                </button>
+                                <button type="button" class="btn btn-defalut btn-sm" onclick="deleteTeam()">删除
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>崔尖团队</td>
+                            <td>黑芝麻医院</td>
+                            <td>崔尖</td>
+                            <td>19</td>
+                            <td>225</td>
+                            <td>0512-88888888</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" onclick="" href="#editmodal">编辑
+                                </button>
+                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" onclick="" href="#editTeamLeader">负责人
+                                </button>
+                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" onclick="" href="#editTeamLeader">查看成员
+                                </button>
+                                <button type="button" class="btn btn-defalut btn-sm" onclick="deleteTeam()">删除
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>团队修改测试</td>
+                            <td>黑芝麻医院</td>
+                            <td>崔尖</td>
+                            <td>19</td>
+                            <td>225</td>
+                            <td>0512-88888888</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" onclick="" href="#editmodal">编辑
+                                </button>
+                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" onclick="" href="#editTeamLeader">负责人
+                                </button>
+                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" onclick="" href="#editTeamLeader">查看成员
+                                </button>
+                                <button type="button" class="btn btn-defalut btn-sm" onclick="deleteTeam()">删除
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr style="margin-top: 0">
+                <div id="pagetoolbar" class="">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 text-right">
+                            <div class="">
+                                <ul id="nav_list_pagetoolbar" class="pagination pagination_custom" unselectable="on"
+                                    style="user-select: none;">
+                                    <li class="active">
+                                        <a id="nav_item_pagetoolbar_1" href="javascript:void(0);"
+                                           title="Page 1 of 1">1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="editmodal" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">新增团队</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">团队名称</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="请输入团队名称" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">团队电话</label>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="请输入团队电话" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">所在单位</label>
+                            <div class="col-md-6">
+                                <label class="control-label">黑芝麻医院</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">保存更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="editTeamLeader" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">设置团队负责人</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">团队负责人</label>
+                            <div class="col-md-6">
+                                <select class="form-control">
+                                    <option>陈利</option>
+                                    <option>崔尖</option>
+                                    <option>陈少司</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">保存更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="lookmMembers" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">团队成员</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-1 control-label">团队职责</label>
+                        <label class="col-md-3 control-label">职称</label>
+                        <label class="col-md-3 control-label">姓名</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-1 control-label">队长</label>
+                        <label class="col-md-3 control-label">医师</label>
+                        <div class="col-md-3 control-label">崔尖</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-1 control-label">成员1</label>
+                        <label class="col-md-3 control-label">医师</label>
+                        <div class="col-md-3 control-label">陈利</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-1 control-label">成员2</label>
+                        <label class="col-md-3 control-label">医师</label>
+                        <div class="col-md-3 control-label">小崔</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-1 control-label">成员3</label>
+                        <label class="col-md-3 control-label">医师</label>
+                        <div class="col-md-3 control-label">小崔</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-1 control-label">成员4</label>
+                        <label class="col-md-3 control-label">医师</label>
+                        <div class="col-md-3 control-label">小崔</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-md-offset-1 control-label">成员5</label>
+                        <label class="col-md-3 control-label">医师</label>
+                        <div class="col-md-3 control-label">小崔</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">保存更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function() {
+        $('.js-example-basic-single').select2({
+            language:'zh-CN'
+        });
+        $('.select_div').find(".select2 ").addClass("form-control");
+    })
+
+    /*
+    * 在团队操作加入团队删除功能，点击删除，提醒团队内成员是否需要删除或者变更团队，
+    * 点击删除则进入医生删除功能流程，点击变更团队则进入变更团队流程，在该团队下无成员时点击删除生效
+    * */
+    function deleteTeam() {
+        alert("删除之前判断（见解释）");
+    }
+    </script>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>体质检测</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <link rel="stylesheet" href="../css/normal_people.css"/>
+    <style>
+        body {
+            font-family: "微软雅黑";
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            请根据近一年的体验和感觉，回答以下问题，共66题
+        </div>
+        <section class="problems" id="problems">
+            <!--<div class="problem active">
+                <div class="problem_title">
+                    <span class="serial_number normal">1</span>
+                    <p>你手脚发凉吗？</p>
+                </div>
+                <div class="problem_content">
+                    <div class="weui-flex radios active">
+                        <label class="weui-flex__item mt_radio"><input type="radio" name="radio" value="1" checked/>没有<span></span></label>
+                        <label class="weui-flex__item mt_radio"><input type="radio" name="radio" value="2" />很少<span></span></label>
+                        <label class="weui-flex__item mt_radio"><input type="radio" name="radio" value="3" />有时<span></span></label>
+                        <label class="weui-flex__item mt_radio"><input type="radio" name="radio" value="4" />经常<span></span></label>
+                        <label class="weui-flex__item mt_radio"><input type="radio" name="radio" value="5" />总是<span></span></label>
+                    </div>
+                </div>
+            </div>-->
+        </section>
+    </div>
+
+    <div class="weui-btn-rea fix_btn">
+        <a id="submit" class="weui-btn weui-btn_primary">提交</a>
+    </div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script src="../js/mockPtrbswt.js"></script>
+<script>
+    $(function() {
+        /* 获取mcok数据，动态加载题目 */
+        var data = mockData();
+
+        /* 渲染所有问题 */
+        var $problems = $(".problems");
+        for(var i = 0; i< data.list.length; i++) {
+            var html =
+                "<div class='problem item_" + data.list[i].type + "' id='" + data.list[i].id + "'>" +
+                "<div class='problem_title'>" +
+                "<div class='problem_number'><span class='serial_number normal'>" + data.list[i].id + "</span></div>" +
+                "<p>" + data.list[i].title + "</p>" +
+                "</div>" +
+                "<div class='problem_content'>" +
+                "<div class='weui-flex radios'>" +
+                "<label class='weui-flex__item mt_radio'><input type='radio' name='radio' value='1' />没有<span></span></label>" +
+                "<label class='weui-flex__item mt_radio'><input type='radio' name='radio' value='2' />很少<span></span></label>" +
+                "<label class='weui-flex__item mt_radio'><input type='radio' name='radio' value='3' />有时<span></span></label>" +
+                "<label class='weui-flex__item mt_radio'><input type='radio' name='radio' value='4' />经常<span></span></label>" +
+                "<label class='weui-flex__item mt_radio'><input type='radio' name='radio' value='5' />总是<span></span></label>" +
+                "</div>" +
+                "</div>" +
+                "</div>";
+            $problems.append(html);
+        }
+
+        /* 让第一条目处于开启状态 */
+        $problems.find(".problem").eq(0).addClass("active");
+        $problems.find(".problem").eq(0).find(".radios").addClass("active");
+
+        /* 调整序号的样式 */
+        $problemTitle = $(".problem_title");
+        for(var j = 0; j < $problemTitle.length; j++) {
+            var titleHeight = $problemTitle.eq(j).css("height");
+            var numHeight = $problemTitle.eq(j).find(".problem_number").css("height");
+            var diffHeight = (parseInt(titleHeight) - parseInt(numHeight))/2;
+            $problemTitle.eq(j).find(".problem_number").css("margin-top" , diffHeight + "px");
+        }
+
+
+    })
+
+    //改变checkbox样式
+    $(".problems").delegate(".mt_radio", "click", function() {
+        if($(this).find("input[name=radio]").length > 0) {
+            /* 选择题目答案后改变序号的样式，变成已回答样式 */
+            var $serialNumber = $(this).parent().parent().parent().find(".serial_number");
+            $serialNumber.text("");
+            $serialNumber.removeClass("normal");
+            $serialNumber.addClass("special");
+
+            /* 点击选项时把其他选项都设成未选中样式 */
+            var $radios = $(this).parent().find("input[type=radio]");
+            for(var i = 0;i < $radios.length; i++) {
+                $radios.eq(i).checked = false;
+                $radios.eq(i).parent().removeClass("active");
+            }
+
+            /* 点击选项，变成选中样式 */
+            $(this).addClass("active");
+            $(this).find("input[name=radio]").checked = true;
+
+            /* 选择完毕把当前的题目关闭 */
+            $(this).parent().parent().parent().removeClass("active");
+            $(this).parent().parent().parent().find(".radios").removeClass("active");
+
+            /* 回答完当前题目后关闭并打开未回答题目的第一题 */
+            var $normalTitle = $(".problem_title .normal");
+            var $newProblem = $normalTitle.eq(0).parent().parent().parent();
+            $newProblem.addClass("active");
+            $newProblem.find(".problem_content .radios").addClass("active");
+            /* 页面滚动到对应未回答的问题 */
+            var id = parseInt($newProblem.attr("id"));
+            if(id == 1) {
+                window.location.href = "#problems";
+            } else {
+                window.location.href = "#" + (parseInt(id) - 1);
+            }
+        }
+    });
+
+    /* 点击标题控制选项的显示与隐藏 */
+    $(".problems").delegate(".problem_title", "click", function() {
+        var display = $(this).parent().find(".radios").css("display");
+
+        if(display == "flex") {
+            $(this).parent().removeClass("active");
+            $(this).parent().find(".radios").removeClass("active");
+        } else {
+            var $problems = $(".problem");
+            for(var i = 0; i < $problems.length; i++) {
+                $problems.eq(i).removeClass("active");
+                $problems.eq(i).find(".radios").removeClass("active");
+            }
+
+            $(this).parent().addClass("active");
+            $(this).parent().find(".radios").addClass("active");
+        }
+    })
+
+    /* 点击提交按钮，获取页面中所有条目的得分 */
+    $("#submit").on("click", function() {
+        window.location.href = "#title_30";
+        /* 验证是否全部问题已经回答 */
+        var bool = checkAllProblems();
+        if(!bool) {
+            f.toptips("请完成所有的题目", "");
+            return false;
+        }
+
+        /* 存放九大体质的得分 */
+        var scoreList = [
+            {"score": 0,"name": "阳虚质", "type": "1", "problem_num": 7},   /*阳虚质得分*/
+            {"score": 0,"name": "阴虚质", "type": "2", "problem_num": 8},  /*阴虚质得分*/
+            {"score": 0,"name": "气虚质", "type": "3", "problem_num": 8},  /*气虚质得分*/
+            {"score": 0,"name": "痰湿质", "type": "4", "problem_num": 8},  /*痰湿质得分*/
+            {"score": 0,"name": "湿热质", "type": "5", "problem_num": 7},  /*湿热质得分*/
+            {"score": 0,"name": "血瘀质", "type": "6", "problem_num": 7},  /*血瘀质得分*/
+            {"score": 0,"name": "特禀质", "type": "7", "problem_num": 7},  /*特禀质得分*/
+            {"score": 0,"name": "气郁质", "type": "8", "problem_num": 7},  /*气郁质得分*/
+            {"score": 0,"name": "平和质", "type": "9", "problem_num": 8},  /*平和质得分*/
+            ]
+
+        /* 遍历所有题目，获取每一条题目的得分，并与九大体质想对应，放到 scoreList 对应的列表中 */
+        $problems = $(".problem");
+        for(var i = 0; i < $problems.length; i++) {
+            $problem = $problems.eq(i);
+            for(var j = 1; j <= 9; j++) {
+                var grade = 0;
+                if($problem.hasClass("item_" + j)) {
+
+                    /* 获取当前题目的分数 */
+                    var $radio = $problem.find(".mt_radio.active input[type=radio]");
+                    if($radio.length != 0) {
+                        grade = parseInt($radio.val());
+                    }
+                    /* 把当前得分加入到对应模块的总得分中 */
+                    if( j == 9) {
+                        /* 当前如果是平和质的话，需要反向计算分数 */
+                        scoreList[j - 1].score = scoreList[j - 1].score + (6 - grade);
+                        break;
+                    } else {
+                        /* 平和质以外的体质，正常计算分数 */
+                        scoreList[j - 1].score = scoreList[j - 1].score + grade;
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        /* 显示得分 */
+        var text = "阳虚质得分:" + scoreList[0].score + "阴虚质得分:" + scoreList[1].score + "气虚质得分:" + scoreList[2].score + "痰湿质得分:" + scoreList[3].score + "湿热质得分:" + scoreList[4].score +
+            "血瘀质得分:" + scoreList[5].score + "特禀质得分:" + scoreList[6].score + "气郁质得分:" + scoreList[7].score + "平和质得分:" + scoreList[8].score ;
+        alert(text);
+
+
+        /* 判断得出此人的体质 */
+        var basicPhysique =[];  /* basicPhysique存放“基本是”体质;  */
+        var mainPhysique = [];  /* mainPhysique存放“是”体质 */
+        var inclinePhysique = [];   /* inclinePhysique存放“倾向是”体质 */
+        var ppPhysique1 = []; /* ppPhysique1存放偏颇体质40分以上;  */
+        var ppPhysique2 = []; /* ppPhysique2存放偏颇体质30~39分得; */
+        var ppPhysique3 = []; /* ppPhysique3存放偏颇体质小于30的 */
+        var flag = 0;   /**/
+        for(var i = 0; i < scoreList.length; i++ ) {
+            if(scoreList[i].type != "9") {
+                var conversionScore = [(scoreList[i].score - scoreList[i].problem_num)/(scoreList[i].problem_num * 4)] * 100;  /* 获取各体质转化分数 */
+                if(conversionScore >= 40) {
+                    ppPhysique1.push(scoreList[i].name)
+                }
+                if(conversionScore < 40 && conversionScore >= 30) {
+                    ppPhysique2.push(scoreList[i].name)
+                }
+                if(conversionScore < 30) {
+                    ppPhysique3.push(scoreList[i].name)
+                }
+            }
+        }
+
+        var pinhzConversionScore = [(scoreList[8].score - scoreList[8].problem_num)/(scoreList[8].problem_num * 4)] * 100;  /* 获取平和质转化分数 */
+        if(pinhzConversionScore >= 60 && ppPhysique1.length == 0 && ppPhysique2.length == 0) {
+            mainPhysique.push("平和质");
+        } else if(pinhzConversionScore >= 60 && ppPhysique1.length == 0 && ppPhysique2.length != 0) {
+            basicPhysique.push("平和质");
+        } else if(ppPhysique1.length != 0) {
+            mainPhysique = ppPhysique1;
+        } else if(ppPhysique2.length != 0) {
+            inclinePhysique = ppPhysique2;
+        }
+
+        /* 根据判断出基本、倾向等体质 */
+        var newText = "";
+        var result = "";
+        result = MosaicString(basicPhysique);
+        if(result != null) {
+            newText = newText + "基本属于（" + result + ")，";
+        };
+        result = MosaicString(mainPhysique);
+        if(result != null) {
+            newText = newText + "是（" + result + ")，";
+        }
+        result = MosaicString(ppPhysique1);
+        if(result != null) {
+            newText = newText + "是（" + result + ")，";
+        }
+        result = MosaicString(ppPhysique2);
+        if(result != null) {
+            newText = newText + "倾向于（" + result + ")，";
+        }
+        alert(newText);
+
+        var identificationResults1 = {
+            type: "1",
+            list: scoreList
+        }
+        var identificationResults2 = {
+            mainPhysique: mainPhysique,
+            basicPhysique: basicPhysique,
+            inclinePhysique: inclinePhysique
+        }
+        sessionStorage.setItem("identificationResults1", JSON.stringify(identificationResults1));
+        sessionStorage.setItem("identificationResults2", JSON.stringify(identificationResults2));
+        window.location.href = "辨识结果.html";
+    })
+
+    /* 拼接结果 */
+    function MosaicString(list) {
+        if(list.length == 0) {
+            return null;
+        }
+        var result;
+        for(var i = 0; i< list.length; i++) {
+            if( i == 0) {
+                result = list[i];
+            } else {
+                result = result + "、" + list[i];
+            }
+        }
+        return result;
+    }
+
+    /* 验证是否全部问题已经回答 */
+    function checkAllProblems() {
+        /* 获取还未回答的题目 */
+        var $number = $(".problems").find(".serial_number.normal");
+
+        if($number.length == 0) {
+            return true
+        }
+        return false;
+    }
+</script>
+</html>

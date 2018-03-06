@@ -1,0 +1,45 @@
+<div class="col-md-12">
+    <div class="portlet">
+        <div class="portlet-title tabbable-line" style="padding: 0 15px;">
+            <ul class="nav nav-tabs" style="float: left">
+                <li class="active">
+                    <a href="#qu" data-toggle="tab" aria-expanded="true"> 区域概览 </a>
+                </li>
+                <li class="">
+                    <a href="#sqzx" data-toggle="tab" aria-expanded="true"> 社区中心概览 </a>
+                </li>
+                <li class="">
+                    <a href="#td" data-toggle="tab" aria-expanded="true"> 团队统计 </a>
+                </li>
+                <li class="">
+                    <a href="#hz" data-toggle="tab" aria-expanded="true"> 居民统计 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="qu">
+
+                </div>
+                <div class="tab-pane" id="sqzx">
+
+                </div>
+                <div class="tab-pane" id="td">
+
+                </div>
+                <div class="tab-pane" id="hz">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<script>
+    $(function () {
+        $("#qu").load("考核统计_区域概览.html");
+        $("#sqzx").load("考核统计_社区中心概览.html");
+        $("#td").load("考核统计_团队统计.html");
+        $("#hz").load("考核统计_居民统计.html");
+    });
+</script>

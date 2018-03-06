@@ -1,0 +1,243 @@
+/*主体内容*/
+.images_info {
+    width: 313px;
+    height: 220px;
+    margin: 10px 7px 0px;
+    border: 1px solid #dfdfdf;
+    float: left
+}
+.hyyw_special {
+    width: 640px;
+    margin: 10px 7px 0px;
+    float: left;
+}
+.hyyw_special .list {
+    height: 187px;
+    border: 1px solid #dfdfdf;
+    border-top: none;
+    font-size: 13px;
+    width: 640px;
+}
+.hyyw_special h1 {
+    width: 640px;
+    height: 33px;
+    background-color: #eff4fb;
+    border: 1px solid #dfdfdf;
+    color: #08c;
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.hyyw_special h1 select {
+    display: block;
+    height: 33px;
+    line-height: 33px;
+    float: left;
+    border: none;
+    outline: none;
+    width: auto;
+    padding: 0 4%;
+    margin: 0;
+}
+.hyyw_special h1 select option{
+    padding: 5% 4%;
+    height: 30px;
+}
+.hyyw_special h1 a {
+    display: block;
+    margin-top: 8px;
+    float: right;
+    color: #f60;
+    margin-right: 10px;
+}
+.hyyw_special .list ul {
+    padding-top: 15px;
+    padding-left: 0px;
+    list-style: none;
+}
+.hyyw_special .list ul li {
+    float: left;
+    margin-top: 10px;
+    width: 638px;
+}
+.hyyw_special .list ul li .date {
+    color: #999;
+    float: right;
+    margin-right: 10px;
+}
+.hyyw_special .list ul li img {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.hyyw_special .list ul li a {
+    display: block;
+    float: left;
+    margin-left: 5px;
+    color: #202020;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 300px;
+}
+.hyyw_special .list ul li a:link {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.hyyw {
+    width: 313px;
+    margin: 10px 7px 0px;
+    float: left;
+}
+.hyyw h1 {
+    width: 313px;
+    height: 33px;
+    background: url("../images/title.png") no-repeat;
+    color: #08c;
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.hyyw h1 span {
+    display: block;
+    height: 33px;
+    line-height: 33px;
+    margin-left: 30px;
+    float: left;
+}
+.hyyw h1 span a {
+    height: 33px;
+    line-height: 33px;
+    margin: 0;
+    color: #08c;
+}
+.hyyw h1 a {
+    display: block;
+    margin-top: 8px;
+    float: right;
+    margin-right: 10px;
+    color: #f60;
+}
+.hyyw .list {
+    border: 1px solid #dfdfdf;
+    border-top: none;
+    height: 247px;
+    font-size: 13px;
+    width: 313px;
+}
+.hyyw .list ul {
+    padding-top: 15px;
+    padding-left: 0px;
+    list-style: none;
+}
+.hyyw .list ul li {
+    float: left;
+    margin-top: 10px;
+    width: 311px;
+}
+.hyyw .list ul .li1 {
+    height: 65px;
+    margin-top: 0px;
+    font-size: 12px;
+}
+.hyyw .list ul .li1 h2 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 230px;
+    margin: 0 auto;
+    color: #202020;
+    font-weight: bold;
+    text-align: center;
+}
+.hyyw .list ul .li1 h2 a {
+    padding: 5px 0px;
+    width: 100%;
+}
+.hyyw .list ul .li1 p {
+    padding-left: 20px;
+    text-indent: 20px;
+}
+.hyyw .list ul .li1 p a {
+    display: inline;
+    float: none;
+    color: #08c;
+}
+.hyyw .list ul li .date {
+    color: #999;
+    float: right;
+    margin-right: 10px;
+}
+.hyyw .list ul li img {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.hyyw .list ul li a {
+    display: block;
+    float: left;
+    margin-left: 5px;
+    color: #202020;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 210px;
+
+}
+.hyyw .list ul li a:link {
+    text-decoration: none;
+    font-size: 12px;
+}
+/* 友情链接 */
+.select-dom {
+    position: relative;
+}
+.sd-select {
+    display: inline-block;
+    float: left;
+    width: 313px;
+    height: 40px;
+    margin: 10px 7px;
+    font-size: 15px;
+    color: #000;
+    padding-left: 16px;
+    border: 1px solid #dfdfdf;
+}
+.sd-select p {
+    display: inline-block;
+    line-height: 40px;
+}
+.sd-select img {
+    display: inline-block;
+    width: 25px;
+    float: right;
+    margin: 7.5px 0;
+}
+.sd-select-content {
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    width: 967px;
+    height: 135px;
+    padding: 12px 0px;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    z-index: 999;
+    overflow-y: auto;
+    margin-left: 7px;
+}
+.sd-select-content a {
+    display: inline-block;
+    font-size: 15px;
+    color: #333;
+    margin: 0px 7px 15px;
+    width: calc((100% - 42px) / 3);
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 16px;
+}

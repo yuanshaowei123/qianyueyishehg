@@ -1,0 +1,304 @@
+<style>
+    .xz-list>li {
+        margin-top: 10px;
+    }
+    .xz-list>li>p {
+        padding: 10px;
+        margin: 0;
+        background-color: #fafafa;
+        cursor: pointer;
+    }
+    .xz-list button {
+        float: right;
+        margin-top: -40px;
+        margin-right: 10px;
+        padding: 5px 8px;
+    }
+    .xzxq {
+        padding-top: 50px;
+        border: 1px solid #f0f4f7;
+    }
+    .xzxq.special {
+        padding: 0;
+    }
+    .xzxq ul li {
+        border-bottom: 1px solid #f0f4f7;
+    }
+    .xzxq ul li a {
+        color: #93a3b5;
+        font-size: 16px;
+        font-weight: 400;
+        cursor: default;
+    }
+    .xzxq .xzjl {
+        padding: 10px;
+        min-height: 100px;
+        margin-top: 5px;
+    }
+    .xzxq .value {
+        color: #000;
+    }
+    .xzxq .xzcy_contents {
+        display: inline-block;
+        width: 100%;
+    }
+    .xzxq .xzcy_contents p {
+        margin-bottom: 0;
+    }
+    .xzxq .xzcy_contents p:first-child {
+        max-width: 80%;
+    }
+</style>
+<div class="col-md-12">
+    <!-- BEGIN PORTLET-->
+    <div class="portlet light portlet-fit" style="margin-bottom: 0">
+        <div style="padding: 20px 20px 0 20px">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a id="jmjkdaA" href="#jmjkda" data-toggle="tab"> 巡诊记录 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="scroller" style="overflow:auto;height: 570px">
+                <div class="tab-content">
+                    <div class="tab-pane fade active in">
+                        <ul class="nav xz-list">
+                            <li>
+                                <p onclick="$.index.xzListClick(this)">2017-08-15 20：07</p>
+                                <div class="xzxq" style="display: none;">
+                                    <button type="button" class="btn btn-circle btn-primary" data-toggle="modal" href="#edit-xzxq">
+                                        编辑
+                                    </button>
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">2017-08-15 20：07</div>
+                                                <div>巡诊时间</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">杨梅</div>
+                                                <div>巡诊对象</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">居民家中</div>
+                                                <div>巡诊地点</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="xzcy_contents">
+                                                <p class="float-right value">杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃
+                                                    杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃</p>
+                                                <p>巡诊成员</p>
+                                            </a>
+                                        </li>
+                                        <li style="border-bottom: 0">
+                                            <a href="javascript:;">
+                                                <div>巡诊记录</div>
+                                                <div class="xzjl value">
+                                                    为居民测量血压
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <p onclick="$.index.xzListClick(this)">2017-08-15 20：07</p>
+                                <div class="xzxq" style="display: none;">
+                                    <button type="button" class="btn btn-circle btn-primary" data-toggle="modal" href="#edit-xzxq">
+                                        编辑
+                                    </button>
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">2017-08-15 20：07</div>
+                                                <div>巡诊时间</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">杨梅</div>
+                                                <div>巡诊对象</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">居民家中</div>
+                                                <div>巡诊地点</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="xzcy_contents">
+                                                <p class="float-right value">杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃
+                                                    杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃</p>
+                                                <p>巡诊成员</p>
+                                            </a>
+                                        </li>
+                                        <li style="border-bottom: 0">
+                                            <a href="javascript:;">
+                                                <div>巡诊记录</div>
+                                                <div class="xzjl value">
+                                                    为居民测量血压
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <p onclick="$.index.xzListClick(this)">2017-08-15 20：07</p>
+                                <div class="xzxq" style="display: none;">
+                                    <button type="button" class="btn btn-circle btn-primary" data-toggle="modal" href="#edit-xzxq">
+                                        编辑
+                                    </button>
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">2017-08-15 20：07</div>
+                                                <div>巡诊时间</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">杨梅</div>
+                                                <div>巡诊对象</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">居民家中</div>
+                                                <div>巡诊地点</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="xzcy_contents">
+                                                <p class="float-right value">杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃
+                                                    杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃</p>
+                                                <p>巡诊成员</p>
+                                            </a>
+                                        </li>
+                                        <li style="border-bottom: 0">
+                                            <a href="javascript:;">
+                                                <div>巡诊记录</div>
+                                                <div class="xzjl value">
+                                                    为居民测量血压
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <p onclick="$.index.xzListClick(this)">2017-08-15 20：07</p>
+                                <div class="xzxq" style="display: none;">
+                                    <button type="button" class="btn btn-circle btn-primary" data-toggle="modal" href="#edit-xzxq">
+                                        编辑
+                                    </button>
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">2017-08-15 20：07</div>
+                                                <div>巡诊时间</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">杨梅</div>
+                                                <div>巡诊对象</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="float-right value">居民家中</div>
+                                                <div>巡诊地点</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="xzcy_contents">
+                                                <p class="float-right value">杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃
+                                                    杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃</p>
+                                                <p>巡诊成员</p>
+                                            </a>
+                                        </li>
+                                        <li style="border-bottom: 0">
+                                            <a href="javascript:;">
+                                                <div>巡诊记录</div>
+                                                <div class="xzjl value">
+                                                    为居民测量血压
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade in" id="edit-xzxq" aria-hidden="true" style="display:none; padding-left: 17px;">
+    <div class="modal-dialog" style="width: 500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">编辑</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="xzxq special">
+                            <ul class="nav">
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="float-right value">2017-08-15 20：07</div>
+                                        <div>巡诊时间</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="float-right value">杨梅</div>
+                                        <div>巡诊对象</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="float-right value">居民家中</div>
+                                        <div>巡诊地点</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="xzcy_contents">
+                                        <p class="float-right value">杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃
+                                            杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃杨桃</p>
+                                        <p>巡诊成员</p>
+                                    </a>
+                                </li>
+                                <li style="border-bottom: 0">
+                                    <a href="javascript:;">
+                                        <div>巡诊记录</div>
+                                        <textarea class="xzjl value" autofocus="autofocus" style="width: 100%; text-align: left;">为居民测量血压</textarea>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">保存更改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+</script>

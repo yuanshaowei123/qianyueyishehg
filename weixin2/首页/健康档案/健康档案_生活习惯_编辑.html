@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0">
+    <title>生活习惯</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <link rel="stylesheet" href="../../css/健康档案.css"/>
+    <style>
+        html {
+            font-size: 30px;
+        }
+        .weui-input.special {
+            width: 60%;
+            border-bottom: 1px solid #000;
+            border-radius:0;
+        }
+        .tydl_text {
+            display: none;
+        }
+        .xyqk_text {
+            display: none;
+        }
+        .yjqk_text,
+        .sfjj,
+        .sfzj,
+        .yjzl,
+        .sfjj_text {
+            display: none;
+        }
+        .zybwh_text,
+        .dwzl {
+            display: none;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+
+    <div class="weui-cells__title">生活环境</div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">厨房排风设施：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">无</option>
+                    <option value="2">油烟机</option>
+                    <option value="3">换气扇</option>
+                    <option value="4">烟囱</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">燃料类型：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">液化气</option>
+                    <option value="2">煤</option>
+                    <option value="3">天然气</option>
+                    <option value="4">沼气</option>
+                    <option value="5">柴火</option>
+                    <option value="6">其他</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">饮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">自来水</option>
+                    <option value="2">经净化过滤的水</option>
+                    <option value="3">井水</option>
+                    <option value="4">河湖水</option>
+                    <option value="5">塘水</option>
+                    <option value="6">其他</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">厕&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">卫生厕所</option>
+                    <option value="2">一格或二格粪池式</option>
+                    <option value="3">马桶</option>
+                    <option value="4">露天粪坑</option>
+                    <option value="5">简易棚厕</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <div class="date-icon"></div>
+                <h4 style="display: inline-block">禽&nbsp;&nbsp;畜&nbsp;&nbsp;栏：</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="">
+                    <option  style='display: none' value='0'></option>
+                    <option value="1">无</option>
+                    <option value="2">单设</option>
+                    <option value="3">室内</option>
+                    <option value="4">室外</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells__title">生活方式</div>
+    <div class="weui-cells tydl">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>体育锻炼</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell tydl_checkbox">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox" value="每天" />每天<span></span></label>
+                    </div>
+                    <div class="weui-flex__item" style="flex: 2;">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox" value="每周一次以上" />每周一次以上<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox" value="偶尔" />偶尔<span></span></label>
+                    </div>
+                    <div class="weui-flex__item other">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" class="no_exercise" name="checkbox" value="不锻炼" />不锻炼<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cell tydl_text">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label style="color: #000;"><input class="weui-input special" type="number" placeholder="每次锻炼时间">分钟</label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label style="color: #000;"><input class="weui-input special" type="number" placeholder="坚持锻炼时间">年</label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <input class="weui-input" type="text" name="text" placeholder="锻炼方式">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>饮食习惯</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="荤素均衡" />荤素均衡<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="荤食为主" />荤食为主<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="素食为主" />素食为主<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="嗜盐" />嗜盐<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="嗜油" />嗜油<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="嗜糖" />嗜糖<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells xyqk">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>吸烟情况</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell xyqk_checkbox">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" class="never_smoke" name="checkbox" value="从不吸烟" />从不吸烟<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox" value="已戒烟" />已戒烟<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox" value="吸烟" />吸烟<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cell xyqk_text">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label style="color: #000;"><input class="weui-input special" type="number" placeholder="日吸量">支</label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label style="color: #000;"><input class="weui-input special" type="number" placeholder="开始吸烟">岁</label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label style="color: #000;"><input class="weui-input special" type="number" placeholder="戒烟年龄">岁</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells yjqk">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>饮酒情况</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell yjqk_checkbox">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" class="never_drink" name="checkbox" value="从不" />从不<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox" value="偶尔" />偶尔<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox" value="经常" />经常<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox" value="每天" />每天<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cell yjqk_text">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label style="color: #000;"><input class="weui-input special" type="number" placeholder="日饮酒量">两</label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label style="color: #000;"><input class="weui-input special" type="number" placeholder="开始饮酒">岁</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells sfjj">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>是否戒酒</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell sfjj_checkbox">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox" value="未戒酒" />未戒酒<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="me_checkbox"><input type="checkbox" name="checkbox" class="abstained" value="已戒酒" />已戒酒<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="sfjj_text" style="color: #000;"><input class="weui-input special" type="number" placeholder="戒酒年龄">岁</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells sfzj">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>近一年是否醉酒</h4>
+            </div>
+            <div class="weui-cell__ft">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="是" />是<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="否" />否<span></span></label>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells yjzl">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>饮酒种类</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="白酒" />白酒<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="啤酒" />啤酒<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="红酒" />红酒<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="黄酒" />黄酒<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="其他" />其他<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells zybwh" style="margin-bottom: 120px;">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>职业病危害因素接触史</h4>
+            </div>
+            <div class="weui-cell__ft zybwh_checkbox">
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="yes" value="有" />有<span></span></label>
+                <label class="me_checkbox"><input type="checkbox" name="checkbox" class="no" value="无" />无<span></span></label>
+            </div>
+        </div>
+        <div class="weui-cell zybwh_text">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <input class="weui-input special" type="text" placeholder="工种">
+                    </div>
+                    <div class="weui-flex__item">
+                        <label style="color: #000;"><input class="weui-input special" type="number" placeholder="从业时间">年</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells dwzl">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><div></div></div>
+            <div class="weui-cell__bd">
+                <h4>毒物种类</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="放射物质无防护" />放射物质无防护<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="放射物质有防护" />放射物质有防护<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="物理因素无防护" />物理因素无防护<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="物理因素有防护" />物理因素有防护<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="化学物质无防护" />化学物质无防护<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="化学物质无防护" />化学物质无防护<span></span></label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="粉尘无防护" />粉尘无防护<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="粉尘有防护" />粉尘有防护<span></span></label>
+                    </div>
+                    <div class="weui-flex__item">
+                        <label class="weui-flex__item me_checkbox"><input type="checkbox" name="checkbox2" value="其他" />其他<span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-btn-rea fix_btn">
+        <a class="weui-btn weui-btn_primary">保存</a>
+    </div>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script>
+
+    $(function () {
+        cal();
+    });
+    //监控屏幕小大变化
+    window.onresize = function(){
+        cal();
+    };
+    //改变rem值
+    function cal() {
+        if(screen.width < 1080) {
+            //通过window.screen.width获取屏幕的宽度
+            var width = screen.width * 2;
+            var zoom = (width/750) * 2.8;
+            $("input[type=checkbox]").css("zoom", zoom);
+
+            var offWidth = width / 25; //这里用宽度/30表示1rem取得的px
+            document.getElementsByTagName("html")[0].style.fontSize = offWidth + 'px'; //把rem的值复制给顶级标签html的font-size
+        }
+    };
+    //点击保存
+    $(".fix_btn a").on("click", function () {
+        location.href = "创建健康档案.html"
+    });
+    //展开、关闭标签，关闭时把选中的值显示在右上角
+    $(".title").on("click", function () {
+        var $self = $(this);
+        var display = $self.parent().find(".selection-area").css("display");
+        if( display == "none") {
+            $self.parent().find(".selection-area").show();
+        } else {
+            $self.parent().find(".selection-area").hide();
+        }
+    });
+    //设置checkbox框为单选
+    $('input[name=checkbox]').click(function(){
+        $this = $(this);
+        if($this[0].checked) {
+            var checkboxs = $this.parent().parent().parent().parent().find("input[name=checkbox]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                    $(checkboxs[i]).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+                }
+            }
+            $this[0].checked = true;
+            $(this).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_sele@2x.png') !important");
+        }
+    });
+
+    $(".add-icon").on("click", function() {
+        var template = $(".jwbs_template");
+        $(this).parent().before(template.html());
+    });
+
+    //体育锻炼
+    $(".tydl .tydl_checkbox input[type=checkbox]").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            if($(this).hasClass("no_exercise")) {
+                $(".tydl .tydl_text").css("display", "none");
+                //清空值
+                var inputs = $(".tydl_text input");
+                for(var i = 0; i< inputs.length; i++) {
+                    inputs[i].value = "";
+                }
+            } else {
+                $(".tydl .tydl_text").css("display", "block");
+            }
+        }
+    });
+
+    //吸烟情况
+    $(".xyqk .xyqk_checkbox input[type=checkbox]").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            if($(this).hasClass("never_smoke")) {
+                $(".xyqk .xyqk_text").css("display", "none");
+                //清空值
+                var inputs = $(".xyqk_text input");
+                for(var i = 0; i< inputs.length; i++) {
+                    inputs[i].value = "";
+                }
+            } else {
+                $(".xyqk .xyqk_text").css("display", "block");
+            }
+        }
+    });
+
+    //饮酒情况
+    $(".yjqk .yjqk_checkbox input[type=checkbox]").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            if($(this).hasClass("never_drink")) {
+                $(".yjqk .yjqk_text").css("display", "none");
+                $(".sfjj").css("display", "none");
+                $(".sfzj").css("display", "none");
+                $(".yjzl").css("display", "none");
+                //清空值
+                var inputs = $(".yjqk_text input");
+                for(var i = 0; i< inputs.length; i++) {
+                    inputs[i].value = "";
+                }
+                $(".sfjj_text input")[0].value = "";
+                var checkboxs = $(".sfjj input[type=checkbox]");
+                for(var i = 0; i< checkboxs.length; i++) {
+                    checkboxs[i].checked  = false;
+                }
+                checkboxs = $(".sfzj input[type=checkbox]");
+                for(var i = 0; i< checkboxs.length; i++) {
+                    checkboxs[i].checked  = false;
+                }
+                checkboxs = $(".yjzl input[type=checkbox]");
+                for(var i = 0; i< checkboxs.length; i++) {
+                    checkboxs[i].checked  = false;
+                    $(checkboxs[i]).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+                }
+            } else {
+                $(".yjqk .yjqk_text").css("display", "block");
+                $(".sfjj").css("display", "block");
+                $(".sfzj").css("display", "block");
+                $(".yjzl").css("display", "block");
+            }
+        }
+    });
+
+    $(".sfjj .sfjj_checkbox input[type=checkbox]").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            if($(this).hasClass("abstained")) {
+                $(".sfjj .sfjj_text").css("display", "block");
+            } else {
+                $(".sfjj .sfjj_text").css("display", "none");
+
+                //清空值
+                $(".sfjj_text input")[0].value = "";
+            }
+        }
+    });
+
+    //职业病危害因素接触史
+    $(".zybwh .zybwh_checkbox input[type=checkbox]").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+        if($(this)[0].checked == true) {
+            if($(this).hasClass("no")) {
+                $(".zybwh .zybwh_text").css("display", "none");
+                $(".dwzl").css("display", "none");
+                $(".zybwh").css("margin-bottom", "120px");
+                $(".dwzl").css("margin-bottom", "0px");
+                //清空值
+                var inputs = $(".zybwh_text input");
+                for(var i = 0; i< inputs.length; i++) {
+                    inputs[i].value = "";
+                }
+                var checkboxs = $(".dwzl input[type=checkbox]");
+                for(var i = 0; i< checkboxs.length; i++) {
+                    checkboxs[i].checked  = false;
+                    $(checkboxs[i]).parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+                }
+            } else {
+                $(".zybwh .zybwh_text").css("display", "block");
+                $(".dwzl").css("display", "block");
+                $(".zybwh").css("margin-bottom", "0px");
+                $(".dwzl").css("margin-bottom", "120px");
+            }
+        }
+    });
+
+    //是与否的单选框再次点击不可取消
+    $(".weui-cell__ft .no").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+    });
+    $(".weui-cell__ft .yes").on("click", function() {
+        if($(this)[0].checked == false) {
+            $(this)[0].checked = true;
+        }
+    });
+
+    $(".weui-cell__ft .me_checkbox").on("click", function() {
+        if($(this).find("input[name=checkbox]")[0].checked == true) {
+            var checkboxs = $(this).parent().find("input[name=checkbox]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                    $(checkboxs[i]).parent().parent().find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+                }
+            }
+            $(this).find("input[name=checkbox]")[0].checked = true;
+            $(this).find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_sele@2x.png') !important");
+        }
+    });
+    //改变checkbox样式
+    $(".weui-cell__bd .me_checkbox").on("click", function() {
+        if($(this).find("input[name=checkbox2]").length > 0) {
+            if($(this).find("input[name=checkbox2]")[0].checked == true) {
+                $(this).find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_sele@2x.png') !important");
+            } else {
+                $(this).find("span").css("background-image", "url('../../images/assessment/@2x/mess_iocn_radi_defa@2x.png') !important");
+            }
+        }
+    });
+</script>
+</body>
+</html>

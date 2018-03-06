@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>版本说明</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+        body {
+            background-color: #fff;
+        }
+        .container {
+            padding-left:15px;
+        }
+        .edition_items_title {
+            height: 55px;
+            line-height: 55px;
+            font-size: 18px;
+            color: #4d4d4d;
+            border-bottom: 1px solid #ccc;
+            font-weight: 400;
+            position: relative;
+        }
+        .edition_items_title i {
+            width: 20px;
+            height: 12px;
+            background: url("../images/icon_downarrow-app.png") no-repeat center;
+            background-size: 20px 12px;
+            display: inline-block;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        .edition_items_title.active i {
+            background: url("../images/icon_uparrow-app.png") no-repeat center;
+            background-size: 20px 12px;
+        }
+        .edition_items_contents {
+            margin-top: 10px;
+            padding: 15px 10px 30px;
+            background-color: #f0f1f5;
+            margin-right: 15px;
+            display: none;
+        }
+        .edition_items_contents.active {
+            display: block;
+        }
+        .edition_items_contents .edition_item_title {
+            font-size: 16px;
+            font-weight: 400;
+            color: #4d4d4d;
+            height: 30px;
+            line-height: 30px;
+        }
+        .edition_items_contents .edition_item_title i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: top;
+            height: 30px;
+            line-height: 30px;
+        }
+        .edition_items_contents .edition_item_title .icon_edition_1 {
+            background: url("../images/icon_add-app.png") no-repeat center;
+            background-size: 16px 16px;
+        }
+        .edition_items_contents .edition_item_title .icon_edition_2 {
+            background: url("../images/icon_update-app.png") no-repeat center;
+            background-size: 16px 16px;
+        }
+        .edition_items_contents .edition_item_title .icon_edition_3 {
+            background: url("../images/icon_update2-app.png") no-repeat center;
+            background-size: 16px 16px;
+        }
+        .edition_items_contents .edition_item_title .icon_edition_4 {
+            background: url("../images/icon_add2-app.png") no-repeat center;
+            background-size: 16px 16px;
+        }
+        .edition_items_contents .edition_item_title p {
+            display: inline-block;
+        }
+        .edition_items_contents .edition_item_contents {
+            font-size: 13px;
+            font-weight: 400;
+            color: #666;
+            padding-left: 17px;
+        }
+        .edition_items_contents .edition_item_contents>div {
+            margin: 5px 0;
+        }
+        .edition_items_contents .edition_item_contents .title {
+            vertical-align: top;
+            /*margin-right: 5px;*/
+            display: inline-block;
+            padding-right: 5px;
+        }
+        .edition_items_contents .edition_item_contents p {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="edition_update">
+            <div>
+                <div class="edition_items_title active">
+                    <p>家庭医生3.8.0 更新内容：</p>
+                    <i></i>
+                </div>
+                <div class="edition_items_contents active">
+                    <div>
+                        <div class="edition_item_title">
+                            <i class="icon_edition_1"></i>
+                            <p>增加本地记录存储功能</p>
+                        </div>
+                        <div class="edition_item_contents special">
+                            <div>
+                                <span class="title">添加居民,</span><p class="">未保存直接返回时，自动保存已输入信息</p>
+                            </div>
+                            <div>
+                                <span class="title">咨询回复,</span><p class="">未保存直接返回时，自动保存已输入信息</p>
+                            </div>
+                            <div>
+                                <span class="title">上门出诊,</span><p class="">未保存直接返回时，自动保存已输入信息</p>
+                            </div>
+                            <div>
+                                <span class="title">社区巡诊,</span><p class="">未保存直接返回时，自动保存填写内容</p>
+                            </div>
+                            <div>
+                                <span class="title">家庭病床,</span><p class="">未保存直接返回时，自动保存已输入信息</p>
+                            </div>
+                            <div>
+                                <span class="title">随&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;访,</span><p class="">未保存直接返回时，自动保存随访已经填写内容</p>
+                            </div>
+                            <div>
+                                <span class="title">健康档案,</span><p class="">未保存直接返回时，自动保存已记录内容</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="edition_item_title">
+                            <i class="icon_edition_2"></i>
+                            <p>优化了一些功能</p>
+                        </div>
+                        <div class="edition_item_contents">
+                            <div>优化保存、返回等提醒信息</div>
+                            <div>优化部分机型适配</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="edition_item_title">
+                            <i class="icon_edition_3"></i>
+                            <p>修复了一些显示错误</p>
+                        </div>
+                        <div class="edition_item_contents">
+                            <div>修复在删除血压、血糖、血脂，提醒信息无法显示的问题</div>
+                            <div>修复一些数据显示错误的问题</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="edition_item_title">
+                            <i class="icon_edition_4"></i>
+                            <p>增加一些控制</p>
+                        </div>
+                        <div class="edition_item_contents">
+                            <div>录入血压、血糖、血脂等数据时，将不提供录入时间选项以后的</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/f.js"></script>
+<script>
+    $(function() {
+
+        /*渲染体质特征时动态控制显示宽度*/
+        var $divs = $(".edition_update .edition_item_contents.special>div");
+        for(var i = 0; i < $divs.length; i++) {
+            var $template = $divs.eq(i);
+
+            var widthDiv = $template.css("width");
+            var widthSpan = $template.find("span").css("width");
+            var diffWidth = parseInt(widthDiv) - parseInt(widthSpan);
+            $template.find("p").css("width", (diffWidth - 10) + "px");
+        }
+
+        //点击版本标题
+        $(".edition_items_title").on("click", function() {
+            if($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this).parent().find(".edition_items_contents").removeClass("active");
+            } else {
+                $(this).addClass("active");
+                $(this).parent().find(".edition_items_contents").addClass("active");
+            }
+        })
+    })
+    </script>
+</html>

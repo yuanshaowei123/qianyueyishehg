@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>预约详情</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="appointment_common container">
+    <div class="weui-panel weui-panel_access" style="margin-top: 20px;">
+        <div class="weui-panel__bd">
+            <div class="weui-media-box weui-media-box_appmsg" style="padding: 10px 15px;">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../../images/doctor.png" style="border-radius: 12px;">
+                </div>
+                <div class="weui-media-box__bd personInfo">
+                    <h4 class="weui-media-box__title personName">张朝阳
+                        <span class="pay-state waiting">待接受</span>
+                    </h4>
+                    <p class="weui-media-box__desc"><span>男</span><span>43岁</span></p>
+                    <p class="weui-media-box__desc"><span>苏州工业园区纳米科技园A7幢403室</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">服务类型</label>
+            </div>
+            <div class="weui-cell__ft">居家上门服务</div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">预约时间</label>
+            </div>
+            <div class="weui-cell__ft">2018/12/12 12:00</div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">发起人</label>
+            </div>
+            <div class="weui-cell__ft">付华</div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">联系电话</label>
+            </div>
+            <a href="tel:13861973219">13861973219</a>
+        </div>
+    </div>
+
+    <div class="weui-cells__title">主诉</div>
+    <div class="weui-panel">
+        <div class="weui-panel__bd">
+            <div class="weui-media-box weui-media-box_text" style="min-height: 80px;">
+                <p class="weui-media-box__desc">
+                    医生，你好，我父亲最近几天肚子反复阵痛，做了B超没什么问题，但是还是会痛,是不是吃了忌口的东西？医生，你好，我父亲最近几天肚子反复阵痛，做了B超没什么问题，但是还是会痛,是不是吃了忌口的东西？医生，你好，我父亲最近几天肚子反复阵痛，做了B超没什么问题，但是还是会痛,是不是吃了忌口的东西？
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells__tips " style="margin-bottom:61px;">
+        <i></i>医生接受后或将根据工作时间确认后修改为您服务的时间
+    </div>
+</div>
+<div class="weui-gallery" id="gallery" style="opacity: 0; display: none;">
+    <span class="weui-gallery__img" id="galleryImg" style="background-image:url()"></span>
+    <div class="weui-gallery__opr">
+        <a href="javascript:" class="weui-gallery__del">
+            <i class="weui-icon-delete weui-icon_gallery-delete"></i>
+        </a>
+    </div>
+</div>
+<!--<div class="js_dialog" id="dialog" style="opacity: 1;display: none">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        &lt;!&ndash;<div class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗标题</strong></div>&ndash;&gt;
+        <div class="weui-dialog__bd">预约尚未完成，确认取消当前上门预约？</div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+        </div>
+    </div>
+</div>
+<div class="weui-btn-rea fix_btn">
+    <a class="weui-btn weui-btn_warn" id="showDialog">取消</a>
+</div>-->
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    /*$(function () {
+        var dialog = $('#dialog');
+
+        dialog.on('click', '.weui-dialog__btn_default', function () {
+            $(this).parents('.js_dialog').fadeOut(200);
+        });
+
+        dialog.on('click', '.weui-dialog__btn_primary', function () {
+            window.location.href = "预约详情_已取消.html"
+        });
+
+        $('#showDialog').on('click', function () {
+            dialog.fadeIn(200);
+        });
+    });*/
+</script>
+</body>
+</html>

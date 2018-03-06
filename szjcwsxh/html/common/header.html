@@ -1,0 +1,78 @@
+<section class="row">
+    <div class="row-column">
+        <span>欢迎光临！苏州市基层卫生协会网</span>
+        <!-- JiaThis Button BEGIN -->
+        <div class="jiathis_style" style="float: right;display: inline-block;">
+            <span class="jiathis_txt">加入收藏 | 分享我们：</span>
+            <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+            <a class="jiathis_button_weixin"></a>
+            <a class="jiathis_button_tsina"></a>
+            <a class="jiathis_button_tqq"></a>
+            <a class="jiathis_button_renren"></a>
+            <a class="jiathis_button_qzone"></a>
+        </div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+    </div>
+</section>
+<section class="row">
+    <div class="banner">
+        <div class="w1440">
+            <div class="search">
+                <span>站内信息搜索</span>
+                <select class="search_select">
+                    <option value="">全部</option>
+                    <option value="">文件</option>
+                </select>
+                <input class="search_input" type="text" placeholder="大家正在搜：心脏病" value="" />
+                <button class="search_icon glyphicon glyphicon-search"></button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row" style="background-color: #01a4e5;">
+    <div class="row-column">
+        <ul class="nav nav-tabs top-nav">
+            <stl:if testtype="ChannelName" testoperate="Equals" testvalue="首页">
+                <stl:successtemplate>
+                    <li class="active"><a href="{Stl.SiteUrl}/">网站首页</a></li>
+                </stl:successtemplate>
+                <stl:failuretemplate>
+                    <li><a href="{Stl.SiteUrl}/">网站首页</a></li>
+                </stl:failuretemplate>
+            </stl:if>
+            <stl:channels channelindex="首页" groupchannel="导航">
+                <stl:if testtype="UpChannelOrSelf">
+                    <stl:successtemplate>
+                        <li class="active">
+                            <stl:a></stl:a>
+                            <div class="sn-dom">
+                                <ul>
+                                    <stl:channels>
+                                        <li>
+                                            <stl:a></stl:a>
+                                        </li>
+                                    </stl:channels>
+                                </ul>
+                            </div>
+                        </li>
+                    </stl:successtemplate>
+                    <stl:failuretemplate>
+                        <li>
+                            <stl:a></stl:a>
+                            <div class="sn-dom">
+                                <ul>
+                                    <stl:channels>
+                                        <li>
+                                            <stl:a></stl:a>
+                                        </li>
+                                    </stl:channels>
+                                </ul>
+                            </div>
+                        </li>
+                    </stl:failuretemplate>
+                </stl:if>
+            </stl:channels>
+        </ul>
+    </div>
+</section>

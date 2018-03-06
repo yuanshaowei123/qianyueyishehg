@@ -1,0 +1,247 @@
+<div class="col-md-6">
+    <div class="portlet light portlet-fit ">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-directions font-green hide"></i>
+                <span class="caption-subject bold font-dark uppercase"> 居民性别比例 </span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div id="xb" style="height:300px;"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="portlet light portlet-fit ">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-directions font-green hide"></i>
+                <span class="caption-subject bold font-dark uppercase"> 居民年龄比例 </span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div id="nl" style="height:300px;"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="portlet light portlet-fit ">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-directions font-green hide"></i>
+                <span class="caption-subject bold font-dark uppercase"> 特殊人群情况 </span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div id="txrq" style="height:300px;"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="portlet light portlet-fit ">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-directions font-green hide"></i>
+                <span class="caption-subject bold font-dark uppercase"> 既往病史人群情况 </span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div id="jwbs" style="height:300px;"></div>
+        </div>
+    </div>
+</div>
+<script src="../assets/global/plugins/echarts/echarts.js" type="text/javascript"></script>
+<script>
+    $(function () {
+        require.config({paths: {echarts: "../assets/global/plugins/echarts/"}}),
+            require(["echarts", "echarts/chart/bar", "echarts/chart/line", "echarts/chart/pie"], function (e) {
+                var xb = e.init(document.getElementById("xb"));
+                xb.setOption({
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        x: 'left',
+                        data: ['女性', '男性']
+                    },
+                    series: [
+                        {
+                            name: '实时数据',
+                            type: 'pie',
+                            radius: ['50%', '70%'],
+                            avoidLabelOverlap: false,
+                            label: {
+                                normal: {
+                                    show: false,
+                                    position: 'center'
+                                },
+                                emphasis: {
+                                    show: true,
+                                    textStyle: {
+                                        fontSize: '30',
+                                        fontWeight: 'bold'
+                                    }
+                                }
+                            },
+                            labelLine: {
+                                normal: {
+                                    show: false
+                                }
+                            },
+                            data: [
+                                {value: 335, name: '女性'},
+                                {value: 310, name: '男性'}
+                            ]
+                        }
+                    ]
+                });
+                var nl = e.init(document.getElementById("nl"));
+                nl.setOption({
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        x: 'left',
+                        data: ['6岁以下', '7-18岁', '19-35岁', '35-60岁', "60-80岁", "80岁以上"]
+                    },
+                    series: [
+                        {
+                            name: '实时数据',
+                            type: 'pie',
+                            radius: ['50%', '70%'],
+                            avoidLabelOverlap: false,
+                            label: {
+                                normal: {
+                                    show: false,
+                                    position: 'center'
+                                },
+                                emphasis: {
+                                    show: true,
+                                    textStyle: {
+                                        fontSize: '30',
+                                        fontWeight: 'bold'
+                                    }
+                                }
+                            },
+                            labelLine: {
+                                normal: {
+                                    show: false
+                                }
+                            },
+                            data: [
+                                {value: 100, name: '6岁以下'},
+                                {value: 250, name: '7-18岁'},
+                                {value: 335, name: '19-35岁'},
+                                {value: 310, name: '35-60岁'},
+                                {value: 121, name: '60-80岁'},
+                                {value: 88, name: '80岁以上'}
+                            ]
+                        }
+                    ]
+                });
+                var txrq = e.init(document.getElementById("txrq"));
+                txrq.setOption({
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        x: 'left',
+                        data: ['儿童', '孕产妇', '老年人', '特困人群', "残疾人", "慢性病患者", "特殊家庭", "精神障碍"]
+                    },
+                    series: [
+                        {
+                            name: '实时数据',
+                            type: 'pie',
+                            radius: ['50%', '70%'],
+                            avoidLabelOverlap: false,
+                            label: {
+                                normal: {
+                                    show: false,
+                                    position: 'center'
+                                },
+                                emphasis: {
+                                    show: true,
+                                    textStyle: {
+                                        fontSize: '30',
+                                        fontWeight: 'bold'
+                                    }
+                                }
+                            },
+                            labelLine: {
+                                normal: {
+                                    show: false
+                                }
+                            },
+                            data: [
+                                {value: 99, name: '儿童'},
+                                {value: 111, name: '孕产妇'},
+                                {value: 205, name: '老年人'},
+                                {value: 310, name: '特困人群'},
+                                {value: 121, name: '残疾人'},
+                                {value: 35, name: '慢性病患者'},
+                                {value: 88, name: '特殊家庭'},
+                                {value: 96, name: '精神障碍'}
+                            ]
+                        }
+                    ]
+                });
+                var jwbs = e.init(document.getElementById("jwbs"));
+                jwbs.setOption({
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        x: 'left',
+                        data: ['高血压', '糖尿病', '脑卒中', 'COPD', "骨关节残疾人", "消化道疾病", "儿童发育不全", "冠心病", "骨质疏松", "创伤史", "癌症"]
+                    },
+                    series: [
+                        {
+                            name: '实时数据',
+                            type: 'pie',
+                            radius: ['50%', '70%'],
+                            avoidLabelOverlap: false,
+                            label: {
+                                normal: {
+                                    show: false,
+                                    position: 'center'
+                                },
+                                emphasis: {
+                                    show: true,
+                                    textStyle: {
+                                        fontSize: '30',
+                                        fontWeight: 'bold'
+                                    }
+                                }
+                            },
+                            labelLine: {
+                                normal: {
+                                    show: false
+                                }
+                            },
+                            data: [
+                                {value: 99, name: '高血压'},
+                                {value: 111, name: '糖尿病'},
+                                {value: 205, name: '脑卒中'},
+                                {value: 201, name: 'COPD'},
+                                {value: 121, name: '骨关节残疾人'},
+                                {value: 77, name: '消化道疾病'},
+                                {value: 9, name: '儿童发育不全'},
+                                {value: 78, name: '冠心病'},
+                                {value: 88, name: '骨质疏松'},
+                                {value: 96, name: '创伤史'},
+                                {value: 2, name: '癌症'}
+                            ]
+                        }
+                    ]
+                });
+            })
+    })
+</script>

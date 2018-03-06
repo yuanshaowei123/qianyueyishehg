@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>体质检测（老年人）</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        body , html{
+            background-color: #fafafa;
+        }
+        .title{
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:44px;
+            background-color: #97cfc2;
+            color: #fff;
+            font-size: 12px;
+            line-height: 44px;
+            padding: 0 15px;
+        }
+        .topic{
+            margin-top: 54px;
+            margin-bottom: 80px;
+            padding: 10px 15px;
+            background-color: #fafafa;
+            width:100%;
+            height:auto;
+        }
+        .do_topic{
+            width:100%;
+            height:auto;
+        }
+        .do_topic li{
+            width:100%;
+            height:auto;
+        }
+        .question{
+            width:100%;
+            height:auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .left{
+            width:20px;
+            height:20px;
+            border-radius: 50%;
+            background-image: url('../images/单选框@2x(1).png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #99d0c3;
+            margin: 6px 10px 6px 0;
+        }
+        .left img{
+            width:100%;
+            height:100%;
+        }
+        .right{
+            font-size: 14px;
+            color: #4d4d4d;
+            width:calc(100% - 16px);
+            /*word-wrap:break-word;*/
+            /*word-break:break-all;*/
+        }
+        .content{
+            width:calc(100% - 8px);
+            min-height: 30px;
+            height:auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 8px;
+            padding-left: 8px;
+            border-left: 1px solid #97cfc2;
+        }
+        .do_topic li:nth-child(33) .content{
+            border-left: 0!important;
+        }
+        .right1{
+            padding: 10px 0;
+            width:100%;
+            display: none;
+        }
+        .option{
+            width:100%;
+            height:44px;
+            background-color: #fff;
+            font-size: 14px;
+            color: #97cfc2;
+            border: 1px solid #97cfc2;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .Choice_kuang{
+            position: relative;
+            font-size: 14px;
+        }
+        .option input{
+            opacity: 0;
+        }
+        .Choice_kuang img{
+            position: absolute;
+            bottom:2px;
+            left:0;
+            width:15px;
+            height:15px;
+            z-index: 0;
+        }
+        footer{
+            position: fixed;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:auto;
+        }
+        .submit{
+            width:100%;
+            height:50px;
+            background-color: #00c281;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            border: none;
+        }
+        .tishi{
+            width:100%;
+            padding: 5px 15px;
+            color: red;
+            font-size: 12px;
+            background-color: #fff;
+            /*opacity: 0.5;*/
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-panel weui-panel_access">
+        <div class="title">请根据近一年的体验和感觉，回答以下问题，共33题</div>
+        <div class="topic">
+            <ul class="do_topic">
+
+
+            </ul>
+        </div>
+        <footer>
+            <div class="tishi"></div>
+            <button class="submit">提交</button>
+        </footer>
+
+    </div>
+</div>
+
+<!--<script src="../js/zepto.min.js"></script>-->
+<!--<script src="../js/f.js"></script>-->
+<script src="../js/jquery.min.js"></script>
+
+<script>
+    $(function () {
+//        循环加载问题
+        let wenti = [
+            "您精力充沛吗？（指精神头足，乐于做事）",
+            "您容易疲乏吗？（指体力如何，是否稍微活动一下或做一点家务劳动就感到累）",
+            "您容易气短，呼吸短促，接不上气吗？",
+            "您说话声音低弱无力吗?（指说话没有力气）",
+            "您感到闷闷不乐、情绪低沉吗?（指心情不愉快，情绪低落）",
+            "您容易精神紧张、焦虑不安吗?（指遇事是否心情紧张）",
+            "您因为生活状态改变而感到孤独、失落吗？" ,
+            "您容易感到害怕或受到惊吓吗?",
+            "您感到身体超重不轻松吗?(感觉身体沉重)\n" +"[BMI指数=体重（kg）/身高2（m）]\n",
+            "您眼睛干涩吗?",
+            "您手脚发凉吗?（不包含因周围温度低或穿的少导致的手脚发冷）",
+            "您胃脘部、背部或腰膝部怕冷吗？（指上腹部、背部、腰部或膝关节等，有一处或多处怕冷）",
+            "您比一般人耐受不了寒冷吗？（指比别人容易害怕冬天或是夏天的冷空调、电扇等）",
+            "您容易患感冒吗?（指每年感冒的次数）",
+            "您没有感冒时也会鼻塞、流鼻涕吗?",
+            "您有口粘口腻，或睡眠打鼾吗？",
+            "您容易过敏(对药物、食物、气味、花粉或在季节交替、气候变化时)吗?",
+            "您的皮肤容易起荨麻疹吗? (包括风团、风疹块、风疙瘩)",
+            "您的皮肤在不知不觉中会出现青紫瘀斑、皮下出血吗?（指皮肤在没有外伤的情况下出现青一块紫一块的情况）",
+            "您的皮肤一抓就红，并出现抓痕吗?（指被指甲或钝物划过后皮肤的反应）",
+            "您皮肤或口唇干吗?",
+            "您有肢体麻木或固定部位疼痛的感觉吗？",
+            "您面部或鼻部有油腻感或者油亮发光吗?（指脸上或鼻子）",
+            "您面色或目眶晦黯，或出现褐色斑块/斑点吗?",
+            "您有皮肤湿疹、疮疖吗？",
+            "您感到口干咽燥、总想喝水吗？",
+            "您感到口苦或嘴里有异味吗?（指口苦或口臭）",
+            "您腹部肥大吗?（指腹部脂肪肥厚）",
+            "您吃(喝)凉的东西会感到不舒服或者怕吃(喝)凉的东西吗？（指不喜欢吃凉的食物，或吃了凉的食物后会不舒服）",
+            "您有大便黏滞不爽、解不尽的感觉吗?(大便容易粘在马桶或便坑壁上)",
+            "您容易大便干燥吗?",
+            "您舌苔厚腻或有舌苔厚厚的感觉吗?（如果自我感觉不清楚可由调查员观察后填写）",
+            "您舌下静脉瘀紫或增粗吗？（可由调查员辅助观察后填写）"
+        ];
+        for(let i = 0;i<wenti.length;i++){
+            let li = $('<li></li>');
+            let num = i+1;
+            let subject = wenti[i];
+            li.html ( `
+                 <div class="question">
+                        <div class="left">${num}</div>
+                        <div class="right">
+                            ${subject}
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="right1">
+                            <div class="option">
+                                <div class="Choice_kuang">
+                                    <img src="../images/单选框@2x(1).png" alt="">
+                                    <input type="radio" name="radio" value="1"/>&nbsp;没有
+                                </div>
+                                <div class="Choice_kuang">
+                                    <img src="../images/单选框@2x(1).png" alt="">
+                                    <input type="radio" name="radio" value="2" />&nbsp;很少
+                                </div>
+                                <div class="Choice_kuang">
+                                    <img src="../images/单选框@2x(1).png" alt="">
+                                    <input type="radio" name="radio" value="3" />&nbsp;有时
+                                </div>
+                                <div class="Choice_kuang">
+                                    <img src="../images/单选框@2x(1).png" alt="">
+                                    <input type="radio" name="radio" value="4" />&nbsp;经常
+                                </div>
+                                <div class="Choice_kuang">
+                                    <img src="../images/单选框@2x(1).png" alt="">
+                                    <input type="radio" name="radio" value="5" />&nbsp;总是
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            `);
+
+            $('.do_topic').append(li)
+
+        }
+
+        //    点击问题出现选项
+        $('.right1').eq(0).css('display','block');
+        $('.question').click(function () {
+            $(this).parent().find('.right1').slideToggle(300,function () {
+                if($(this).is(':hidden')){//隐藏
+                    $('.do_topic li').each(function (index,value) {
+                        let img = $('.do_topic li').eq(index).find('.question .left').find('img').attr('src');
+                        if(!img){
+                            $('.do_topic li').eq(index).find('.right1').slideDown(300);
+                            return false;
+                        }
+                    })
+                }else{
+                    $(this).parent().parent().siblings().find('.right1').slideUp(300);
+                }
+            });
+
+
+
+        });
+
+//    点击选项，收回去
+        let arr = [];
+        $('input').click(function () {
+            var a = $("input[name='radio']:checked").val();
+            $(this).parent().siblings().find('img').attr('src','../images/单选框@2x(1).png');
+            $(this).prev().attr('src','../images/384021742056323469.png');
+            arr.push(a);//收集所选
+
+//            字体变色
+            $(this).parent().parent().parent().parent().parent().find('.right').css('color','#999')
+//        收回去
+            $(this).parent().parent().parent().slideUp(300,function () {
+                //        下一个选项自动打开
+                $('.do_topic li').each(function (index,value) {
+                    let img = $('.do_topic li').eq(index).find('.question .left').find('img').attr('src');
+                    if(!img){
+                        $('.do_topic li').eq(index).find('.right1').slideDown(300);
+                        return false;
+                    }
+                })
+            })
+            //        外边显示为对勾
+            $(this).parent().parent().parent().parent().parent().find('.left').html('<img src="../images/图标-勾选@2x.png" alt="">');
+        });
+
+
+//        提交
+        $('.submit').click(function () {
+//            console.log($('.do_topic li').length == 33)
+            $('.do_topic li').each(function (index,value) {
+                let img = $('.do_topic li').eq(index).find('.question .left').find('img').attr('src');
+                if(!img){
+                    let text = $('.do_topic li').eq(index).find('.question .left').text();
+                    $('.tishi').text('您还没有回答完问题，请回答完问题再提交!');
+                    return false;
+                }else {
+
+                    if(index ==  $('.do_topic li').length-1){//循环到最后一个
+//              八大体质
+                        let qi = Number(arr[1])+Number(arr[2])+Number(arr[3])+Number(arr[13]);
+                        let yang = Number(arr[10])+Number(arr[11])+Number(arr[12])+Number(arr[28]);
+                        let yin = Number(arr[9])+Number(arr[20])+Number(arr[25])+Number(arr[30]);
+                        let tan = Number(arr[8])+Number(arr[15])+Number(arr[27])+Number(arr[31]);
+                        let shi = Number(arr[22])+Number(arr[24])+Number(arr[26])+Number(arr[29]);
+                        let que = Number(arr[18])+Number(arr[21])+Number(arr[23])+Number(arr[32]);
+                        let yu = Number(arr[4])+Number(arr[5])+Number(arr[6])+Number(arr[7]);
+                        let te = Number(arr[14])+Number(arr[16])+Number(arr[17])+Number(arr[19]);
+                        let obj = {
+                            '气虚质':qi,
+                            '阳虚质':yang,
+                            '阴虚质':yin,
+                            '痰湿质':tan,
+                            '温热质':shi,
+                            '血瘀质':que,
+                            '气郁质':yu,
+                            '特禀质':te,
+                        }
+                        let arr2 = [qi,yang,yin,tan,shi,que,yu,te];
+                        let obj1 = {};
+                        for(let key in obj){
+                            if(obj[key] >= 11){
+                                obj1[key] = '是';
+                            }else if(9<= obj[key] && obj[key]<=10){
+                                obj1[key] = '倾向是';
+                            }else{
+                                obj1[key] = '否';
+                            }
+                        }
+
+//                        特殊的平和体质
+                        let arr1 = [Number(arr[1]),Number(arr[3]),Number(arr[4]),Number(arr[12])];
+//                        反向算分数
+                        for(let i = 0;i<arr1.length;i++){
+                            if(arr1[i]== 1){
+                                arr1[i] = 5 ;
+                            }else if(arr1[i]== 2){
+                                arr1[i] = 4 ;
+                            }else if(arr1[i]== 4){
+                                arr1[i] = 2 ;
+                            }else if(arr1[i]== 5){
+                                arr1[i] = 1 ;
+                            }
+                        }
+//                        把第一个加进去
+                        arr1.unshift(Number(arr[0]));
+//                        计算分数
+                        let ping = 0;
+                        for(let i = 0;i<arr1.length;i++){
+                            ping += arr1[i];
+                        }
+//                        九中体质对应分数
+                        obj['平和质'] = ping;
+                        obj1['平和质'] = '';
+
+//                        判断是否是平和质
+                        let result=arr2.every(function (value,index){//判断其他八项是否都<=8
+                            return value <= 8;
+                        });
+                        let result1=arr2.every(function (value,index){//判断其他八项是否都<=8
+                            return value <= 10;
+                        });
+                        if(ping >= 17 && result){
+                            obj1['平和质'] = '是';
+                        }else if(ping >= 17 && result1){
+                            obj1['平和质'] = '基本是';
+                        }else{
+                            obj1['平和质'] = '否';
+                        }
+
+                        let obj3 = [];
+                        let type = 0;
+                        for(let key in obj){
+                            type++;
+                            if(key == "平和质"){
+                                var aa = {'score':obj[key], 'name':key, 'type':type,'problem_num':5};
+                                obj3.push(aa)
+                            }else{
+                                var bb = {'score':obj[key], 'name':key, 'type':type,'problem_num':4};
+                                obj3.push(bb)
+                            }
+                        }
+//                      循环出是、基本本是、倾向是
+                        let obj4 = {};
+                        let arr3 = [];
+                        let arr4 = [];
+                        let arr5 = [];
+
+                        for(let i in obj1){
+                           if(obj1[i] == '是') {
+                               arr3.push(i)
+                           }else if(obj1[i] == '基本是'){
+                               arr4.push(i)
+                           }else if(obj1[i] == '倾向是'){
+                               arr5.push(i)
+                           }
+                        }
+                        if(arr3.length==0 && arr4.length==0 && arr5.length==0){
+                            location.reload();
+                        }
+                        obj4['basicPhysique'] = arr4;//“基本是”体质
+                        obj4['mainPhysique'] = arr3;//“是”体质
+                        obj4['inclinePhysique'] = arr5;//“倾向是”体质
+
+//                      输出来要传到后台的数据
+                        console.log(obj);
+
+                        console.log(obj1);
+                        console.log(obj3);
+                        console.log(obj4);
+                        sessionStorage.identificationResults1 = JSON.stringify(obj3);
+                        sessionStorage.identificationResults2 = JSON.stringify(obj4);
+
+                        alert('提交成功');
+//                        window.location.href = 'personal_Constitution.html';
+                    }
+                }
+            })
+        })
+
+
+    })
+
+
+</script>
+</body>
+</html>

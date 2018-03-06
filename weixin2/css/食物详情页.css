@@ -1,0 +1,40 @@
+html {
+    font-size: 30px;
+}
+body {
+    background-color: #fff;
+    height: auto;
+}
+.food_img {
+    width: 11.5rem;
+    height: 7rem;
+    margin: 0.333333rem 0.5rem 0.666667rem;
+    background-size: 11.5rem 7rem;
+}
+.food_detail {
+    margin: 0 0.5rem 0.5rem;
+}
+.food_detail .food_name {
+    font-size: 0.466667rem;
+    color: #666666;
+    margin-bottom: 0.333333rem;
+}
+.food_detail_table {
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #cccccc;
+}
+.food_detail_table td {
+    border: 1px solid #cccccc;
+    width: 3.833333rem;
+    height: 1.666667rem;
+}
+.food_detail_table tr.title td {
+    font-size: 0.5rem;
+    color: #666666;
+    background-color: #fafafa;
+}
+.food_detail_table tr td {
+    font-size: 0.533333rem;
+    color: #333333;
+}

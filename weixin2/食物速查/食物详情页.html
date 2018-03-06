@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>食物详情页</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <link rel="stylesheet" href="../css/食物详情页.css"/>
+</head>
+<body>
+    <section>
+        <div class="food_img" style="background: url('../images/@2x/img_swxq_defa@2x.png') no-repeat center"></div>
+    </section>
+    <section class="food_detail">
+        <p class="food_name">食物名称：小米</p>
+        <table class="food_detail_table">
+            <tr class="title">
+                <td>蛋白质（克）</td>
+                <td>脂肪（克）</td>
+                <td>水分（克）</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>7</td>
+                <td>12</td>
+            </tr>
+            <tr class="title">
+                <td>钾（毫克）</td>
+                <td>磷（毫克）</td>
+                <td>纳（毫克）</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>8</td>
+                <td>14</td>
+            </tr>
+            <tr class="title">
+                <td>钙（毫克）</td>
+                <td>铁（毫克）</td>
+                <td>能量（千卡）</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>12</td>
+                <td>200</td>
+            </tr>
+        </table>
+    </section>
+
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/f.js"></script>
+    <script>
+        $(function () {
+            cal();
+        });
+
+        //监控屏幕大小变化
+        window.onresize = function(){
+            cal();
+        };
+
+        //改变rem值，实现适配
+        function cal() {
+            if(screen.width < 1080) {
+                //通过window.screen.width获取屏幕的宽度
+                var width = screen.width * 2;
+
+                var offWidth = width / 25; //这里用宽度/30表示1rem取得的px
+                document.getElementsByTagName("html")[0].style.fontSize = offWidth + 'px'; //把rem的值复制给顶级标签html的font-size
+            }
+        };
+    </script>
+</body>
+</html>

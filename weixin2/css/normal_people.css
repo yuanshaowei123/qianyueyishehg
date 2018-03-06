@@ -1,0 +1,107 @@
+.container {
+    /*padding: 40px 0 0;*/
+    padding: 0;
+    margin-bottom: 30px;
+}
+.top {
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #97cfc2;
+    padding-left: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.problems {
+    padding: 50px 15px 15px;
+}
+.problem .problem_title {
+    padding: 5px 0;
+}
+.problem .problem_title .problem_number {
+    display: inline-block;
+    vertical-align: top;
+}
+.problem .problem_title .serial_number {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    line-height: 19px;
+    font-size: 14px;
+    text-align: center;
+    color: #97cfc2;
+    margin-right: 5px;
+}
+.problem .problem_title .serial_number.normal {
+    border-radius: 50%;
+    border: 2px solid #97cfc2;
+}
+.problem .problem_title .serial_number.special {
+    width: 21px;
+    height: 21px;
+    background: url("../images/physique/problem_sele.png");
+    background-size: 21px 21px;
+    line-height: 21px;
+    vertical-align: middle;
+}
+.problem.active .problem_title .serial_number.normal {
+    border: 2px solid #00c281;
+    color: #00c281;
+}
+.problem .problem_title p {
+    font-size: 14px;
+    color: #999;
+    display: inline-block;
+    width: 90%;
+}
+.problem.active .problem_title p {
+    color: #4d4d4d;
+}
+.problem_content {
+    margin: 0 10px;
+    padding: 2px 0px 10px 10px;
+    border-left: 1px solid #97cfc2;
+}
+.problem:last-child .problem_content {
+    border-left: 0;
+}
+.problem_content .radios {
+    background-color: #fff;
+    border: 1px solid #97cfc2;
+    height: 44px;
+    line-height: 44px;
+    display: none;
+}
+.problem_content .radios.active {
+    display: flex;
+}
+.problem_content .mt_radio {
+    position: relative;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #97cfc2;
+}
+.problem_content .mt_radio>span {
+    width: 14px;
+    height: 14px;
+    background: url("../images/physique/radio_defa.png")  no-repeat center;
+    background-size: 14px 14px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(40%, -50%);
+}
+.problem_content .mt_radio.active>span {
+    background: url("../images/physique/radio_sele.png")  no-repeat center;
+    background-size: 14px 14px;
+}
+.problem_content .mt_radio input[type=radio] {
+    opacity: 0;
+    z-index: -1;
+}

@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0">
+    <title>身体情况</title>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+    <link rel="stylesheet" href="../css/f.css"/>
+    <link rel="stylesheet" href="../css/身体状况.css"/>
+</head>
+<body ontouchstart>
+<div class="container">
+    <!-- 生命体征 -->
+    <div class="weui-cells top-cells">
+        <div class="weui-cell smtz-title">
+            <div class="weui-cell__hd"><img class="input-icon" src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>生命体征</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" class="smtz-text" value="" placeholder="T"/>
+                        <label class="weui-flex__item" style="color: #000;">℃</label>
+                    </div>
+                    <div style="width: 3%;"></div>
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" class="smtz-text" value="" placeholder="P"/>
+                        <label class="weui-flex__item" style="color: #000;">次/分</label>
+                    </div>
+                    <div style="width: 3%;"></div>
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" class="smtz-text" value="" placeholder="R"/>
+                        <label class="weui-flex__item" style="color: #000;">次/分</label>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" class="smtz-text" value="" placeholder="BP"/>
+                        <label class="weui-flex__item" style="color: #000;">mmHg</label>
+                    </div>
+                    <div style="width: 3%;"></div>
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" class="smtz-text" value="" placeholder="体重"/>
+                        <label class="weui-flex__item" style="color: #000;">kg</label>
+                    </div>
+                    <div style="width: 3%;"></div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 意识状态 -->
+    <div class="weui-cells">
+        <div class="weui-cell yszt-title">
+            <div class="weui-cell__hd"><img class="input-icon" src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>意识状态</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item" style="text-align: center;">
+                        <label for="normal1" class="weui-flex__item state-name" style="color: #000;">呼之</label>：
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="ny" class="weui-flex__item">能应</label>
+                        <input type="checkbox" name="checkbox2" id="ny" value="能应" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="by" class="weui-flex__item">不应</label>
+                        <input type="checkbox" name="checkbox2" id="by" value="不应" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item" style="text-align: center;">
+                        <label for="normal1" class="weui-flex__item state-name" style="color: #000;">对答</label>：
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="qt" class="weui-flex__item">切题</label>
+                        <input type="checkbox" name="checkbox2" id="qt" value="切题" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="bqt" class="weui-flex__item">不切题</label>
+                        <input type="checkbox" name="checkbox2" id="bqt" value="不切题" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item" style="text-align: center;">
+                        <label for="normal1" class="weui-flex__item state-name" style="color: #000;">定向</label>：
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="zq" class="weui-flex__item">正确</label>
+                        <input type="checkbox" name="checkbox2" id="zq" value="正确" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="bzq" class="weui-flex__item">不正确</label>
+                        <input type="checkbox" name="checkbox2" id="bzq" value="不正确" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 皮肤 -->
+    <div class="weui-cells top-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>皮肤</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="complete">完整</label>
+                        <input type="checkbox" name="checkbox3" id="complete" value="完整" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="pale">苍白</label>
+                        <input type="checkbox" name="checkbox4" id="pale" value="苍白" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="jaundice">黄疸</label>
+                        <input type="checkbox" name="checkbox4" id="jaundice" value="黄疸" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="chao-hong">潮红</label>
+                        <input type="checkbox" name="checkbox4" id="chao-hong" value="潮红" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="cyanosis">发绀</label>
+                        <input type="checkbox" name="checkbox4" id="cyanosis" value="发绀" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="edema1">水肿</label>
+                        <input type="checkbox" name="checkbox4" id="edema1" value="水肿" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="alopecia">脱发</label>
+                        <input type="checkbox" name="checkbox4" id="alopecia" value="脱发" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="rash">皮疹</label>
+                        <input type="checkbox" name="checkbox4" id="rash" value="皮疹" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="chu-xue-dian">出血点</label>
+                        <input type="checkbox" name="checkbox4" id="chu-xue-dian" value="出血点" />
+                    </div>
+                    <div class="weui-flex__item yc">
+                        <label for="ya-chuang">压疮</label>
+                        <input type="checkbox" name="checkbox4" id="ya-chuang" value="压疮" />
+                    </div>
+                    <div class="weui-flex__item sk">
+                        <label for="wound">伤口</label>
+                        <input type="checkbox" name="checkbox4" id="wound" value="伤口" />
+                    </div>
+                    <div class="weui-flex__item other">
+                        <label for="other1">其他</label>
+                        <input type="checkbox" name="checkbox4" class="other-checkbox" id="other1" value="其他" />
+                    </div>
+                </div>
+                <div class="weui-flex yc-text" style="display: none;">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" value="" placeholder="压疮部位"style="width: 90%;"/>
+                    </div>
+                    <div style="width: 3%;"></div>
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" value="" placeholder="范围"/>
+                        <label class="weui-flex__item" style="color: #000;">cm</label>
+                    </div>
+                    <div style="width: 3%;"></div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+                <div class="weui-flex sk-text" style="display: none;">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" value="" placeholder="伤口部位"style="width: 90%;"/>
+                    </div>
+                    <div style="width: 3%;"></div>
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" value="" placeholder="范围"/>
+                        <label class="weui-flex__item" style="color: #000;">cm</label>
+                    </div>
+                    <div style="width: 3%;"></div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+                <div class="weui-flex other-text">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text" placeholder="其填写其他皮肤症状" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 口腔 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>口腔</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="normal1" class="weui-flex__item">正常</label>
+                        <input type="checkbox" name="checkbox3" id="normal1" value="正常" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="ulcer" class="weui-flex__item">溃疡</label>
+                        <input type="checkbox" name="checkbox4" id="ulcer" value="溃疡" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="false-teeth" class="weui-flex__item">假牙</label>
+                        <input type="checkbox" name="checkbox4" id="false-teeth" value="假牙" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 食欲 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>食欲</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="normal2" class="weui-flex__item">正常</label>
+                        <input type="checkbox" name="checkbox3" id="normal2" value="正常" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="anorexia" class="weui-flex__item">食欲不振</label>
+                        <input type="checkbox" name="checkbox4" id="anorexia" value="食欲不振" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="dysphagia" class="weui-flex__item">吞咽困难</label>
+                        <input type="checkbox" name="checkbox4" id="dysphagia" value="吞咽困难" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="nausea" class="weui-flex__item">恶心</label>
+                        <input type="checkbox" name="checkbox4" id="nausea" value="恶心" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="vomit" class="weui-flex__item">呕吐</label>
+                        <input type="checkbox" name="checkbox4" id="vomit" value="呕吐" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="nasal-feeding" class="weui-flex__item">鼻饲</label>
+                        <input type="checkbox" name="checkbox4" id="nasal-feeding" value="鼻饲" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="semi-flow" class="weui-flex__item">半流</label>
+                        <input type="checkbox" name="checkbox4" id="semi-flow" value="半流" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="fluid" class="weui-flex__item">流质</label>
+                        <input type="checkbox" name="checkbox4" id="fluid" value="流质" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="soft-rice" class="weui-flex__item">软饭</label>
+                        <input type="checkbox" name="checkbox4" id="soft-rice" value="软饭" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 咳嗽 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>咳嗽</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="no-cough" class="weui-flex__item">不咳嗽</label>
+                        <input type="checkbox" name="checkbox" id="no-cough" value="不咳嗽" />
+                    </div>
+                    <div class="weui-flex__item ks">
+                        <label for="ksytbykc" class="weui-flex__item">咳嗽有痰不易咳出</label>
+                        <input type="checkbox" name="checkbox" id="ksytbykc" value="咳嗽有痰不易咳出" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="kswt" class="weui-flex__item">咳嗽无痰</label>
+                        <input type="checkbox" name="checkbox" id="kswt" value="咳嗽无痰" />
+                    </div>
+                    <div class="weui-flex__item ks">
+                        <label for="ksytykc" class="weui-flex__item">咳嗽有痰易咳出</label>
+                        <input type="checkbox" name="checkbox" id="ksytykc" value="咳嗽有痰易咳出" />
+                    </div>
+                </div>
+                <div class="weui-flex ks-text" style="display: none">
+                    <div class="weui-flex__item">
+                        <label for="rare" class="weui-flex__item">稀</label>
+                        <input type="checkbox" name="checkbox1" id="rare" value="稀" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="thick" class="weui-flex__item">稠</label>
+                        <input type="checkbox" name="checkbox1" id="thick" value="稠" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" value="" placeholder="颜色" style="width: 90%"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 活动能力 -->
+    <div class="weui-cells top-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>活动能力</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="normal3" class="weui-flex__item">正常</label>
+                        <input type="checkbox" name="checkbox" id="normal3" value="正常" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="bounded" class="weui-flex__item">受限</label>
+                        <input type="checkbox" name="checkbox" id="bounded" value="受限" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="edema2" class="weui-flex__item">水肿</label>
+                        <input type="checkbox" name="checkbox" id="edema2" value="水肿" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="pain" class="weui-flex__item">疼痛</label>
+                        <input type="checkbox" name="checkbox" id="pain" value="疼痛" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item other">
+                        <label for="hemiplegia" class="weui-flex__item">偏瘫</label>
+                        <input type="checkbox" name="checkbox" class="other-checkbox" id="hemiplegia" value="偏瘫" />
+                    </div>
+                    <div class="weui-flex__item other">
+                        <label for="pamplegia" class="weui-flex__item">全瘫</label>
+                        <input type="checkbox" name="checkbox" class="other-checkbox" id="pamplegia" value="全瘫" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+                <div class="weui-flex other-text">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text" placeholder="偏瘫部位" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 活动后气促 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>活动后气促</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="you1" class="weui-flex__item">有</label>
+                        <input type="checkbox" name="checkbox" id="you1" value="有" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="wu1" class="weui-flex__item">无</label>
+                        <input type="checkbox" name="checkbox" id="wu1" value="无" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 表达能力 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>表达能力</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="normal4" class="weui-flex__item">正常</label>
+                        <input type="checkbox" name="checkbox" id="normal4" value="正常" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="qianjia" class="weui-flex__item">欠佳</label>
+                        <input type="checkbox" name="checkbox" id="qianjia" value="欠佳" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="bad" class="weui-flex__item">差</label>
+                        <input type="checkbox" name="checkbox" id="bad" value="差" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="aphasia" class="weui-flex__item">失语</label>
+                        <input type="checkbox" name="checkbox" id="aphasia" value="失语" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 听觉 -->
+    <div class="weui-cells top-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>听觉</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="normal5" class="weui-flex__item">正常</label>
+                        <input type="checkbox" name="checkbox3" id="normal5" value="正常" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="zeqj" class="weui-flex__item">左耳欠佳</label>
+                        <input type="checkbox" name="checkbox4" id="zeqj" value="左耳欠佳" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="yeqj" class="weui-flex__item">右耳欠佳</label>
+                        <input type="checkbox" name="checkbox4" id="yeqj" value="右耳欠佳" />
+                    </div>
+                    <div class="weui-flex__item ">
+                        <label for="zel" class="weui-flex__item">左耳聋</label>
+                        <input type="checkbox" name="checkbox4" id="zel" value="左耳聋" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="yel" class="weui-flex__item">右耳聋</label>
+                        <input type="checkbox" name="checkbox4" id="yel" value="右耳聋" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 视力 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>视力</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="normal6" class="weui-flex__item">正常</label>
+                        <input type="checkbox" name="checkbox3" id="normal6" value="正常" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="zyqj" class="weui-flex__item">左眼欠佳</label>
+                        <input type="checkbox" name="checkbox4" id="zyqj" value="左眼欠佳" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="yyqj" class="weui-flex__item">右眼欠佳</label>
+                        <input type="checkbox" name="checkbox4" id="yyqj" value="右眼欠佳" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 瞳孔 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>瞳孔</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="dengda" class="weui-flex__item">等大</label>
+                        <input type="checkbox" name="checkbox" id="dengda" value="等大" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="sanda" class="weui-flex__item">散大</label>
+                        <input type="checkbox" name="checkbox" id="sanda" value="散大" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="narrow" class="weui-flex__item">缩小</label>
+                        <input type="checkbox" name="checkbox" id="narrow" value="缩小" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="budengda" class="weui-flex__item">不等大</label>
+                        <input type="checkbox" name="checkbox" id="budengda" value="不等大" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 对光反应 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>对光反应</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="existence" class="weui-flex__item">存在</label>
+                        <input type="checkbox" name="checkbox" id="existence" value="存在" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="slow" class="weui-flex__item">迟钝</label>
+                        <input type="checkbox" name="checkbox" id="slow" value="迟钝" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="disappear" class="weui-flex__item">消失</label>
+                        <input type="checkbox" name="checkbox" id="disappear" value="消失" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 睡眠 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>睡眠</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="normal7" class="weui-flex__item">正常</label>
+                        <input type="checkbox" name="checkbox" id="normal7" value="正常" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="rskn" class="weui-flex__item">入睡困难</label>
+                        <input type="checkbox" name="checkbox" id="rskn" value="入睡困难" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="yx" class="weui-flex__item">易醒</label>
+                        <input type="checkbox" name="checkbox" id="yx" value="易醒" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="dm" class="weui-flex__item">多梦</label>
+                        <input type="checkbox" name="checkbox" id="dm" value="多梦" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="sm" class="weui-flex__item">失眠</label>
+                        <input type="checkbox" name="checkbox" id="sm" value="失眠" />
+                    </div>
+                    <div class="weui-flex__item ">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 每天睡眠时间(小时) -->
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <img class="input-icon" src="" alt="" />
+                <h4 style="display: inline-block">每天睡眠时间(小时)</h4>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="time" class="weui-input" type="text" placeholder="" style="text-align: right;">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 睡眠时间 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>睡眠时间</h4>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="fzsm" class="weui-flex__item">辅助睡眠</label>
+                        <input type="checkbox" name="checkbox" id="fzsm" value="辅助睡眠" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="yw" class="weui-flex__item">药物</label>
+                        <input type="checkbox" name="checkbox" id="yw" value="药物" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="qtcmfs" class="weui-flex__item">其他催眠方式</label>
+                        <input type="checkbox" name="checkbox" id="qtcmfs" value="其他催眠方式" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 大便 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>大便</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="normal8" class="weui-flex__item">正常</label>
+                        <input type="checkbox" name="checkbox" id="normal8" value="正常" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="constipation" class="weui-flex__item">便秘</label>
+                        <input type="checkbox" name="checkbox" id="constipation" value="便秘" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="incontinence" class="weui-flex__item">失禁</label>
+                        <input type="checkbox" name="checkbox" id="incontinence" value="失禁" />
+                    </div>
+                    <div class="weui-flex__item fx">
+                        <label for="diarrhea" class="weui-flex__item">腹泻</label>
+                        <input type="checkbox" name="checkbox" class="other-checkbox" id="diarrhea" value="腹泻" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="other2" class="weui-flex__item">其他</label>
+                        <input type="checkbox" name="checkbox" id="other2" value="其他" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+                <div class="weui-flex fx-text" style="display: none;">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text1" value="" placeholder="次数" style="width: 60%"/>
+                        <label class="weui-flex__item" style="color: #000;">次/日</label>
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 小便 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>小便</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="normal9" class="weui-flex__item">正常</label>
+                        <input type="checkbox" name="checkbox" id="normal9" value="正常" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="nzl" class="weui-flex__item">尿潴留</label>
+                        <input type="checkbox" name="checkbox" id="nzl" value="尿潴留" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="np" class="weui-flex__item">尿频</label>
+                        <input type="checkbox" name="checkbox" id="np" value="尿频" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="nt" class="weui-flex__item">尿痛</label>
+                        <input type="checkbox" name="checkbox" id="nt" value="尿痛" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="nj" class="weui-flex__item">尿急</label>
+                        <input type="checkbox" name="checkbox" id="nj" value="尿急" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="nsj" class="weui-flex__item">尿失禁</label>
+                        <input type="checkbox" name="checkbox" id="nsj" value="尿失禁" />
+                    </div>
+                    <div class="weui-flex__item">
+                        <label for="nx" class="weui-flex__item">尿血</label>
+                        <input type="checkbox" name="checkbox" id="nx" value="尿血" />
+                    </div>
+                    <div class="weui-flex__item other">
+                        <label for="other3" class="weui-flex__item">其他</label>
+                        <input type="checkbox" name="checkbox" class="other-checkbox" id="other3" value="其他" />
+                    </div>
+                </div>
+                <div class="weui-flex other-text">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text" placeholder="其他问题" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 疼痛 -->
+    <div class="weui-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>疼痛</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="wu2" class="weui-flex__item">无</label>
+                        <input type="checkbox" name="checkbox" id="wu2" value="无" />
+                    </div>
+                    <div class="weui-flex__item other">
+                        <label for="jxtt" class="weui-flex__item">间歇疼痛</label>
+                        <input type="checkbox" name="checkbox" class="other-checkbox" id="jxtt" value="间歇疼痛" />
+                    </div>
+                    <div class="weui-flex__item other">
+                        <label for="cxtt" class="weui-flex__item">持续疼痛</label>
+                        <input type="checkbox" name="checkbox" class="other-checkbox" id="cxtt" value="持续疼痛" />
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item other">
+                        <label for="yywzt" class="weui-flex__item">用药物止疼</label>
+                        <input type="checkbox" name="checkbox" class="other-checkbox" id="yywzt" value="用药物止疼" />
+                    </div>
+                    <div class="weui-flex__item other">
+                        <label for="wyywzt" class="weui-flex__item">未用药物止疼</label>
+                        <input type="checkbox" name="checkbox" class="other-checkbox" id="wyywzt" value="未用药物止疼" />
+                    </div>
+                    <div class="weui-flex__item" style="text-align: center">
+                        <div class="other-text">
+                            <input type="text" name="text1" value="" placeholder="位置"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 过敏史 -->
+    <div class="weui-cells last-cells">
+        <div class="weui-cell title">
+            <div class="weui-cell__hd"><img src="" alt=""></div>
+            <div class="weui-cell__bd">
+                <h4>过敏史</h4>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell selection-area">
+            <div class="weui-cell__bd">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <label for="wu3" class="weui-flex__item">无</label>
+                        <input type="checkbox" name="checkbox" id="wu3" value="无" />
+                    </div>
+                    <div class="weui-flex__item other">
+                        <label for="you2" class="weui-flex__item">有</label>
+                        <input type="checkbox" name="checkbox" class="other-checkbox" id="you2" value="有" />
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                    <div class="weui-flex__item">
+                    </div>
+                </div>
+                <div class="weui-flex other-text">
+                    <div class="weui-flex__item">
+                        <input type="text" name="text" placeholder="请填写过敏源、过敏症状(不明确的无需填写)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-btn-rea fix_btn">
+        <a class="weui-btn weui-btn_primary">保存</a>
+    </div>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script>
+
+    $(function () {
+        cal();
+
+        //初期化评估日期
+        var date = new Date();
+        var mon = date.getMonth() + 1;
+        var day = date.getDate();
+        var nowDay = date.getFullYear() + "-" + (mon<10?"0"+mon:mon) + "-" +(day<10?"0"+day:day);
+        $(".assessmentDate").val(nowDay);
+    });
+    //监控屏幕小大变化
+    window.onresize = function(){
+        cal();
+    };
+    //改变rem值
+    function cal() {
+        if(screen.width < 1080) {
+            //通过window.screen.width获取屏幕的宽度
+            var width = screen.width * 2;
+            var zoom = (width/750) * 2.8;
+            $("input[type=checkbox]").css("zoom", zoom);
+
+            var offWidth = width / 25; //这里用宽度/30表示1rem取得的px
+            document.getElementsByTagName("html")[0].style.fontSize = offWidth + 'px'; //把rem的值复制给顶级标签html的font-size
+        }
+    };
+    //点击保存
+    $(".fix_btn a").on("click", function () {
+        location.href = "护理评估单.html"
+    });
+    //获取checkbox选中的值
+    function getCheckboxValues($self) {
+        var checkBoxs = $self.parent().find(".selection-area input[type=checkbox]");
+        var html;
+        var str = '';
+        var count = 0;
+        for(var i = 0; i < checkBoxs.length; i++) {
+            var checkbox = checkBoxs[i];
+            if(checkbox.checked) {
+                if ($(checkbox).hasClass("other-checkbox")) {
+                    var value = $(checkbox).parent().parent().parent().find("div[class $= '-text'] input[type=text]").val();
+                    if(value != "") {
+                        count ++;
+                        if(count == 1) {
+                            str += checkbox.value + "(" + value + ")";
+                        } else {
+                            str += "," + checkbox.value + "(" + value + ")";
+                        }
+                    } else {
+                        count ++;
+                        if(count == 1) {
+                            str += checkbox.value;
+                        } else {
+                            str += "," + checkbox.value;
+                        }
+                    }
+                    continue;
+                }
+                if(checkbox.value != "") {
+                    count ++;
+                    if(count == 1) {
+                        str += checkbox.value;
+                    } else {
+                        str = str + "," + checkbox.value;
+                    }
+                }
+            }
+        }
+        html = "<span style='display: inline-block;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;'>" +
+            str + "</span>"
+        return html;
+    };
+    //获取意识状态的checkbox选中的值
+    function getYsztCheckboxValues($self) {
+        var checkBoxs = $self.parent().find(".selection-area input[name=checkbox2]");
+        var html;
+        var str = '';
+        for(var i = 0; i < checkBoxs.length; i++) {
+            var checkbox = checkBoxs[i];
+            if(checkbox.checked) {
+                str += $(checkbox).parent().parent().find(".state-name").text() + "(" + checkbox.value + ")";
+            }
+        }
+        html = "<span style='display: inline-block;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;'>" +
+            str + "</span>"
+        return html;
+    };
+    //获取生命体征的input的值
+    function getSmtzInputValues($self) {
+        var inputs = $self.parent().find(".selection-area input[class=smtz-text]");
+        var html;
+        var str = '';
+        var count = 0;
+        for(var i = 0; i < inputs.length; i++) {
+            var input = inputs[i];
+            if(input.value != "") {
+                count ++;
+                if(count == 1) {
+                    str += $(input).attr("placeholder") + "(" + input.value +
+                            $(input).parent().find("label").text() + ")";
+                } else {
+                    str += "," + $(input).attr("placeholder") + "(" + input.value +
+                        $(input).parent().find("label").text() + ")";
+                }
+            }
+        }
+        html = "<span style='display: inline-block;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;'>" +
+            str + "</span>"
+        return html;
+    };
+    //展开、关闭标签，关闭时把选中的值显示在右上角
+    $(".title").on("click", function () {
+        var $self = $(this);
+        var display = $self.parent().find(".selection-area").css("display");
+        if( display == "none") {
+            $self.find(".weui-cell__ft").html("");
+            $self.parent().find(".selection-area").show();
+        } else {
+            var html = getCheckboxValues($self);
+            $self.find(".weui-cell__ft").html(html);
+            $self.parent().find(".selection-area").hide();
+        }
+    });
+    //意识状态-展开、关闭标签，关闭时把选中的值显示在右上角
+    $(".yszt-title").on("click", function () {
+        var $self = $(this);
+        var display = $self.parent().find(".selection-area").css("display");
+        if( display == "none") {
+            $self.find(".weui-cell__ft").html("");
+            $self.parent().find(".selection-area").show();
+        } else {
+            var html = getYsztCheckboxValues($self);
+            $self.find(".weui-cell__ft").html(html);
+            $self.parent().find(".selection-area").hide();
+        }
+    });
+    //生命体征-展开、关闭标签，关闭时把选中的值显示在右上角
+    $(".smtz-title").on("click", function () {
+        var $self = $(this);
+        var display = $self.parent().find(".selection-area").css("display");
+        if( display == "none") {
+            $self.find(".weui-cell__ft").html("");
+            $self.parent().find(".selection-area").show();
+        } else {
+            var html = getSmtzInputValues($self);
+            $self.find(".weui-cell__ft").html(html);
+            $self.parent().find(".selection-area").hide();
+        }
+    });
+    //设置意识状态checkbox框为单选
+    $('input[name=checkbox2]').click(function(){
+        $this = $(this);
+        if($this[0].checked) {
+            var checkboxs = $this.parent().parent().find("input[name=checkbox2]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                }
+            }
+            $this[0].checked = true;
+        }
+    });
+    //设置checkbox框为单选
+    $('input[name=checkbox]').click(function(){
+        $this = $(this);
+        if($this[0].checked) {
+            var checkboxs = $this.parent().parent().parent().find("input[name=checkbox]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                }
+            }
+            $this[0].checked = true;
+        }
+
+        if(!($this.parent().hasClass("other")
+            || $this.parent().hasClass("ks")
+            || $this.parent().hasClass("fx"))) {
+            $this.parent().parent().parent().find('div[class $= "-text"]').hide();
+            if($this.parent().parent().parent().find(".ks-text").length != 0 ) {
+                var data = $this.parent().parent().parent().find(".ks-text input[type=checkbox]");
+                for(var i = 0; i< data.length; i++) {
+                    if(data[i].checked) {
+                        data[i].checked = false;
+                    }
+                }
+            }
+        }
+    });
+    //设置(带有正常或完整)checkbox框为单选
+    $('input[name=checkbox3]').click(function(){
+        $this = $(this);
+        if($this[0].checked) {
+            var checkboxs = $this.parent().parent().parent().find("input[name=checkbox4]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                }
+            }
+            $this.parent().parent().parent().find('div[class $= "-text"]').hide();
+        }
+    });
+    //设置(带有正常或完整)checkbox框为单选
+    $('input[name=checkbox4]').click(function(){
+        $this = $(this);
+        if($this[0].checked) {
+            var checkboxs = $this.parent().parent().parent().find("input[name=checkbox3]");
+            for(var i = 0; i< checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                }
+            }
+        }
+    });
+    //点击checkbox"其他"，显示文本框
+    $(".other").on("click", function() {
+        $this = $(this);
+        if($this.find("input[type=checkbox]")[0].checked) {
+            $this.parent().parent().find(".other-text").show();
+        } else {
+            $this.parent().parent().find(".other-text").hide();
+        }
+    })
+    //点击checkbox"压疮"，显示文本框
+    $(".yc").on("click", function() {
+        $this = $(this);
+        if($this.find("input[type=checkbox]")[0].checked) {
+            $this.parent().parent().find(".yc-text").show();
+        } else {
+            $this.parent().parent().find(".yc-text").hide();
+        }
+    })
+    //点击checkbox"伤口"，显示文本框
+    $(".sk").on("click", function() {
+        $this = $(this);
+        if($this.find("input[type=checkbox]")[0].checked) {
+            $this.parent().parent().find(".sk-text").show();
+        } else {
+            $this.parent().parent().find(".sk-text").hide();
+        }
+    })
+    //点击checkbox"咳嗽"，显示文本框
+    $(".ks").on("click", function() {
+        $this = $(this);
+        if($this.find("input[type=checkbox]")[0].checked) {
+            $this.parent().parent().find(".ks-text").show();
+        } else {
+            $this.parent().parent().find(".ks-text").hide();
+        }
+    })
+    //点击checkbox"腹泻"，显示文本框
+    $(".fx").on("click", function() {
+        $this = $(this);
+        if($this.find("input[type=checkbox]")[0].checked) {
+            $this.parent().parent().find(".fx-text").show();
+        } else {
+            $this.parent().parent().find(".fx-text").hide();
+        }
+    })
+</script>
+</body>
+</html>

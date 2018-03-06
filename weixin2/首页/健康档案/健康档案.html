@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>健康档案</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+</head>
+<body ontouchstart>
+<div class="js_dialog" style="opacity: 1;">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <h4 style="padding: 10px 20px;text-align: left;">创建健康档案</h4>
+        <p style="padding: 5px 20px;font-size: 14px;text-align: left;">该居民尚未建立健康档案，赶紧创建健康档案吧！</p>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">创建</a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../js/zepto.min.js"></script>
+<script>
+    $(".weui-dialog__btn_primary").on("click", function () {
+        location.href = "创建健康档案.html"
+    });
+    $(".weui-dialog__btn_default").on("click", function () {
+        location.href = "健康档案_基本信息.html"
+    });
+</script>
+</html>

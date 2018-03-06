@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>上传报告</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <style>
+        .weui-uploader__file {
+            margin-right: 9px;
+        }
+        .fix_btn .weui-btn {
+            border-radius: 0;
+        }
+        .fix_btn .weui-btn::after {
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="container">
+    <div class="weui-cells" style="margin-top:0">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label class="weui-label">报告类型</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select2">
+                    <option value="1">体检</option>
+                    <option value="2">检查</option>
+                    <option value="3">病历</option>
+                    <option value="4">处方</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">就诊日期</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="date" class="weui-input" type="date" value="">
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label class="weui-label">就诊人</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select2">
+                    <option value="1">付华</option>
+                    <option value="2">王琦</option>
+                    <option value="3">顾俊</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label class="weui-label">就诊医院</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select2">
+                    <option value="1">苏州大学附属第二医院</option>
+                    <option value="2">苏州大学附属第二医院</option>
+                    <option value="3">苏州大学附属第二医院</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label class="weui-label">就诊科室</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select2">
+                    <option value="1">儿科</option>
+                    <option value="2">肾内科</option>
+                    <option value="3">心内科</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <div class="weui-uploader">
+                    <div class="weui-uploader__hd">
+                        <p class="weui-uploader__title">图片上传</p>
+                    </div>
+                    <div class="weui-uploader__bd">
+                        <p class="uploader_tips">上传病历，化验单，检查单</p>
+                        <ul class="weui-uploader__files" id="uploaderFiles">
+                        </ul>
+                        <div class="weui-uploader__input-box">
+                            <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*"
+                                   multiple="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui-btn-rea fix_btn">
+    <button class="weui-btn weui-btn_primary">上传</button>
+</div>
+<div class="weui-gallery" id="gallery" style="opacity: 0; display: none;">
+    <span class="weui-gallery__img" id="galleryImg" style="background-image:url()"></span>
+    <div class="weui-gallery__opr">
+        <a href="javascript:" class="weui-gallery__del">
+            <i class="weui-icon-delete weui-icon_gallery-delete"></i>
+        </a>
+    </div>
+</div>
+
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    $("#date").val(f.signData());
+
+    $(".fix_btn button").on("click", function () {
+        if (f.reg_photo($(".weui-uploader__files").find("li").length)) {
+
+            //上传时置灰按钮
+            $(this).removeClass("weui-btn_primary");
+            $(this).attr("type", "default");
+            $(this).attr("disabled", "true");
+            $(this).text("上传中...");
+
+            f.successToptips("上传成功", "个人中心.html");
+        }
+    })
+
+    //点击大图下面的删除按钮，删除图片
+    $(".weui-gallery .weui-gallery__del").on("click", function() {
+        var pa = /.*\((.*)\)/;
+        var imgPath = "";
+        //获取大图地址
+        var imgs = $(this).parent().parent().find(".weui-gallery__img");
+        $.each(imgs, function(index, img) {
+            imgPath = img.getAttribute("style").match(pa)[1];
+        });
+        //获取图片列表，与大图匹配
+        var lis = $(".weui-uploader__files li");
+        $.each(lis, function(index, li) {
+            var path = li.getAttribute("style").match(pa)[1];
+            if(imgPath == path) {
+                $(li).remove();
+                return false;
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

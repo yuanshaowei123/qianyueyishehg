@@ -1,0 +1,494 @@
+<style>
+    .sfForm .modal-body {
+        padding: 30px;
+    }
+    .sfForm .form-horizontal .control-label {
+        padding-top: 0;
+    }
+    .sfForm .form_title {
+        text-align: center;
+        margin-bottom: 15px!important;
+    }
+    .sfForm .form_title input {
+        height: 40px;
+        width: 320px;
+        text-align: center;
+    }
+    .sfForm .form_instruction {
+        text-align: center;
+        margin-bottom: 15px!important;
+    }
+    .sfForm .form_instruction textarea {
+        width: 97%;
+    }
+    .sfForm .add_subject {
+        position: relative;
+        margin-top: 15px;
+    }
+    .sfForm .form-group {
+        margin-bottom: 0;
+    }
+    .sfForm .add_subject .add_subject_label {
+        margin: 0 auto;
+        background: url('../images/icon_sele.png') no-repeat;
+        background-size: 240px 100%;
+        height: 34px;
+        line-height: 34px;
+        width: 240px!important;
+        text-align: center;
+        float: none;
+        display: block;
+        color: #fff;
+    }
+    .sfForm .add_subject .add_subject_label.active {
+        background: url('../images/icon_defa.png') no-repeat;
+        background-size: 240px 100%;
+        color: #000;
+    }
+    .sfForm .add_subject .subject_options {
+        border: 1px solid #eee;
+        margin: 15px 0;
+        padding: 20px;
+    }
+    .sfForm .add_subject .subject_options label {
+        margin-right: 10px;
+    }
+    .sfForm .add_subject .subject_options::after {
+        content: "";
+        position:absolute;
+        border-width: 13px;
+        border-style: solid;
+        border-color: transparent transparent #eee;
+        box-sizing: border-box;
+        left: 50%;
+        top: 23px;
+    }
+    .sfForm .subject_item {
+        border: 1px solid #bbb;
+        padding: 5px 10px;
+        display: block;
+        position: relative;
+        margin-bottom: 5px;
+    }
+    .sfForm .subject_item p {
+        margin: 8px 0 0;
+    }
+</style>
+<div class="col-md-12">
+    <!-- BEGIN PORTLET-->
+    <div class="portlet light portlet-fit" style="margin-bottom: 0;min-height: 650px;">
+        <div class="portlet-title">
+            <div class="form-group col-md-12" style="margin-bottom: 0;">
+                <button href="#addSfForm" data-toggle="modal" class="btn btn-circle btn-primary"
+                        style="float: right;border-radius: 15px!important;padding: 4px 10px;" onclick="editForm(1)">添加表单
+                </button>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="portlet-body onlineConsulting">
+            <div class="table-scrollable table-scrollable-borderless">
+                <table class="table table-hover table-light lbt_table">
+                    <thead>
+                    <tr class="uppercase">
+                        <th>标题</th>
+                        <th>创建时间</th>
+                        <th>关联区域</th>
+                        <th>当前状态</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="#addSfForm" data-toggle="modal" onclick="editForm(2)">高血压随访表</a>
+                            </td>
+                            <td>2017年11月11日</td>
+                            <td>否</td>
+                            <td>开启</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#addSfForm" data-toggle="modal" onclick="editForm(2)">糖尿病随访表</a>
+                            </td>
+                            <td>2017年11月11日</td>
+                            <td>否</td>
+                            <td>开启</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#addSfForm" data-toggle="modal" onclick="editForm(2)">精神障碍随访表</a>
+                            </td>
+                            <td>2017年11月11日</td>
+                            <td>否</td>
+                            <td>开启</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr style="margin-top: 0">
+            <div id="pagetoolbar" class="">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 text-right">
+                        <div class="">
+                            <ul id="nav_list_pagetoolbar" class="pagination pagination_custom" unselectable="on"9
+                                style="user-select: none;">
+                                <li class="active">
+                                    <a id="nav_item_pagetoolbar_1" href="javascript:void(0);"
+                                       title="Page 1 of 1">1</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="clear: both"></div>
+
+<!-- 题目类型模板 -->
+<div class="subject_template" style="display: none;">
+    <div class="form-group subject_item">
+        <button class="close subject_close" type="button">×</button>
+        <div class="form-group col-md-4">
+            <label class="col-md-5 control-label">题型</label>
+            <div class="col-md-6">
+                <p>单选</p>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label class="col-md-5 control-label">题目名称</label>
+            <div class="col-md-6">
+                <p>血压</p>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label class="col-md-5 control-label">是否必填</label>
+            <div class="col-md-6">
+                <label class="mt-checkbox">
+                    <input type="checkbox" class="unique_checkbox"/>是
+                    <span></span>
+                </label>
+                <label class="mt-checkbox">
+                    <input type="checkbox" class="unique_checkbox"/>否
+                    <span></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label class="col-md-5 control-label">排序号</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="请输入" value="">
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label class="col-md-5 control-label">题目总分值</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="请输入" value="">
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label class="col-md-5 control-label">是否计算分数</label>
+            <div class="col-md-6">
+                <label class="mt-checkbox">
+                    <input type="checkbox" class="unique_checkbox"/>是
+                    <span></span>
+                </label>
+                <label class="mt-checkbox">
+                    <input type="checkbox" class="unique_checkbox"/>否
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addSfForm"
+     class="modal fade in sfForm" data-backdrop="static">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">新增随访表单</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <!-- 表单题目 -->
+                    <div class="form-group form_title">
+                        <input type="text" placeholder="请输入标题"/>
+                    </div>
+                    <!-- 表单说明 -->
+                    <div class="form-group form_instruction">
+                        <textarea rows="3" placeholder="请输入说明"/>
+                    </div>
+                    <!-- 关联区域 -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">关联区域</label>
+                        <div class="col-md-6">
+                            <label class="mt-checkbox">
+                                <input type="checkbox" class="unique_checkbox"/>相城区
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox" class="unique_checkbox"/>亭湖区
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox" class="unique_checkbox"/>泉州北峰
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- 表单状态 -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">表单状态</label>
+                        <div class="col-md-6">
+                            <label class="mt-checkbox">
+                                <input type="checkbox" class="unique_checkbox"/>关闭
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox" class="unique_checkbox"/>开启
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- 是否计分 -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">表单计分状态</label>
+                        <div class="col-md-6">
+                            <label class="mt-checkbox">
+                                <input type="checkbox" class="unique_checkbox"/>计分
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox" class="unique_checkbox"/>不计分
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="subject_items">
+
+                    </div>
+                    <!-- 选择题目按钮 -->
+                    <div class="form-group add_subject">
+                        <label class="control-label col-md-12 add_subject_label active">添加题目</label>
+                        <div class="form-group subject_options">
+                            <div class="form-group subject_tx">
+                                <label class="col-md-3 control-label">题目类型(必选)</label>
+                                <div class="col-md-8">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="单选"/>单选
+                                        <input type="checkbox" value="1" class="subject_type" style="display: none;"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="多选"/>多选
+                                        <input type="checkbox" value="2" class="subject_type" style="display: none;"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="填空"/>填空
+                                        <input type="checkbox" value="3" class="subject_type" style="display: none;"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="可添加复合"/>可添加复合
+                                        <input type="checkbox" value="4" class="subject_type" style="display: none;"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="下拉"/>下拉
+                                        <input type="checkbox" value="5" class="subject_type" style="display: none;"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="日期"/>日期
+                                        <input type="checkbox" value="6" class="subject_type" style="display: none;"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="简答"/>简答
+                                        <input type="checkbox" value="7" class="subject_type" style="display: none;"/>
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group subject_tm" style="display: none;">
+                                <label class="col-md-3 control-label">题目(必选)</label>
+                                <div class="col-md-8 subject_tm_contents"></div>
+                            </div>
+                            <div class="form-group" style="text-align: center">
+                                <button type="button" class="btn btn-default">取消</button>
+                                <button type="button" class="btn btn-primary">完成</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    //点击弹出编辑框，判断是新增还是更新
+    function editForm(e) {
+        if(e == 1) {
+            $(".sfForm .modal-title").html("添加表单");
+            $(".subject_items").html("");
+        } else {
+            $(".sfForm .modal-title").html("编辑表单");
+
+            /* 当前为编辑表单时，显示已有的题目 */
+            $(".subject_items").html("");
+            var html = $(".subject_template").html();
+            for(var i = 0; i<4; i++) {
+                $(".subject_items").append(html);
+            }
+        }
+    }
+
+    //点击添加题目按钮，切换题目选择框打开关闭状态
+    $(".add_subject_label").on("click", function() {
+        if($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(".subject_options").css("display", "none");
+        }  else {
+            $(this).addClass("active");
+            $(".subject_options").css("display", "block");
+        }
+    });
+
+    //点击添加题目的选择框中“完成”按钮，添加所选择的题目
+    $(".subject_options .btn-primary").on("click", function() {
+       var html = $(".subject_template").html();
+
+        /*根据选中的选项来添加对应的题目*/
+        var flag = false;
+        var checkboxs = $(".subject_tm .subject_tm_contents input[type=checkbox]");
+        for(var i=0; i<checkboxs.length; i++) {
+            /*当前如果选中时添加对应的题型*/
+            if(checkboxs[i].checked) {
+                flag = true;
+
+
+                /* 判断当添加的题型不是单选和多选时 添加题目时题目总分值跟是否计分两个选项不可以填写
+                 TODO */
+
+                /* 判断当添加的题型是单选和多选时 添加题目时题目总分值跟是否计分两个选项可以填写
+                 TODO */
+
+                $(".subject_items").append(html);
+            }
+        }
+
+        /*判断如果已添加全部选中的题型时清空所有选项关闭题目选择框，如果判断到根本没有选中的选项时不关闭选择框*/
+        if(flag) {
+            var checkboxs = $(".subject_options input[type=checkbox]");
+            for(var i=0; i<checkboxs.length; i++) {
+                if(checkboxs[i].checked) {
+                    checkboxs[i].checked = false;
+                }
+            }
+
+            $(".add_subject .add_subject_label").removeClass("active");
+            $(".subject_options").css("display", "none");
+            $(".subject_tm_contents").html("");
+            $(".subject_tm").css("display", "none");
+        } else {
+            alert("请选择题型以及题目！");
+        }
+
+    })
+
+    //点击添加题目选择框中“取消”按钮，清空所有选中的选项，并且关闭选择框
+    $(".subject_options .btn-default").on("click", function() {
+       var checkboxs = $(".subject_options").find("input[type=checkbox]");
+       for(var i = 0; i < checkboxs.length; i++) {
+           if(checkboxs[i].checked) {
+               checkboxs[i].checked = false;
+           }
+       }
+       //添加题目选择框关闭
+        $(".add_subject .add_subject_label").removeClass("active");
+        $(".subject_options").css("display", "none");
+        $(".subject_tm_contents").html("");
+        $(".subject_tm").css("display", "none");
+    })
+
+    //点击新增题目框的关闭按钮
+    $(".sfForm").delegate(".subject_close", "click", function() {
+        $(this).parent().remove();
+    })
+
+    /* 模拟题目列表 */
+    var tms = [
+        {"id": "1001", "type": "1", "title":"血压"},
+        {"id": "1002", "type": "2", "title":"疾病"},
+        {"id": "1003", "type": "3", "title":"运动次数"},
+        {"id": "1004", "type": "4", "title":"药物"},
+        {"id": "1005", "type": "5", "title":"体征"},
+        {"id": "1006", "type": "6", "title":"药物名称"},
+        {"id": "1007", "type": "7", "title":"转诊原因"},
+        {"id": "1001", "type": "1", "title":"血压"},
+        {"id": "1002", "type": "2", "title":"疾病"},
+        {"id": "1003", "type": "3", "title":"运动次数"},
+        {"id": "1004", "type": "4", "title":"药物"},
+        {"id": "1005", "type": "5", "title":"体征"},
+        {"id": "1006", "type": "6", "title":"药物名称"},
+        {"id": "1007", "type": "7", "title":"转诊原因"},
+    ]
+
+    //点击添加题目选择框中题型的选项
+    $(".subject_tx input[type=checkbox]").on("click", function() {
+        var checkdFlag = $(this)[0].checked;
+        /* 获取当前点击的题型 */
+        var type = $(this).parent().find(".subject_type").val();
+
+        /* 判断点击事件为选中还是取消选中状态*/
+        if(checkdFlag) {
+            /*获取题目列表的显示状态*/
+            var display = $(".subject_tm").css("display");
+            if(display == "none") {
+                $(".subject_tm").css("display", "block");
+            }
+
+            /* 根据选中的题型获取对应的题目列表 */
+            for(var i = 0; i< tms.length; i++) {
+                if(tms[i].type == type) {
+                    var html = "<label class='mt-checkbox'>" +
+                        "<input type='checkbox' value='" + tms[i].title + "'/>" + tms[i].title +
+                        "<input type='text' class='box_type' style='display: none;' value='" + tms[i].type + "'>" +
+                        "<span></span></label>";
+                    $(".subject_tm .subject_tm_contents").append(html);
+                }
+            }
+        } else {
+            var checkboxs = $(".subject_tm .subject_tm_contents input[type=checkbox]");
+            for(var i=0; i<checkboxs.length; i++) {
+                var box_type = $(checkboxs[i]).parent().find(".box_type").val();
+                if(box_type == type) {
+                    $(checkboxs[i]).parent().remove();
+                }
+            }
+
+            /*判断当前取消的题型选项是否为最后一个,如果是最后一个则题目列表全部隐藏*/
+            var lastFlag = false;
+            var subject_checkboxs = $(".subject_tx input[type=checkbox]");
+            for(var i=0; i<subject_checkboxs.length; i++) {
+               if(subject_checkboxs[i].checked) {
+                   lastFlag = true;
+               }
+            }
+
+            if(!lastFlag) {
+                $(".subject_tm").css("display", "none");
+            }
+        }
+    })
+</script>

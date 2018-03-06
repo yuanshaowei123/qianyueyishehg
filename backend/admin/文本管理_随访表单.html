@@ -1,0 +1,39 @@
+<style>
+    #bdlbA, #tklbA {
+        padding: 10px 25px;
+    }
+</style>
+<div class="col-md-12">
+    <!-- BEGIN PORTLET-->
+    <div class="portlet light portlet-fit" style="margin-bottom: 0;min-height: 650px;">
+        <div style="padding: 20px 20px 0 20px">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a id="bdlbA" href="#bdlb" data-toggle="tab"> 表单 </a>
+                </li>
+                <li>
+                    <a id="tklbA" href="#tklb" data-toggle="tab"> 题库 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="scroller" style="overflow:auto;height: 570px">
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="bdlb">
+                    </div><div class="tab-pane fade in" id="tklb">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(function () {
+        $("#bdlb").load("文本管理_随访表单_表单.html");
+        $("#tklb").load("文本管理_随访表单_题库.html");
+    });
+
+
+</script>

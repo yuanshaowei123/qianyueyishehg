@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0">
+    <title>大伟烧烤</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <link rel="stylesheet" href="../../css/idangerous.swiper.css">
+    <style>
+        html {
+            font-size: 30px;
+        }
+        body {
+            /*font-family: Microsoft Yahei,SimSun,Helvetica;*/
+            background-color: #fff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .banner {
+            position: relative;
+            background-size: 100%;
+            height: 11rem;
+            width: 100%;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 11rem;
+        }
+        .swiper-slide {
+            color: #fff;
+            text-align: center;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 11rem;
+            display: block;
+            background-size: 100% 9.6rem;
+        }
+        .pagination {
+            position: absolute;
+            z-index: 20;
+            bottom: 0.2rem;
+            width: 100%;
+            text-align: center;
+        }
+
+
+        .doctors-list .all-doctors-icon i {
+            background: url("../../images/@2x/icon_arrow_defa@2x.png") no-repeat center;
+            width: 0.5rem;
+            height: 0.933333rem;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            top: -2px;
+            margin-left: 0.5rem;
+        }
+
+
+
+        .informations {
+            padding-bottom: 20px;
+        }
+        .informations>h4 {
+            margin: 0 0.51rem;
+            font-size: 0.966667rem;
+            font-weight: bold;
+            color: #4d4d4d;
+            padding: 10px 0;
+        }
+        .informations>h4 span {
+            float: right;
+            font-weight: normal;
+            height: 100%;
+            color: #999;
+            font-size: 0.866667rem;
+            width: 4.5rem;
+        }
+        .informations>h4 span i {
+            background: url("../../images/@2x/icon_arrow_defa@2x.png") no-repeat center;
+            width: 0.5rem;
+            height: 0.933333rem;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            top: -3px;
+            margin-left: 0.25rem;
+        }
+
+        .informations .weui-media-box__hd img {
+            width: 9.933333rem;
+            height: 5.333333rem;
+        }
+        .informations .weui-panel__bd .look_num i {
+            display: inline-block;
+            background: url("../../images/@2x/icon_read_defa@2x.png") no-repeat center;
+            background-size: 0.933333rem 0.6rem;
+            width: 0.933333rem;
+            height: 0.6rem;
+            margin-right: 0.333333rem;
+        }
+        /*底部导航*/
+
+        .myDoctor_tabbar img {
+            width: 44px;
+            height: 44px;
+            margin: 16px 0 6px;
+        }
+        .myDoctor_tabbar p {
+            font-size: 24px;
+            /*font-weight: bold;*/
+            color: #4c4c4c;
+            height: 26px;
+            line-height: 26px;
+            margin: 0;
+        }
+        .caipin_k{
+            width:100%;
+            height:auto;
+        }
+        .caipin{
+            width:100%;
+            height:auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .caipin li{
+            width:50%;
+            height:100%;
+        }
+        .caipin li img{
+            width:100%;
+            height:100%;
+            padding:0 3px;
+        }
+        .remen{
+            width:100%;
+            height:auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .remen li{
+            width:33.3%;
+            height:150px;
+            padding:0 3px;
+        }
+        .remen li img{
+            width:100%;
+            height:100%;
+        }
+        .aa{
+            margin-bottom: 5rem;
+        }
+        footer{
+            position: fixed;
+            left:0;
+            bottom:0;
+            width:100%;
+            height: auto;
+            text-align: center;
+            line-height: 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #000;
+            opacity: 0.7;
+            padding:10px 0;
+        }
+        .footer p{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+<section class="banner">
+    <!-- 点击轮播图跳转后台配置的页面 -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="pagination"></div>
+</section>
+
+
+
+<!--店主推荐-->
+<section class="informations">
+    <h4>店主推荐
+        <span class="all-informations-icon">
+            <!--查看更多-->
+            <!--<i></i>-->
+        </span>
+    </h4>
+    <!--菜品-->
+    <div class="caipin_k">
+        <ul class="caipin">
+            <li>
+                <img src="img/海鲜大咖.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/海鲜大咖.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/海鲜大咖.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/海鲜大咖.jpg" alt="">
+            </li>
+        </ul>
+
+
+    </div>
+</section>
+
+<!--热门菜系-->
+<section class="informations">
+    <h4>热门菜系
+        <span class="all-informations-icon"></span>
+    </h4>
+    <!--菜品-->
+    <ul class="remen">
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+    </ul>
+</section>
+
+
+<section class="informations">
+    <h4>热门菜系
+        <span class="all-informations-icon"></span>
+    </h4>
+    <!--菜品-->
+    <ul class="remen">
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+    </ul>
+</section>
+
+
+<section class="informations aa">
+    <h4>热门菜系
+        <span class="all-informations-icon"></span>
+    </h4>
+    <!--菜品-->
+    <ul class="remen">
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/海鲜大咖.jpg" alt="">
+        </li>
+    </ul>
+</section>
+
+<!--底部地址-->
+<footer>
+    <p>地址：地址:河津市东都西八区梦幻帝豪北50米</p>
+    <p>预约电话: 13133929281</p>
+    <p>营业时间。下午4:00--凌晨2:00</p>
+</footer>
+
+
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/f.js"></script>
+<script src="../../js/idangerous.swiper.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        cal();
+    });
+
+    //监控屏幕大小变化
+    window.onresize = function(){
+        cal();
+    };
+
+    //改变rem值，实现适配
+    function cal() {
+        if(screen.width < 1080) {
+            //通过window.screen.width获取屏幕的宽度
+            var width = screen.width * 2;
+
+            var offWidth = width / 25; //这里用宽度/30表示1rem取得的px
+            document.getElementsByTagName("html")[0].style.fontSize = offWidth + 'px'; //把rem的值复制给顶级标签html的font-size
+        }
+    };
+
+    //设置轮播图属性
+    var mySwiper = new Swiper('.swiper-container',{
+        loop: true,
+        pagination : '.pagination',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+
+    });
+
+
+
+</script>
+</body>
+</html>

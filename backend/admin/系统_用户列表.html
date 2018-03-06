@@ -1,0 +1,396 @@
+<div class="row" style="margin: 0;">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-directions font-green hide"></i>
+                    <span class="caption-subject bold font-dark uppercase">管理员</span>
+                </div>
+                <div class="actions" style="float: right">
+                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                        <button type="button" class="btn btn-circle btn-primary" data-toggle="modal" href="#addUser">
+                            添加系统用户
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable table-scrollable-borderless">
+                    <table class="table table-hover table-light">
+                        <thead>
+                            <tr class="uppercase">
+                                <th>登录名</th>
+                                <th>医院</th>
+                                <th>备注</th>
+                                <th>联系电话</th>
+                                <th>角色</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>付华</td>
+                                <td>黑芝麻社区医院金阊区卫生服务中心</td>
+                                <td></td>
+                                <td>18550134851</td>
+                                <td>管理员</td>
+                                <td>
+                                    <a data-toggle="modal" href="#roleSetting" style="margin-right: 20px;">角色设置</a>
+                                    <a class="mt-sweetalert"
+                                       data-title="将移除此用户，请确认"
+                                       data-message=
+                                               "<a class='glyphicon glyphicon-remove close-operation'
+                                            style='width:20px;height:20px;position:absolute;top:10px;right:10px;'></a>"
+                                       data-html="true"
+                                       data-type="info"
+                                       data-show-confirm-button="true"
+                                       data-confirm-button-class="btn-success"
+                                       data-show-cancel-button="true"
+                                       data-cancel-button-class="btn-danger"
+                                       data-close-on-confirm="false"
+                                       data-close-on-cancel="false"
+                                       data-confirm-button-text='确定'
+                                       data-cancel-button-text='取消'
+                                       data-popup-title-success="已经移除"
+                                       data-popup-title-cancel="已经取消">
+                                        移除
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>付小华</td>
+                                <td>亭湖区新城街道社区卫生服务中心</td>
+                                <td></td>
+                                <td>18550134851</td>
+                                <td>院长</td>
+                                <td>
+                                    <a data-toggle="modal" href="#roleSetting" style="margin-right: 20px;">角色设置</a>
+                                    <a class="mt-sweetalert"
+                                       data-title="将移除此用户，请确认"
+                                       data-message=
+                                               "<a class='glyphicon glyphicon-remove close-operation'
+                                            style='width:20px;height:20px;position:absolute;top:10px;right:10px;'></a>"
+                                       data-html="true"
+                                       data-type="info"
+                                       data-show-confirm-button="true"
+                                       data-confirm-button-class="btn-success"
+                                       data-show-cancel-button="true"
+                                       data-cancel-button-class="btn-danger"
+                                       data-close-on-confirm="false"
+                                       data-close-on-cancel="false"
+                                       data-confirm-button-text='确定'
+                                       data-cancel-button-text='取消'
+                                       data-popup-title-success="已经移除"
+                                       data-popup-title-cancel="已经取消">
+                                        移除
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>付小华</td>
+                                <td>亭湖区新城街道社区卫生服务中心</td>
+                                <td></td>
+                                <td>18550134851</td>
+                                <td>区长/管理员</td>
+                                <td>
+                                    <a data-toggle="modal" href="#roleSetting" style="margin-right: 20px;">角色设置</a>
+                                    <a class="mt-sweetalert"
+                                       data-title="将移除此用户，请确认"
+                                       data-message=
+                                               "<a class='glyphicon glyphicon-remove close-operation'
+                                            style='width:20px;height:20px;position:absolute;top:10px;right:10px;'></a>"
+                                       data-html="true"
+                                       data-type="info"
+                                       data-show-confirm-button="true"
+                                       data-confirm-button-class="btn-success"
+                                       data-show-cancel-button="true"
+                                       data-cancel-button-class="btn-danger"
+                                       data-close-on-confirm="false"
+                                       data-close-on-cancel="false"
+                                       data-confirm-button-text='确定'
+                                       data-cancel-button-text='取消'
+                                       data-popup-title-success="已经移除"
+                                       data-popup-title-cancel="已经取消">
+                                        移除
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr style="margin-top: 0">
+                <div id="pagetoolbar" class="">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 text-right">
+                            <div class="">
+                                <ul id="nav_list_pagetoolbar" class="pagination pagination_custom" unselectable="on"
+                                    style="user-select: none;">
+                                    <li class="active"><a id="nav_item_pagetoolbar_1" href="javascript:void(0);"
+                                                          title="Page 1 of 1">1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 添加系统用户 -->
+<style>
+    .add-system-user {
+        width: 800px;
+    }
+    .add-system-user .modal-body {
+        min-height: 350px;
+    }
+    .add-system-user .confirm-hospital-btn,
+    .add-system-user .cancel-hospital-btn {
+        display: none;
+        margin-right: 5px;
+    }
+    .add-system-user .hospital-list {
+        display: block;
+    }
+    .add-system-user .hospital-list li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .add-system-user .hospital-options {
+        position: absolute;
+        z-index: 99;
+        background-color: #fff;
+        border: 1px solid #bbb;
+        padding: 20px;
+        max-height: 200px;
+        min-height: 100px;
+        width: 300px;
+        overflow-y: auto;
+        display: none;
+        margin-top: 5px;
+    }
+</style>
+<div class="modal fade" id="addUser" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog add-system-user">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">系统用户</h4>
+            </div>
+            <div class="modal-body" style="">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">登录名</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">医院</label>
+                            <div class="col-md-6" style="position: relative">
+                                <ul class="hospital-list">
+                                </ul>
+                                <button type="button" class="btn green select-hospital-btn">选择</button>
+                                <button type="button" class="btn blue confirm-hospital-btn">确认</button>
+                                <button type="button" class="btn gray cancel-hospital-btn">取消</button>
+                                <div class="mt-checkbox-inline hospital-options">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院一院"> 黑芝麻附属医院一院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院二院"> 黑芝麻附属医院二院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院三院"> 黑芝麻附属医院三院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院四院"> 黑芝麻附属医院四院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院五院"> 黑芝麻附属医院五院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院六院"> 黑芝麻附属医院六院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院七院"> 黑芝麻附属医院七院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院八院"> 黑芝麻附属医院八院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院九院"> 黑芝麻附属医院九院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院十院"> 黑芝麻附属医院十院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院十一院"> 黑芝麻附属医院十一院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院十二院"> 黑芝麻附属医院十二院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院十三院"> 黑芝麻附属医院十三院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院十四院"> 黑芝麻附属医院十四院
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox" value="黑芝麻附属医院十五院"> 黑芝麻附属医院十五院
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">电话</label>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">备注</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="请输入" value="">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="roleSetting" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">角色设置</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <h4>选择要设置的角色</h4>
+                        <div style="margin: 20px 10px;">
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>系统管理员
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>院长
+                                <span></span>
+                            </label>
+                            <label class="mt-checkbox">
+                                <input type="checkbox"/>区长
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn green">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //是否同意更换团队
+    var SweetAlert = function () {
+        return {
+            init: function () {
+                $(".mt-sweetalert").each(function () {
+                    var t = $(this).data("title"), a = $(this).data("message"), s = $(this).data("type"),
+                        e = $(this).data("allow-outside-click"), n = $(this).data("show-confirm-button"),
+                        c = $(this).data("show-cancel-button"), o = $(this).data("close-on-confirm"),
+                        i = $(this).data("close-on-cancel"), l = $(this).data("confirm-button-text"),
+                        u = $(this).data("cancel-button-text"), h = $(this).data("popup-title-success"),
+                        d = $(this).data("popup-message-success"), r = $(this).data("popup-title-cancel"),
+                        f = $(this).data("popup-message-cancel"), p = $(this).data("confirm-button-class"),
+                        m = $(this).data("cancel-button-class"), w = $(this).data("html")
+                    $(this).click(function () {
+                        swal({
+                            title: t,
+                            text: a,
+                            html: w,
+                            type: s,
+                            allowOutsideClick: e,
+                            showConfirmButton: n,
+                            showCancelButton: c,
+                            confirmButtonClass: p,
+                            cancelButtonClass: m,
+                            closeOnConfirm: o,
+                            closeOnCancel: i,
+                            confirmButtonText: l,
+                            cancelButtonText: u
+                        }, function (t) {
+                            if (t) {
+                                console.log("同意事件");
+                                swal(h, d, "success");
+                            } else {
+                                console.log("拒绝事件");
+                                swal(r, f, "error");
+                            }
+                        })
+                    })
+                })
+            }
+        }
+    }();
+    jQuery(document).ready(function () {
+        SweetAlert.init();
+    });
+
+    //点击选择按钮，出现下拉框
+    $(".select-hospital-btn").on("click", function() {
+        $(this).css("display", "none");
+        $(this).parent().find(".confirm-hospital-btn").css("display", "inline-block");
+        $(this).parent().find(".cancel-hospital-btn").css("display", "inline-block");
+        $(this).parent().find(".hospital-options").css("display", "block");
+    })
+
+    //点击确认按钮
+    $(".confirm-hospital-btn").on("click", function() {
+        $(this).css("display", "none");
+        $(this).parent().find(".select-hospital-btn").css("display", "block");
+        $(this).parent().find(".cancel-hospital-btn").css("display", "none");
+        $(this).parent().find(".hospital-options").css("display", "none");
+        $(this).parent().find(".hospital-list").html("");
+        /*把下拉框中选中的选项显示到上面特定区域中*/
+        var checkboxs = $(this).parent().find(".hospital-options input[type=checkbox]");
+        for(var i = 0; i< checkboxs.length; i++) {
+            if(checkboxs[i].checked) {
+                $(this).parent().find(".hospital-list").append("<li>" + $(checkboxs[i]).val() +"</li>")
+            }
+        }
+    })
+    //点击取消按钮
+    $(".cancel-hospital-btn").on("click", function() {
+        $(this).css("display", "none");
+        $(this).parent().find(".select-hospital-btn").css("display", "block");
+        $(this).parent().find(".confirm-hospital-btn").css("display", "none");
+        $(this).parent().find(".hospital-options").css("display", "none");
+    })
+</script>

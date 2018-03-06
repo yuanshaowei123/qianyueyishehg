@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0">
+    <title>创建健康档案</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <link rel="stylesheet" href="../../css/健康档案.css"/>
+</head>
+<body ontouchstart>
+<div class="container create_jkda">
+    <div class="item">
+        <h4>
+            基本信息
+            <div class="editIcon jbxx-icon">
+                <div></div>
+                <span>编辑</span>
+            </div>
+        </h4>
+        <p><span>10</span>/<span>15</span></p>
+        <!-- 进度条 -->
+        <div class="weui-progress">
+            <div class="weui-progress__bar">
+                <div class="weui-progress__inner-bar" style="width: 80%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <h4>
+            健康信息
+            <div class="editIcon jkxx-icon">
+                <div></div>
+                <span>编辑</span>
+            </div>
+        </h4>
+        <p><span>3</span>/<span>18</span></p>
+        <!-- 进度条 -->
+        <div class="weui-progress">
+            <div class="weui-progress__bar">
+                <div class="weui-progress__inner-bar" style="width: 30%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <h4>
+            生活习惯
+            <div class="editIcon shxg-icon">
+                <div></div>
+                <span>编辑</span>
+            </div>
+        </h4>
+        <p><span>5</span>/<span>10</span></p>
+        <!-- 进度条 -->
+        <div class="weui-progress">
+            <div class="weui-progress__bar">
+                <div class="weui-progress__inner-bar" style="width: 40%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="weui-btn-rea fix_btn">
+    <a class="weui-btn weui-btn_primary">提交审核</a>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script>
+    $(function () {
+        cal();
+    });
+
+    window.onresize = function(){
+        cal();
+    };
+
+    function cal() {
+        if(screen.width < 1080) {
+            //通过window.screen.width获取屏幕的宽度
+            var width = screen.width * 2;
+            var zoom = (width/750) * 2.8;
+            $("input[type=checkbox]").css("zoom", zoom);
+
+            var offWidth = width / 25; //这里用宽度/30表示1rem取得的px
+            document.getElementsByTagName("html")[0].style.fontSize = offWidth + 'px'; //把rem的值复制给顶级标签html的font-size
+        }
+    };
+
+    $(".jbxx-icon").on("click", function() {
+        location.href = "健康档案_基本信息_编辑.html"
+    })
+    $(".jkxx-icon").on("click", function() {
+        location.href = "健康档案_健康信息_编辑.html"
+    })
+    $(".shxg-icon").on("click", function() {
+        location.href = "健康档案_生活习惯_编辑.html"
+    })
+</script>
+</body>
+</html>

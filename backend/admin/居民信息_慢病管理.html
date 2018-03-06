@@ -1,0 +1,32 @@
+<div class="col-md-12">
+    <div class="portlet light portlet-fit" style="margin-bottom: 0">
+        <div class="portlet-title" style="margin-bottom: 0">
+            <div class="caption">
+                <span id="signs_title" class="caption-subject font-dark bold uppercase">血压</span>
+            </div>
+            <div class="actions" style="float: right">
+                <div class="btn-group btn-group-circle" data-toggle="buttons">
+                    <label class="signs btn red active" data-href="居民信息_慢病管理_血压" data-title="血压" onclick="$.index.signsItemClick(this)">
+                        <input type="radio" class="toggle">血压
+                    </label>
+                    <label class="signs btn red" data-href="居民信息_慢病管理_血糖" data-title="血糖" onclick="$.index.signsItemClick(this)">
+                        <input type="radio" class="toggle">血糖
+                    </label>
+                    <label class="signs btn red" data-href="居民信息_慢病管理_血脂" data-title="血脂" onclick="$.index.signsItemClick(this)">
+                        <input type="radio" class="toggle">血脂
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="signs">
+
+</div>
+<script>
+    $(function () {
+        $("#signs").load("居民信息_慢病管理_血压.html");
+        $("#signs_title").html("血压")
+    });
+</script>
+

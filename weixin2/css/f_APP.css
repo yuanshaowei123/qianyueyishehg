@@ -1,0 +1,64 @@
+.article_APP_details {
+    background-color: white;
+}
+
+.article_APP_details h1 {
+    font-size: 24px;
+    text-align: left;  display: inline-block
+}
+
+.article_title{
+    text-align: center
+}
+
+.article_title p {
+    text-align: left;  display: inline-block
+}
+
+.article_look {
+    text-indent: 0 !important;
+}
+
+.article_look {
+    margin-top: 1.6em!important;
+    margin-bottom: 0!important;
+    color: #999;
+    line-height: 14px;
+    font-size: 14px;
+}
+
+.article_look img {
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 3px
+}
+
+.signProtocol h1 img {
+    width: 40px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.signProtocol section > p {
+    color: #7e8691;
+    margin-bottom: 0;
+}
+
+.signImg {
+    float: right;
+    line-height: 100px;
+    text-align: right;
+}
+
+.signImg p {
+    font-size: 14px;
+    display: inline;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.signImg img {
+    width: 100px;
+    vertical-align: middle;
+}

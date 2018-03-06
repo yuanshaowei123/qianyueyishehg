@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>我的咨询</title>
+    <link rel="stylesheet" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" href="../../css/f.css"/>
+    <style>
+        #thelist {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<div class="weui-tab">
+    <div class="weui-navbar">
+        <a class="weui-navbar__item" href="热门问题.html">
+            热门问题
+        </a>
+        <a class="weui-navbar__item weui-bar__item_on">
+            我的咨询
+        </a>
+    </div>
+    <div class="weui-tab__panel">
+
+    </div>
+</div>
+<div id="wrapper">
+    <div id="scroller">
+        <div id="pullDown">
+        </div>
+        <div id="thelist">
+            <div class="weui-panel onlineConsulting_panel onlineConsulting_my"
+                 onclick="window.location='我的咨询_详情_等待回复.html'">
+                <div class="weui-panel__bd">
+                    <div class="weui-media-box weui-media-box_text onlineConsulting_box">
+                        <p class="weui-media-box__desc">医生，你好，我父亲最近几天肚子反复阵痛，做了B超没什么问题，但是还是会痛,是不是吃了忌口的东西？</p>
+                        <ul class="weui-media-box__info">
+                            <li class="weui-media-box__info__meta">2017-5-26 16:24:04</li>
+                            <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">王琦</li>
+                            <li class="weui-media-box__info__meta">50岁</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="weui-panel__ft onlineConsulting_tab">
+                    <div class="weui-cell weui-cell_access weui-cell_link">
+                        <div class="weui-cell__bd">
+                            <span class="weui-badge weui-badge-warning">等待回复</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-panel onlineConsulting_panel onlineConsulting_my"
+                 onclick="window.location='我的咨询_详情_已回复.html'">
+                <div class="weui-panel__bd">
+                    <div class="weui-media-box weui-media-box_text onlineConsulting_box">
+                        <p class="weui-media-box__desc">医生，你好，我父亲最近几天肚子反复阵痛，做了B超没什么问题，但是还是会痛,是不是吃了忌口的东西？</p>
+                        <ul class="weui-media-box__info">
+                            <li class="weui-media-box__info__meta">2017-5-26 16:24:04</li>
+                            <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">王琦</li>
+                            <li class="weui-media-box__info__meta">50岁</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="weui-panel__ft onlineConsulting_tab">
+                    <div class="weui-cell weui-cell_access weui-cell_link">
+                        <div class="weui-cell__bd">
+                            <span class="weui-badge weui-badge-success">已回复</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pullUp">
+            <span class="pullUpLabel">上拉加载更多...</span>
+        </div>
+    </div>
+</div>
+<script src="../../js/zepto.min.js"></script>
+<script src="../../js/iscroll.js"></script>
+<script src="../../js/f.js"></script>
+<script>
+    //    f.ocToggle($(".onlineConsulting_panel"))
+    //初始化绑定iScroll控件
+    //接口获取数据
+    function getdata() {
+        var data = [
+            {
+                id: "1",
+                text: "医生，你好，我父亲最近几天肚子反复阵痛，做了B超没什么问题，但是还是会痛,是不是吃了忌口的东西？",
+                time: "2017-05-04 19:00:00",
+                sex: "男",
+                age: "50"
+            },
+            {
+                id: "2",
+                text: "医生，你好，但是还是会痛,是不是吃了忌口的东西？做了B超没什么问题，但是还是会痛,是不是吃了忌口的东西？",
+                time: "2017-06-04 19:00:00",
+                sex: "女",
+                age: "50"
+            },
+            {
+                id: "3",
+                text: "我父亲最近几天肚子反复阵痛，做了B超没什么问题，但是还是会痛,是不是吃了忌口的东西？",
+                time: "2017-06-04 19:00:00",
+                sex: "男",
+                age: "50"
+            }
+        ];
+        return data;
+    }
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, false);
+    document.addEventListener('DOMContentLoaded', f.loaded(getdata(), "myOnlineConsulting"), false);
+</script>
+</body>
+</html>

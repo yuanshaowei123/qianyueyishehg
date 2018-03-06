@@ -1,0 +1,1121 @@
+<style>
+    *{
+        box-sizing: border-box!important;
+    }
+    .aaa{
+        display: block;
+    }
+    .bbb{
+        display: none;
+    }
+    .tab-content > .active, .pill-content > .active{
+        overflow-x: hidden;
+    }
+　　
+    .btn-group.btn-group-devided>.btn {
+        margin-right: 0;
+    }
+    .tjtm{
+        margin-right: 20px;
+    }
+    .tjtm1{
+        position: relative;
+        width:100px;
+        border-radius: 0!important;
+        /*padding:0;*/
+    }
+    .type{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width:100%;
+        box-shadow: 0 0 1px #888888;
+        z-index: 100;
+        background-color: #fff;
+        display: none;
+    }
+    .type li{
+        cursor:pointer;
+        height:30px;
+        width:100%;
+        font-size: 15px;
+        color: #000;
+        text-align: center;
+        line-height: 30px;
+    }
+    .type li:hover{
+        color: red;
+    }
+    .title_tm{
+        font-size: 20px!important;
+        text-align: center;
+        text-align: center!important;
+        margin: 0!important;
+    }
+    .title_tms{
+        font-size: 16px!important;
+        color: #666;
+    }
+    .title_text{
+        height:34px;
+        width:100%;
+        border: 1px solid #e2e2e4;
+        padding: 6px 12px;
+    }
+    .options{
+        height:34px;
+        width:50%;
+        border: 1px solid #e2e2e4;
+        padding: 6px 12px;
+    }
+    .remarkss{
+        display: none;
+    }
+    .delete , .remarks{
+        cursor: pointer;
+        display: inline-block;
+        font-size: 12px;
+        color: #000;
+        line-height: 34px;
+        padding: 0 3px;
+    }
+    .delete:hover{
+        color: red;
+    }
+    .remarks:hover{
+        color: red;
+    }
+    .ratio{
+        height:34px;
+        width:20%;
+        border: 1px solid #e2e2e4;
+        text-align: center;
+    }
+    .xu_remarks{
+        height:34px;
+        width:18%;
+        border: 0;
+        border-bottom: 1px solid #e2e2e4;
+        padding: 6px 12px;
+        display: none;
+    }
+    .add_options{
+        height:34px;
+        width:50%;
+        border: 1px dashed red;
+        padding: 6px 12px;
+        text-align: center;
+        cursor: pointer;
+        color: red;
+        font-weight: 600;
+        background-color: #fff;
+    }
+    .add_options1{
+        height:34px;
+        width:50%;
+        border: 1px dashed red;
+        padding: 6px 12px;
+        text-align: center;
+        cursor: pointer;
+        color: red;
+        font-weight: 600;
+        background-color: #fff;
+    }
+    .add_options_fuhe{
+        height:34px;
+        width:50%;
+        border: 1px dashed red;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-weight: 600;
+        background-color: #fff;
+        color: red;
+    }
+    option{
+        color: #000;
+    }
+    .choice{
+        cursor: pointer;
+    }
+    .tk_title{
+        height:34px;
+        width:25%;
+        border: 1px solid #e2e2e4;
+        padding: 6px 12px;
+        text-align: center;
+    }
+    .write_lx{
+        height:34px;
+        width:25%;
+        border: 1px solid #e2e2e4;
+        padding: 6px 12px;
+        text-align: center;
+    }
+    /*.tk_title1{*/
+        /*border: 0!important;*/
+        /*border-bottom: 1px solid #e2e2e4!important;*/
+    /*}*/
+    .xian{
+        display: inline-block;
+        width:25%;
+        height:100%;
+        border-bottom: 1px solid #e2e2e4!important;
+        margin-bottom: -10px;
+    }
+    .add_fh{
+        padding: 0 20px;
+        color: red;
+        cursor: pointer;
+    }
+    .tk_title2{
+        height:34px;
+        width:20%;
+        border: 1px solid #e2e2e4;
+        padding: 6px 12px;
+        text-align: center;
+    }
+    .add_click , .add_click1{
+        display: none;
+    }
+    .portlet.light>.portlet-title>.captions{
+        width:100%;
+        padding: 0 25%;
+        line-height: 60px;
+        display: flex!important;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        color: #000;
+        cursor: pointer;
+        border-bottom: 1px solid #e2e2e4;
+    }
+    .captions>span:hover{
+        color:red!important;
+    }
+    .portlet.light.portlet-fit>.sfbd_tz{
+        padding: 10px 25% 20px;
+    }
+    .biaoti{
+        position: relative;
+    }
+    .fanhui{
+        position: absolute;
+        top:15px;
+        right: 30px;
+        margin: auto;
+    }
+    .kuang{
+        margin-bottom: 30px;
+    }
+    .kuang:hover{
+        border: 1px solid #e2e2e4;
+    }
+    .add_tx1{
+        display: none;
+    }
+    .closes{
+        position: absolute;
+        font-size: 14px;
+        color: #666;
+        top :10px;
+        right:10px;
+        border: 0;
+        background-color: #fff;
+        cursor: pointer;
+        z-index:100;
+    }
+    .add_fotter , .add_tx1{
+        display: none;
+    }
+    .tishi{
+        margin: 70px 0;
+        text-align: center;
+        color: #ddd;
+        padding: 30px 0;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit aaa">
+            <div class="portlet-title">
+                <div class="actions tjtm" style="float: right">
+                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                        <button type="button" class="btn btn-circle btn-primary added">添加题目</button>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body" style="min-height: 581px">
+                <div class="table-scrollable table-scrollable-borderless">
+                    <table class="table table-hover table-light">
+                        <thead>
+                        <tr class="uppercase">
+                            <th>序号</th>
+                            <th>题目类型</th>
+                            <th>标题</th>
+                            <th>关联表单</th>
+                            <th>创建时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>单选题</td>
+                            <td><a href="#addBannersf1" data-toggle="modal">血压</a></td>
+                            <td>高血压随访表</td>
+                            <td>2017年8月17日</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>多选题</td>
+                            <td><a href="#addBannersf2" data-toggle="modal">心里调整</a></td>
+                            <td>高血压随访表</td>
+                            <td>2017年8月17日</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>填空题</td>
+                            <td><a href="#addBannersf3" data-toggle="modal">心里调整3</a></td>
+                            <td>高血压随访表</td>
+                            <td>2017年8月17日</td>
+                        </tr> <tr>
+                            <td>4</td>
+                            <td>可添加复合</td>
+                            <td><a href="#addBannersf4" data-toggle="modal">心里调整4</a></td>
+                            <td>高血压随访表</td>
+                            <td>2017年8月17日</td>
+                        </tr> <tr>
+                            <td>5</td>
+                            <td>下拉题</td>
+                            <td><a href="#addBannersf5" data-toggle="modal">心里调整5</a></td>
+                            <td>高血压随访表</td>
+                            <td>2017年8月17日</td>
+                        </tr> <tr>
+                            <td>6</td>
+                            <td>日期题</td>
+                            <td><a href="#addBannersf6" data-toggle="modal">心里调整6</a></td>
+                            <td>高血压随访表</td>
+                            <td>2017年8月17日</td>
+                        </tr> <tr>
+                            <td>7</td>
+                            <td>简答</td>
+                            <td><a href="#addBannersf7" data-toggle="modal">心里调整7</a></td>
+                            <td>高血压随访表</td>
+                            <td>2017年8月17日</td>
+                        </tr><tr>
+                            <td>8</td>
+                            <td>标题类</td>
+                            <td><a href="#addBannersf8" data-toggle="modal">心里调整8</a></td>
+                            <td>高血压随访表</td>
+                            <td>2017年8月17日</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr style="margin-top: 0">
+                <div id="pagetoolbar" class="">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 text-right">
+                            <div class="">
+                                <ul id="nav_list_pagetoolbar" class="pagination pagination_custom" unselectable="on"
+                                    style="user-select: none;">
+                                    <li class="active">
+                                        <a id="nav_item_pagetoolbar_1" href="javascript:void(0);"
+                                           title="Page 1 of 1">1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portlet light portlet-fit bbb">
+            <div class="portlet-title biaoti">
+                <div class="caption captions">
+                    <span class="xuanxiang">单选题</span>
+                    <span class="xuanxiang">多选题</span>
+                    <span class="xuanxiang">填空题</span>
+                    <span class="xuanxiang">可添加复合题</span>
+                    <span class="xuanxiang">下拉题</span>
+                    <span class="xuanxiang">日期题</span>
+                    <span class="xuanxiang">简答题</span>
+                    <span class="xuanxiang">标题</span>
+                </div>
+                <div class="actions fanhui" style="float: right">
+                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                        <button type="button" class="btn btn-circle btn-primary Return" data-href="文本管理">
+                            返回
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body sfbd_tz">
+                <div class="row">
+                    <div class="modal-content yemian_add">
+                        <!--添加题-->
+
+                    </div>
+                    <p class="tishi">请单击上方导航添加题目</p>
+                    <div class="modal-footer add_fotter">
+                        <button type="button" class="btn btn-default btn Return" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--点击添加选项-->
+<div class="add_click">
+    <div class="form-group">
+        <label class="col-md-1 col-md-offset-1 control-label"></label>
+        <div class="col-md-7">
+            <input type="text" class="options" value="选项">
+            <span class="delete">删除</span>
+            <span class="remarks">备注</span>
+            <span class="remarkss">需备注</span>
+            <input type="text" class="xu_remarks">
+            <input type="text" class="ratio" placeholder="分值百分比">
+        </div>
+    </div>
+</div>
+<div class="add_click1">
+    <div class="form-group">
+        <label class="col-md-1 col-md-offset-1 control-label"></label>
+        <div class="col-md-7">
+            <input type="text" class="options" value="选项">
+            <span class="delete">删除</span>
+        </div>
+    </div>
+</div>
+<!--点击添加题型-->
+<div class="add_tx1" id="1"><div class="modal-body kuang">
+    <div class="closes">×</div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+
+            <div class="col-md-8">
+                <input type="text" class="title_text" placeholder="请输入单选题目...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <input type="text" class="options" value="选项">
+                <span class="delete">删除</span>
+                <span class="remarks">备注</span>
+                <span class="remarkss">需备注</span>
+                <input type="text" class="xu_remarks">
+                <input type="text" class="ratio" placeholder="分值百分比">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <input type="text" class="options" value="选项">
+                <span class="delete">删除</span>
+                <span class="remarks">备注</span>
+                <span class="remarkss">需备注</span>
+                <input type="text" class="xu_remarks">
+                <input type="text" class="ratio" placeholder="分值百分比">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <input type="text" class="options" value="选项">
+                <span class="delete">删除</span>
+                <span class="remarks">备注</span>
+                <span class="remarkss">需备注</span>
+                <input type="text" class="xu_remarks">
+                <input type="text" class="ratio" placeholder="分值百分比">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7 add_options_area">
+                <input type="button" class="add_options" value="增加选项">
+            </div>
+        </div>
+
+    </form>
+</div></div>
+<div class="add_tx1" id="2"><div class="modal-body kuang">
+    <div class="closes">×</div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+
+            <div class="col-md-8">
+                <input type="text" class="title_text" placeholder="请输入多选题目...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <input type="text" class="options" value="选项">
+                <span class="delete">删除</span>
+                <span class="remarks">备注</span>
+                <span class="remarkss">需备注</span>
+                <input type="text" class="xu_remarks">
+                <input type="text" class="ratio" placeholder="分值百分比">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <input type="text" class="options" value="选项">
+                <span class="delete">删除</span>
+                <span class="remarks">备注</span>
+                <span class="remarkss">需备注</span>
+                <input type="text" class="xu_remarks">
+                <input type="text" class="ratio" placeholder="分值百分比">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <input type="text" class="options" value="选项">
+                <span class="delete">删除</span>
+                <span class="remarks">备注</span>
+                <span class="remarkss">需备注</span>
+                <input type="text" class="xu_remarks">
+                <input type="text" class="ratio" placeholder="分值百分比">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7 add_options_area">
+                <input type="button" class="add_options" value="增加选项">
+            </div>
+        </div>
+    </form>
+</div></div>
+<div class="add_tx1" id="3"><div class="modal-body kuang">
+    <div class="closes">×</div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+            <div class="col-md-7">
+                <input type="text" class="tk_title" placeholder="填空左标题">
+                <div class="xian"></div>
+                <input type="text" class="tk_title" placeholder="填空右标题">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">输入长度</label>
+            <div class="col-md-7">
+                <input type="text" class="tk_title" placeholder="请输入长度">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">类型</label>
+            <div class="col-md-7">
+                <select name="" class="write_lx">
+                    <option value="0">中文</option>
+                    <option value="1">英文</option>
+                    <option value="2">法语</option>
+                    <option value="3">日语</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div></div>
+<div class="add_tx1" id="4"><div class="modal-body kuang">
+    <div class="closes">×</div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+            <div class="col-md-7">
+                <input type="text" class="tk_title" placeholder="用药情况">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <select name="" id="" class="add_options_fuhe">
+                    <option value="0">添加题型</option>
+                    <option value="1">单选</option>
+                    <option value="2">多选</option>
+                    <option value="3">填空</option>
+                    <option value="5">下拉</option>
+                    <option value="6">日期</option>
+                    <option value="7">简答</option>
+                    <option value="8">标题</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div></div>
+<div class="add_tx1" id="5"><div class="modal-body kuang">
+    <div class="closes">×</div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+
+            <div class="col-md-8">
+                <input type="text" class="title_text" placeholder="请输入下拉题目...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <input type="text" class="options" value="选项">
+                <span class="delete">删除</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <input type="text" class="options" value="选项">
+                <span class="delete">删除</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <input type="text" class="options" value="选项">
+                <span class="delete">删除</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7 add_options_area">
+                <input type="button" class="add_options1" value="增加选项">
+            </div>
+        </div>
+
+    </form>
+</div></div>
+<div class="add_tx1" id="6"><div class="modal-body kuang">
+    <div class="closes">×</div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+            <div class="col-md-7">
+                <input type="text" class="options" placeholder="请输入日期名称...">
+            </div>
+        </div>
+    </form>
+</div></div>
+<div class="add_tx1" id="7"><div class="modal-body kuang">
+    <div class="closes">×</div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+            <div class="col-md-7">
+                <input type="text" class="options" placeholder="请输入简答题目...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">备注</label>
+            <div class="col-md-7">
+                <input type="text" class="options" placeholder="请输入备注内容...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">输入长度</label>
+            <div class="col-md-7">
+                <input type="text" class="tk_title" placeholder="请输入长度">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">类型</label>
+            <div class="col-md-7">
+                <select name="" class="write_lx">
+                    <option value="0">中文</option>
+                    <option value="1">英文</option>
+                    <option value="2">法语</option>
+                    <option value="3">日语</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div></div>
+<div class="add_tx1" id="8"><div class="modal-body kuang">
+    <div class="closes">×</div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+            <div class="col-md-7">
+                <input type="text" class="options" placeholder="请输入标题名称...">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-md-offset-1 control-label"></label>
+            <div class="col-md-7">
+                <select name="" class="add_options_fuhe">
+                    <option value="0">添加题型</option>
+                    <option value="1">单选</option>
+                    <option value="2">多选</option>
+                    <option value="3">填空</option>
+                    <option value="5">下拉</option>
+                    <option value="6">日期</option>
+                    <option value="7">简答</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div></div>
+
+
+<!--弹出框-->
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addBannersf1"
+     class="modal fade in lbt_info" data-backdrop="static">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">单选题</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="closes">×</div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+                        <div class="col-md-7">
+                            <input type="text" class="title_text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" value="选项">
+                            <span class="delete">删除</span>
+                            <span class="remarks">备注</span>
+                            <span class="remarkss">需备注</span>
+                            <input type="text" class="xu_remarks">
+                            <input type="text" class="ratio" placeholder="分值百分比">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" value="选项">
+                            <span class="delete">删除</span>
+                            <span class="remarks">备注</span>
+                            <span class="remarkss">需备注</span>
+                            <input type="text" class="xu_remarks">
+                            <input type="text" class="ratio" placeholder="分值百分比">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" value="选项">
+                            <span class="delete">删除</span>
+                            <span class="remarks">备注</span>
+                            <span class="remarkss">需备注</span>
+                            <input type="text" class="xu_remarks">
+                            <input type="text" class="ratio" placeholder="分值百分比">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7 add_options_area">
+                            <input type="button" class="add_options" value="增加选项">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addBannersf2"
+     class="modal fade in lbt_info" data-backdrop="static">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">多选题</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="closes">×</div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+                        <div class="col-md-7">
+                            <input type="text" class="title_text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" value="选项">
+                            <span class="delete">删除</span>
+                            <span class="remarks">备注</span>
+                            <span class="remarkss">需备注</span>
+                            <input type="text" class="xu_remarks">
+                            <input type="text" class="ratio" placeholder="分值百分比">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" value="选项">
+                            <span class="delete">删除</span>
+                            <span class="remarks">备注</span>
+                            <span class="remarkss">需备注</span>
+                            <input type="text" class="xu_remarks">
+                            <input type="text" class="ratio" placeholder="分值百分比">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" value="选项">
+                            <span class="delete">删除</span>
+                            <span class="remarks">备注</span>
+                            <span class="remarkss">需备注</span>
+                            <input type="text" class="xu_remarks">
+                            <input type="text" class="ratio" placeholder="分值百分比">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7 add_options_area">
+                            <input type="button" class="add_options" value="增加选项">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addBannersf3"
+     class="modal fade in lbt_info" data-backdrop="static">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">填空</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="closes">×</div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+                        <div class="col-md-7">
+                            <input type="text" class="tk_title" placeholder="填空左标题">
+                            <div class="xian"></div>
+                            <input type="text" class="tk_title" placeholder="填空右标题">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">输入长度</label>
+                        <div class="col-md-7">
+                            <input type="text" class="tk_title" placeholder="请输入长度">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">类型</label>
+                        <div class="col-md-7">
+                            <select name="" class="write_lx">
+                                <option value="0">中文</option>
+                                <option value="1">英文</option>
+                                <option value="2">法语</option>
+                                <option value="3">日语</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addBannersf4"
+     class="modal fade in lbt_info" data-backdrop="static">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">可添加复合题</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+                        <div class="col-md-7">
+                            <input type="text" class="tk_title" placeholder="用药情况">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms"></label>
+                        <div class="col-md-7 add_options_area">
+                            <select name="" class="add_options_fuhe">
+                                <option value="0">添加题型</option>
+                                <option value="1">单选</option>
+                                <option value="2">多选</option>
+                                <option value="3">填空</option>
+                                <option value="5">下拉</option>
+                                <option value="6">日期</option>
+                                <option value="7">简答</option>
+                                <option value="8">标题</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addBannersf5"
+     class="modal fade in lbt_info" data-backdrop="static">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">下拉题</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="closes">×</div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+
+                        <div class="col-md-7">
+                            <input type="text" class="title_text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" value="选项">
+                            <span class="delete">删除</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" value="选项">
+                            <span class="delete">删除</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" value="选项">
+                            <span class="delete">删除</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7 add_options_area">
+                            <input type="button" class="add_options1" value="增加选项">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addBannersf6"
+     class="modal fade in lbt_info" data-backdrop="static">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">日期</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm">日期名称</label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" placeholder="请输入...">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addBannersf7"
+     class="modal fade in lbt_info" data-backdrop="static">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">简答题</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="closes">×</div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm">题目</label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" placeholder="请输入简答题目...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">备注</label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" placeholder="请输入备注内容...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">输入长度</label>
+                        <div class="col-md-7">
+                            <input type="text" class="tk_title" placeholder="请输入长度">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm title_tms">类型</label>
+                        <div class="col-md-7">
+                            <select name="" class="write_lx">
+                                <option value="0">中文</option>
+                                <option value="1">英文</option>
+                                <option value="2">法语</option>
+                                <option value="3">日语</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addBannersf8"
+     class="modal fade in lbt_info" data-backdrop="static">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">标题类</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 col-md-offset-1 control-label title_tm">标题名称</label>
+                        <div class="col-md-7">
+                            <input type="text" class="options" placeholder="请输入...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-md-offset-1 control-label"></label>
+                        <div class="col-md-7">
+                            <select name="" class="add_options_fuhe">
+                                <option value="0">添加题型</option>
+                                <option value="1">单选</option>
+                                <option value="2">多选</option>
+                                <option value="3">填空</option>
+                                <option value="5">下拉</option>
+                                <option value="6">日期</option>
+                                <option value="7">简答</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/components-editors.min.js" type="text/javascript"></script>
+<script>
+    $(".added").click(function () {
+        $(".aaa").hide();
+        $(".bbb").show();
+    })
+    $(".Return").click(function () {
+        $(".bbb").hide();
+        $(".aaa").show();
+    })
+//    点击备注
+    $(".yemian_add , .modal-body , .modal-content").delegate(".remarks", "click", function () {
+        $(this).next().show();
+        $(this).hide();
+    })
+//    点击添加选项
+    $("body").delegate(".add_options", "click", function () {
+        var htmls = $('.add_click').html();
+        $(this).parent().parent().before(htmls)
+    })
+    //    点击添加选项下拉题
+    $(".yemian_add , .modal-body").delegate(".add_options1", "click", function () {
+        var htmls = $('.add_click1').html();
+        $(this).parent().parent().before(htmls)
+    })
+    //    点击删除选项
+    $(".yemian_add , .form-horizontal , .modal-content").delegate(".delete", "click", function () {
+        $(this).parent().parent().remove();
+    })
+    //    关闭按钮
+    $(".yemian_add , .modal-content").delegate(".closes", "click", function () {
+        $(this).parent().remove();
+        //    判断是否有题
+        if($('.yemian_add').children().length=='0'){
+            $('.add_fotter').hide();
+            $('.tishi').show();
+        }
+    })
+
+    //    点击添加题
+    $('.xuanxiang').each(function (index,value) {
+        $('.xuanxiang').eq(index).click(function () {
+            var html = $('.add_tx1').eq(index).html();
+            $('.yemian_add').append(html);
+            $('.add_fotter').show();
+            $('.tishi').hide();
+        })
+    })
+
+
+//            点击复合题选项
+    $('body').delegate(".add_options_fuhe", "click", function () {
+        var fu = $(this).parent().parent();
+        var zhi = $(this).val();
+        $('.add_tx1').each(function (index2,value2) {
+            var zhiid =$('.add_tx1').eq(index2);
+            if(zhi==zhiid.attr('id')) {
+                fu.before(zhiid.html());
+            }
+        })
+//       默认第一个
+        $(this).val(0);
+    })
+
+</script>
+
+<div style="clear: both"></div>
